@@ -1,43 +1,12 @@
-use std::time::Duration;
+mod timer;
 
 use gtk::prelude::{BoxExt, ButtonExt, OrientableExt, WidgetExt};
 use relm4::{
     adw,
     gtk::{self},
-    Component, ComponentParts, ComponentSender, RelmApp, Worker, WorkerController, RelmWidgetExt,
+    Component, ComponentParts, ComponentSender, RelmApp, RelmWidgetExt, WorkerController,
 };
-
-struct TimerModel;
-
-#[derive(Debug)]
-enum TimerOutput {
-    Tick,
-}
-
-impl Worker for TimerModel {
-    type Output = TimerOutput;
-    type Init = ();
-    type Input = ();
-
-    fn init(_init: Self::Init, sender: relm4::ComponentSender<Self>) -> Self {
-        let output_sender = sender.output_sender().clone();
-        sender.command(move |_out, shutdown| {
-            shutdown
-                .register(async move {
-                    let mut interval = tokio::time::interval(Duration::from_secs(1));
-                    interval.tick().await;
-                    loop {
-                        interval.tick().await;
-                        output_sender.send(TimerOutput::Tick).unwrap();
-                    }
-                })
-                .drop_on_shutdown()
-        });
-        Self {}
-    }
-
-    fn update(&mut self, _message: Self::Input, _sender: relm4::ComponentSender<Self>) {}
-}
+use timer::{TimerModel, TimerOutput};
 
 struct AppModel {
     start: usize,
@@ -75,15 +44,22 @@ impl Component for AppModel {
             gtk::Box {
                 set_spacing: 5,
                 set_orientation: gtk::Orientation::Vertical,
-                #[watch]
-                set_class_active: ("timer-running", model.running),
                 adw::HeaderBar {},
                 adw::Clamp {
+                    set_orientation: gtk::Orientation::Horizontal,
                     gtk::Box {
+                        set_class_active: ("timer", true),
+                        #[watch]
+                        set_class_active: ("timer-running", model.running),
+                        #[watch]
+                        set_class_active: ("timer-stopped", !model.running),
                         set_spacing: 5,
                         set_orientation: gtk::Orientation::Vertical,
+                        set_valign: gtk::Align::Center,
                         set_margin_all: 20,
+                        set_vexpand: true,
                         append: label = &gtk::Label {
+                            set_class_active: ("timer-label", true),
                             #[watch]
                             set_label: &format!("{}", model.counter)
                         },
@@ -93,7 +69,7 @@ impl Component for AppModel {
                             set_spacing: 10,
                             append: start_stop_btn = &gtk::Button {
                                 #[watch]
-                                set_label: if model.running { "Stop" } else { "Start" },
+                                set_label: if model.running { "Pause" } else if model.counter == model.start { "Start" } else { "Resume" },
                                 #[watch]
                                 set_sensitive: model.counter != 0,
                                 #[watch]
@@ -116,7 +92,22 @@ impl Component for AppModel {
         root: &Self::Root,
         sender: relm4::ComponentSender<Self>,
     ) -> ComponentParts<Self> {
-        relm4::set_global_css(".timer-running { background: #2b8724; }");
+        relm4::set_global_css(
+            ".timer {
+                border-radius: 8px;
+                padding: 20px;
+            }
+            .timer-running {
+                background: #2b8724;
+            }
+            .timer-stopped {
+                background: #346d9a;
+            }
+            .timer-label {
+                font-size: 48px;
+            }
+            ",
+        );
         let model = AppModel {
             start: init,
             counter: init,
@@ -148,7 +139,7 @@ impl Component for AppModel {
                 if self.counter == 0 {
                     sender.input_sender().send(AppInput::StartStop).unwrap();
                 }
-            },
+            }
             AppInput::Reset => {
                 self.counter = self.start;
             }
