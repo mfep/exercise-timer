@@ -6,6 +6,7 @@ use gtk::prelude::{BoxExt, ButtonExt, OrientableExt, WidgetExt};
 use relm4::gtk::gio;
 use relm4::gtk::prelude::GtkWindowExt;
 use relm4::Controller;
+use relm4::typed_list_view::{RelmListItem, TypedListView};
 use relm4::{
     adw,
     gtk::{self, prelude::ObjectExt},
@@ -16,6 +17,7 @@ use timer::{TimerModel, TimerOutput};
 
 #[derive(Debug)]
 struct ExerciseSetup {
+    name: String,
     warmup_s: usize,
     exercise_s: usize,
     rest_s: usize,
@@ -32,6 +34,7 @@ enum ExerciseState {
 impl Default for ExerciseSetup {
     fn default() -> Self {
         Self {
+            name: String::from("Good Exercise"),
             warmup_s: 2,
             exercise_s: 2,
             rest_s: 2,
@@ -243,6 +246,60 @@ impl Component for ExerciseModel {
 
 struct AppModel {
     exerciser: Controller<ExerciseModel>,
+    list_exercises: TypedListView<ExerciseSetup, gtk::NoSelection>,
+}
+
+struct ExerciseSetupWidgets {
+    label: gtk::Label,
+}
+
+impl RelmListItem for ExerciseSetup {
+    type Root = gtk::Box;
+    type Widgets = ExerciseSetupWidgets;
+    
+    fn setup(_list_item: &gtk::ListItem) -> (Self::Root, Self::Widgets) {
+        relm4::view! {
+            #[name = "container_box"]
+            gtk::Box {
+                set_hexpand: true,
+                set_class_active: ("card", true),
+                set_margin_top: 5,
+                set_margin_start: 5,
+                set_margin_end: 5,
+                inline_css: "padding: 10px",
+                #[name = "label"]
+                gtk::Label {
+                    set_class_active: ("title-4", true),
+                },
+                gtk::Box {
+                    set_class_active: ("linked", true),
+                    set_hexpand: true,
+                    set_halign: gtk::Align::End,
+                    gtk::Button {
+                        set_icon_name: "edit",
+                    },
+                    gtk::Button {
+                        set_class_active: ("destructive-action", true),
+                        set_icon_name: "entry-clear",
+                    },
+                    gtk::Button {
+                        set_class_active: ("suggested-action", true),
+                        set_icon_name: "play",
+                    }
+                }
+            }
+        }
+
+        let widgets = ExerciseSetupWidgets {
+            label,
+        };
+
+        (container_box, widgets)
+    }
+
+    fn bind(&mut self, widgets: &mut Self::Widgets, _root: &mut Self::Root) {
+        widgets.label.set_label(&self.name);
+    }
 }
 
 #[relm4::component]
@@ -261,13 +318,11 @@ impl SimpleComponent for AppModel {
                     set_orientation: gtk::Orientation::Vertical,
                     append: left_header = &adw::HeaderBar {
                         set_title_widget: Some(&adw::WindowTitle::new("Test Title", "Test Subtitle")),
-                        // set_show_end_title_buttons: false,
                     },
-                    gtk::Label {
-                        set_label: "Test 1",
-                    },
-                    gtk::Label {
-                        set_label: "Test 2"
+                    gtk::ScrolledWindow {
+                        set_vexpand: true,
+                        #[local_ref]
+                        list_exercises -> gtk::ListView {}
                     }
                 },
                 append = &gtk::Separator::new(gtk::Orientation::Vertical),
@@ -289,12 +344,17 @@ impl SimpleComponent for AppModel {
         root: &Self::Root,
         sender: ComponentSender<Self>,
     ) -> ComponentParts<Self> {
-        let model = AppModel {
+        let mut model = AppModel {
             exerciser: ExerciseModel::builder()
                 .launch(())
                 .forward(sender.input_sender(), identity),
+            list_exercises: TypedListView::default(),
         };
+        for _i in 0..10 {
+            model.list_exercises.append(ExerciseSetup::default());
+        }
         let exerciser = model.exerciser.widget();
+        let list_exercises = &model.list_exercises.view;
         let widgets = view_output!();
         widgets
             .leaflet
@@ -308,5 +368,6 @@ impl SimpleComponent for AppModel {
 fn main() {
     // gio::resources_register_include!("hiit.gresource").expect("Failed to register resources.");
     let app = RelmApp::new("org.safeworlds.hiit");
+    relm4_icons::initialize_icons();
     app.run::<AppModel>(());
 }
