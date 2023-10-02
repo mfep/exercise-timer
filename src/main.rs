@@ -1,92 +1,24 @@
 mod exercise_timer;
+mod exercise_setup;
 
-pub use exercise_timer::ExerciseSetup;
+use exercise_setup::ExerciseSetup;
 use exercise_timer::ExerciseTimer;
 use gtk::prelude::{BoxExt, ButtonExt, OrientableExt, WidgetExt};
 use relm4::factory::FactoryVecDeque;
-use relm4::prelude::{DynamicIndex, FactoryComponent};
+use relm4::prelude::{DynamicIndex};
 use relm4::Controller;
 use relm4::{
     adw,
     gtk::{self, prelude::ObjectExt},
-    Component, ComponentController, ComponentParts, ComponentSender, RelmApp, RelmWidgetExt,
+    Component, ComponentController, ComponentParts, ComponentSender, RelmApp,
     SimpleComponent,
 };
-
-#[derive(Debug)]
-pub enum ExerciseSetupInput {
-    Remove,
-}
-
-#[derive(Debug)]
-pub enum ExerciseSetupOutput {
-    Remove(DynamicIndex),
-}
 
 #[derive(Debug)]
 pub enum AppModelInput {
     PromptNewExercise,
     RemoveExerciseSetup(DynamicIndex),
     None,
-}
-
-#[relm4::factory(pub)]
-impl FactoryComponent for ExerciseSetup {
-    type Init = ExerciseSetup;
-    type Input = ExerciseSetupInput;
-    type Output = ExerciseSetupOutput;
-    type CommandOutput = ();
-    type ParentInput = AppModelInput;
-    type ParentWidget = gtk::Box;
-
-    view! {
-        gtk::Box {
-            set_hexpand: true,
-            set_class_active: ("card", true),
-            set_margin_top: 5,
-            set_margin_start: 5,
-            set_margin_end: 5,
-            inline_css: "padding: 10px",
-            gtk::Label {
-                set_class_active: ("title-4", true),
-                #[watch]
-                set_label: &self.name,
-            },
-            gtk::Box {
-                set_class_active: ("linked", true),
-                set_hexpand: true,
-                set_halign: gtk::Align::End,
-                gtk::Button {
-                    set_icon_name: "edit",
-                },
-                gtk::Button {
-                    set_class_active: ("destructive-action", true),
-                    set_icon_name: "entry-clear",
-                    connect_clicked[sender, index] => move |_| {
-                        sender.output(ExerciseSetupOutput::Remove(index.clone()))
-                    },
-                },
-                gtk::Button {
-                    set_class_active: ("suggested-action", true),
-                    set_icon_name: "play",
-                }
-            }
-        }
-    }
-
-    fn init_model(
-        init: Self::Init,
-        _index: &Self::Index,
-        _sender: relm4::FactorySender<Self>,
-    ) -> Self {
-        init
-    }
-
-    fn forward_to_parent(output: Self::Output) -> Option<Self::ParentInput> {
-        Some(match output {
-            ExerciseSetupOutput::Remove(index) => AppModelInput::RemoveExerciseSetup(index),
-        })
-    }
 }
 
 struct AppModel {

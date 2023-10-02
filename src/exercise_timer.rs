@@ -8,32 +8,13 @@ use relm4::{
 };
 use timer::{TimerModel, TimerOutput};
 
-#[derive(Debug)]
-pub struct ExerciseSetup {
-    pub name: String,
-    warmup_s: usize,
-    exercise_s: usize,
-    rest_s: usize,
-    sets: usize,
-}
+use crate::exercise_setup::ExerciseSetup;
 
 #[derive(PartialEq)]
 enum ExerciseState {
     Warmup,
     Exercise,
     Rest,
-}
-
-impl Default for ExerciseSetup {
-    fn default() -> Self {
-        Self {
-            name: String::from("Good Exercise"),
-            warmup_s: 2,
-            exercise_s: 2,
-            rest_s: 2,
-            sets: 2,
-        }
-    }
 }
 
 pub struct ExerciseTimer {
