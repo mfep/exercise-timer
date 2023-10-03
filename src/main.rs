@@ -1,22 +1,24 @@
-mod exercise_timer;
+mod exercise_editor;
 mod exercise_setup;
+mod exercise_timer;
 
+use exercise_editor::{ExerciseEditor, ExerciseEditorInput, ExerciseEditorOutput};
 use exercise_setup::ExerciseSetup;
 use exercise_timer::ExerciseTimer;
 use gtk::prelude::{BoxExt, ButtonExt, OrientableExt, WidgetExt};
 use relm4::factory::FactoryVecDeque;
-use relm4::prelude::{DynamicIndex};
+use relm4::prelude::DynamicIndex;
 use relm4::Controller;
 use relm4::{
     adw,
     gtk::{self, prelude::ObjectExt},
-    Component, ComponentController, ComponentParts, ComponentSender, RelmApp,
-    SimpleComponent,
+    Component, ComponentController, ComponentParts, ComponentSender, RelmApp, SimpleComponent,
 };
 
 #[derive(Debug)]
 pub enum AppModelInput {
     PromptNewExercise,
+    CreateExerciseSetup(ExerciseSetup),
     RemoveExerciseSetup(DynamicIndex),
     None,
 }
@@ -24,6 +26,7 @@ pub enum AppModelInput {
 struct AppModel {
     exerciser: Controller<ExerciseTimer>,
     list_exercises: FactoryVecDeque<ExerciseSetup>,
+    exercise_editor: Controller<ExerciseEditor>,
 }
 
 #[relm4::component]
@@ -80,6 +83,12 @@ impl SimpleComponent for AppModel {
                 .launch(())
                 .forward(sender.input_sender(), |_| AppModelInput::None),
             list_exercises,
+            exercise_editor: ExerciseEditor::builder()
+                .transient_for(root)
+                .launch(ExerciseSetup::default())
+                .forward(sender.input_sender(), |message| match message {
+                    ExerciseEditorOutput::Create(setup) => AppModelInput::CreateExerciseSetup(setup),
+                }),
         };
         let exerciser = model.exerciser.widget();
         let list_exercises = model.list_exercises.widget();
@@ -95,13 +104,15 @@ impl SimpleComponent for AppModel {
     fn update(&mut self, message: Self::Input, _sender: ComponentSender<Self>) {
         match message {
             AppModelInput::PromptNewExercise => {
-                self.list_exercises
-                    .guard()
-                    .push_front(ExerciseSetup::default());
+                self.exercise_editor.emit(ExerciseEditorInput::Show);
             }
             AppModelInput::RemoveExerciseSetup(index) => {
                 let index = index.current_index();
                 self.list_exercises.guard().remove(index);
+            }
+            AppModelInput::CreateExerciseSetup(setup) => {
+                println!("Exercise created: {:?}", setup);
+                self.list_exercises.guard().push_front(setup);
             }
             AppModelInput::None => {}
         }

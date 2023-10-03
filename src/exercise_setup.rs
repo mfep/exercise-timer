@@ -3,7 +3,7 @@ use relm4::gtk::prelude::*;
 
 use crate::AppModelInput;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct ExerciseSetup {
     pub name: String,
     pub warmup_s: usize,
