@@ -2,8 +2,10 @@ mod exercise_editor;
 mod exercise_setup;
 mod exercise_timer;
 
-use exercise_editor::{ExerciseEditor, ExerciseEditorInput, ExerciseEditorOutput};
-use exercise_setup::ExerciseSetup;
+use std::rc::Rc;
+
+use exercise_editor::{ExerciseEditor, ExerciseEditorInput, ExerciseEditorOutput, ExerciseEditorRole};
+use exercise_setup::{ExerciseSetup, ExerciseSetupModel};
 use exercise_timer::ExerciseTimer;
 use gtk::prelude::{BoxExt, ButtonExt, OrientableExt, WidgetExt};
 use relm4::factory::FactoryVecDeque;
@@ -25,11 +27,11 @@ pub enum AppModelInput {
 
 struct AppModel {
     exerciser: Controller<ExerciseTimer>,
-    list_exercises: FactoryVecDeque<ExerciseSetup>,
-    exercise_editor: Controller<ExerciseEditor>,
+    list_exercises: FactoryVecDeque<ExerciseSetupModel>,
+    exercise_editor: Rc<Controller<ExerciseEditor>>,
 }
 
-#[relm4::component]
+#[relm4::component(pub)]
 impl SimpleComponent for AppModel {
     type Init = ();
     type Input = AppModelInput;
@@ -83,12 +85,16 @@ impl SimpleComponent for AppModel {
                 .launch(())
                 .forward(sender.input_sender(), |_| AppModelInput::None),
             list_exercises,
-            exercise_editor: ExerciseEditor::builder()
-                .transient_for(root)
-                .launch(ExerciseSetup::default())
-                .forward(sender.input_sender(), |message| match message {
-                    ExerciseEditorOutput::Create(setup) => AppModelInput::CreateExerciseSetup(setup),
-                }),
+            exercise_editor: Rc::new(
+                ExerciseEditor::builder()
+                    .transient_for(root)
+                    .launch(ExerciseSetup::default())
+                    .forward(sender.input_sender(), |message| match message {
+                        ExerciseEditorOutput::Create(setup) => {
+                            AppModelInput::CreateExerciseSetup(setup)
+                        }
+                    }),
+            ),
         };
         let exerciser = model.exerciser.widget();
         let list_exercises = model.list_exercises.widget();
@@ -104,7 +110,7 @@ impl SimpleComponent for AppModel {
     fn update(&mut self, message: Self::Input, _sender: ComponentSender<Self>) {
         match message {
             AppModelInput::PromptNewExercise => {
-                self.exercise_editor.emit(ExerciseEditorInput::Show);
+                self.exercise_editor.emit(ExerciseEditorInput::Show(ExerciseEditorRole::New));
             }
             AppModelInput::RemoveExerciseSetup(index) => {
                 let index = index.current_index();
@@ -112,7 +118,9 @@ impl SimpleComponent for AppModel {
             }
             AppModelInput::CreateExerciseSetup(setup) => {
                 println!("Exercise created: {:?}", setup);
-                self.list_exercises.guard().push_front(setup);
+                self.list_exercises
+                    .guard()
+                    .push_front((setup, self.exercise_editor.clone()));
             }
             AppModelInput::None => {}
         }

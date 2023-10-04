@@ -1,7 +1,15 @@
-use relm4::{prelude::{FactoryComponent, DynamicIndex}, gtk, RelmWidgetExt};
-use relm4::gtk::prelude::*;
+use std::rc::Rc;
 
-use crate::AppModelInput;
+use relm4::gtk::prelude::*;
+use relm4::ComponentController;
+use relm4::{
+    gtk,
+    prelude::{DynamicIndex, FactoryComponent},
+    Controller, RelmWidgetExt,
+};
+
+use crate::exercise_editor::{ExerciseEditorInput, ExerciseEditorRole};
+use crate::{exercise_editor::ExerciseEditor, AppModelInput};
 
 #[derive(Debug, Clone)]
 pub struct ExerciseSetup {
@@ -25,14 +33,25 @@ impl Default for ExerciseSetup {
 }
 
 #[derive(Debug)]
+pub struct ExerciseSetupModel {
+    setup: ExerciseSetup,
+    edit_dialog: Rc<Controller<ExerciseEditor>>,
+}
+
+#[derive(Debug)]
+pub enum ExerciseSetupInput {
+    Edit,
+}
+
+#[derive(Debug)]
 pub enum ExerciseSetupOutput {
     Remove(DynamicIndex),
 }
 
 #[relm4::factory(pub)]
-impl FactoryComponent for ExerciseSetup {
-    type Init = ExerciseSetup;
-    type Input = ();
+impl FactoryComponent for ExerciseSetupModel {
+    type Init = (ExerciseSetup, Rc<Controller<ExerciseEditor>>);
+    type Input = ExerciseSetupInput;
     type Output = ExerciseSetupOutput;
     type CommandOutput = ();
     type ParentInput = AppModelInput;
@@ -49,7 +68,7 @@ impl FactoryComponent for ExerciseSetup {
             gtk::Label {
                 set_class_active: ("title-4", true),
                 #[watch]
-                set_label: &self.name,
+                set_label: &self.setup.name,
             },
             gtk::Box {
                 set_class_active: ("linked", true),
@@ -57,6 +76,7 @@ impl FactoryComponent for ExerciseSetup {
                 set_halign: gtk::Align::End,
                 gtk::Button {
                     set_icon_name: "edit",
+                    connect_clicked => ExerciseSetupInput::Edit,
                 },
                 gtk::Button {
                     set_class_active: ("destructive-action", true),
@@ -78,12 +98,24 @@ impl FactoryComponent for ExerciseSetup {
         _index: &Self::Index,
         _sender: relm4::FactorySender<Self>,
     ) -> Self {
-        init
+        Self {
+            setup: init.0,
+            edit_dialog: init.1,
+        }
     }
 
     fn forward_to_parent(output: Self::Output) -> Option<Self::ParentInput> {
         Some(match output {
             ExerciseSetupOutput::Remove(index) => AppModelInput::RemoveExerciseSetup(index),
         })
+    }
+
+    fn update(&mut self, message: Self::Input, _sender: relm4::FactorySender<Self>) {
+        match message {
+            ExerciseSetupInput::Edit => {
+                self.edit_dialog
+                    .emit(ExerciseEditorInput::Show(ExerciseEditorRole::Edit));
+            }
+        }
     }
 }
