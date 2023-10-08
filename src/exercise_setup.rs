@@ -1,7 +1,7 @@
 use relm4::{
-    prelude::*,
     gtk::{self, prelude::*, Root},
-    RelmWidgetExt, Component,
+    prelude::*,
+    Component, RelmWidgetExt,
 };
 
 use crate::exercise_editor::{ExerciseEditorOutput, ExerciseEditorRole};
@@ -33,11 +33,13 @@ impl Default for ExerciseSetup {
 pub enum ExerciseSetupInput {
     Edit(Root),
     Update(ExerciseSetup),
+    Load,
 }
 
 #[derive(Debug)]
 pub enum ExerciseSetupOutput {
     Remove(DynamicIndex),
+    Load(ExerciseSetup),
 }
 
 #[relm4::factory(pub)]
@@ -107,6 +109,7 @@ impl FactoryComponent for ExerciseSetup {
                 gtk::Button {
                     set_class_active: ("suggested-action", true),
                     set_icon_name: "play",
+                    connect_clicked => ExerciseSetupInput::Load,
                 }
             }
         }
@@ -123,6 +126,7 @@ impl FactoryComponent for ExerciseSetup {
     fn forward_to_parent(output: Self::Output) -> Option<Self::ParentInput> {
         Some(match output {
             ExerciseSetupOutput::Remove(index) => AppModelInput::RemoveExerciseSetup(index),
+            ExerciseSetupOutput::Load(setup) => AppModelInput::LoadExercise(setup),
         })
     }
 
@@ -142,6 +146,9 @@ impl FactoryComponent for ExerciseSetup {
             }
             ExerciseSetupInput::Update(setup) => {
                 *self = setup;
+            }
+            ExerciseSetupInput::Load => {
+                sender.output(ExerciseSetupOutput::Load(self.clone()));
             }
         }
     }

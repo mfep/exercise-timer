@@ -3,7 +3,7 @@ mod timer;
 use gtk::prelude::{BoxExt, ButtonExt, OrientableExt, WidgetExt};
 use relm4::{
     adw,
-    gtk::{self},
+    gtk::{self, prelude::Cast},
     Component, ComponentParts, ComponentSender, RelmWidgetExt, WorkerController,
 };
 use timer::{TimerModel, TimerOutput};
@@ -51,6 +51,7 @@ impl ExerciseTimer {
 pub enum ExerciseTimerInput {
     Tick,
     StartStop,
+    Pause,
     Reset,
 }
 
@@ -74,12 +75,13 @@ fn remaining_str(remaining_s: usize) -> String {
 
 #[relm4::component(pub)]
 impl Component for ExerciseTimer {
-    type Init = ();
+    type Init = ExerciseSetup;
     type Input = ExerciseTimerInput;
     type Output = ();
     type CommandOutput = ();
 
     view! {
+        #[name = "root_clamp"]
         adw::Clamp {
             set_orientation: gtk::Orientation::Horizontal,
             gtk::Box {
@@ -141,7 +143,7 @@ impl Component for ExerciseTimer {
     }
 
     fn init(
-        _init: Self::Init,
+        init: Self::Init,
         root: &Self::Root,
         sender: relm4::ComponentSender<Self>,
     ) -> ComponentParts<Self> {
@@ -166,7 +168,7 @@ impl Component for ExerciseTimer {
             }
             ",
         );
-        let model = ExerciseTimer::new(ExerciseSetup::default(), &sender);
+        let model = ExerciseTimer::new(init, &sender);
         let widgets = view_output!();
         ComponentParts { model, widgets }
     }
@@ -185,6 +187,10 @@ impl Component for ExerciseTimer {
                     self.timer = build_timer(&sender);
                 }
                 self.running = !self.running;
+            }
+            ExerciseTimerInput::Pause => {
+                self.timer = None;
+                self.running = false;
             }
             ExerciseTimerInput::Tick => {
                 assert!(self.running);
@@ -218,5 +224,15 @@ impl Component for ExerciseTimer {
                 self.reset(&sender);
             }
         }
+    }
+
+    fn shutdown(&mut self, widgets: &mut Self::Widgets, _output: relm4::Sender<Self::Output>) {
+        widgets
+            .root_clamp
+            .parent()
+            .unwrap()
+            .downcast::<gtk::Box>()
+            .unwrap()
+            .remove(&widgets.root_clamp);
     }
 }

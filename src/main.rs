@@ -2,11 +2,9 @@ mod exercise_editor;
 mod exercise_setup;
 mod exercise_timer;
 
-use exercise_editor::{
-    ExerciseEditor, ExerciseEditorOutput, ExerciseEditorRole,
-};
+use exercise_editor::{ExerciseEditor, ExerciseEditorOutput, ExerciseEditorRole};
 use exercise_setup::ExerciseSetup;
-use exercise_timer::ExerciseTimer;
+use exercise_timer::{ExerciseTimer, ExerciseTimerInput};
 use futures::StreamExt;
 use gtk::prelude::{BoxExt, ButtonExt, OrientableExt, WidgetExt};
 use relm4::factory::FactoryVecDeque;
@@ -23,11 +21,12 @@ pub enum AppModelInput {
     PromptNewExercise,
     CreateExerciseSetup(ExerciseSetup),
     RemoveExerciseSetup(DynamicIndex),
+    LoadExercise(ExerciseSetup),
     None,
 }
 
 struct AppModel {
-    exerciser: Controller<ExerciseTimer>,
+    exercise_timer: Option<Controller<ExerciseTimer>>,
     list_exercises: FactoryVecDeque<ExerciseSetup>,
 }
 
@@ -62,14 +61,18 @@ impl Component for AppModel {
                     }
                 },
                 append = &gtk::Separator::new(gtk::Orientation::Vertical),
+                #[name = "right_leaflet"]
                 append = &gtk::Box {
                     set_hexpand: true,
                     set_orientation: gtk::Orientation::Vertical,
                     adw::HeaderBar {
                         set_title_widget: Some(&adw::WindowTitle::new("Main Title", "Main Subtitle")),
                     },
-                    #[local_ref]
-                    exerciser -> adw::Clamp,
+                    #[name = "status_page"]
+                    adw::StatusPage {
+                        set_title: "No exercises created yet",
+                        set_icon_name: Some("weight2"),
+                    }
                 }
             }
         }
@@ -82,12 +85,9 @@ impl Component for AppModel {
     ) -> ComponentParts<Self> {
         let list_exercises = FactoryVecDeque::new(gtk::Box::default(), sender.input_sender());
         let model = AppModel {
-            exerciser: ExerciseTimer::builder()
-                .launch(())
-                .forward(sender.input_sender(), |_| AppModelInput::None),
+            exercise_timer: None,
             list_exercises,
         };
-        let exerciser = model.exerciser.widget();
         let list_exercises = model.list_exercises.widget();
         let widgets = view_output!();
         widgets
@@ -98,9 +98,18 @@ impl Component for AppModel {
         ComponentParts { model, widgets }
     }
 
-    fn update(&mut self, message: Self::Input, sender: ComponentSender<Self>, root: &Self::Root) {
+    fn update_with_view(
+        &mut self,
+        widgets: &mut Self::Widgets,
+        message: Self::Input,
+        sender: ComponentSender<Self>,
+        root: &Self::Root,
+    ) {
         match message {
             AppModelInput::PromptNewExercise => {
+                if let Some(timer) = self.exercise_timer.as_ref() {
+                    timer.sender().emit(ExerciseTimerInput::Pause);
+                }
                 let mut editor = ExerciseEditor::builder()
                     .transient_for(root.widget_ref())
                     .launch((ExerciseEditorRole::New, ExerciseSetup::default()))
@@ -118,7 +127,18 @@ impl Component for AppModel {
             }
             AppModelInput::CreateExerciseSetup(setup) => {
                 println!("Exercise created: {:?}", setup);
-                self.list_exercises.guard().push_front(setup);
+                self.list_exercises.guard().push_back(setup);
+            }
+            AppModelInput::LoadExercise(setup) => {
+                self.exercise_timer = Some(
+                    ExerciseTimer::builder()
+                        .launch(setup)
+                        .forward(sender.input_sender(), |_msg| AppModelInput::None),
+                );
+                widgets.status_page.set_visible(false);
+                widgets
+                    .right_leaflet
+                    .append(self.exercise_timer.as_ref().unwrap().widget());
             }
             AppModelInput::None => {}
         }
