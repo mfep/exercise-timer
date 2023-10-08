@@ -8,7 +8,6 @@ use relm4::{
 #[derive(Debug)]
 pub struct ExerciseEditor {
     setup: ExerciseSetup,
-    is_active: bool,
     role: ExerciseEditorRole,
 }
 
@@ -20,7 +19,6 @@ pub enum ExerciseEditorRole {
 
 #[derive(Debug)]
 pub enum ExerciseEditorInput {
-    Show(ExerciseEditorRole),
     Create,
     Cancel,
     NameChanged(String),
@@ -37,21 +35,20 @@ pub enum ExerciseEditorOutput {
 
 #[relm4::component(pub)]
 impl SimpleComponent for ExerciseEditor {
-    type Init = ExerciseSetup;
+    type Init = (ExerciseEditorRole, ExerciseSetup);
     type Input = ExerciseEditorInput;
-    type Output = ExerciseEditorOutput;
+    type Output = Option<ExerciseEditorOutput>;
 
     view! {
-        adw::Window {
-            #[watch]
-            set_visible: model.is_active,
+        window = adw::Window {
             set_modal: true,
+            set_visible: true,
+            set_default_width: 400,
             gtk::Box {
                 set_orientation: gtk::Orientation::Vertical,
                 adw::HeaderBar {
                     #[wrap(Some)]
                     set_title_widget = &adw::WindowTitle {
-                        #[watch]
                         set_title: match model.role {
                             ExerciseEditorRole::New => "New exercise",
                             ExerciseEditorRole::Edit => "Edit exercise",
@@ -63,7 +60,10 @@ impl SimpleComponent for ExerciseEditor {
                         connect_clicked => ExerciseEditorInput::Cancel,
                     },
                     pack_end = &gtk::Button {
-                        set_label: "Create",
+                        set_label: match model.role {
+                            ExerciseEditorRole::New => "Create",
+                            ExerciseEditorRole::Edit => "Update",
+                        },
                         set_class_active: ("suggested-action", true),
                         connect_clicked => ExerciseEditorInput::Create,
                     }
@@ -131,7 +131,7 @@ impl SimpleComponent for ExerciseEditor {
                                 set_lower: 1f64,
                                 set_upper: 999f64,
                                 set_step_increment: 1f64,
-                                set_value: model.setup.sets as f64,
+                                set_value: model.setup.rest_s as f64,
                                 connect_value_changed[sender] => move |adj| {
                                     sender
                                         .input_sender()
@@ -151,7 +151,7 @@ impl SimpleComponent for ExerciseEditor {
                                 set_lower: 1f64,
                                 set_upper: 999f64,
                                 set_step_increment: 1f64,
-                                set_value: model.setup.sets as f64,
+                                set_value: model.setup.exercise_s as f64,
                                 connect_value_changed[sender] => move |adj| {
                                     sender
                                         .input_sender()
@@ -172,9 +172,8 @@ impl SimpleComponent for ExerciseEditor {
         sender: relm4::ComponentSender<Self>,
     ) -> relm4::ComponentParts<Self> {
         let model = ExerciseEditor {
-            setup: init,
-            is_active: false,
-            role: ExerciseEditorRole::New,
+            setup: init.1,
+            role: init.0,
         };
         let widgets = view_output!();
         ComponentParts { model, widgets }
@@ -182,18 +181,10 @@ impl SimpleComponent for ExerciseEditor {
 
     fn update(&mut self, message: Self::Input, sender: ComponentSender<Self>) {
         match message {
-            ExerciseEditorInput::Show(role) => {
-                self.is_active = true;
-                self.role = role;
-            }
-            ExerciseEditorInput::Cancel => {
-                self.is_active = false;
-            }
+            ExerciseEditorInput::Cancel => sender.output(None).unwrap(),
             ExerciseEditorInput::Create => {
-                self.is_active = false;
                 sender
-                    .output_sender()
-                    .send(ExerciseEditorOutput::Create(self.setup.clone()))
+                    .output(Some(ExerciseEditorOutput::Create(self.setup.clone())))
                     .unwrap();
             }
             ExerciseEditorInput::NameChanged(name) => {
@@ -212,5 +203,9 @@ impl SimpleComponent for ExerciseEditor {
                 self.setup.rest_s = val;
             }
         }
+    }
+
+    fn shutdown(&mut self, widgets: &mut Self::Widgets, _output: relm4::Sender<Self::Output>) {
+        widgets.window.close();
     }
 }

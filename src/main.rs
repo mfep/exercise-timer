@@ -2,20 +2,21 @@ mod exercise_editor;
 mod exercise_setup;
 mod exercise_timer;
 
-use std::rc::Rc;
-
-use exercise_editor::{ExerciseEditor, ExerciseEditorInput, ExerciseEditorOutput, ExerciseEditorRole};
-use exercise_setup::{ExerciseSetup, ExerciseSetupModel};
+use exercise_editor::{
+    ExerciseEditor, ExerciseEditorOutput, ExerciseEditorRole,
+};
+use exercise_setup::ExerciseSetup;
 use exercise_timer::ExerciseTimer;
+use futures::StreamExt;
 use gtk::prelude::{BoxExt, ButtonExt, OrientableExt, WidgetExt};
 use relm4::factory::FactoryVecDeque;
 use relm4::prelude::DynamicIndex;
-use relm4::Controller;
 use relm4::{
     adw,
     gtk::{self, prelude::ObjectExt},
-    Component, ComponentController, ComponentParts, ComponentSender, RelmApp, SimpleComponent,
+    Component, ComponentController, ComponentParts, ComponentSender, RelmApp,
 };
+use relm4::{Controller, WidgetRef};
 
 #[derive(Debug)]
 pub enum AppModelInput {
@@ -27,15 +28,15 @@ pub enum AppModelInput {
 
 struct AppModel {
     exerciser: Controller<ExerciseTimer>,
-    list_exercises: FactoryVecDeque<ExerciseSetupModel>,
-    exercise_editor: Rc<Controller<ExerciseEditor>>,
+    list_exercises: FactoryVecDeque<ExerciseSetup>,
 }
 
 #[relm4::component(pub)]
-impl SimpleComponent for AppModel {
+impl Component for AppModel {
     type Init = ();
     type Input = AppModelInput;
     type Output = ();
+    type CommandOutput = ();
 
     view! {
         adw::Window {
@@ -85,16 +86,6 @@ impl SimpleComponent for AppModel {
                 .launch(())
                 .forward(sender.input_sender(), |_| AppModelInput::None),
             list_exercises,
-            exercise_editor: Rc::new(
-                ExerciseEditor::builder()
-                    .transient_for(root)
-                    .launch(ExerciseSetup::default())
-                    .forward(sender.input_sender(), |message| match message {
-                        ExerciseEditorOutput::Create(setup) => {
-                            AppModelInput::CreateExerciseSetup(setup)
-                        }
-                    }),
-            ),
         };
         let exerciser = model.exerciser.widget();
         let list_exercises = model.list_exercises.widget();
@@ -107,10 +98,19 @@ impl SimpleComponent for AppModel {
         ComponentParts { model, widgets }
     }
 
-    fn update(&mut self, message: Self::Input, _sender: ComponentSender<Self>) {
+    fn update(&mut self, message: Self::Input, sender: ComponentSender<Self>, root: &Self::Root) {
         match message {
             AppModelInput::PromptNewExercise => {
-                self.exercise_editor.emit(ExerciseEditorInput::Show(ExerciseEditorRole::New));
+                let mut editor = ExerciseEditor::builder()
+                    .transient_for(root.widget_ref())
+                    .launch((ExerciseEditorRole::New, ExerciseSetup::default()))
+                    .into_stream();
+                relm4::spawn_local(async move {
+                    if let Some(ExerciseEditorOutput::Create(setup)) = editor.next().await.unwrap()
+                    {
+                        sender.input(AppModelInput::CreateExerciseSetup(setup));
+                    }
+                });
             }
             AppModelInput::RemoveExerciseSetup(index) => {
                 let index = index.current_index();
@@ -118,9 +118,7 @@ impl SimpleComponent for AppModel {
             }
             AppModelInput::CreateExerciseSetup(setup) => {
                 println!("Exercise created: {:?}", setup);
-                self.list_exercises
-                    .guard()
-                    .push_front((setup, self.exercise_editor.clone()));
+                self.list_exercises.guard().push_front(setup);
             }
             AppModelInput::None => {}
         }

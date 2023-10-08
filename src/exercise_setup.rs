@@ -1,15 +1,12 @@
-use std::rc::Rc;
-
-use relm4::gtk::prelude::*;
-use relm4::ComponentController;
 use relm4::{
-    gtk,
-    prelude::{DynamicIndex, FactoryComponent},
-    Controller, RelmWidgetExt,
+    prelude::*,
+    gtk::{self, prelude::*, Root},
+    RelmWidgetExt, Component,
 };
 
-use crate::exercise_editor::{ExerciseEditorInput, ExerciseEditorRole};
+use crate::exercise_editor::{ExerciseEditorOutput, ExerciseEditorRole};
 use crate::{exercise_editor::ExerciseEditor, AppModelInput};
+use futures::StreamExt;
 
 #[derive(Debug, Clone)]
 pub struct ExerciseSetup {
@@ -33,14 +30,9 @@ impl Default for ExerciseSetup {
 }
 
 #[derive(Debug)]
-pub struct ExerciseSetupModel {
-    setup: ExerciseSetup,
-    edit_dialog: Rc<Controller<ExerciseEditor>>,
-}
-
-#[derive(Debug)]
 pub enum ExerciseSetupInput {
-    Edit,
+    Edit(Root),
+    Update(ExerciseSetup),
 }
 
 #[derive(Debug)]
@@ -49,8 +41,8 @@ pub enum ExerciseSetupOutput {
 }
 
 #[relm4::factory(pub)]
-impl FactoryComponent for ExerciseSetupModel {
-    type Init = (ExerciseSetup, Rc<Controller<ExerciseEditor>>);
+impl FactoryComponent for ExerciseSetup {
+    type Init = ExerciseSetup;
     type Input = ExerciseSetupInput;
     type Output = ExerciseSetupOutput;
     type CommandOutput = ();
@@ -65,10 +57,35 @@ impl FactoryComponent for ExerciseSetupModel {
             set_margin_start: 5,
             set_margin_end: 5,
             inline_css: "padding: 10px",
-            gtk::Label {
-                set_class_active: ("title-4", true),
-                #[watch]
-                set_label: &self.setup.name,
+            gtk::Box {
+                set_orientation: gtk::Orientation::Vertical,
+                gtk::Label {
+                    set_class_active: ("title-4", true),
+                    set_halign: gtk::Align::Start,
+                    #[watch]
+                    set_label: &self.name,
+                },
+                // ToDo Grid
+                gtk::Label {
+                    set_halign: gtk::Align::Start,
+                    #[watch]
+                    set_label: &format!("Sets: {}", self.sets),
+                },
+                gtk::Label {
+                    set_halign: gtk::Align::Start,
+                    #[watch]
+                    set_label: &format!("Warmup: {}s", self.warmup_s),
+                },
+                gtk::Label {
+                    set_halign: gtk::Align::Start,
+                    #[watch]
+                    set_label: &format!("Exercise: {}s", self.exercise_s),
+                },
+                gtk::Label {
+                    set_halign: gtk::Align::Start,
+                    #[watch]
+                    set_label: &format!("Rest: {}s", self.rest_s),
+                },
             },
             gtk::Box {
                 set_class_active: ("linked", true),
@@ -76,7 +93,9 @@ impl FactoryComponent for ExerciseSetupModel {
                 set_halign: gtk::Align::End,
                 gtk::Button {
                     set_icon_name: "edit",
-                    connect_clicked => ExerciseSetupInput::Edit,
+                    connect_clicked[sender] => move |btn| {
+                        sender.input(ExerciseSetupInput::Edit(btn.root().unwrap()));
+                    },
                 },
                 gtk::Button {
                     set_class_active: ("destructive-action", true),
@@ -98,10 +117,7 @@ impl FactoryComponent for ExerciseSetupModel {
         _index: &Self::Index,
         _sender: relm4::FactorySender<Self>,
     ) -> Self {
-        Self {
-            setup: init.0,
-            edit_dialog: init.1,
-        }
+        init
     }
 
     fn forward_to_parent(output: Self::Output) -> Option<Self::ParentInput> {
@@ -110,11 +126,22 @@ impl FactoryComponent for ExerciseSetupModel {
         })
     }
 
-    fn update(&mut self, message: Self::Input, _sender: relm4::FactorySender<Self>) {
+    fn update(&mut self, message: Self::Input, sender: relm4::FactorySender<Self>) {
         match message {
-            ExerciseSetupInput::Edit => {
-                self.edit_dialog
-                    .emit(ExerciseEditorInput::Show(ExerciseEditorRole::Edit));
+            ExerciseSetupInput::Edit(root) => {
+                let mut editor = ExerciseEditor::builder()
+                    .transient_for(root)
+                    .launch((ExerciseEditorRole::Edit, self.clone()))
+                    .into_stream();
+                relm4::spawn_local(async move {
+                    if let Some(ExerciseEditorOutput::Create(setup)) = editor.next().await.unwrap()
+                    {
+                        sender.input(ExerciseSetupInput::Update(setup));
+                    }
+                });
+            }
+            ExerciseSetupInput::Update(setup) => {
+                *self = setup;
             }
         }
     }

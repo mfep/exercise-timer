@@ -16,3 +16,4 @@ tokio = { version = "1.28", features = [
     "time",
     "rt-multi-thread",
 ] }
+futures = "0.3.28"
