@@ -1,14 +1,16 @@
 mod timer;
 
-use gtk::prelude::{BoxExt, ButtonExt, OrientableExt, WidgetExt};
 use relm4::{
     adw,
-    gtk::{self, prelude::Cast},
+    gtk::{self, prelude::*},
     Component, ComponentParts, ComponentSender, RelmWidgetExt, WorkerController,
 };
 use timer::{TimerModel, TimerOutput};
 
-use crate::exercise_setup::ExerciseSetup;
+use crate::{
+    audio_player::{AudioPlayerInput, AudioPlayerModel},
+    exercise_setup::ExerciseSetup,
+};
 
 #[derive(PartialEq)]
 enum ExerciseState {
@@ -24,10 +26,15 @@ pub struct ExerciseTimer {
     remaining_s: usize,
     running: bool,
     timer: Option<WorkerController<TimerModel>>,
+    audio_player: WorkerController<AudioPlayerModel>,
 }
 
 impl ExerciseTimer {
-    fn new(exercise: ExerciseSetup, sender: &ComponentSender<ExerciseTimer>) -> Self {
+    fn new(
+        exercise: ExerciseSetup,
+        output: rodio::OutputStreamHandle,
+        sender: &ComponentSender<ExerciseTimer>,
+    ) -> Self {
         Self {
             state: ExerciseState::Warmup,
             remaining_sets: exercise.sets,
@@ -35,6 +42,9 @@ impl ExerciseTimer {
             running: true,
             timer: build_timer(sender),
             setup: exercise,
+            audio_player: AudioPlayerModel::builder()
+                .detach_worker(output)
+                .forward(sender.input_sender(), |_msg| ExerciseTimerInput::Tick),
         }
     }
 
@@ -75,7 +85,7 @@ fn remaining_str(remaining_s: usize) -> String {
 
 #[relm4::component(pub)]
 impl Component for ExerciseTimer {
-    type Init = ExerciseSetup;
+    type Init = (ExerciseSetup, rodio::OutputStreamHandle);
     type Input = ExerciseTimerInput;
     type Output = ();
     type CommandOutput = ();
@@ -168,7 +178,7 @@ impl Component for ExerciseTimer {
             }
             ",
         );
-        let model = ExerciseTimer::new(init, &sender);
+        let model = ExerciseTimer::new(init.0, init.1, &sender);
         let widgets = view_output!();
         ComponentParts { model, widgets }
     }
@@ -194,8 +204,10 @@ impl Component for ExerciseTimer {
             }
             ExerciseTimerInput::Tick => {
                 assert!(self.running);
+                let mut pings = 1u32;
                 self.remaining_s -= 1;
                 if self.remaining_s == 0 {
+                    pings = 2;
                     match self.state {
                         ExerciseState::Warmup => {
                             self.state = ExerciseState::Exercise;
@@ -208,6 +220,7 @@ impl Component for ExerciseTimer {
                                     .input_sender()
                                     .send(ExerciseTimerInput::StartStop)
                                     .unwrap();
+                                pings = 3;
                             } else {
                                 self.state = ExerciseState::Rest;
                                 self.remaining_s = self.setup.rest_s;
@@ -219,6 +232,9 @@ impl Component for ExerciseTimer {
                         }
                     }
                 }
+                if self.remaining_s <= 5 {
+                    self.audio_player.emit(AudioPlayerInput::PlayPing(pings));
+                }
             }
             ExerciseTimerInput::Reset => {
                 self.reset(&sender);
@@ -227,12 +243,11 @@ impl Component for ExerciseTimer {
     }
 
     fn shutdown(&mut self, widgets: &mut Self::Widgets, _output: relm4::Sender<Self::Output>) {
-        widgets
-            .root_clamp
-            .parent()
-            .unwrap()
-            .downcast::<gtk::Box>()
-            .unwrap()
-            .remove(&widgets.root_clamp);
+        if let Some(parent) = widgets.root_clamp.parent() {
+            parent
+                .downcast::<gtk::Box>()
+                .unwrap()
+                .remove(&widgets.root_clamp);
+        }
     }
 }

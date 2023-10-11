@@ -1,3 +1,4 @@
+mod audio_player;
 mod exercise_editor;
 mod exercise_setup;
 mod exercise_timer;
@@ -11,10 +12,11 @@ use relm4::factory::FactoryVecDeque;
 use relm4::prelude::DynamicIndex;
 use relm4::{
     adw,
-    gtk::{self, prelude::ObjectExt},
+    gtk::{self, gio, prelude::*},
     Component, ComponentController, ComponentParts, ComponentSender, RelmApp,
 };
 use relm4::{Controller, WidgetRef};
+use rodio;
 
 #[derive(Debug)]
 pub enum AppModelInput {
@@ -28,11 +30,12 @@ pub enum AppModelInput {
 struct AppModel {
     exercise_timer: Option<Controller<ExerciseTimer>>,
     list_exercises: FactoryVecDeque<ExerciseSetup>,
+    output_stream: rodio::OutputStreamHandle,
 }
 
 #[relm4::component(pub)]
 impl Component for AppModel {
-    type Init = ();
+    type Init = rodio::OutputStreamHandle;
     type Input = AppModelInput;
     type Output = ();
     type CommandOutput = ();
@@ -79,7 +82,7 @@ impl Component for AppModel {
     }
 
     fn init(
-        _init: Self::Init,
+        init: Self::Init,
         root: &Self::Root,
         sender: ComponentSender<Self>,
     ) -> ComponentParts<Self> {
@@ -87,6 +90,7 @@ impl Component for AppModel {
         let model = AppModel {
             exercise_timer: None,
             list_exercises,
+            output_stream: init,
         };
         let list_exercises = model.list_exercises.widget();
         let widgets = view_output!();
@@ -132,7 +136,7 @@ impl Component for AppModel {
             AppModelInput::LoadExercise(setup) => {
                 self.exercise_timer = Some(
                     ExerciseTimer::builder()
-                        .launch(setup)
+                        .launch((setup, self.output_stream.clone()))
                         .forward(sender.input_sender(), |_msg| AppModelInput::None),
                 );
                 widgets.status_page.set_visible(false);
@@ -146,7 +150,10 @@ impl Component for AppModel {
 }
 
 fn main() {
+    let (_stream, stream_handle) =
+        rodio::OutputStream::try_default().expect("Could not create audio output stream");
+    gio::resources_register_include!("hiit.gresource").expect("Could not register resources");
     let app = RelmApp::new("org.safeworlds.hiit");
     relm4_icons::initialize_icons();
-    app.run::<AppModel>(());
+    app.run::<AppModel>(stream_handle);
 }
