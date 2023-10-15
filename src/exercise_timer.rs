@@ -1,3 +1,4 @@
+mod audio_player;
 mod timer;
 
 use relm4::{
@@ -7,10 +8,8 @@ use relm4::{
 };
 use timer::{TimerModel, TimerOutput};
 
-use crate::{
-    audio_player::{AudioPlayerInput, AudioPlayerModel},
-    exercise_setup::ExerciseSetup,
-};
+use crate::exercise_setup::ExerciseSetup;
+use audio_player::{AudioPlayerInput, AudioPlayerModel};
 
 #[derive(PartialEq)]
 enum ExerciseState {
@@ -180,6 +179,7 @@ impl Component for ExerciseTimer {
         );
         let model = ExerciseTimer::new(init.0, init.1, &sender);
         let widgets = view_output!();
+        model.audio_player.emit(AudioPlayerInput::NextWarmup);
         ComponentParts { model, widgets }
     }
 
@@ -204,14 +204,13 @@ impl Component for ExerciseTimer {
             }
             ExerciseTimerInput::Tick => {
                 assert!(self.running);
-                let mut pings = 1u32;
                 self.remaining_s -= 1;
                 if self.remaining_s == 0 {
-                    pings = 2;
                     match self.state {
                         ExerciseState::Warmup => {
                             self.state = ExerciseState::Exercise;
                             self.remaining_s = self.setup.exercise_s;
+                            self.audio_player.emit(AudioPlayerInput::NextExercise);
                         }
                         ExerciseState::Exercise => {
                             self.remaining_sets -= 1;
@@ -220,20 +219,21 @@ impl Component for ExerciseTimer {
                                     .input_sender()
                                     .send(ExerciseTimerInput::StartStop)
                                     .unwrap();
-                                pings = 3;
+                                self.audio_player.emit(AudioPlayerInput::Finished);
                             } else {
                                 self.state = ExerciseState::Rest;
                                 self.remaining_s = self.setup.rest_s;
+                                self.audio_player.emit(AudioPlayerInput::NextRest);
                             }
                         }
                         ExerciseState::Rest => {
                             self.state = ExerciseState::Exercise;
                             self.remaining_s = self.setup.exercise_s;
+                            self.audio_player.emit(AudioPlayerInput::NextExercise);
                         }
                     }
-                }
-                if self.remaining_s <= 5 {
-                    self.audio_player.emit(AudioPlayerInput::PlayPing(pings));
+                } else if self.remaining_s <= 5 {
+                    self.audio_player.emit(AudioPlayerInput::Ping);
                 }
             }
             ExerciseTimerInput::Reset => {

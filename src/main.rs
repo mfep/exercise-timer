@@ -1,4 +1,3 @@
-mod audio_player;
 mod exercise_editor;
 mod exercise_setup;
 mod exercise_timer;
