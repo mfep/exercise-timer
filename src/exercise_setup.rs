@@ -4,8 +4,11 @@ use relm4::{
     Component, RelmWidgetExt,
 };
 
-use crate::exercise_editor::{ExerciseEditorOutput, ExerciseEditorRole};
 use crate::{exercise_editor::ExerciseEditor, AppModelInput};
+use crate::{
+    exercise_editor::{ExerciseEditorOutput, ExerciseEditorRole},
+    settings,
+};
 use futures::StreamExt;
 
 #[derive(Debug, Clone)]
@@ -19,13 +22,7 @@ pub struct ExerciseSetup {
 
 impl Default for ExerciseSetup {
     fn default() -> Self {
-        Self {
-            name: String::from("Good Exercise"),
-            warmup_s: 2,
-            exercise_s: 2,
-            rest_s: 2,
-            sets: 2,
-        }
+        settings::load_default_exercise_setup()
     }
 }
 

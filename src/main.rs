@@ -2,6 +2,7 @@ mod audio_player;
 mod exercise_editor;
 mod exercise_setup;
 mod exercise_timer;
+mod settings;
 
 use exercise_editor::{ExerciseEditor, ExerciseEditorOutput, ExerciseEditorRole};
 use exercise_setup::ExerciseSetup;
@@ -13,10 +14,10 @@ use relm4::prelude::DynamicIndex;
 use relm4::{
     adw,
     gtk::{self, gio, prelude::*},
-    Component, ComponentController, ComponentParts, ComponentSender, RelmApp,
+    Component, ComponentController, ComponentParts, ComponentSender, RelmApp, RelmObjectExt,
 };
 use relm4::{Controller, WidgetRef};
-use rodio;
+use settings::WindowGeometry;
 
 #[derive(Debug)]
 pub enum AppModelInput {
@@ -31,6 +32,7 @@ struct AppModel {
     exercise_timer: Option<Controller<ExerciseTimer>>,
     list_exercises: FactoryVecDeque<ExerciseSetup>,
     output_stream: rodio::OutputStreamHandle,
+    window_geometry: WindowGeometry,
 }
 
 #[relm4::component(pub)]
@@ -42,8 +44,9 @@ impl Component for AppModel {
 
     view! {
         adw::Window {
-            set_default_width: 800,
-            set_default_height: 400,
+            add_binding: (&model.window_geometry.width, "default_width"),
+            add_binding: (&model.window_geometry.height, "default_height"),
+            add_binding: (&model.window_geometry.is_maximized, "maximized"),
             #[name = "leaflet"]
             adw::Leaflet {
                 set_can_navigate_back: true,
@@ -88,11 +91,16 @@ impl Component for AppModel {
         root: &Self::Root,
         sender: ComponentSender<Self>,
     ) -> ComponentParts<Self> {
-        let list_exercises = FactoryVecDeque::new(gtk::Box::default(), sender.input_sender());
+        let list_exercises = FactoryVecDeque::from_iter(
+            settings::load_exercise_list_from_gsettings().into_iter(),
+            gtk::Box::default(),
+            sender.input_sender(),
+        );
         let model = AppModel {
             exercise_timer: None,
             list_exercises,
             output_stream: init,
+            window_geometry: WindowGeometry::new_from_gsettings(),
         };
         let list_exercises = model.list_exercises.widget();
         let widgets = view_output!();
@@ -148,6 +156,12 @@ impl Component for AppModel {
             }
             AppModelInput::None => {}
         }
+    }
+}
+
+impl Drop for AppModel {
+    fn drop(&mut self) {
+        settings::save_exercise_list_to_gsettings(self.list_exercises.iter());
     }
 }
 
