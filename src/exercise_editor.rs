@@ -1,14 +1,19 @@
 use crate::exercise_setup::ExerciseSetup;
-use gtk::prelude::{ButtonExt, EditableExt, GtkWindowExt, OrientableExt, WidgetExt};
+use gtk::prelude::{ButtonExt, GtkWindowExt, OrientableExt, WidgetExt};
 use relm4::{
     adw::{self, prelude::*},
-    gtk, ComponentParts, ComponentSender, RelmWidgetExt, SimpleComponent,
+    binding::*,
+    gtk, ComponentParts, ComponentSender, RelmObjectExt, RelmWidgetExt, SimpleComponent,
 };
 
 #[derive(Debug)]
 pub struct ExerciseEditor {
-    setup: ExerciseSetup,
     role: ExerciseEditorRole,
+    name: StringBinding,
+    sets: U32Binding,
+    warmup_s: U32Binding,
+    exercise_s: U32Binding,
+    rest_s: U32Binding,
 }
 
 #[derive(Debug)]
@@ -21,11 +26,6 @@ pub enum ExerciseEditorRole {
 pub enum ExerciseEditorInput {
     Create,
     Cancel,
-    NameChanged(String),
-    SetsChanged(usize),
-    WarmupChanged(usize),
-    ExerciseChanged(usize),
-    RestChanged(usize),
 }
 
 #[derive(Debug)]
@@ -74,13 +74,7 @@ impl SimpleComponent for ExerciseEditor {
                     set_orientation: gtk::Orientation::Vertical,
                     adw::EntryRow {
                         set_title: "Name",
-                        set_text: &model.setup.name,
-                        connect_changed[sender] => move |row| {
-                            sender
-                                .input_sender()
-                                .send(ExerciseEditorInput::NameChanged(row.text().to_string()))
-                                .unwrap();
-                        }
+                        add_binding: (&model.name, "text"),
                     },
                     adw::ActionRow {
                         set_title: "Number of sets",
@@ -91,13 +85,7 @@ impl SimpleComponent for ExerciseEditor {
                                 set_lower: 1f64,
                                 set_upper: 999f64,
                                 set_step_increment: 1f64,
-                                set_value: model.setup.sets as f64,
-                                connect_value_changed[sender] => move |adj| {
-                                    sender
-                                        .input_sender()
-                                        .send(ExerciseEditorInput::SetsChanged(adj.value() as usize))
-                                        .unwrap()
-                                },
+                                add_binding: (&model.sets, "value"),
                             }
                         }
                     },
@@ -108,16 +96,10 @@ impl SimpleComponent for ExerciseEditor {
                             set_margin_top: 8,
                             set_margin_bottom: 8,
                             set_adjustment = &gtk::Adjustment {
-                                set_lower: 0f64,
+                                set_lower: 1f64,
                                 set_upper: 999f64,
                                 set_step_increment: 1f64,
-                                set_value: model.setup.warmup_s as f64,
-                                connect_value_changed[sender] => move |adj| {
-                                    sender
-                                        .input_sender()
-                                        .send(ExerciseEditorInput::WarmupChanged(adj.value() as usize))
-                                        .unwrap()
-                                },
+                                add_binding: (&model.warmup_s, "value"),
                             }
                         }
                     },
@@ -131,13 +113,7 @@ impl SimpleComponent for ExerciseEditor {
                                 set_lower: 1f64,
                                 set_upper: 999f64,
                                 set_step_increment: 1f64,
-                                set_value: model.setup.rest_s as f64,
-                                connect_value_changed[sender] => move |adj| {
-                                    sender
-                                        .input_sender()
-                                        .send(ExerciseEditorInput::RestChanged(adj.value() as usize))
-                                        .unwrap()
-                                },
+                                add_binding: (&model.rest_s, "value"),
                             }
                         }
                     },
@@ -151,13 +127,7 @@ impl SimpleComponent for ExerciseEditor {
                                 set_lower: 1f64,
                                 set_upper: 999f64,
                                 set_step_increment: 1f64,
-                                set_value: model.setup.exercise_s as f64,
-                                connect_value_changed[sender] => move |adj| {
-                                    sender
-                                        .input_sender()
-                                        .send(ExerciseEditorInput::ExerciseChanged(adj.value() as usize))
-                                        .unwrap()
-                                },
+                                add_binding: (&model.exercise_s, "value"),
                             }
                         }
                     },
@@ -172,7 +142,11 @@ impl SimpleComponent for ExerciseEditor {
         sender: relm4::ComponentSender<Self>,
     ) -> relm4::ComponentParts<Self> {
         let model = ExerciseEditor {
-            setup: init.1,
+            name: StringBinding::new(init.1.name.clone()),
+            sets: U32Binding::new(init.1.sets as u32),
+            warmup_s: U32Binding::new(init.1.warmup_s as u32),
+            rest_s: U32Binding::new(init.1.rest_s as u32),
+            exercise_s: U32Binding::new(init.1.exercise_s as u32),
             role: init.0,
         };
         let widgets = view_output!();
@@ -184,23 +158,14 @@ impl SimpleComponent for ExerciseEditor {
             ExerciseEditorInput::Cancel => sender.output(None).unwrap(),
             ExerciseEditorInput::Create => {
                 sender
-                    .output(Some(ExerciseEditorOutput::Create(self.setup.clone())))
+                    .output(Some(ExerciseEditorOutput::Create(ExerciseSetup {
+                        name: self.name.get(),
+                        warmup_s: self.warmup_s.get() as usize,
+                        exercise_s: self.exercise_s.get() as usize,
+                        rest_s: self.rest_s.get() as usize,
+                        sets: self.sets.get() as usize,
+                    })))
                     .unwrap();
-            }
-            ExerciseEditorInput::NameChanged(name) => {
-                self.setup.name = name;
-            }
-            ExerciseEditorInput::SetsChanged(val) => {
-                self.setup.sets = val;
-            }
-            ExerciseEditorInput::WarmupChanged(val) => {
-                self.setup.warmup_s = val;
-            }
-            ExerciseEditorInput::ExerciseChanged(val) => {
-                self.setup.exercise_s = val;
-            }
-            ExerciseEditorInput::RestChanged(val) => {
-                self.setup.rest_s = val;
             }
         }
     }

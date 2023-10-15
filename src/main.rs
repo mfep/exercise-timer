@@ -42,6 +42,8 @@ impl Component for AppModel {
 
     view! {
         adw::Window {
+            set_default_width: 800,
+            set_default_height: 400,
             #[name = "leaflet"]
             adw::Leaflet {
                 set_can_navigate_back: true,
@@ -73,7 +75,7 @@ impl Component for AppModel {
                     },
                     #[name = "status_page"]
                     adw::StatusPage {
-                        set_title: "No exercises created yet",
+                        set_title: "No exercise selected",
                         set_icon_name: Some("weight2"),
                     }
                 }
