@@ -9,8 +9,8 @@ use exercise_timer::{ExerciseTimer, ExerciseTimerInput};
 use futures::StreamExt;
 use gtk::prelude::{BoxExt, ButtonExt, OrientableExt, WidgetExt};
 use relm4::factory::FactoryVecDeque;
-use relm4::gtk::CssProvider;
 use relm4::gtk::gdk::Display;
+use relm4::gtk::CssProvider;
 use relm4::prelude::DynamicIndex;
 use relm4::{
     adw,
@@ -26,6 +26,7 @@ pub enum AppModelInput {
     CreateExerciseSetup(ExerciseSetup),
     RemoveExerciseSetup(DynamicIndex),
     LoadExercise(ExerciseSetup),
+    Back,
     None,
 }
 
@@ -51,11 +52,12 @@ impl Component for AppModel {
             #[name = "leaflet"]
             adw::Leaflet {
                 set_can_navigate_back: true,
+                #[name = "left_leaflet"]
                 append = &gtk::Box {
                     set_width_request: 300,
                     set_orientation: gtk::Orientation::Vertical,
                     append: left_header = &adw::HeaderBar {
-                        set_title_widget: Some(&adw::WindowTitle::new("Test Title", "Test Subtitle")),
+                        set_title_widget: Some(&adw::WindowTitle::new("Exercises", "")),
                         pack_start = &gtk::Button {
                             set_icon_name: "plus",
                             connect_clicked => AppModelInput::PromptNewExercise,
@@ -75,10 +77,16 @@ impl Component for AppModel {
                     set_hexpand: true,
                     set_orientation: gtk::Orientation::Vertical,
                     adw::HeaderBar {
-                        set_title_widget: Some(&adw::WindowTitle::new("Main Title", "Main Subtitle")),
+                        set_title_widget: Some(&adw::WindowTitle::new("Trainer", "")),
+                        #[name = "back_btn"]
+                        pack_start = &gtk::Button {
+                            set_icon_name: "left",
+                            connect_clicked => AppModelInput::Back,
+                        }
                     },
                     #[name = "status_page"]
                     adw::StatusPage {
+                        set_vexpand: true,
                         set_title: "No exercise selected",
                         set_icon_name: Some("weight2"),
                     }
@@ -108,6 +116,11 @@ impl Component for AppModel {
         widgets
             .leaflet
             .bind_property("folded", &widgets.left_header, "show_end_title_buttons")
+            .sync_create()
+            .build();
+        widgets
+            .leaflet
+            .bind_property("folded", &widgets.back_btn, "visible")
             .sync_create()
             .build();
         ComponentParts { model, widgets }
@@ -154,6 +167,12 @@ impl Component for AppModel {
                 widgets
                     .right_leaflet
                     .append(self.exercise_timer.as_ref().unwrap().widget());
+                widgets.leaflet.set_visible_child(&widgets.right_leaflet);
+            }
+            AppModelInput::Back => {
+                widgets.leaflet.set_visible_child(&widgets.left_leaflet);
+                widgets.status_page.set_visible(true);
+                self.exercise_timer = None;
             }
             AppModelInput::None => {}
         }

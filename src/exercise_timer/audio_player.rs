@@ -50,9 +50,7 @@ impl Worker for AudioPlayerModel {
             AudioPlayerInput::Ping => {
                 self.play_ping(1);
             }
-            AudioPlayerInput::NextWarmup => {
-                self.play_ping(2);
-            }
+            AudioPlayerInput::NextWarmup => {}
             AudioPlayerInput::NextExercise => {
                 self.play_ping(2);
             }

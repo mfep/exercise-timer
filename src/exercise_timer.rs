@@ -156,27 +156,6 @@ impl Component for ExerciseTimer {
         root: &Self::Root,
         sender: relm4::ComponentSender<Self>,
     ) -> ComponentParts<Self> {
-        relm4::set_global_css(
-            ".timer {
-                padding: 20px;
-            }
-            .timer-warmup {
-                background: @warning_bg_color;
-                color: @warning_fg_color;
-            }
-            .timer-exercise {
-                background: @success_bg_color;
-                color: @success_fg_color;
-            }
-            .timer-rest {
-                background: @accent_bg_color;
-                color: @accent_fg_color;
-            }
-            .timer-label {
-                font-size: 48px;
-            }
-            ",
-        );
         let model = ExerciseTimer::new(init.0, init.1, &sender);
         let widgets = view_output!();
         model.audio_player.emit(AudioPlayerInput::NextWarmup);
