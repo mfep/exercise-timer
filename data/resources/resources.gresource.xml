@@ -2,5 +2,6 @@
 <gresources>
   <gresource prefix="/xyz/safeworlds/hiit/">
     <file compressed="true">audio/ping.wav</file>
+    <file compressed="true">style.css</file>
   </gresource>
 </gresources>

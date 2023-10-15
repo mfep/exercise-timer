@@ -9,6 +9,8 @@ use exercise_timer::{ExerciseTimer, ExerciseTimerInput};
 use futures::StreamExt;
 use gtk::prelude::{BoxExt, ButtonExt, OrientableExt, WidgetExt};
 use relm4::factory::FactoryVecDeque;
+use relm4::gtk::CssProvider;
+use relm4::gtk::gdk::Display;
 use relm4::prelude::DynamicIndex;
 use relm4::{
     adw,
@@ -164,11 +166,23 @@ impl Drop for AppModel {
     }
 }
 
+fn load_css() {
+    let provider = CssProvider::new();
+    provider.load_from_resource("/xyz/safeworlds/hiit/style.css");
+
+    gtk::style_context_add_provider_for_display(
+        &Display::default().expect("Could not connect to a display."),
+        &provider,
+        gtk::STYLE_PROVIDER_PRIORITY_APPLICATION,
+    );
+}
+
 fn main() {
     let (_stream, stream_handle) =
         rodio::OutputStream::try_default().expect("Could not create audio output stream");
     gio::resources_register_include!("hiit.gresource").expect("Could not register resources");
     let app = RelmApp::new("org.safeworlds.hiit");
     relm4_icons::initialize_icons();
+    load_css();
     app.run::<AppModel>(stream_handle);
 }
