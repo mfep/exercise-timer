@@ -21,5 +21,9 @@
             <default>"[{\"name\": \"Exercise\", \"sets\": 5, \"warmup_s\": 5, \"exercise_s\": 60, \"rest_s\": 20}]"</default>
             <summary>List of exercise setups, in JSON notation</summary>
         </key>
+        <key name="warmup-s" type="u">
+            <default>5</default>
+            <summary>The duration of the warmup, in seconds</summary>
+        </key>
     </schema>
 </schemalist>

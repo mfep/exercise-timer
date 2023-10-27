@@ -34,6 +34,29 @@ impl Drop for WindowGeometry {
     }
 }
 
+#[derive(Clone, Debug, Default)]
+pub struct GlobalExerciseSetup {
+    pub warmup_s: U32Binding,
+}
+
+impl GlobalExerciseSetup {
+    pub fn new_from_gsettings() -> Self {
+        let settings = gio::Settings::new(APP_ID);
+        Self {
+            warmup_s: U32Binding::new(settings.uint("warmup-s")),
+        }
+    }
+}
+
+impl Drop for GlobalExerciseSetup {
+    fn drop(&mut self) {
+        let settings = gio::Settings::new(APP_ID);
+        settings.delay();
+        let _ = settings.set_uint("warmup-s", self.warmup_s.get());
+        settings.apply();
+    }
+}
+
 fn parse_json_to_exercise_setup(value: &json::JsonValue) -> ExerciseSetup {
     ExerciseSetup {
         name: value["name"]
@@ -43,9 +66,6 @@ fn parse_json_to_exercise_setup(value: &json::JsonValue) -> ExerciseSetup {
         sets: value["sets"]
             .as_usize()
             .expect("Cannot find 'sets' in settings dictionary"),
-        warmup_s: value["warmup_s"]
-            .as_usize()
-            .expect("Cannot find 'warmup_s' in settings dictionary"),
         exercise_s: value["exercise_s"]
             .as_usize()
             .expect("Cannot find 'exercises_s' in settings dictionary"),
@@ -77,7 +97,6 @@ pub fn save_exercise_list_to_gsettings<'a>(exercises: impl Iterator<Item = &'a E
             object! {
                 name: exercise.name.clone(),
                 sets: exercise.sets,
-                warmup_s: exercise.warmup_s,
                 exercise_s: exercise.exercise_s,
                 rest_s: exercise.rest_s,
             }

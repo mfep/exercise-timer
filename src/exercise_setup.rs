@@ -16,7 +16,6 @@ use futures::StreamExt;
 #[derive(Debug, Clone)]
 pub struct ExerciseSetup {
     pub name: String,
-    pub warmup_s: usize,
     pub exercise_s: usize,
     pub rest_s: usize,
     pub sets: usize,
@@ -24,9 +23,7 @@ pub struct ExerciseSetup {
 
 impl ExerciseSetup {
     pub fn total_duration(&self) -> Duration {
-        Duration::from_secs(
-            (self.warmup_s + self.exercise_s * self.sets + self.rest_s * (self.sets - 1)) as u64,
-        )
+        Duration::from_secs((self.exercise_s * self.sets + self.rest_s * (self.sets - 1)) as u64)
     }
 }
 
@@ -94,27 +91,18 @@ impl FactoryComponent for ExerciseSetup {
                     },
                     attach[0, 1, 1, 1] = &gtk::Label {
                         set_halign: gtk::Align::Start,
-                        set_label: "Warmup (s):",
+                        set_label: "Exercise (s):",
                     },
                     attach[1, 1, 1, 1] = &gtk::Label {
                         set_halign: gtk::Align::End,
                         #[watch]
-                        set_label: &self.warmup_s.to_string(),
+                        set_label: &self.exercise_s.to_string(),
                     },
                     attach[0, 2, 1, 1] = &gtk::Label {
                         set_halign: gtk::Align::Start,
-                        set_label: "Exercise (s):",
-                    },
-                    attach[1, 2, 1, 1] = &gtk::Label {
-                        set_halign: gtk::Align::End,
-                        #[watch]
-                        set_label: &self.exercise_s.to_string(),
-                    },
-                    attach[0, 3, 1, 1] = &gtk::Label {
-                        set_halign: gtk::Align::Start,
                         set_label: "Rest (s):",
                     },
-                    attach[1, 3, 1, 1] = &gtk::Label {
+                    attach[1, 2, 1, 1] = &gtk::Label {
                         set_halign: gtk::Align::End,
                         #[watch]
                         set_label: &self.rest_s.to_string(),

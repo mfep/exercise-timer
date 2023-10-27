@@ -11,7 +11,6 @@ pub struct ExerciseEditor {
     role: ExerciseEditorRole,
     name: StringBinding,
     sets: U32Binding,
-    warmup_s: U32Binding,
     exercise_s: U32Binding,
     rest_s: U32Binding,
 }
@@ -90,20 +89,6 @@ impl SimpleComponent for ExerciseEditor {
                         }
                     },
                     adw::ActionRow {
-                        set_title: "Warmup time",
-                        set_subtitle: "seconds",
-                        add_suffix = &gtk::SpinButton {
-                            set_margin_top: 8,
-                            set_margin_bottom: 8,
-                            set_adjustment = &gtk::Adjustment {
-                                set_lower: 1f64,
-                                set_upper: 999f64,
-                                set_step_increment: 1f64,
-                                add_binding: (&model.warmup_s, "value"),
-                            }
-                        }
-                    },
-                    adw::ActionRow {
                         set_title: "Rest time",
                         set_subtitle: "seconds",
                         add_suffix = &gtk::SpinButton {
@@ -144,7 +129,6 @@ impl SimpleComponent for ExerciseEditor {
         let model = ExerciseEditor {
             name: StringBinding::new(init.1.name.clone()),
             sets: U32Binding::new(init.1.sets as u32),
-            warmup_s: U32Binding::new(init.1.warmup_s as u32),
             rest_s: U32Binding::new(init.1.rest_s as u32),
             exercise_s: U32Binding::new(init.1.exercise_s as u32),
             role: init.0,
@@ -160,7 +144,6 @@ impl SimpleComponent for ExerciseEditor {
                 sender
                     .output(Some(ExerciseEditorOutput::Create(ExerciseSetup {
                         name: self.name.get(),
-                        warmup_s: self.warmup_s.get() as usize,
                         exercise_s: self.exercise_s.get() as usize,
                         rest_s: self.rest_s.get() as usize,
                         sets: self.sets.get() as usize,

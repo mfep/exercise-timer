@@ -20,6 +20,7 @@ enum ExerciseState {
 
 pub struct ExerciseTimer {
     setup: ExerciseSetup,
+    warmup_s: usize,
     state: ExerciseState,
     remaining_sets: usize,
     remaining_s: usize,
@@ -31,13 +32,15 @@ pub struct ExerciseTimer {
 impl ExerciseTimer {
     fn new(
         exercise: ExerciseSetup,
+        warmup_s: usize,
         output: rodio::OutputStreamHandle,
         sender: &ComponentSender<ExerciseTimer>,
     ) -> Self {
         Self {
             state: ExerciseState::Warmup,
+            warmup_s,
             remaining_sets: exercise.sets,
-            remaining_s: exercise.warmup_s,
+            remaining_s: warmup_s,
             running: true,
             timer: build_timer(sender),
             setup: exercise,
@@ -50,7 +53,7 @@ impl ExerciseTimer {
     fn reset(&mut self, sender: &ComponentSender<ExerciseTimer>) {
         self.state = ExerciseState::Warmup;
         self.remaining_sets = self.setup.sets;
-        self.remaining_s = self.setup.warmup_s;
+        self.remaining_s = self.warmup_s;
         self.running = true;
         self.timer = build_timer(sender);
     }
@@ -82,9 +85,15 @@ fn remaining_str(remaining_s: usize) -> String {
     }
 }
 
+pub struct ExerciseTimerInit {
+    pub setup: ExerciseSetup,
+    pub warmup_s: usize,
+    pub output_handle: rodio::OutputStreamHandle,
+}
+
 #[relm4::component(pub)]
 impl Component for ExerciseTimer {
-    type Init = (ExerciseSetup, rodio::OutputStreamHandle);
+    type Init = ExerciseTimerInit;
     type Input = ExerciseTimerInput;
     type Output = ();
     type CommandOutput = ();
@@ -156,7 +165,7 @@ impl Component for ExerciseTimer {
         root: &Self::Root,
         sender: relm4::ComponentSender<Self>,
     ) -> ComponentParts<Self> {
-        let model = ExerciseTimer::new(init.0, init.1, &sender);
+        let model = ExerciseTimer::new(init.setup, init.warmup_s, init.output_handle, &sender);
         let widgets = view_output!();
         model.audio_player.emit(AudioPlayerInput::NextWarmup);
         ComponentParts { model, widgets }

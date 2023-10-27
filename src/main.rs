@@ -5,7 +5,7 @@ mod settings;
 
 use exercise_editor::{ExerciseEditor, ExerciseEditorOutput, ExerciseEditorRole};
 use exercise_setup::ExerciseSetup;
-use exercise_timer::{ExerciseTimer, ExerciseTimerInput};
+use exercise_timer::{ExerciseTimer, ExerciseTimerInit, ExerciseTimerInput};
 use futures::StreamExt;
 use gtk::prelude::{BoxExt, ButtonExt, OrientableExt, WidgetExt};
 use relm4::factory::FactoryVecDeque;
@@ -14,11 +14,12 @@ use relm4::gtk::CssProvider;
 use relm4::prelude::DynamicIndex;
 use relm4::{
     adw,
+    binding::Binding,
     gtk::{self, gio, prelude::*},
     Component, ComponentController, ComponentParts, ComponentSender, RelmApp, RelmObjectExt,
 };
 use relm4::{Controller, WidgetRef};
-use settings::WindowGeometry;
+use settings::{GlobalExerciseSetup, WindowGeometry};
 
 #[derive(Debug)]
 pub enum AppModelInput {
@@ -35,6 +36,7 @@ struct AppModel {
     list_exercises: FactoryVecDeque<ExerciseSetup>,
     output_stream: rodio::OutputStreamHandle,
     window_geometry: WindowGeometry,
+    global_settings: GlobalExerciseSetup,
 }
 
 #[relm4::component(pub)]
@@ -110,6 +112,7 @@ impl Component for AppModel {
             list_exercises,
             output_stream: init,
             window_geometry: WindowGeometry::new_from_gsettings(),
+            global_settings: GlobalExerciseSetup::new_from_gsettings(),
         };
         let list_exercises = model.list_exercises.widget();
         let widgets = view_output!();
@@ -160,7 +163,11 @@ impl Component for AppModel {
             AppModelInput::LoadExercise(setup) => {
                 self.exercise_timer = Some(
                     ExerciseTimer::builder()
-                        .launch((setup, self.output_stream.clone()))
+                        .launch(ExerciseTimerInit {
+                            setup,
+                            warmup_s: self.global_settings.warmup_s.get() as usize,
+                            output_handle: self.output_stream.clone(),
+                        })
                         .forward(sender.input_sender(), |_msg| AppModelInput::None),
                 );
                 widgets.status_page.set_visible(false);
