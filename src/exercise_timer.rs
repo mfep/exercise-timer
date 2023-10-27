@@ -233,7 +233,7 @@ impl Component for ExerciseTimer {
     fn shutdown(&mut self, widgets: &mut Self::Widgets, _output: relm4::Sender<Self::Output>) {
         if let Some(parent) = widgets.root_clamp.parent() {
             parent
-                .downcast::<gtk::Box>()
+                .downcast::<adw::ToolbarView>()
                 .unwrap()
                 .remove(&widgets.root_clamp);
         }

@@ -10,6 +10,7 @@ relm4 = { version="0.6.2", features = ["gnome_44", "libadwaita"] }
 relm4-components = "0.6.2"
 relm4-macros = "0.6.2"
 relm4-icons = { version = "0.6.0", features = ["edit", "play", "plus", "entry-clear", "weight2", "left"] }
+libadwaita = { version="0.4.4", features = ["v1_4"] }
 tokio = { version = "1.28", features = [
     "rt",
     "macros",

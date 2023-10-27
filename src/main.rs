@@ -7,15 +7,15 @@ use exercise_editor::{ExerciseEditor, ExerciseEditorOutput, ExerciseEditorRole};
 use exercise_setup::ExerciseSetup;
 use exercise_timer::{ExerciseTimer, ExerciseTimerInit, ExerciseTimerInput};
 use futures::StreamExt;
-use gtk::prelude::{BoxExt, ButtonExt, OrientableExt, WidgetExt};
+use gtk::prelude::{ButtonExt, OrientableExt, WidgetExt};
 use relm4::factory::FactoryVecDeque;
 use relm4::gtk::gdk::Display;
 use relm4::gtk::CssProvider;
 use relm4::prelude::DynamicIndex;
 use relm4::{
-    adw,
+    adw::{self, prelude::*},
     binding::Binding,
-    gtk::{self, gio, prelude::*},
+    gtk::{self, gio},
     Component, ComponentController, ComponentParts, ComponentSender, RelmApp, RelmObjectExt,
 };
 use relm4::{Controller, WidgetRef};
@@ -27,7 +27,6 @@ pub enum AppModelInput {
     CreateExerciseSetup(ExerciseSetup),
     RemoveExerciseSetup(DynamicIndex),
     LoadExercise(ExerciseSetup),
-    Back,
     None,
 }
 
@@ -47,52 +46,66 @@ impl Component for AppModel {
     type CommandOutput = ();
 
     view! {
-        adw::Window {
+        adw::ApplicationWindow {
+            set_size_request: (300, 300),
             add_binding: (&model.window_geometry.width, "default_width"),
             add_binding: (&model.window_geometry.height, "default_height"),
             add_binding: (&model.window_geometry.is_maximized, "maximized"),
-            #[name = "leaflet"]
-            adw::Leaflet {
-                set_can_navigate_back: true,
-                #[name = "left_leaflet"]
-                append = &gtk::Box {
-                    set_width_request: 300,
-                    set_orientation: gtk::Orientation::Vertical,
-                    append: left_header = &adw::HeaderBar {
-                        set_title_widget: Some(&adw::WindowTitle::new("Exercises", "")),
-                        pack_start = &gtk::Button {
-                            set_icon_name: "plus",
-                            connect_clicked => AppModelInput::PromptNewExercise,
+            add_breakpoint = adw::Breakpoint::new(
+                adw::BreakpointCondition::new_length(
+                    adw::BreakpointConditionLengthType::MaxWidth, 400f64, adw::LengthUnit::Sp
+                )) {
+                    add_setter: (&split_view, "collapsed", &true.into()),
+                },
+            #[name = "split_view"]
+            adw::NavigationSplitView {
+                #[wrap(Some)]
+                set_sidebar = &adw::NavigationPage {
+                    set_title: "Exercise List",
+                    #[wrap(Some)]
+                    set_child = &adw::ToolbarView {
+                        add_top_bar = &adw::HeaderBar {
+                            pack_start = &gtk::Button {
+                                set_icon_name: "plus",
+                                connect_clicked => AppModelInput::PromptNewExercise,
+                            },
                         },
+                        #[name = "return_banner"]
+                        add_top_bar = &adw::Banner {
+                            set_title: "Exercise is running",
+                            set_button_label: Some("Return"),
+                            connect_button_clicked[split_view] => move |_banner| {
+                                split_view.set_show_content(true);
+                            },
+                        },
+                        #[wrap(Some)]
+                        set_content = &gtk::ScrolledWindow {
+                            set_vexpand: true,
+                            #[local_ref]
+                            list_exercises -> gtk::Box {
+                                set_orientation: gtk::Orientation::Vertical,
+                            }
+                        }
                     },
-                    gtk::ScrolledWindow {
-                        set_vexpand: true,
-                        #[local_ref]
-                        list_exercises -> gtk::Box {
-                            set_orientation: gtk::Orientation::Vertical,
+                },
+                #[name = "main_navigation_page"]
+                #[wrap(Some)]
+                set_content = &adw::NavigationPage {
+                    set_title: "Timer",
+                    #[wrap(Some)]
+                    #[name = "main_view"]
+                    set_child = &adw::ToolbarView {
+                        add_top_bar = &adw::HeaderBar {
+                        },
+                        #[wrap(Some)]
+                        #[name = "status_page"]
+                        set_content = &adw::StatusPage {
+                            set_vexpand: true,
+                            set_title: "No exercise selected",
+                            set_icon_name: Some("weight2"),
                         }
                     }
                 },
-                append = &gtk::Separator::new(gtk::Orientation::Vertical),
-                #[name = "right_leaflet"]
-                append = &gtk::Box {
-                    set_hexpand: true,
-                    set_orientation: gtk::Orientation::Vertical,
-                    adw::HeaderBar {
-                        set_title_widget: Some(&adw::WindowTitle::new("Trainer", "")),
-                        #[name = "back_btn"]
-                        pack_start = &gtk::Button {
-                            set_icon_name: "left",
-                            connect_clicked => AppModelInput::Back,
-                        }
-                    },
-                    #[name = "status_page"]
-                    adw::StatusPage {
-                        set_vexpand: true,
-                        set_title: "No exercise selected",
-                        set_icon_name: Some("weight2"),
-                    }
-                }
             }
         }
     }
@@ -116,16 +129,6 @@ impl Component for AppModel {
         };
         let list_exercises = model.list_exercises.widget();
         let widgets = view_output!();
-        widgets
-            .leaflet
-            .bind_property("folded", &widgets.left_header, "show_end_title_buttons")
-            .sync_create()
-            .build();
-        widgets
-            .leaflet
-            .bind_property("folded", &widgets.back_btn, "visible")
-            .sync_create()
-            .build();
         ComponentParts { model, widgets }
     }
 
@@ -170,16 +173,10 @@ impl Component for AppModel {
                         })
                         .forward(sender.input_sender(), |_msg| AppModelInput::None),
                 );
-                widgets.status_page.set_visible(false);
                 widgets
-                    .right_leaflet
-                    .append(self.exercise_timer.as_ref().unwrap().widget());
-                widgets.leaflet.set_visible_child(&widgets.right_leaflet);
-            }
-            AppModelInput::Back => {
-                widgets.leaflet.set_visible_child(&widgets.left_leaflet);
-                widgets.status_page.set_visible(true);
-                self.exercise_timer = None;
+                    .main_view
+                    .set_content(Some(self.exercise_timer.as_ref().unwrap().widget()));
+                widgets.split_view.set_show_content(true);
             }
             AppModelInput::None => {}
         }
