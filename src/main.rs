@@ -27,6 +27,7 @@ pub enum AppModelInput {
     CreateExerciseSetup(ExerciseSetup),
     RemoveExerciseSetup(DynamicIndex),
     LoadExercise(ExerciseSetup),
+    Popped,
     None,
 }
 
@@ -51,16 +52,9 @@ impl Component for AppModel {
             add_binding: (&model.window_geometry.width, "default_width"),
             add_binding: (&model.window_geometry.height, "default_height"),
             add_binding: (&model.window_geometry.is_maximized, "maximized"),
-            add_breakpoint = adw::Breakpoint::new(
-                adw::BreakpointCondition::new_length(
-                    adw::BreakpointConditionLengthType::MaxWidth, 400f64, adw::LengthUnit::Sp
-                )) {
-                    add_setter: (&split_view, "collapsed", &true.into()),
-                },
-            #[name = "split_view"]
-            adw::NavigationSplitView {
-                #[wrap(Some)]
-                set_sidebar = &adw::NavigationPage {
+            #[name = "navigation_view"]
+            adw::NavigationView {
+                add = &adw::NavigationPage {
                     set_title: "Exercise List",
                     #[wrap(Some)]
                     set_child = &adw::ToolbarView {
@@ -68,14 +62,6 @@ impl Component for AppModel {
                             pack_start = &gtk::Button {
                                 set_icon_name: "plus",
                                 connect_clicked => AppModelInput::PromptNewExercise,
-                            },
-                        },
-                        #[name = "return_banner"]
-                        add_top_bar = &adw::Banner {
-                            set_title: "Exercise is running",
-                            set_button_label: Some("Return"),
-                            connect_button_clicked[split_view] => move |_banner| {
-                                split_view.set_show_content(true);
                             },
                         },
                         #[wrap(Some)]
@@ -89,23 +75,15 @@ impl Component for AppModel {
                     },
                 },
                 #[name = "main_navigation_page"]
-                #[wrap(Some)]
-                set_content = &adw::NavigationPage {
+                add = &adw::NavigationPage {
                     set_title: "Timer",
                     #[wrap(Some)]
                     #[name = "main_view"]
                     set_child = &adw::ToolbarView {
-                        add_top_bar = &adw::HeaderBar {
-                        },
-                        #[wrap(Some)]
-                        #[name = "status_page"]
-                        set_content = &adw::StatusPage {
-                            set_vexpand: true,
-                            set_title: "No exercise selected",
-                            set_icon_name: Some("weight2"),
-                        }
+                        add_top_bar = &adw::HeaderBar {},
                     }
                 },
+                connect_popped[sender] => move |_, _| { sender.input(AppModelInput::Popped); },
             }
         }
     }
@@ -176,7 +154,10 @@ impl Component for AppModel {
                 widgets
                     .main_view
                     .set_content(Some(self.exercise_timer.as_ref().unwrap().widget()));
-                widgets.split_view.set_show_content(true);
+                widgets.navigation_view.push(&widgets.main_navigation_page);
+            }
+            AppModelInput::Popped => {
+                self.exercise_timer = None;
             }
             AppModelInput::None => {}
         }
