@@ -8,6 +8,7 @@ use exercise_setup::ExerciseSetup;
 use exercise_timer::{ExerciseTimer, ExerciseTimerInit, ExerciseTimerInput};
 use futures::StreamExt;
 use gtk::prelude::{ButtonExt, OrientableExt, WidgetExt};
+use relm4::actions::{RelmAction, RelmActionGroup};
 use relm4::factory::FactoryVecDeque;
 use relm4::gtk::gdk::Display;
 use relm4::gtk::CssProvider;
@@ -31,6 +32,11 @@ pub enum AppModelInput {
     None,
 }
 
+relm4::new_action_group!(WindowActionGroup, "win");
+relm4::new_stateless_action!(PreferencesAction, WindowActionGroup, "preferences");
+relm4::new_stateless_action!(ShortcutsAction, WindowActionGroup, "show-help-overlay");
+relm4::new_stateless_action!(AboutAction, WindowActionGroup, "about");
+
 struct AppModel {
     exercise_timer: Option<Controller<ExerciseTimer>>,
     list_exercises: FactoryVecDeque<ExerciseSetup>,
@@ -46,7 +52,18 @@ impl Component for AppModel {
     type Output = ();
     type CommandOutput = ();
 
+    menu! {
+        primary_menu: {
+            section! {
+                "_Preferences" => PreferencesAction,
+                "_Keyboard Shortcuts" => ShortcutsAction,
+                "_About Exercise Timer" => AboutAction,
+            }
+        }
+    }
+
     view! {
+        #[name = "main_window"]
         adw::ApplicationWindow {
             set_size_request: (300, 300),
             add_binding: (&model.window_geometry.width, "default_width"),
@@ -62,6 +79,10 @@ impl Component for AppModel {
                             pack_start = &gtk::Button {
                                 set_icon_name: "plus",
                                 connect_clicked => AppModelInput::PromptNewExercise,
+                            },
+                            pack_end = &gtk::MenuButton {
+                                set_icon_name: "open-menu-symbolic",
+                                set_menu_model: Some(&primary_menu),
                             },
                         },
                         #[wrap(Some)]
@@ -105,8 +126,31 @@ impl Component for AppModel {
             window_geometry: WindowGeometry::new_from_gsettings(),
             global_settings: GlobalExerciseSetup::new_from_gsettings(),
         };
+        let mut actions = RelmActionGroup::<WindowActionGroup>::new();
+        let about_action = {
+            let root = root.clone();
+            RelmAction::<AboutAction>::new_stateless(move |_| {
+                let about_window = adw::AboutWindow::builder()
+                    // .application_icon(APP_ID)
+                    // Insert your license of choice here
+                    // .license_type(gtk::License::MitX11)
+                    .transient_for(&root)
+                    .website("https://github.com/mfep/hiit/")
+                    .issue_url("https://github.com/mfep/hiit/issues/")
+                    .application_name("Exercise Timer")
+                    // .version(VERSION)
+                    // .translator_credits("translator-credits")
+                    .copyright("© 2023 Lőrinc Serfőző")
+                    .developers(vec!["Lőrinc Serfőző"])
+                    .designers(vec!["Lőrinc Serfőző"])
+                    .build();
+                about_window.present();
+            })
+        };
+        actions.add_action(about_action);
         let list_exercises = model.list_exercises.widget();
         let widgets = view_output!();
+        actions.register_for_widget(&widgets.main_window);
         ComponentParts { model, widgets }
     }
 
