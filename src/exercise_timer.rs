@@ -37,10 +37,18 @@ impl ExerciseTimer {
         sender: &ComponentSender<ExerciseTimer>,
     ) -> Self {
         Self {
-            state: ExerciseState::Warmup,
+            state: if warmup_s > 0 {
+                ExerciseState::Warmup
+            } else {
+                ExerciseState::Exercise
+            },
             warmup_s,
             remaining_sets: exercise.sets,
-            remaining_s: warmup_s,
+            remaining_s: if warmup_s > 0 {
+                warmup_s
+            } else {
+                exercise.exercise_s
+            },
             running: true,
             timer: build_timer(sender),
             setup: exercise,
@@ -51,9 +59,17 @@ impl ExerciseTimer {
     }
 
     fn reset(&mut self, sender: &ComponentSender<ExerciseTimer>) {
-        self.state = ExerciseState::Warmup;
+        self.state = if self.warmup_s > 0 {
+            ExerciseState::Warmup
+        } else {
+            ExerciseState::Exercise
+        };
         self.remaining_sets = self.setup.sets;
-        self.remaining_s = self.warmup_s;
+        self.remaining_s = if self.warmup_s > 0 {
+            self.warmup_s
+        } else {
+            self.setup.exercise_s
+        };
         self.running = true;
         self.timer = build_timer(sender);
     }

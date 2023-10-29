@@ -47,7 +47,7 @@ impl Component for SettingsDialogModel {
                                         #[wrap(Some)]
                                         #[name = "warmup_adjust"]
                                         set_adjustment = &gtk::Adjustment {
-                                            set_lower: 1.0,
+                                            set_lower: 0.0,
                                             set_upper: 999.0,
                                             set_step_increment: 1.0,
                                             add_binding: (&init.warmup_s, "value"),
