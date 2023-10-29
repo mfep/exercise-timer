@@ -2,6 +2,7 @@ mod exercise_editor;
 mod exercise_setup;
 mod exercise_timer;
 mod settings;
+mod settings_dialog;
 
 use exercise_editor::{ExerciseEditor, ExerciseEditorOutput, ExerciseEditorRole};
 use exercise_setup::ExerciseSetup;
@@ -22,6 +23,9 @@ use relm4::{
 };
 use relm4::{Controller, WidgetRef};
 use settings::{GlobalExerciseSetup, WindowGeometry};
+use settings_dialog::SettingsDialogModel;
+
+const APP_ID: &str = "xyz.safeworlds.hiit";
 
 #[derive(Debug)]
 pub enum AppModelInput {
@@ -95,6 +99,9 @@ impl Component for AppModel {
                                 #[local_ref]
                                 list_exercises -> gtk::Box {
                                     set_orientation: gtk::Orientation::Vertical,
+                                    set_margin_start: 12,
+                                    set_margin_end: 12,
+                                    set_spacing: 8,
                                 }
                             },
                             #[name = "exercise_list_status"]
@@ -163,7 +170,18 @@ impl Component for AppModel {
                 about_window.present();
             })
         };
+        let preferences_action = {
+            let root = root.clone();
+            let global_settings = model.global_settings.clone();
+            RelmAction::<PreferencesAction>::new_stateless(move |_| {
+                SettingsDialogModel::builder()
+                    .transient_for(&root)
+                    .launch(global_settings.clone())
+                    .detach();
+            })
+        };
         actions.add_action(about_action);
+        actions.add_action(preferences_action);
         let list_exercises = model.list_exercises.widget();
         let widgets = view_output!();
         actions.register_for_widget(&widgets.main_window);

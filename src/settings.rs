@@ -3,8 +3,6 @@ use json::{self, object};
 use relm4::binding::*;
 use relm4::gtk::gio::{self, prelude::*};
 
-const APP_ID: &str = "xyz.safeworlds.hiit";
-
 #[derive(Clone, Debug, Default)]
 pub struct WindowGeometry {
     pub width: I32Binding,
@@ -14,7 +12,7 @@ pub struct WindowGeometry {
 
 impl WindowGeometry {
     pub fn new_from_gsettings() -> Self {
-        let settings = gio::Settings::new(APP_ID);
+        let settings = gio::Settings::new(crate::APP_ID);
         Self {
             width: I32Binding::new(settings.int("window-width")),
             height: I32Binding::new(settings.int("window-height")),
@@ -25,7 +23,7 @@ impl WindowGeometry {
 
 impl Drop for WindowGeometry {
     fn drop(&mut self) {
-        let settings = gio::Settings::new(APP_ID);
+        let settings = gio::Settings::new(crate::APP_ID);
         settings.delay();
         let _ = settings.set_int("window-width", self.width.get());
         let _ = settings.set_int("window-height", self.height.get());
@@ -41,7 +39,7 @@ pub struct GlobalExerciseSetup {
 
 impl GlobalExerciseSetup {
     pub fn new_from_gsettings() -> Self {
-        let settings = gio::Settings::new(APP_ID);
+        let settings = gio::Settings::new(crate::APP_ID);
         Self {
             warmup_s: U32Binding::new(settings.uint("warmup-s")),
         }
@@ -50,7 +48,7 @@ impl GlobalExerciseSetup {
 
 impl Drop for GlobalExerciseSetup {
     fn drop(&mut self) {
-        let settings = gio::Settings::new(APP_ID);
+        let settings = gio::Settings::new(crate::APP_ID);
         settings.delay();
         let _ = settings.set_uint("warmup-s", self.warmup_s.get());
         settings.apply();
@@ -76,7 +74,7 @@ fn parse_json_to_exercise_setup(value: &json::JsonValue) -> ExerciseSetup {
 }
 
 pub fn load_default_exercise_setup() -> ExerciseSetup {
-    let settings = gio::Settings::new(APP_ID);
+    let settings = gio::Settings::new(crate::APP_ID);
     let raw_json = settings.string("default-exercise-json");
     parse_json_to_exercise_setup(
         &json::parse(&raw_json).expect("Could not parse default exercise setup"),
@@ -84,14 +82,14 @@ pub fn load_default_exercise_setup() -> ExerciseSetup {
 }
 
 pub fn load_exercise_list_from_gsettings() -> Vec<ExerciseSetup> {
-    let settings = gio::Settings::new(APP_ID);
+    let settings = gio::Settings::new(crate::APP_ID);
     let raw_json = settings.string("exercise-json-list");
     let parsed = json::parse(&raw_json).expect("Could not parse exercise list");
     parsed.members().map(parse_json_to_exercise_setup).collect()
 }
 
 pub fn save_exercise_list_to_gsettings<'a>(exercises: impl Iterator<Item = &'a ExerciseSetup>) {
-    let settings = gio::Settings::new(APP_ID);
+    let settings = gio::Settings::new(crate::APP_ID);
     let json_list: Vec<json::JsonValue> = exercises
         .map(|exercise| {
             object! {
