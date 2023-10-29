@@ -18,6 +18,7 @@ use relm4::{
     binding::Binding,
     gtk::{self, gio},
     Component, ComponentController, ComponentParts, ComponentSender, RelmApp, RelmObjectExt,
+    RelmWidgetExt,
 };
 use relm4::{Controller, WidgetRef};
 use settings::{GlobalExerciseSetup, WindowGeometry};
@@ -86,13 +87,28 @@ impl Component for AppModel {
                             },
                         },
                         #[wrap(Some)]
-                        set_content = &gtk::ScrolledWindow {
-                            set_vexpand: true,
-                            #[local_ref]
-                            list_exercises -> gtk::Box {
-                                set_orientation: gtk::Orientation::Vertical,
-                            }
-                        }
+                        #[name = "exercise_list_stack"]
+                        set_content = &gtk::Stack {
+                            #[name = "exercise_list_scrolled"]
+                            gtk::ScrolledWindow {
+                                set_vexpand: true,
+                                #[local_ref]
+                                list_exercises -> gtk::Box {
+                                    set_orientation: gtk::Orientation::Vertical,
+                                }
+                            },
+                            #[name = "exercise_list_status"]
+                            adw::StatusPage {
+                                set_icon_name: Some("weight2"),
+                                set_title: "No exercise is created yet",
+                                gtk::Button {
+                                    set_class_active: ("suggested-action", true),
+                                    set_label: "Create exercise",
+                                    set_halign: gtk::Align::Center,
+                                    connect_clicked => AppModelInput::PromptNewExercise,
+                                }
+                            },
+                        },
                     },
                 },
                 #[name = "main_navigation_page"]
@@ -140,7 +156,7 @@ impl Component for AppModel {
                     .application_name("Exercise Timer")
                     // .version(VERSION)
                     // .translator_credits("translator-credits")
-                    .copyright("© 2023 Lőrinc Serfőző")
+                    .copyright("© 2023 Exercise Timer developers")
                     .developers(vec!["Lőrinc Serfőző"])
                     .designers(vec!["Lőrinc Serfőző"])
                     .build();
@@ -151,6 +167,7 @@ impl Component for AppModel {
         let list_exercises = model.list_exercises.widget();
         let widgets = view_output!();
         actions.register_for_widget(&widgets.main_window);
+        update_status_visible(&widgets, &model);
         ComponentParts { model, widgets }
     }
 
@@ -182,7 +199,6 @@ impl Component for AppModel {
                 self.list_exercises.guard().remove(index);
             }
             AppModelInput::CreateExerciseSetup(setup) => {
-                println!("Exercise created: {:?}", setup);
                 self.list_exercises.guard().push_back(setup);
             }
             AppModelInput::LoadExercise(setup) => {
@@ -205,6 +221,19 @@ impl Component for AppModel {
             }
             AppModelInput::None => {}
         }
+        update_status_visible(&widgets, &self);
+    }
+}
+
+fn update_status_visible(widgets: &AppModelWidgets, model: &AppModel) {
+    if model.list_exercises.is_empty() {
+        widgets
+            .exercise_list_stack
+            .set_visible_child(&widgets.exercise_list_status);
+    } else {
+        widgets
+            .exercise_list_stack
+            .set_visible_child(&widgets.exercise_list_scrolled);
     }
 }
 
