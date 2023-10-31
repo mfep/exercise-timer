@@ -35,6 +35,7 @@ impl Drop for WindowGeometry {
 #[derive(Clone, Debug, Default)]
 pub struct GlobalExerciseSetup {
     pub warmup_s: U32Binding,
+    pub beep_volume: F64Binding,
 }
 
 impl GlobalExerciseSetup {
@@ -42,6 +43,7 @@ impl GlobalExerciseSetup {
         let settings = gio::Settings::new(crate::APP_ID);
         Self {
             warmup_s: U32Binding::new(settings.uint("warmup-s")),
+            beep_volume: F64Binding::new(settings.double("beep-volume")),
         }
     }
 }
@@ -51,6 +53,7 @@ impl Drop for GlobalExerciseSetup {
         let settings = gio::Settings::new(crate::APP_ID);
         settings.delay();
         let _ = settings.set_uint("warmup-s", self.warmup_s.get());
+        let _ = settings.set_double("beep-volume", self.beep_volume.get());
         settings.apply();
     }
 }

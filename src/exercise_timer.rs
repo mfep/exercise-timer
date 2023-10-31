@@ -3,13 +3,16 @@ mod timer;
 
 use relm4::{
     adw,
+    binding::Binding,
     gtk::{self, prelude::*},
-    Component, ComponentParts, ComponentSender, RelmWidgetExt, WorkerController,
+    Component, ComponentParts, ComponentSender, RelmObjectExt, RelmWidgetExt, WorkerController,
 };
 use timer::{TimerModel, TimerOutput};
 
-use crate::exercise_setup::ExerciseSetup;
+use crate::{exercise_setup::ExerciseSetup, settings::GlobalExerciseSetup};
 use audio_player::{AudioPlayerInput, AudioPlayerModel};
+
+use self::audio_player::AudioPlayerModelInit;
 
 #[derive(PartialEq)]
 enum ExerciseState {
@@ -20,7 +23,7 @@ enum ExerciseState {
 
 pub struct ExerciseTimer {
     setup: ExerciseSetup,
-    warmup_s: usize,
+    global_setup: GlobalExerciseSetup,
     state: ExerciseState,
     remaining_sets: usize,
     remaining_s: usize,
@@ -32,17 +35,19 @@ pub struct ExerciseTimer {
 impl ExerciseTimer {
     fn new(
         exercise: ExerciseSetup,
-        warmup_s: usize,
+        global_setup: GlobalExerciseSetup,
         output: rodio::OutputStreamHandle,
         sender: &ComponentSender<ExerciseTimer>,
     ) -> Self {
+        let warmup_s = global_setup.warmup_s.get() as usize;
+        let beep_volume = global_setup.beep_volume.get();
         Self {
             state: if warmup_s > 0 {
                 ExerciseState::Warmup
             } else {
                 ExerciseState::Exercise
             },
-            warmup_s,
+            global_setup,
             remaining_sets: exercise.sets,
             remaining_s: if warmup_s > 0 {
                 warmup_s
@@ -53,20 +58,24 @@ impl ExerciseTimer {
             timer: build_timer(sender),
             setup: exercise,
             audio_player: AudioPlayerModel::builder()
-                .detach_worker(output)
+                .detach_worker(AudioPlayerModelInit {
+                    output_stream: output,
+                    volume: beep_volume,
+                })
                 .forward(sender.input_sender(), |_msg| ExerciseTimerInput::Tick),
         }
     }
 
     fn reset(&mut self, sender: &ComponentSender<ExerciseTimer>) {
-        self.state = if self.warmup_s > 0 {
+        let warmup_s = self.global_setup.warmup_s.get() as usize;
+        self.state = if warmup_s > 0 {
             ExerciseState::Warmup
         } else {
             ExerciseState::Exercise
         };
         self.remaining_sets = self.setup.sets;
-        self.remaining_s = if self.warmup_s > 0 {
-            self.warmup_s
+        self.remaining_s = if warmup_s > 0 {
+            warmup_s
         } else {
             self.setup.exercise_s
         };
@@ -103,7 +112,7 @@ fn remaining_str(remaining_s: usize) -> String {
 
 pub struct ExerciseTimerInit {
     pub setup: ExerciseSetup,
-    pub warmup_s: usize,
+    pub global_setup: GlobalExerciseSetup,
     pub output_handle: rodio::OutputStreamHandle,
 }
 
@@ -145,26 +154,45 @@ impl Component for ExerciseTimer {
                         },
                     },
                     gtk::Label {
-                        set_class_active: ("title-1", true),
+                        add_css_class: "timer-label",
                         #[watch]
                         set_label: &remaining_str(model.remaining_s),
                     },
                     gtk::Box {
                         set_orientation: gtk::Orientation::Horizontal,
                         set_halign: gtk::Align::Center,
-                        set_class_active: ("linked", true),
+                        set_spacing: 12,
                         gtk::Button {
-                            #[watch]
-                            set_label: if model.running { "Pause" } else { "Resume" },
-                            #[watch]
-                            set_sensitive: model.remaining_s != 0,
-                            connect_clicked => ExerciseTimerInput::StartStop,
-                        },
-                        gtk::Button {
-                            set_label: "Restart",
+                            add_css_class: "circular",
+                            set_icon_name: "refresh",
+                            set_valign: gtk::Align::Center,
                             connect_clicked => ExerciseTimerInput::Reset,
                             #[watch]
                             set_class_active: ("suggested-action", model.remaining_s == 0),
+                        },
+                        gtk::Button {
+                            set_css_classes: &["circular", "large-button"],
+                            #[watch]
+                            set_sensitive: model.remaining_s != 0,
+                            connect_clicked => ExerciseTimerInput::StartStop,
+                            gtk::Image {
+                                #[watch]
+                                set_icon_name: Some(if model.running { "pause" } else { "play" }),
+                                set_pixel_size: 24,
+                            },
+                        },
+                        #[name = "volume_button"]
+                        gtk::ScaleButton {
+                            set_valign: gtk::Align::Center,
+                            set_icons: &["audio-volume-muted-symbolic", "audio-volume-high-symbolic", "audio-volume-medium-symbolic"],
+                            set_adjustment = &gtk::Adjustment {
+                                set_lower: 0f64,
+                                set_upper: 1f64,
+                                add_binding: (&model.global_setup.beep_volume, "value"),
+                                connect_value_changed[audio_sender] => move |adj| {
+                                    audio_sender.emit(AudioPlayerInput::SetVolume(adj.value()))
+                                },
+                            }
                         }
                     }
                 },
@@ -181,8 +209,14 @@ impl Component for ExerciseTimer {
         root: &Self::Root,
         sender: relm4::ComponentSender<Self>,
     ) -> ComponentParts<Self> {
-        let model = ExerciseTimer::new(init.setup, init.warmup_s, init.output_handle, &sender);
+        let model = ExerciseTimer::new(init.setup, init.global_setup, init.output_handle, &sender);
+        let audio_sender = model.audio_player.sender();
         let widgets = view_output!();
+        widgets
+            .volume_button
+            .first_child()
+            .unwrap()
+            .set_css_classes(&["circular", "toggle"]);
         model.audio_player.emit(AudioPlayerInput::NextWarmup);
         ComponentParts { model, widgets }
     }

@@ -16,10 +16,8 @@ use relm4::gtk::CssProvider;
 use relm4::prelude::DynamicIndex;
 use relm4::{
     adw::{self, prelude::*},
-    binding::Binding,
     gtk::{self, gio},
     Component, ComponentController, ComponentParts, ComponentSender, RelmApp, RelmObjectExt,
-    RelmWidgetExt,
 };
 use relm4::{Controller, WidgetRef};
 use settings::{GlobalExerciseSetup, WindowGeometry};
@@ -109,7 +107,7 @@ impl Component for AppModel {
                                 set_icon_name: Some("weight2"),
                                 set_title: "No exercise is created yet",
                                 gtk::Button {
-                                    set_class_active: ("suggested-action", true),
+                                    set_css_classes: &["suggested-action", "pill"],
                                     set_label: "Create exercise",
                                     set_halign: gtk::Align::Center,
                                     connect_clicked => AppModelInput::PromptNewExercise,
@@ -224,7 +222,7 @@ impl Component for AppModel {
                     ExerciseTimer::builder()
                         .launch(ExerciseTimerInit {
                             setup,
-                            warmup_s: self.global_settings.warmup_s.get() as usize,
+                            global_setup: self.global_settings.clone(),
                             output_handle: self.output_stream.clone(),
                         })
                         .forward(sender.input_sender(), |_msg| AppModelInput::None),
