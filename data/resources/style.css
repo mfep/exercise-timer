@@ -2,16 +2,16 @@
     padding: 20px;
 }
 .timer-warmup {
-    background: @warning_bg_color;
-    color: @warning_fg_color;
+    background: #63452c;
+    color: #ffffff;
 }
 .timer-exercise {
-    background: @success_bg_color;
-    color: @success_fg_color;
+    background: #26a269;
+    color: #ffffff;
 }
 .timer-rest {
-    background: @accent_bg_color;
-    color: @accent_fg_color;
+    background: #1a5fb4;
+    color: #ffffff;
 }
 .timer-label {
     font-size: 48px;
