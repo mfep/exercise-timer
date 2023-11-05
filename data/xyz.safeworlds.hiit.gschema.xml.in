@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-    <schema id="xyz.safeworlds.hiit" path="/xyz/safeworlds/hiit/">
+    <schema id="@app-id@" path="/xyz/safeworlds/hiit/">
         <key name="window-width" type="i">
             <default>400</default>
             <summary>The width of the window</summary>
@@ -18,7 +18,7 @@
             <summary>Default exercise setup, in JSON notation</summary>
         </key>
         <key name="exercise-json-list" type="s">
-            <default>"[{\"name\": \"Exercise\", \"sets\": 5, \"warmup_s\": 5, \"exercise_s\": 60, \"rest_s\": 20}]"</default>
+            <default>"[]"</default>
             <summary>List of exercise setups, in JSON notation</summary>
         </key>
         <key name="warmup-s" type="u">

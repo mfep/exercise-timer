@@ -1,0 +1,13 @@
+pub const APP_ID: &str = @APP_ID@;
+#[allow(unused)]
+pub const GETTEXT_PACKAGE: &str = @GETTEXT_PACKAGE@;
+#[allow(unused)]
+pub const LOCALEDIR: &str = @LOCALEDIR@;
+#[allow(unused)]
+pub const PKGDATADIR: &str = @PKGDATADIR@;
+#[allow(unused)]
+pub const PROFILE: &str = @PROFILE@;
+#[allow(unused)]
+pub const RESOURCES_FILE: &str = concat!(@PKGDATADIR@, "/resources.gresource");
+#[allow(unused)]
+pub const VERSION: &str = @VERSION@;

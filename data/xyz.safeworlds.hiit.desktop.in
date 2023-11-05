@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Exercise Timer
+Comment=Timer clock for high intensity interval training
+Type=Application
+Exec=hiit
+Terminal=false
+Categories=GNOME;GTK;Utility;
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity interval training;
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+Icon=@icon@
+StartupNotify=true

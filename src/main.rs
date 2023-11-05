@@ -1,8 +1,10 @@
+mod config;
 mod exercise_editor;
 mod exercise_setup;
 mod exercise_timer;
 mod settings;
 mod settings_dialog;
+mod setup;
 
 use exercise_editor::{ExerciseEditor, ExerciseEditorOutput, ExerciseEditorRole};
 use exercise_setup::ExerciseSetup;
@@ -11,19 +13,14 @@ use futures::StreamExt;
 use gtk::prelude::{ButtonExt, OrientableExt, WidgetExt};
 use relm4::actions::{RelmAction, RelmActionGroup};
 use relm4::factory::FactoryVecDeque;
-use relm4::gtk::gdk::Display;
-use relm4::gtk::CssProvider;
 use relm4::prelude::DynamicIndex;
 use relm4::{
     adw::{self, prelude::*},
-    gtk::{self, gio},
-    Component, ComponentController, ComponentParts, ComponentSender, RelmApp, RelmObjectExt,
+    gtk, Component, ComponentController, ComponentParts, ComponentSender, RelmApp, RelmObjectExt,
 };
 use relm4::{Controller, WidgetRef};
 use settings::{GlobalExerciseSetup, WindowGeometry};
 use settings_dialog::SettingsDialogModel;
-
-const APP_ID: &str = "xyz.safeworlds.hiit";
 
 #[derive(Debug)]
 pub enum AppModelInput {
@@ -259,23 +256,10 @@ impl Drop for AppModel {
     }
 }
 
-fn load_css() {
-    let provider = CssProvider::new();
-    provider.load_from_resource("/xyz/safeworlds/hiit/style.css");
-
-    gtk::style_context_add_provider_for_display(
-        &Display::default().expect("Could not connect to a display."),
-        &provider,
-        gtk::STYLE_PROVIDER_PRIORITY_APPLICATION,
-    );
-}
-
 fn main() {
+    setup::setup();
     let (_stream, stream_handle) =
         rodio::OutputStream::try_default().expect("Could not create audio output stream");
-    gio::resources_register_include!("hiit.gresource").expect("Could not register resources");
-    let app = RelmApp::new("org.safeworlds.hiit");
-    relm4_icons::initialize_icons();
-    load_css();
+    let app = RelmApp::new(config::APP_ID);
     app.run::<AppModel>(stream_handle);
 }
