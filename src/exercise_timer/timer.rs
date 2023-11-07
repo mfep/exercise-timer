@@ -1,6 +1,5 @@
-use std::time::Duration;
-
 use relm4::Worker;
+use std::time::Duration;
 
 pub struct TimerModel;
 

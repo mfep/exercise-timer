@@ -1,6 +1,5 @@
-use relm4::gtk::gio;
-use relm4::{self, prelude::*, Worker};
-use rodio::{self, Decoder, Source};
+use relm4::{self, gtk::gio, prelude::*};
+use rodio::{self, Source};
 
 pub struct AudioPlayerModel {
     output_stream: rodio::OutputStreamHandle,
@@ -11,7 +10,7 @@ pub struct AudioPlayerModel {
 impl AudioPlayerModel {
     fn play_ping(&self, times: u32) {
         let cursor = std::io::Cursor::new(self.ping_bytes.clone());
-        let decoder = Decoder::new_wav(cursor).expect("Could not decode WAV");
+        let decoder = rodio::Decoder::new_wav(cursor).expect("Could not decode WAV");
         let new_duration = decoder.total_duration().unwrap() * times;
         let d = decoder
             .repeat_infinite()
@@ -38,7 +37,7 @@ pub struct AudioPlayerModelInit {
     pub volume: f64,
 }
 
-impl Worker for AudioPlayerModel {
+impl relm4::Worker for AudioPlayerModel {
     type Init = AudioPlayerModelInit;
     type Input = AudioPlayerInput;
     type Output = ();

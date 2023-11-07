@@ -3,9 +3,10 @@ mod timer;
 
 use relm4::{
     adw,
-    binding::Binding,
+    binding::*,
     gtk::{self, prelude::*},
-    Component, ComponentParts, ComponentSender, RelmObjectExt, RelmWidgetExt, WorkerController,
+    prelude::*,
+    RelmObjectExt, RelmWidgetExt,
 };
 use timer::{TimerModel, TimerOutput};
 
@@ -28,8 +29,8 @@ pub struct ExerciseTimer {
     remaining_sets: usize,
     remaining_s: usize,
     running: bool,
-    timer: Option<WorkerController<TimerModel>>,
-    audio_player: WorkerController<AudioPlayerModel>,
+    timer: Option<relm4::WorkerController<TimerModel>>,
+    audio_player: relm4::WorkerController<AudioPlayerModel>,
 }
 
 impl ExerciseTimer {
@@ -92,7 +93,9 @@ pub enum ExerciseTimerInput {
     Reset,
 }
 
-fn build_timer(sender: &ComponentSender<ExerciseTimer>) -> Option<WorkerController<TimerModel>> {
+fn build_timer(
+    sender: &ComponentSender<ExerciseTimer>,
+) -> Option<relm4::WorkerController<TimerModel>> {
     Some(
         TimerModel::builder()
             .detach_worker(())

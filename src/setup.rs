@@ -1,7 +1,4 @@
-use relm4::gtk;
-
-// use gettextrs::{gettext, LocaleCategory};
-use gtk::{gio, glib};
+use relm4::gtk::{self, gio, glib};
 
 pub fn setup() {
     gtk::init().unwrap();

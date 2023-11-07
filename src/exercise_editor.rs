@@ -1,9 +1,8 @@
-use crate::exercise_setup::ExerciseSetup;
-use gtk::prelude::{ButtonExt, GtkWindowExt, OrientableExt, WidgetExt};
+use crate::exercise_setup::*;
 use relm4::{
     adw::{self, prelude::*},
     binding::*,
-    gtk, ComponentParts, ComponentSender, RelmObjectExt, RelmWidgetExt, SimpleComponent,
+    gtk, RelmObjectExt, RelmWidgetExt,
 };
 
 #[derive(Debug)]
@@ -33,7 +32,7 @@ pub enum ExerciseEditorOutput {
 }
 
 #[relm4::component(pub)]
-impl SimpleComponent for ExerciseEditor {
+impl relm4::SimpleComponent for ExerciseEditor {
     type Init = (ExerciseEditorRole, ExerciseSetup);
     type Input = ExerciseEditorInput;
     type Output = Option<ExerciseEditorOutput>;
@@ -134,10 +133,10 @@ impl SimpleComponent for ExerciseEditor {
             role: init.0,
         };
         let widgets = view_output!();
-        ComponentParts { model, widgets }
+        relm4::ComponentParts { model, widgets }
     }
 
-    fn update(&mut self, message: Self::Input, sender: ComponentSender<Self>) {
+    fn update(&mut self, message: Self::Input, sender: relm4::ComponentSender<Self>) {
         match message {
             ExerciseEditorInput::Cancel => sender.output(None).unwrap(),
             ExerciseEditorInput::Create => {

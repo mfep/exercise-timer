@@ -1,3 +1,5 @@
+use crate::settings::*;
+
 use relm4::{
     self,
     adw::{self, prelude::*},
@@ -6,13 +8,11 @@ use relm4::{
     RelmObjectExt,
 };
 
-use crate::settings;
-
 pub struct SettingsDialogModel;
 
 #[relm4::component(pub)]
 impl Component for SettingsDialogModel {
-    type Init = settings::GlobalExerciseSetup;
+    type Init = GlobalExerciseSetup;
     type Input = ();
     type Output = ();
     type CommandOutput = ();

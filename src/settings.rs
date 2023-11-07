@@ -1,7 +1,10 @@
-use crate::exercise_setup::ExerciseSetup;
-use json::{self, object};
-use relm4::binding::*;
-use relm4::gtk::gio::{self, prelude::*};
+use crate::exercise_setup::*;
+use json;
+use relm4::{
+    self,
+    binding::*,
+    gtk::gio::{self, prelude::*},
+};
 
 #[derive(Clone, Debug, Default)]
 pub struct WindowGeometry {
@@ -95,7 +98,7 @@ pub fn save_exercise_list_to_gsettings<'a>(exercises: impl Iterator<Item = &'a E
     let settings = gio::Settings::new(crate::config::APP_ID);
     let json_list: Vec<json::JsonValue> = exercises
         .map(|exercise| {
-            object! {
+            json::object! {
                 name: exercise.name.clone(),
                 sets: exercise.sets,
                 exercise_s: exercise.exercise_s,

@@ -1,17 +1,12 @@
-use std::time::Duration;
-
+use crate::exercise_editor::*;
+use crate::*;
+use futures::prelude::*;
 use relm4::{
-    gtk::{self, prelude::*, Root},
+    gtk::{self, prelude::*},
     prelude::*,
-    Component, RelmWidgetExt,
+    RelmWidgetExt,
 };
-
-use crate::{exercise_editor::ExerciseEditor, AppModelInput};
-use crate::{
-    exercise_editor::{ExerciseEditorOutput, ExerciseEditorRole},
-    settings,
-};
-use futures::StreamExt;
+use std::time::Duration;
 
 #[derive(Debug, Clone)]
 pub struct ExerciseSetup {
@@ -35,7 +30,7 @@ impl Default for ExerciseSetup {
 
 #[derive(Debug)]
 pub enum ExerciseSetupInput {
-    Edit(Root),
+    Edit(gtk::Root),
     Update(ExerciseSetup),
     Load,
 }

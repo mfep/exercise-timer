@@ -6,21 +6,19 @@ mod settings;
 mod settings_dialog;
 mod setup;
 
-use exercise_editor::{ExerciseEditor, ExerciseEditorOutput, ExerciseEditorRole};
-use exercise_setup::ExerciseSetup;
-use exercise_timer::{ExerciseTimer, ExerciseTimerInit, ExerciseTimerInput};
-use futures::StreamExt;
-use gtk::prelude::{ButtonExt, OrientableExt, WidgetExt};
-use relm4::actions::{RelmAction, RelmActionGroup};
-use relm4::factory::FactoryVecDeque;
-use relm4::prelude::DynamicIndex;
+use crate::exercise_editor::*;
+use crate::exercise_setup::*;
+use crate::exercise_timer::*;
+use crate::settings::*;
+use crate::settings_dialog::*;
+use futures::prelude::*;
 use relm4::{
+    self,
     adw::{self, prelude::*},
-    gtk, Component, ComponentController, ComponentParts, ComponentSender, RelmApp, RelmObjectExt,
+    gtk,
+    prelude::*,
+    RelmObjectExt,
 };
-use relm4::{Controller, WidgetRef};
-use settings::{GlobalExerciseSetup, WindowGeometry};
-use settings_dialog::SettingsDialogModel;
 
 #[derive(Debug)]
 pub enum AppModelInput {
@@ -39,7 +37,7 @@ relm4::new_stateless_action!(AboutAction, WindowActionGroup, "about");
 
 struct AppModel {
     exercise_timer: Option<Controller<ExerciseTimer>>,
-    list_exercises: FactoryVecDeque<ExerciseSetup>,
+    list_exercises: relm4::factory::FactoryVecDeque<ExerciseSetup>,
     output_stream: rodio::OutputStreamHandle,
     window_geometry: WindowGeometry,
     global_settings: GlobalExerciseSetup,
@@ -132,7 +130,7 @@ impl Component for AppModel {
         root: &Self::Root,
         sender: ComponentSender<Self>,
     ) -> ComponentParts<Self> {
-        let list_exercises = FactoryVecDeque::from_iter(
+        let list_exercises = relm4::factory::FactoryVecDeque::from_iter(
             settings::load_exercise_list_from_gsettings().into_iter(),
             gtk::Box::default(),
             sender.input_sender(),
@@ -144,19 +142,18 @@ impl Component for AppModel {
             window_geometry: WindowGeometry::new_from_gsettings(),
             global_settings: GlobalExerciseSetup::new_from_gsettings(),
         };
-        let mut actions = RelmActionGroup::<WindowActionGroup>::new();
+        let mut actions = relm4::actions::RelmActionGroup::<WindowActionGroup>::new();
         let about_action = {
             let root = root.clone();
-            RelmAction::<AboutAction>::new_stateless(move |_| {
+            relm4::actions::RelmAction::<AboutAction>::new_stateless(move |_| {
                 let about_window = adw::AboutWindow::builder()
-                    // .application_icon(APP_ID)
-                    // Insert your license of choice here
-                    // .license_type(gtk::License::MitX11)
+                    .application_icon(config::APP_ID)
+                    // .license_type(gtk::License::Gpl30)
                     .transient_for(&root)
                     .website("https://github.com/mfep/hiit/")
                     .issue_url("https://github.com/mfep/hiit/issues/")
                     .application_name("Exercise Timer")
-                    // .version(VERSION)
+                    .version(config::VERSION)
                     // .translator_credits("translator-credits")
                     .copyright("© 2023 Exercise Timer developers")
                     .developers(vec!["Lőrinc Serfőző"])
@@ -168,7 +165,7 @@ impl Component for AppModel {
         let preferences_action = {
             let root = root.clone();
             let global_settings = model.global_settings.clone();
-            RelmAction::<PreferencesAction>::new_stateless(move |_| {
+            relm4::actions::RelmAction::<PreferencesAction>::new_stateless(move |_| {
                 SettingsDialogModel::builder()
                     .transient_for(&root)
                     .launch(global_settings.clone())
