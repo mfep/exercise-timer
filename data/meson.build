@@ -24,6 +24,8 @@ endif
 # Appdata
 appdata_conf = configuration_data()
 appdata_conf.set('app-id', application_id)
+appdata_conf.set('homepage', homepage)
+appdata_conf.set('issue-tracker', issue_tracker)
 appdata_file = configure_file(
   input: '@0@.metainfo.xml.in'.format(base_id),
   output: '@0@.metainfo.xml'.format(application_id),

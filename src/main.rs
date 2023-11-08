@@ -147,17 +147,17 @@ impl Component for AppModel {
             let root = root.clone();
             relm4::actions::RelmAction::<AboutAction>::new_stateless(move |_| {
                 let about_window = adw::AboutWindow::builder()
-                    .application_icon(config::APP_ID)
-                    // .license_type(gtk::License::Gpl30)
                     .transient_for(&root)
-                    .website("https://github.com/mfep/hiit/")
-                    .issue_url("https://github.com/mfep/hiit/issues/")
+                    .application_icon(config::APP_ID)
                     .application_name("Exercise Timer")
-                    .version(config::VERSION)
+                    .copyright(config::COPYRIGHT)
+                    .designers(config::DESIGNERS)
+                    .developers(config::DEVELOPERS)
+                    .issue_url(config::ISSUE_TRACKER)
+                    .license_type(gtk::License::Gpl30)
                     // .translator_credits("translator-credits")
-                    .copyright("© 2023 Exercise Timer developers")
-                    .developers(vec!["Lőrinc Serfőző"])
-                    .designers(vec!["Lőrinc Serfőző"])
+                    .version(config::VERSION)
+                    .website(config::HOMEPAGE)
                     .build();
                 about_window.present();
             })

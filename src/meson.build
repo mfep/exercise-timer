@@ -1,11 +1,22 @@
 global_conf = configuration_data()
 global_conf.set_quoted('APP_ID', application_id)
-global_conf.set_quoted('PKGDATADIR', pkgdatadir)
-global_conf.set_quoted('PROFILE', profile)
 global_conf.set_quoted('VERSION', version + version_suffix)
-global_conf.set_quoted('GETTEXT_PACKAGE', gettext_package)
-global_conf.set_quoted('LOCALEDIR', localedir)
-config = configure_file(
+global_conf.set_quoted('HOMEPAGE', homepage)
+global_conf.set_quoted('ISSUE_TRACKER', issue_tracker)
+global_conf.set_quoted('COPYRIGHT', copyright)
+
+developers_str = ''
+foreach dev : developers
+  developers_str += '"' + dev + '", '
+endforeach
+designers_str = ''
+foreach des : designers
+  designers_str += '"' + des + '", '
+endforeach
+global_conf.set('DEVELOPERS', developers_str)
+global_conf.set('DESIGNERS', designers_str)
+
+configure_file(
   input: 'config.rs.in',
   output: 'config.rs',
   configuration: global_conf
@@ -32,7 +43,7 @@ endif
 
 cargo_env = [ 'CARGO_HOME=' + meson.project_build_root() / 'cargo-home' ]
 
-cargo_build = custom_target(
+custom_target(
   'cargo-build',
   build_by_default: true,
   build_always_stale: true,

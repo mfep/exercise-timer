@@ -74,46 +74,37 @@ impl relm4::SimpleComponent for ExerciseEditor {
                         set_title: "Name",
                         add_binding: (&model.name, "text"),
                     },
-                    adw::ActionRow {
+                    adw::SpinRow {
                         set_title: "Number of sets",
-                        add_suffix = &gtk::SpinButton {
-                            set_margin_top: 8,
-                            set_margin_bottom: 8,
-                            set_adjustment = &gtk::Adjustment {
-                                set_lower: 1f64,
-                                set_upper: 999f64,
-                                set_step_increment: 1f64,
-                                add_binding: (&model.sets, "value"),
-                            }
-                        }
+                        #[wrap(Some)]
+                        set_adjustment = &gtk::Adjustment {
+                            set_lower: 1f64,
+                            set_upper: 999f64,
+                            set_step_increment: 1f64,
+                            add_binding: (&model.sets, "value"),
+                        },
                     },
-                    adw::ActionRow {
+                    adw::SpinRow {
                         set_title: "Rest time",
                         set_subtitle: "seconds",
-                        add_suffix = &gtk::SpinButton {
-                            set_margin_top: 8,
-                            set_margin_bottom: 8,
-                            set_adjustment = &gtk::Adjustment {
-                                set_lower: 1f64,
-                                set_upper: 999f64,
-                                set_step_increment: 1f64,
-                                add_binding: (&model.rest_s, "value"),
-                            }
-                        }
+                        #[wrap(Some)]
+                        set_adjustment = &gtk::Adjustment {
+                            set_lower: 1f64,
+                            set_upper: 999f64,
+                            set_step_increment: 1f64,
+                            add_binding: (&model.rest_s, "value"),
+                        },
                     },
-                    adw::ActionRow {
+                    adw::SpinRow {
                         set_title: "Exercise time",
                         set_subtitle: "seconds",
-                        add_suffix = &gtk::SpinButton {
-                            set_margin_top: 8,
-                            set_margin_bottom: 8,
-                            set_adjustment = &gtk::Adjustment {
-                                set_lower: 1f64,
-                                set_upper: 999f64,
-                                set_step_increment: 1f64,
-                                add_binding: (&model.exercise_s, "value"),
-                            }
-                        }
+                        #[wrap(Some)]
+                        set_adjustment = &gtk::Adjustment {
+                            set_lower: 1f64,
+                            set_upper: 999f64,
+                            set_step_increment: 1f64,
+                            add_binding: (&model.exercise_s, "value"),
+                        },
                     },
                 }
             }

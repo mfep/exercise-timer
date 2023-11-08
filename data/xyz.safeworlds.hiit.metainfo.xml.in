@@ -3,7 +3,7 @@
   <id>@app-id@</id>
   <metadata_license>CC0</metadata_license>
   <!-- Insert your license of choice here -->
-  <!-- <project_license>MIT</project_license> -->
+  <project_license>AGPL-3.0-or-later</project_license>
   <name>Exercise Timer</name>
   <summary>Timer clock for high intensity interval training</summary>
   <description>
@@ -15,8 +15,8 @@
       <caption>Main window</caption>
     </screenshot>
   </screenshots> -->
-  <url type="homepage">https://github.com/mfep/hiit</url>
-  <url type="bugtracker">https://github.com/mfep/hiit/issues</url>
+  <url type="homepage">@homepage@</url>
+  <url type="bugtracker">@issue-tracker@</url>
   <content_rating type="oars-1.0" />
   <releases>
     <release version="0.1.0" date="2023-11-05" />

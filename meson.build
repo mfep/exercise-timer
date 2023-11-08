@@ -10,6 +10,11 @@ i18n = import('i18n')
 gnome = import('gnome')
 
 base_id = 'xyz.safeworlds.hiit'
+homepage = 'https://github.com/mfep/exercise-timer'
+issue_tracker = homepage + '/issues'
+copyright = '© 2023 Exercise Timer developers'
+developers = ['Lőrinc Serfőző']
+designers = ['Lőrinc Serfőző']
 
 dependency('glib-2.0', version: '>= 2.66')
 dependency('gio-2.0', version: '>= 2.66')
