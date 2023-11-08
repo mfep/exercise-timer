@@ -14,8 +14,13 @@
     color: #ffffff;
 }
 .timer-label {
-    font-size: 48px;
+    font-size: 72px;
 }
 .large-button {
+    padding: 6px;
+    -gtk-icon-size: 18px;
+}
+.huge-button {
     padding: 12px;
+    -gtk-icon-size: 36px;
 }

@@ -134,8 +134,8 @@ impl Component for ExerciseTimer {
                 set_orientation: gtk::Orientation::Vertical,
                 set_valign: gtk::Align::Center,
                 gtk::Box {
-                    set_class_active: ("timer", true),
-                    set_class_active: ("card", true),
+                    add_css_class: "timer",
+                    add_css_class: "card",
                     #[watch]
                     set_class_active: ("timer-warmup", model.state == ExerciseState::Warmup),
                     #[watch]
@@ -148,7 +148,7 @@ impl Component for ExerciseTimer {
                     set_margin_all: 20,
                     set_vexpand: true,
                     gtk::Label {
-                        set_class_active: ("title-2", true),
+                        add_css_class: "title-2",
                         #[watch]
                         set_label: match model.state {
                             ExerciseState::Warmup => "Warm up",
@@ -166,7 +166,7 @@ impl Component for ExerciseTimer {
                         set_halign: gtk::Align::Center,
                         set_spacing: 12,
                         gtk::Button {
-                            add_css_class: "circular",
+                            set_css_classes: &["circular", "large-button"],
                             set_icon_name: "refresh",
                             set_valign: gtk::Align::Center,
                             connect_clicked => ExerciseTimerInput::Reset,
@@ -174,14 +174,13 @@ impl Component for ExerciseTimer {
                             set_class_active: ("suggested-action", model.remaining_s == 0),
                         },
                         gtk::Button {
-                            set_css_classes: &["circular", "large-button"],
+                            set_css_classes: &["circular", "huge-button"],
                             #[watch]
                             set_sensitive: model.remaining_s != 0,
                             connect_clicked => ExerciseTimerInput::StartStop,
                             gtk::Image {
                                 #[watch]
                                 set_icon_name: Some(if model.running { "pause" } else { "play" }),
-                                set_pixel_size: 24,
                             },
                         },
                         #[name = "volume_button"]
@@ -219,7 +218,7 @@ impl Component for ExerciseTimer {
             .volume_button
             .first_child()
             .unwrap()
-            .set_css_classes(&["circular", "toggle"]);
+            .set_css_classes(&["circular", "toggle", "large-button"]);
         model.audio_player.emit(AudioPlayerInput::NextWarmup);
         ComponentParts { model, widgets }
     }
