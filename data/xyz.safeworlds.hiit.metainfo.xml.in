@@ -2,34 +2,46 @@
 <component type="desktop-application">
   <id>@app-id@</id>
   <metadata_license>CC0</metadata_license>
-  <!-- Insert your license of choice here -->
-  <project_license>AGPL-3.0-or-later</project_license>
+  <project_license>GPL-3.0</project_license>
   <name>Exercise Timer</name>
   <summary>Timer clock for high intensity interval training</summary>
   <description>
-    <p>A boilerplate template for GTK + Rust. It uses Meson as a build system and has flatpak support by default.</p>
+    <p>Exercise timer is a simple utility to conduct interval training.</p>
+    <p>Following a short preparation period, a prescribed number of exercise sets are played. In between each exercise, there is a resting period.</p>
+    <p>The app does not make an assumption about the kind of the exercise.</p>
+    <p>Features:</p>
+    <ul>
+      <li>Save and recall presets containing the number of sets and the duration of the exercise and rest periods.</li>
+      <li>Set the duration of the preparation in the settings.</li>
+      <li>A beeping sound is played at- and prior to each transition.</li>
+      <li>The volume of the sound can be adjusted.</li>
+      <li>Light and dark mode follows the system's setting.</li>
+    </ul>
   </description>
-  <!-- <screenshots>
+  <screenshots>
     <screenshot type="default">
-      <image></image>
-      <caption>Main window</caption>
+      <image>https://media.githubusercontent.com/media/mfep/exercise-timer/main/data/screenshots/dark_exercise_list.png</image>
+      <caption>Exercise list - dark mode</caption>
     </screenshot>
-  </screenshots> -->
+    <screenshot>
+      <image>https://media.githubusercontent.com/media/mfep/exercise-timer/main/data/screenshots/dark_timer.png</image>
+      <caption>Timer - dark mode</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://media.githubusercontent.com/media/mfep/exercise-timer/main/data/screenshots/light_exercise_list.png</image>
+      <caption>Exercise list - light mode</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://media.githubusercontent.com/media/mfep/exercise-timer/main/data/screenshots/light_timer.png</image>
+      <caption>Timer - light mode</caption>
+    </screenshot>
+  </screenshots>
   <url type="homepage">@homepage@</url>
   <url type="bugtracker">@issue-tracker@</url>
   <content_rating type="oars-1.0" />
   <releases>
     <release version="0.1.0" date="2023-11-05" />
   </releases>
-  <!-- <kudos> -->
-     <!--
-       GNOME Software kudos:
-       https://gitlab.gnome.org/GNOME/gnome-software/-/blob/main/doc/kudos.md
-     -->
-     <!-- <kudo>ModernToolkit</kudo>
-     <kudo>HiDpiIcon</kudo> -->
-  <!-- </kudos> -->
   <developer_name>safe worlds</developer_name>
-  <!-- <translation type="gettext">@gettext-package@</translation> -->
   <launchable type="desktop-id">@app-id@.desktop</launchable>
 </component>
