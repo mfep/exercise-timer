@@ -1,5 +1,6 @@
+use crate::app::*;
 use crate::exercise_editor::*;
-use crate::*;
+use crate::settings;
 use futures::prelude::*;
 use relm4::{
     gtk::{self, prelude::*},
