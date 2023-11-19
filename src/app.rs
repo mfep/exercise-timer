@@ -5,6 +5,7 @@ use crate::exercise_timer::*;
 use crate::settings;
 use crate::settings_dialog::*;
 use futures::prelude::*;
+use relm4::actions::AccelsPlus;
 use relm4::{
     self,
     adw::{self, prelude::*},
@@ -20,13 +21,16 @@ pub enum AppModelInput {
     RemoveExerciseSetup(DynamicIndex),
     LoadExercise(ExerciseSetup),
     Popped,
-    None,
+    StartStop,
+    Reset,
 }
 
 relm4::new_action_group!(WindowActionGroup, "win");
 relm4::new_stateless_action!(PreferencesAction, WindowActionGroup, "preferences");
 relm4::new_stateless_action!(ShortcutsAction, WindowActionGroup, "show-help-overlay");
 relm4::new_stateless_action!(AboutAction, WindowActionGroup, "about");
+relm4::new_stateless_action!(StartStopAction, WindowActionGroup, "start-stop");
+relm4::new_stateless_action!(ResetAction, WindowActionGroup, "reset");
 
 pub struct AppModel {
     exercise_timer: Option<Controller<ExerciseTimer>>,
@@ -165,11 +169,30 @@ impl Component for AppModel {
                     .detach();
             })
         };
+        let start_stop_action = {
+            let sender = sender.clone();
+            relm4::actions::RelmAction::<StartStopAction>::new_stateless(move |_| {
+                sender.input(AppModelInput::StartStop);
+            })
+        };
+        let reset_action = {
+            let sender = sender.clone();
+            relm4::actions::RelmAction::<ResetAction>::new_stateless(move |_| {
+                sender.input(AppModelInput::Reset);
+            })
+        };
         actions.add_action(about_action);
         actions.add_action(preferences_action);
+        actions.add_action(start_stop_action);
+        actions.add_action(reset_action);
         let list_exercises = model.list_exercises.widget();
         let widgets = view_output!();
         actions.register_for_widget(&widgets.main_window);
+        relm4::main_application()
+            .set_accelerators_for_action::<PreferencesAction>(&["<Control>comma"]);
+        relm4::main_application().set_accelerators_for_action::<StartStopAction>(&["space"]);
+        relm4::main_application().set_accelerators_for_action::<ResetAction>(&["r"]);
+
         update_status_visible(&widgets, &model);
         ComponentParts { model, widgets }
     }
@@ -212,7 +235,7 @@ impl Component for AppModel {
                             global_setup: self.global_settings.clone(),
                             output_handle: self.output_stream.clone(),
                         })
-                        .forward(sender.input_sender(), |_msg| AppModelInput::None),
+                        .detach(),
                 );
                 widgets
                     .main_view
@@ -222,7 +245,16 @@ impl Component for AppModel {
             AppModelInput::Popped => {
                 self.exercise_timer = None;
             }
-            AppModelInput::None => {}
+            AppModelInput::StartStop => {
+                if let Some(controller) = &self.exercise_timer {
+                    controller.emit(ExerciseTimerInput::StartStop);
+                }
+            }
+            AppModelInput::Reset => {
+                if let Some(controller) = &self.exercise_timer {
+                    controller.emit(ExerciseTimerInput::Reset);
+                }
+            }
         }
         update_status_visible(&widgets, &self);
     }
