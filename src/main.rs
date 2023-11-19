@@ -6,7 +6,7 @@ mod exercise_timer;
 mod settings;
 mod settings_dialog;
 mod setup;
-use relm4::{gtk::prelude::*, actions::AccelsPlus};
+use relm4::{actions::AccelsPlus, gtk::prelude::*};
 
 relm4::new_action_group!(AppActionGroup, "app");
 relm4::new_stateless_action!(QuitAction, AppActionGroup, "quit");
