@@ -4,6 +4,7 @@ use crate::exercise_setup::*;
 use crate::exercise_timer::*;
 use crate::settings;
 use crate::settings_dialog::*;
+use crate::shortcuts_window::*;
 use futures::prelude::*;
 use relm4::actions::AccelsPlus;
 use relm4::{
@@ -38,6 +39,7 @@ pub struct AppModel {
     output_stream: rodio::OutputStreamHandle,
     window_geometry: settings::WindowGeometry,
     global_settings: settings::GlobalExerciseSetup,
+    shortcuts_window: Controller<ShortcutsWindowModel>,
 }
 
 #[relm4::component(pub)]
@@ -138,6 +140,10 @@ impl Component for AppModel {
             output_stream: init,
             window_geometry: settings::WindowGeometry::new_from_gsettings(),
             global_settings: settings::GlobalExerciseSetup::new_from_gsettings(),
+            shortcuts_window: ShortcutsWindowModel::builder()
+                .transient_for(&root)
+                .launch(())
+                .detach(),
         };
         let mut actions = relm4::actions::RelmActionGroup::<WindowActionGroup>::new();
         let about_action = {
@@ -169,6 +175,12 @@ impl Component for AppModel {
                     .detach();
             })
         };
+        let shortcuts_action = {
+            let shortcuts_window_sender = model.shortcuts_window.sender().clone();
+            relm4::actions::RelmAction::<ShortcutsAction>::new_stateless(move |_| {
+                shortcuts_window_sender.send(ShortcutsWindowInput::Show).unwrap();
+            })
+        };
         let start_stop_action = {
             let sender = sender.clone();
             relm4::actions::RelmAction::<StartStopAction>::new_stateless(move |_| {
@@ -183,6 +195,7 @@ impl Component for AppModel {
         };
         actions.add_action(about_action);
         actions.add_action(preferences_action);
+        actions.add_action(shortcuts_action);
         actions.add_action(start_stop_action);
         actions.add_action(reset_action);
         let list_exercises = model.list_exercises.widget();
@@ -190,6 +203,8 @@ impl Component for AppModel {
         actions.register_for_widget(&widgets.main_window);
         relm4::main_application()
             .set_accelerators_for_action::<PreferencesAction>(&["<Control>comma"]);
+        relm4::main_application()
+            .set_accelerators_for_action::<ShortcutsAction>(&["<Control>question"]);
         relm4::main_application().set_accelerators_for_action::<StartStopAction>(&["space"]);
         relm4::main_application().set_accelerators_for_action::<ResetAction>(&["r"]);
 

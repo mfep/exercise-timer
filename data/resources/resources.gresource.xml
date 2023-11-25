@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/xyz/safeworlds/hiit/">
+    <file compressed="true" preprocess="xml-stripblanks" alias="gtk/help-overlay.ui">ui/help-overlay.ui</file>
     <file compressed="true">audio/ping.wav</file>
     <file compressed="true">style.css</file>
   </gresource>

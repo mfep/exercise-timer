@@ -6,6 +6,7 @@ mod exercise_timer;
 mod settings;
 mod settings_dialog;
 mod setup;
+mod shortcuts_window;
 use relm4::{actions::AccelsPlus, gtk::prelude::*};
 
 relm4::new_action_group!(AppActionGroup, "app");
