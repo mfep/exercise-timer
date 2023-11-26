@@ -178,7 +178,9 @@ impl Component for AppModel {
         let shortcuts_action = {
             let shortcuts_window_sender = model.shortcuts_window.sender().clone();
             relm4::actions::RelmAction::<ShortcutsAction>::new_stateless(move |_| {
-                shortcuts_window_sender.send(ShortcutsWindowInput::Show).unwrap();
+                shortcuts_window_sender
+                    .send(ShortcutsWindowInput::Show)
+                    .unwrap();
             })
         };
         let start_stop_action = {
