@@ -74,3 +74,17 @@ gnome.post_install(
   glib_compile_schemas: true,
   update_desktop_database: true,
 )
+
+flatpak_cargo_generator = find_program(meson.project_source_root() / 'build-aux/flatpak-cargo-generator.py')
+
+custom_target(
+  'cargo-update-sources',
+  build_by_default: false,
+  output: 'cargo-sources.json',
+  input: meson.project_source_root() / 'Cargo.lock',
+  command: [
+    flatpak_cargo_generator,
+    '@INPUT@',
+    '-o', '@SOURCE_ROOT@/cargo-sources.json'
+  ]
+)

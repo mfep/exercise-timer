@@ -18,9 +18,8 @@ finish-args:
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm16/bin
   prepend-ld-library-path: /usr/lib/sdk/llvm16/lib
-  build-args:
-  - --share=network
   env:
+    CARGO_HOME: /run/build/hiit/cargo
     CARGO_REGISTRIES_CRATES_IO_PROTOCOL: sparse
     CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER: clang
     CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUSTFLAGS: -C link-arg=-fuse-ld=/usr/lib/sdk/rust-stable/bin/mold
@@ -32,6 +31,8 @@ modules:
   run-tests: true
   config-opts:
   - -Dprofile=development
+  - -Doffline=true
   sources:
   - type: dir
     path: ../
+  - ../cargo-sources.json
