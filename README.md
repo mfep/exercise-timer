@@ -15,6 +15,12 @@ Exercise timer is a simple utility to conduct interval training. It is built for
 - 🗣️ The volume of the sound can be adjusted.
 - ☯️ Light and dark mode follows the system's setting.
 
+## Installing
+
+The recommended way of installing Exercise Timer is via Flathub.
+
+<a href="https://flathub.org/apps/details/xyz.safeworlds.hiit" target="_blank"><img alt="Download on Flathub" src="https://flathub.org/assets/badges/flathub-badge-en.png" title="Download on Flathub" width="240"></a>
+
 ## 🛠️ Building the Flatpak
 
 1. If not present, install `flatpak-builder`. It is most probably available in the operating system's package repository. E.g. on Fedora:
