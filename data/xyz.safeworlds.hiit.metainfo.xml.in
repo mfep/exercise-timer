@@ -44,6 +44,12 @@
     <color type="primary" scheme_preference="dark">#7f2c22</color>
   </branding>
   <releases>
+    <release version="1.1.0" date="2024-04-12">
+      <description>
+        <p>Updated icon for better contrast on dark backgrounds</p>
+        <p>Added branding color metadata</p>
+      </description>
+    </release>
     <release version="1.0.0" date="2023-11-26">
       <description>
         <p>Initial release of Exercise Timer</p>
