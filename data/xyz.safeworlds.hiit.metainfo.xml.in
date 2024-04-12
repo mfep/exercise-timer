@@ -39,6 +39,10 @@
   <url type="homepage">@homepage@</url>
   <url type="bugtracker">@issue-tracker@</url>
   <content_rating type="oars-1.0" />
+  <branding>
+    <color type="primary" scheme_preference="light">#faa298</color>
+    <color type="primary" scheme_preference="dark">#7f2c22</color>
+  </branding>
   <releases>
     <release version="1.0.0" date="2023-11-26">
       <description>
