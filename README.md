@@ -2,6 +2,11 @@
 
 # Exercise Timer
 
+[![CI badge](https://img.shields.io/github/actions/workflow/status/mfep/exercise-timer/ci.yml?branch=main)](https://github.com/mfep/midiconn/actions/workflows/ci.yml)
+[![License badge](https://img.shields.io/github/license/mfep/exercise-timer)](./LICENSE.txt)
+[![Flathub badge](https://img.shields.io/flathub/downloads/xyz.safeworlds.hiit?logo=flathub&logoColor=white)](https://flathub.org/apps/details/xyz.safeworlds.hiit)
+![Platforms badge](https://img.shields.io/badge/platform-linux-informational)
+
 Exercise timer is a simple utility to conduct interval training. It is built for the GNOME desktop using [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1.4/index.html) and [Relm4](https://relm4.org/).
 
 ![A screenshot of Exercise Timer's exercise list UI](./data/screenshots/dark_exercise_list.png) ![A screenshot of Exercise Timer's timer UI](./data/screenshots/dark_timer.png)
