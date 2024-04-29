@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 relm4 = { version="0.6.2", features = ["gnome_44", "libadwaita"] }
 relm4-components = "0.6.2"
-relm4-macros = "0.6.2"
+relm4-macros = "0.8.1"
 relm4-icons = { version = "0.6.0", features = [
     "edit",
     "entry-clear",
