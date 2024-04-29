@@ -13,14 +13,14 @@
               <object class="GtkShortcutsShortcut">
                 <property name="title" translatable="yes" context="shortcut window">Start/Stop exercise</property>
                 <property name="action-name">win.start-stop</property>
-                <property name="accelerator">&lt;primary&gt;space</property>
+                <property name="accelerator">space</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="title" translatable="yes" context="shortcut window">Reset exercise</property>
                 <property name="action-name">win.reset</property>
-                <property name="accelerator">&lt;primary&gt;r</property>
+                <property name="accelerator">r</property>
               </object>
             </child>
           </object>
