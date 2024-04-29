@@ -44,6 +44,23 @@
     <color type="primary" scheme_preference="dark">#7f2c22</color>
   </branding>
   <releases>
+    <release version="1.2.0" date="2024-04-29">
+      <description>
+        <p>Features</p>
+        <ul>
+          <li>Displaying remaining time in minutes:seconds format</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Fix misleading Ctrl designators in shortcuts window</li>
+          <li>Fix timer overflow after finish</li>
+        </ul>
+        <p>Miscellenous changes</p>
+        <ul>
+          <li>Updated application runtime to GNOME 46</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.1.0" date="2024-04-12">
       <description>
         <p>Updated icon for better contrast on dark backgrounds</p>
