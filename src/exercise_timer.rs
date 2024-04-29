@@ -231,7 +231,9 @@ impl Component for ExerciseTimer {
     ) {
         match message {
             ExerciseTimerInput::StartStop => {
-                if self.running {
+                if self.remaining_s == 0 && self.remaining_sets == 0 {
+                    return;
+                } else if self.running {
                     self.timer = None;
                 } else {
                     self.timer = build_timer(&sender);
@@ -255,10 +257,8 @@ impl Component for ExerciseTimer {
                         ExerciseState::Exercise => {
                             self.remaining_sets -= 1;
                             if self.remaining_sets == 0 {
-                                sender
-                                    .input_sender()
-                                    .send(ExerciseTimerInput::StartStop)
-                                    .unwrap();
+                                self.timer = None;
+                                self.running = false;
                                 self.audio_player.emit(AudioPlayerInput::Finished);
                             } else {
                                 self.state = ExerciseState::Rest;
