@@ -105,11 +105,27 @@ fn build_timer(
     )
 }
 
-fn remaining_str(remaining_s: usize) -> String {
+fn remaining_str_mins(remaining_s: usize) -> String {
     if remaining_s == 0 {
-        String::from("Finished")
+        String::from("")
     } else {
-        format!("{}", remaining_s)
+        format!("{:02}", remaining_s / 60)
+    }
+}
+
+fn remaining_str_colon(remaining_s: usize) -> String {
+    if remaining_s == 0 {
+        String::from("Finished!")
+    } else {
+        String::from(":")
+    }
+}
+
+fn remaining_str_secs(remaining_s: usize) -> String {
+    if remaining_s == 0 {
+        String::from("")
+    } else {
+        format!("{:02}", remaining_s % 60)
     }
 }
 
@@ -156,10 +172,27 @@ impl Component for ExerciseTimer {
                             ExerciseState::Rest => "Rest",
                         },
                     },
-                    gtk::Label {
+                    gtk::Box {
                         add_css_class: "timer-label",
-                        #[watch]
-                        set_label: &remaining_str(model.remaining_s),
+                        set_orientation: gtk::Orientation::Horizontal,
+                        set_halign: gtk::Align::Center,
+                        gtk::Label {
+                            set_width_chars: 5,
+                            set_xalign: 1.0,
+                            #[watch]
+                            set_label: &remaining_str_mins(model.remaining_s),
+                        },
+                        gtk::Label {
+                            set_width_chars: 1,
+                            #[watch]
+                            set_label: &remaining_str_colon(model.remaining_s),
+                        },
+                        gtk::Label {
+                            set_width_chars: 5,
+                            set_xalign: 0.0,
+                            #[watch]
+                            set_label: &remaining_str_secs(model.remaining_s),
+                        },
                     },
                     gtk::Box {
                         set_orientation: gtk::Orientation::Horizontal,
