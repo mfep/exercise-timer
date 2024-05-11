@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.2.1](https://github.com/mfep/exercise-timer/compare/677f3f20f5dda688a78d92f725fa9e6cd2887cf6..v1.2.1) - 2024-05-11
+#### Bug Fixes
+- **(UI)** Increased period duration limits - ([4f128b7](https://github.com/mfep/exercise-timer/commit/4f128b75cf7904ab1fd02e496d5e00ec44a08804)) - [@mfep](https://github.com/mfep)
+#### Miscellaneous Chores
+- **(docs)** Updated metainfo for release - ([436e9ad](https://github.com/mfep/exercise-timer/commit/436e9ad79f88f3c7ea2d791f4516411f0d76e7fc)) - [@mfep](https://github.com/mfep)
+- **(platform)** Updated dependency stack to GNOME 46 - ([677f3f2](https://github.com/mfep/exercise-timer/commit/677f3f20f5dda688a78d92f725fa9e6cd2887cf6)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.2.0](https://github.com/mfep/exercise-timer/compare/f534c014a7b93e9f8c99943c31cd06ce8118261c..v1.2.0) - 2024-04-29
 #### Bug Fixes
 - **(UI)** Fix timer overflow after finish - ([5814f49](https://github.com/mfep/exercise-timer/commit/5814f49157311b537d6075e17942731551e95a55)) - [@mfep](https://github.com/mfep)
