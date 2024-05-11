@@ -14,6 +14,7 @@ use relm4::{
     prelude::*,
     RelmObjectExt,
 };
+use relm4_icons::icon_names;
 
 #[derive(Debug)]
 pub enum AppModelInput {
@@ -74,7 +75,7 @@ impl Component for AppModel {
                     set_child = &adw::ToolbarView {
                         add_top_bar = &adw::HeaderBar {
                             pack_start = &gtk::Button {
-                                set_icon_name: "plus",
+                                set_icon_name: icon_names::PLUS,
                                 connect_clicked => AppModelInput::PromptNewExercise,
                             },
                             pack_end = &gtk::MenuButton {
@@ -98,7 +99,7 @@ impl Component for AppModel {
                             },
                             #[name = "exercise_list_status"]
                             adw::StatusPage {
-                                set_icon_name: Some("weight2"),
+                                set_icon_name: Some(icon_names::WEIGHT2),
                                 set_title: "No exercise is created yet",
                                 gtk::Button {
                                     set_css_classes: &["suggested-action", "pill"],
@@ -126,14 +127,23 @@ impl Component for AppModel {
 
     fn init(
         init: Self::Init,
-        root: &Self::Root,
+        root: Self::Root,
         sender: ComponentSender<Self>,
     ) -> ComponentParts<Self> {
-        let list_exercises = relm4::factory::FactoryVecDeque::from_iter(
-            settings::load_exercise_list_from_gsettings().into_iter(),
-            gtk::Box::default(),
-            sender.input_sender(),
-        );
+        let mut list_exercises = relm4::factory::FactoryVecDeque::builder()
+            .launch(gtk::Box::default())
+            .forward(sender.input_sender(), |output| match output {
+                ExerciseSetupOutput::Remove(index) => AppModelInput::RemoveExerciseSetup(index),
+                ExerciseSetupOutput::Load(exercise_setup) => {
+                    AppModelInput::LoadExercise(exercise_setup)
+                }
+            });
+        {
+            let mut guard = list_exercises.guard();
+            for exercise_setup in settings::load_exercise_list_from_gsettings().into_iter() {
+                guard.push_back(exercise_setup);
+            }
+        }
         let model = AppModel {
             exercise_timer: None,
             list_exercises,
@@ -273,7 +283,7 @@ impl Component for AppModel {
                 }
             }
         }
-        update_status_visible(&widgets, &self);
+        update_status_visible(widgets, self);
     }
 }
 

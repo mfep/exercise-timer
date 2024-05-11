@@ -113,7 +113,7 @@ impl relm4::SimpleComponent for ExerciseEditor {
 
     fn init(
         init: Self::Init,
-        root: &Self::Root,
+        root: Self::Root,
         sender: relm4::ComponentSender<Self>,
     ) -> relm4::ComponentParts<Self> {
         let model = ExerciseEditor {

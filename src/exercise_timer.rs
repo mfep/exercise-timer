@@ -8,6 +8,7 @@ use relm4::{
     prelude::*,
     RelmObjectExt, RelmWidgetExt,
 };
+use relm4_icons::icon_names;
 use timer::{TimerModel, TimerOutput};
 
 use crate::{exercise_setup::ExerciseSetup, settings::GlobalExerciseSetup};
@@ -200,7 +201,7 @@ impl Component for ExerciseTimer {
                         set_spacing: 12,
                         gtk::Button {
                             set_css_classes: &["circular", "large-button"],
-                            set_icon_name: "refresh",
+                            set_icon_name: icon_names::REFRESH,
                             set_valign: gtk::Align::Center,
                             connect_clicked => ExerciseTimerInput::Reset,
                             #[watch]
@@ -213,7 +214,7 @@ impl Component for ExerciseTimer {
                             connect_clicked => ExerciseTimerInput::StartStop,
                             gtk::Image {
                                 #[watch]
-                                set_icon_name: Some(if model.running { "pause" } else { "play" }),
+                                set_icon_name: Some(if model.running { icon_names::PAUSE } else { icon_names::PLAY }),
                             },
                         },
                         #[name = "volume_button"]
@@ -241,7 +242,7 @@ impl Component for ExerciseTimer {
 
     fn init(
         init: Self::Init,
-        root: &Self::Root,
+        root: Self::Root,
         sender: relm4::ComponentSender<Self>,
     ) -> ComponentParts<Self> {
         let model = ExerciseTimer::new(init.setup, init.global_setup, init.output_handle, &sender);

@@ -1,4 +1,3 @@
-use crate::app::*;
 use crate::exercise_editor::*;
 use crate::settings;
 use futures::prelude::*;
@@ -7,6 +6,7 @@ use relm4::{
     prelude::*,
     RelmWidgetExt,
 };
+use relm4_icons::icon_names;
 use std::time::Duration;
 
 #[derive(Debug, Clone)]
@@ -55,7 +55,6 @@ impl FactoryComponent for ExerciseSetup {
     type Input = ExerciseSetupInput;
     type Output = ExerciseSetupOutput;
     type CommandOutput = ();
-    type ParentInput = AppModelInput;
     type ParentWidget = gtk::Box;
 
     view! {
@@ -106,7 +105,7 @@ impl FactoryComponent for ExerciseSetup {
                         attach[1, 1, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,
                             #[watch]
-                            set_label: &format!("{} s", self.exercise_s.to_string()),
+                            set_label: &format!("{} s", self.exercise_s),
                         },
                         attach[0, 2, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,
@@ -115,7 +114,7 @@ impl FactoryComponent for ExerciseSetup {
                         attach[1, 2, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,
                             #[watch]
-                            set_label: &format!("{} s", self.rest_s.to_string()),
+                            set_label: &format!("{} s", self.rest_s),
                         },
                     },
                     #[wrap(Some)]
@@ -125,21 +124,21 @@ impl FactoryComponent for ExerciseSetup {
                             set_orientation: gtk::Orientation::Horizontal,
                             set_valign: gtk::Align::End,
                             gtk::Button {
-                                set_icon_name: "edit",
+                                set_icon_name: icon_names::EDIT,
                                 connect_clicked[sender] => move |btn| {
                                     sender.input(ExerciseSetupInput::Edit(btn.root().unwrap()));
                                 },
                             },
                             gtk::Button {
                                 set_class_active: ("destructive-action", true),
-                                set_icon_name: "entry-clear",
+                                set_icon_name: icon_names::ENTRY_CLEAR,
                                 connect_clicked[sender, index] => move |_| {
-                                    sender.output(ExerciseSetupOutput::Remove(index.clone()))
+                                    sender.output(ExerciseSetupOutput::Remove(index.clone())).unwrap();
                                 },
                             },
                             gtk::Button {
                                 set_class_active: ("suggested-action", true),
-                                set_icon_name: "play",
+                                set_icon_name: icon_names::PLAY,
                                 connect_clicked => ExerciseSetupInput::Load,
                             },
                         },
@@ -155,13 +154,6 @@ impl FactoryComponent for ExerciseSetup {
         _sender: relm4::FactorySender<Self>,
     ) -> Self {
         init
-    }
-
-    fn forward_to_parent(output: Self::Output) -> Option<Self::ParentInput> {
-        Some(match output {
-            ExerciseSetupOutput::Remove(index) => AppModelInput::RemoveExerciseSetup(index),
-            ExerciseSetupOutput::Load(setup) => AppModelInput::LoadExercise(setup),
-        })
     }
 
     fn update(&mut self, message: Self::Input, sender: relm4::FactorySender<Self>) {
@@ -182,7 +174,9 @@ impl FactoryComponent for ExerciseSetup {
                 *self = setup;
             }
             ExerciseSetupInput::Load => {
-                sender.output(ExerciseSetupOutput::Load(self.clone()));
+                sender
+                    .output(ExerciseSetupOutput::Load(self.clone()))
+                    .unwrap();
             }
         }
     }

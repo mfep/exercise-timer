@@ -1,6 +1,6 @@
 use relm4::{
     self,
-    gtk::{self, prelude::*},
+    gtk::{self, glib, prelude::*},
     prelude::*,
 };
 
@@ -34,14 +34,14 @@ impl SimpleComponent for ShortcutsWindowModel {
             set_visible: model.visible,
             connect_close_request[sender] => move |_| {
                 sender.input(ShortcutsWindowInput::Hide);
-                gtk::Inhibit(false)
+                glib::Propagation::Stop
             }
         }
     }
 
     fn init(
         _init: Self::Init,
-        root: &Self::Root,
+        root: Self::Root,
         sender: ComponentSender<Self>,
     ) -> ComponentParts<Self> {
         let model = Self { visible: false };

@@ -1,5 +1,4 @@
 use crate::exercise_setup::*;
-use json;
 use relm4::{
     self,
     binding::*,
