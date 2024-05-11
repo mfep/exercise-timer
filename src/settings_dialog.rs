@@ -1,4 +1,7 @@
-use crate::settings::*;
+use crate::{
+    exercise_editor::{SPIN_ROW_STEP, SPIN_ROW_UPPER},
+    settings::*,
+};
 
 use relm4::{
     self,
@@ -35,8 +38,8 @@ impl Component for SettingsDialogModel {
                             #[name = "warmup_adjust"]
                             set_adjustment = &gtk::Adjustment {
                                 set_lower: 0.0,
-                                set_upper: 999.0,
-                                set_step_increment: 1.0,
+                                set_upper: SPIN_ROW_UPPER,
+                                set_step_increment: SPIN_ROW_STEP,
                                 add_binding: (&init.warmup_s, "value"),
                             },
                         },

@@ -31,6 +31,10 @@ pub enum ExerciseEditorOutput {
     Create(ExerciseSetup),
 }
 
+pub const SPIN_ROW_LOWER: f64 = 1f64;
+pub const SPIN_ROW_UPPER: f64 = 1000000f64;
+pub const SPIN_ROW_STEP: f64 = 1f64;
+
 #[relm4::component(pub)]
 impl relm4::SimpleComponent for ExerciseEditor {
     type Init = (ExerciseEditorRole, ExerciseSetup);
@@ -78,9 +82,9 @@ impl relm4::SimpleComponent for ExerciseEditor {
                         set_title: "Number of sets",
                         #[wrap(Some)]
                         set_adjustment = &gtk::Adjustment {
-                            set_lower: 1f64,
-                            set_upper: 999f64,
-                            set_step_increment: 1f64,
+                            set_lower: SPIN_ROW_LOWER,
+                            set_upper: SPIN_ROW_UPPER,
+                            set_step_increment: SPIN_ROW_STEP,
                             add_binding: (&model.sets, "value"),
                         },
                     },
@@ -89,9 +93,9 @@ impl relm4::SimpleComponent for ExerciseEditor {
                         set_subtitle: "seconds",
                         #[wrap(Some)]
                         set_adjustment = &gtk::Adjustment {
-                            set_lower: 1f64,
-                            set_upper: 999f64,
-                            set_step_increment: 1f64,
+                            set_lower: SPIN_ROW_LOWER,
+                            set_upper: SPIN_ROW_UPPER,
+                            set_step_increment: SPIN_ROW_STEP,
                             add_binding: (&model.rest_s, "value"),
                         },
                     },
@@ -100,9 +104,9 @@ impl relm4::SimpleComponent for ExerciseEditor {
                         set_subtitle: "seconds",
                         #[wrap(Some)]
                         set_adjustment = &gtk::Adjustment {
-                            set_lower: 1f64,
-                            set_upper: 999f64,
-                            set_step_increment: 1f64,
+                            set_lower: SPIN_ROW_LOWER,
+                            set_upper: SPIN_ROW_UPPER,
+                            set_step_increment: SPIN_ROW_STEP,
                             add_binding: (&model.exercise_s, "value"),
                         },
                     },
