@@ -44,6 +44,14 @@
     <color type="primary" scheme_preference="dark">#7f2c22</color>
   </branding>
   <releases>
+      <release version="1.2.1" date="2024-05-11">
+      <description>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Allow time periods longer than 999 seconds</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.2.0" date="2024-04-29">
       <description>
         <p>Features</p>
