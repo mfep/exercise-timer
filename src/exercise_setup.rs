@@ -1,6 +1,7 @@
 use crate::exercise_editor::*;
 use crate::settings;
 use futures::prelude::*;
+use gettextrs::gettext;
 use relm4::{
     gtk::{self, prelude::*},
     prelude::*,
@@ -91,7 +92,7 @@ impl FactoryComponent for ExerciseSetup {
                         set_column_spacing: 24,
                         attach[0, 0, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,
-                            set_label: "Sets",
+                            set_label: &gettext("Sets"),
                         },
                         attach[1, 0, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,
@@ -100,7 +101,7 @@ impl FactoryComponent for ExerciseSetup {
                         },
                         attach[0, 1, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,
-                            set_label: "Exercise",
+                            set_label: &gettext("Exercise"),
                         },
                         attach[1, 1, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,
@@ -109,7 +110,7 @@ impl FactoryComponent for ExerciseSetup {
                         },
                         attach[0, 2, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,
-                            set_label: "Rest",
+                            set_label: &gettext("Rest"),
                         },
                         attach[1, 2, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,

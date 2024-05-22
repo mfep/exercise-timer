@@ -1,3 +1,4 @@
+use gettextrs::gettext;
 use relm4::{self, gtk::gio, prelude::*};
 use rodio::{self, Source};
 
@@ -10,7 +11,7 @@ pub struct AudioPlayerModel {
 impl AudioPlayerModel {
     fn play_ping(&self, times: u32) {
         let cursor = std::io::Cursor::new(self.ping_bytes.clone());
-        let decoder = rodio::Decoder::new_wav(cursor).expect("Could not decode WAV");
+        let decoder = rodio::Decoder::new_wav(cursor).expect(&gettext("Could not decode WAV"));
         let new_duration = decoder.total_duration().unwrap() * times;
         let d = decoder
             .repeat_infinite()
@@ -18,7 +19,7 @@ impl AudioPlayerModel {
             .amplify(self.volume as f32);
         self.output_stream
             .play_raw(d.convert_samples())
-            .expect("Could not play audio");
+            .expect(&gettext("Could not play audio"));
     }
 }
 
@@ -47,7 +48,7 @@ impl relm4::Worker for AudioPlayerModel {
             "/xyz/safeworlds/hiit/audio/ping.wav",
             gio::ResourceLookupFlags::NONE,
         )
-        .expect("Could not open data");
+        .expect(&gettext("Could not open data"));
         Self {
             output_stream: init.output_stream,
             volume: init.volume,

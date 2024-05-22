@@ -1,0 +1,16 @@
+data/resources/resources.gresource.xml
+data/resources/ui/help-overlay.ui
+data/xyz.safeworlds.hiit.desktop.in.in
+data/xyz.safeworlds.hiit.gschema.xml.in
+data/xyz.safeworlds.hiit.metainfo.xml.in.in
+src/app.rs
+src/exercise_editor.rs
+src/exercise_setup.rs
+src/exercise_timer.rs
+src/exercise_timer/audio_player.rs
+src/exercise_timer/timer.rs
+src/main.rs
+src/settings_dialog.rs
+src/settings.rs
+src/setup.rs
+src/shortcuts_window.rs

@@ -1,4 +1,5 @@
 use crate::exercise_setup::*;
+use gettextrs::gettext;
 use relm4::{
     adw::{self, prelude::*},
     binding::*,
@@ -51,20 +52,20 @@ impl relm4::SimpleComponent for ExerciseEditor {
                 adw::HeaderBar {
                     #[wrap(Some)]
                     set_title_widget = &adw::WindowTitle {
-                        set_title: match model.role {
-                            ExerciseEditorRole::New => "New exercise",
-                            ExerciseEditorRole::Edit => "Edit exercise",
+                        set_title: &match model.role {
+                            ExerciseEditorRole::New => gettext("New exercise"),
+                            ExerciseEditorRole::Edit => gettext("Edit exercise"),
                         },
                     },
                     set_show_end_title_buttons: false,
                     pack_start = &gtk::Button {
-                        set_label: "Cancel",
+                        set_label: &gettext("Cancel"),
                         connect_clicked => ExerciseEditorInput::Cancel,
                     },
                     pack_end = &gtk::Button {
-                        set_label: match model.role {
-                            ExerciseEditorRole::New => "Create",
-                            ExerciseEditorRole::Edit => "Update",
+                        set_label: &match model.role {
+                            ExerciseEditorRole::New => gettext("Create"),
+                            ExerciseEditorRole::Edit => gettext("Update"),
                         },
                         set_class_active: ("suggested-action", true),
                         connect_clicked => ExerciseEditorInput::Create,
@@ -75,11 +76,11 @@ impl relm4::SimpleComponent for ExerciseEditor {
                     set_class_active: ("card", true),
                     set_orientation: gtk::Orientation::Vertical,
                     adw::EntryRow {
-                        set_title: "Name",
+                        set_title: &gettext("Name"),
                         add_binding: (&model.name, "text"),
                     },
                     adw::SpinRow {
-                        set_title: "Number of sets",
+                        set_title: &gettext("Number of sets"),
                         #[wrap(Some)]
                         set_adjustment = &gtk::Adjustment {
                             set_lower: SPIN_ROW_LOWER,
@@ -89,8 +90,8 @@ impl relm4::SimpleComponent for ExerciseEditor {
                         },
                     },
                     adw::SpinRow {
-                        set_title: "Rest time",
-                        set_subtitle: "seconds",
+                        set_title: &gettext("Rest time"),
+                        set_subtitle: &gettext("seconds"),
                         #[wrap(Some)]
                         set_adjustment = &gtk::Adjustment {
                             set_lower: SPIN_ROW_LOWER,
@@ -100,8 +101,8 @@ impl relm4::SimpleComponent for ExerciseEditor {
                         },
                     },
                     adw::SpinRow {
-                        set_title: "Exercise time",
-                        set_subtitle: "seconds",
+                        set_title: &gettext("Exercise time"),
+                        set_subtitle: &gettext("seconds"),
                         #[wrap(Some)]
                         set_adjustment = &gtk::Adjustment {
                             set_lower: SPIN_ROW_LOWER,

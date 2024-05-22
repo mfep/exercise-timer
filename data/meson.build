@@ -3,10 +3,15 @@ subdir('icons')
 # Desktop file
 desktop_conf = configuration_data()
 desktop_conf.set('icon', application_id)
-desktop_file = configure_file(
-  input: '@0@.desktop.in'.format(base_id),
+desktop_file = i18n.merge_file(
+  type: 'desktop',
+  input: configure_file(
+    input: '@0@.desktop.in.in'.format(base_id),
+    output: '@BASENAME@',
+    configuration: desktop_conf
+  ),
   output: '@0@.desktop'.format(application_id),
-  configuration: desktop_conf,
+  po_dir: podir,
   install: true,
   install_dir: datadir / 'applications'
 )
@@ -26,10 +31,14 @@ appdata_conf = configuration_data()
 appdata_conf.set('app-id', application_id)
 appdata_conf.set('homepage', homepage)
 appdata_conf.set('issue-tracker', issue_tracker)
-appdata_file = configure_file(
-  input: '@0@.metainfo.xml.in'.format(base_id),
+appdata_file = i18n.merge_file(
+  input: configure_file(
+    input: '@0@.metainfo.xml.in.in'.format(base_id),
+    output: '@BASENAME@',
+    configuration: appdata_conf
+  ),
   output: '@0@.metainfo.xml'.format(application_id),
-  configuration: appdata_conf,
+  po_dir: podir,
   install: true,
   install_dir: datadir / 'metainfo'
 )
@@ -46,7 +55,7 @@ endif
 # GSchema
 gschema_conf = configuration_data()
 gschema_conf.set('app-id', application_id)
-# gschema_conf.set('gettext-package', gettext_package)
+gschema_conf.set('gettext-package', gettext_package)
 configure_file(
   input: '@0@.gschema.xml.in'.format(base_id),
   output: '@0@.gschema.xml'.format(application_id),

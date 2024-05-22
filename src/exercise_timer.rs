@@ -1,6 +1,7 @@
 mod audio_player;
 mod timer;
 
+use gettextrs::gettext;
 use relm4::{
     adw,
     binding::*,
@@ -116,7 +117,7 @@ fn remaining_str_mins(remaining_s: usize) -> String {
 
 fn remaining_str_colon(remaining_s: usize) -> String {
     if remaining_s == 0 {
-        String::from("Finished!")
+        gettext("Finished!")
     } else {
         String::from(":")
     }
@@ -167,10 +168,10 @@ impl Component for ExerciseTimer {
                     gtk::Label {
                         add_css_class: "title-2",
                         #[watch]
-                        set_label: match model.state {
-                            ExerciseState::Warmup => "Warm up",
-                            ExerciseState::Exercise => "Exercise",
-                            ExerciseState::Rest => "Rest",
+                        set_label: &match model.state {
+                            ExerciseState::Warmup => gettext("Warm up"),
+                            ExerciseState::Exercise => gettext("Exercise"),
+                            ExerciseState::Rest => gettext("Rest"),
                         },
                     },
                     gtk::Box {
@@ -234,7 +235,11 @@ impl Component for ExerciseTimer {
                 },
                 gtk::Label {
                     #[watch]
-                    set_label: &format!("Remaining sets: {}", model.remaining_sets),
+                    set_label: &if false {
+                        gettext("Remaining sets: {}")
+                    } else {
+                        gettext!("Remaining sets: {}", model.remaining_sets)
+                    }
                 },
             },
         }

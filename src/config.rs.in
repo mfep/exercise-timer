@@ -5,3 +5,5 @@ pub const ISSUE_TRACKER: &str = @ISSUE_TRACKER@;
 pub const COPYRIGHT: &str = @COPYRIGHT@;
 pub const DEVELOPERS: &[&str] = &[ @DEVELOPERS@ ];
 pub const DESIGNERS: &[&str] = &[ @DESIGNERS@ ];
+pub const GETTEXT_PACKAGE: &str = @GETTEXT_PACKAGE@;
+pub const LOCALEDIR: &str = @LOCALEDIR@;

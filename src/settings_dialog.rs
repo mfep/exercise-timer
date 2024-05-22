@@ -3,6 +3,7 @@ use crate::{
     settings::*,
 };
 
+use gettextrs::gettext;
 use relm4::{
     self,
     adw::{self, prelude::*},
@@ -28,12 +29,12 @@ impl Component for SettingsDialogModel {
             set_search_enabled: false,
             add = &adw::PreferencesPage {
                 add = &adw::PreferencesGroup {
-                    set_title: "Exercise defaults",
+                    set_title: &gettext("Exercise defaults"),
                     gtk::ListBox {
                         add_css_class: "boxed-list",
                         adw::SpinRow {
-                            set_title: "Warmup time",
-                            set_subtitle: "seconds",
+                            set_title: &gettext("Warmup time"),
+                            set_subtitle: &gettext("seconds"),
                             #[wrap(Some)]
                             #[name = "warmup_adjust"]
                             set_adjustment = &gtk::Adjustment {

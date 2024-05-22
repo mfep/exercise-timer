@@ -7,6 +7,7 @@ mod settings;
 mod settings_dialog;
 mod setup;
 mod shortcuts_window;
+use gettextrs::gettext;
 use relm4::{actions::AccelsPlus, gtk::prelude::*};
 
 relm4::new_action_group!(AppActionGroup, "app");
@@ -15,7 +16,7 @@ relm4::new_stateless_action!(QuitAction, AppActionGroup, "quit");
 fn main() {
     setup::setup();
     let (_stream, stream_handle) =
-        rodio::OutputStream::try_default().expect("Could not create audio output stream");
+        rodio::OutputStream::try_default().expect(&gettext("Could not create audio output stream"));
     let app = relm4::main_adw_application();
 
     let mut actions = relm4::actions::RelmActionGroup::<AppActionGroup>::new();

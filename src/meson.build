@@ -4,6 +4,8 @@ global_conf.set_quoted('VERSION', version + version_suffix)
 global_conf.set_quoted('HOMEPAGE', homepage)
 global_conf.set_quoted('ISSUE_TRACKER', issue_tracker)
 global_conf.set_quoted('COPYRIGHT', copyright)
+global_conf.set_quoted('GETTEXT_PACKAGE', gettext_package)
+global_conf.set_quoted('LOCALEDIR', localedir)
 
 developers_str = ''
 foreach dev : developers

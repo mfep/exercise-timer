@@ -66,7 +66,7 @@ if get_option('profile') == 'development'
 endif
 
 subdir('data')
-# subdir('po')
+subdir('po')
 subdir('src')
 
 gnome.post_install(

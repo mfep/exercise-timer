@@ -6,6 +6,7 @@ use crate::settings;
 use crate::settings_dialog::*;
 use crate::shortcuts_window::*;
 use futures::prelude::*;
+use gettextrs::gettext;
 use relm4::actions::AccelsPlus;
 use relm4::{
     self,
@@ -53,9 +54,9 @@ impl Component for AppModel {
     menu! {
         primary_menu: {
             section! {
-                "_Preferences" => PreferencesAction,
-                "_Keyboard Shortcuts" => ShortcutsAction,
-                "_About Exercise Timer" => AboutAction,
+                &gettext("_Preferences") => PreferencesAction,
+                &gettext("_Keyboard Shortcuts") => ShortcutsAction,
+                &gettext("_About Exercise Timer") => AboutAction,
             }
         }
     }
@@ -70,7 +71,7 @@ impl Component for AppModel {
             #[name = "navigation_view"]
             adw::NavigationView {
                 add = &adw::NavigationPage {
-                    set_title: "Exercise List",
+                    set_title: &gettext("Exercise List"),
                     #[wrap(Some)]
                     set_child = &adw::ToolbarView {
                         add_top_bar = &adw::HeaderBar {
@@ -100,10 +101,10 @@ impl Component for AppModel {
                             #[name = "exercise_list_status"]
                             adw::StatusPage {
                                 set_icon_name: Some(icon_names::WEIGHT2),
-                                set_title: "No exercise is created yet",
+                                set_title: &gettext("No exercise is created yet"),
                                 gtk::Button {
                                     set_css_classes: &["suggested-action", "pill"],
-                                    set_label: "Create exercise",
+                                    set_label: &gettext("Create exercise"),
                                     set_halign: gtk::Align::Center,
                                     connect_clicked => AppModelInput::PromptNewExercise,
                                 }
@@ -113,7 +114,7 @@ impl Component for AppModel {
                 },
                 #[name = "main_navigation_page"]
                 add = &adw::NavigationPage {
-                    set_title: "Timer",
+                    set_title: &gettext("Timer"),
                     #[wrap(Some)]
                     #[name = "main_view"]
                     set_child = &adw::ToolbarView {
@@ -162,7 +163,7 @@ impl Component for AppModel {
                 let about_window = adw::AboutWindow::builder()
                     .transient_for(&root)
                     .application_icon(config::APP_ID)
-                    .application_name("Exercise Timer")
+                    .application_name(&gettext("Exercise Timer"))
                     .copyright(config::COPYRIGHT)
                     .designers(config::DESIGNERS)
                     .developers(config::DEVELOPERS)

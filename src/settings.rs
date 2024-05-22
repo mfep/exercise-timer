@@ -1,4 +1,5 @@
 use crate::exercise_setup::*;
+use gettextrs::gettext;
 use relm4::{
     self,
     binding::*,
@@ -62,19 +63,20 @@ impl Drop for GlobalExerciseSetup {
 
 fn parse_json_to_exercise_setup(value: &json::JsonValue) -> ExerciseSetup {
     ExerciseSetup {
-        name: value["name"]
-            .as_str()
-            .expect("Cannot find 'name' in settings dictionary")
-            .to_string(),
+        name: gettext(
+            value["name"]
+                .as_str()
+                .expect(&gettext("Cannot find 'name' in settings dictionary")),
+        ),
         sets: value["sets"]
             .as_usize()
-            .expect("Cannot find 'sets' in settings dictionary"),
+            .expect(&gettext("Cannot find 'sets' in settings dictionary")),
         exercise_s: value["exercise_s"]
             .as_usize()
-            .expect("Cannot find 'exercises_s' in settings dictionary"),
+            .expect(&gettext("Cannot find 'exercises_s' in settings dictionary")),
         rest_s: value["rest_s"]
             .as_usize()
-            .expect("Cannot find 'rest_s' in settings dictionary"),
+            .expect(&gettext("Cannot find 'rest_s' in settings dictionary")),
     }
 }
 
@@ -82,14 +84,14 @@ pub fn load_default_exercise_setup() -> ExerciseSetup {
     let settings = gio::Settings::new(crate::config::APP_ID);
     let raw_json = settings.string("default-exercise-json");
     parse_json_to_exercise_setup(
-        &json::parse(&raw_json).expect("Could not parse default exercise setup"),
+        &json::parse(&raw_json).expect(&gettext("Could not parse default exercise setup")),
     )
 }
 
 pub fn load_exercise_list_from_gsettings() -> Vec<ExerciseSetup> {
     let settings = gio::Settings::new(crate::config::APP_ID);
     let raw_json = settings.string("exercise-json-list");
-    let parsed = json::parse(&raw_json).expect("Could not parse exercise list");
+    let parsed = json::parse(&raw_json).expect(&gettext("Could not parse exercise list"));
     parsed.members().map(parse_json_to_exercise_setup).collect()
 }
 
@@ -107,5 +109,5 @@ pub fn save_exercise_list_to_gsettings<'a>(exercises: impl Iterator<Item = &'a E
         .collect();
     settings
         .set("exercise-json-list", json::stringify(json_list))
-        .expect("Could not update settings with exercise list");
+        .expect(&gettext("Could not update settings with exercise list"));
 }

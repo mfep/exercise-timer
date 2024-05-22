@@ -63,7 +63,7 @@
           <li>Fix misleading Ctrl designators in shortcuts window</li>
           <li>Fix timer overflow after finish</li>
         </ul>
-        <p>Miscellenous changes</p>
+        <p>Miscellaneous changes</p>
         <ul>
           <li>Updated application runtime to GNOME 46</li>
         </ul>
@@ -81,6 +81,8 @@
       </description>
     </release>
   </releases>
-  <developer_name>safe worlds</developer_name>
+  <!-- Translators: this should not be translated -->
+  <developer_name translatable="no">safe worlds</developer_name>
+  <translation type="gettext">@gettext-package@</translation>
   <launchable type="desktop-id">@app-id@.desktop</launchable>
 </component>
