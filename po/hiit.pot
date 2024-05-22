@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 19:08+0200\n"
+"POT-Creation-Date: 2024-05-22 20:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -193,11 +193,6 @@ msgstr ""
 msgid "Initial release of Exercise Timer"
 msgstr ""
 
-#. Translators: this should not be translated
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:85
-msgid "safe worlds"
-msgstr ""
-
 #: src/app.rs:57
 msgid "_Preferences"
 msgstr ""
@@ -315,7 +310,7 @@ msgstr ""
 msgid "Warmup time"
 msgstr ""
 
-#: src/settings.rs:68
+#: src/settings.rs:67
 msgid "Cannot find 'name' in settings dictionary"
 msgstr ""
 

@@ -62,12 +62,11 @@ impl Drop for GlobalExerciseSetup {
 }
 
 fn parse_json_to_exercise_setup(value: &json::JsonValue) -> ExerciseSetup {
+    let name = value["name"]
+        .as_str()
+        .expect(&gettext("Cannot find 'name' in settings dictionary"));
     ExerciseSetup {
-        name: gettext(
-            value["name"]
-                .as_str()
-                .expect(&gettext("Cannot find 'name' in settings dictionary")),
-        ),
+        name: gettext(name),
         sets: value["sets"]
             .as_usize()
             .expect(&gettext("Cannot find 'sets' in settings dictionary")),

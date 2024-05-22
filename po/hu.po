@@ -5,16 +5,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 19:08+0200\n"
-"PO-Revision-Date: 2024-05-22 19:12+0200\n"
-"Last-Translator:  <>\n"
-"Language-Team: Hungarian\n"
+"POT-Creation-Date: 2024-05-22 20:07+0200\n"
+"PO-Revision-Date: 2024-05-22 18:01+0000\n"
+"Last-Translator: Lőrinc Serfőző <lorinc.serfozo@mailbox.org>\n"
+"Language-Team: Hungarian <https://hosted.weblate.org/projects/exercise-timer/"
+"exercise-timer/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 46.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6-dev\n"
 
 #: data/resources/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -62,7 +63,8 @@ msgid ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
 "interval training;"
 msgstr ""
-"Gnome;GTK;Eszköz;Sport;Edzés;HIIT;Tréning;Gyakorlat;Intenzív intervallumedzés"
+"Gnome;GTK;Eszköz;Sport;Edzés;HIIT;Tréning;Gyakorlat;Intenzív "
+"intervallumedzés;"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:6
 msgid "The width of the window"
@@ -118,23 +120,23 @@ msgid ""
 "the exercise and rest periods."
 msgstr ""
 "Az edzések, melyek tartalmazzák a szettek számát, a gyakorlat és a pihenés "
-"idejét, elmenthetők és betölthetők"
+"idejét, elmenthetők és betölthetők."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
 msgid "Set the duration of the preparation in the settings."
-msgstr "A felkészülési idő a Beállításokban módosítható"
+msgstr "A felkészülési idő a Beállításokban módosítható."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid "A beeping sound is played at- and prior to each transition."
-msgstr "Sípoló hang jelzi a periódusok végét"
+msgstr "Sípoló hang jelzi a periódusok végét."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "The volume of the sound can be adjusted."
-msgstr "A síp hangereje állítható"
+msgstr "A síp hangereje állítható."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "Light and dark mode follows the system's setting."
-msgstr "A világos és sötét megjelenés követi a rendszerbeállítást"
+msgstr "A világos és sötét megjelenés követi a rendszerbeállítást."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
 msgid "Exercise list - dark mode"
@@ -197,11 +199,6 @@ msgstr "Metaadatok hozzáadva a brand színekről"
 msgid "Initial release of Exercise Timer"
 msgstr "Az Edzésóra kezdeti kiadása"
 
-#. Translators: this should not be translated
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:85
-msgid "safe worlds"
-msgstr ""
-
 #: src/app.rs:57
 msgid "_Preferences"
 msgstr "_Beállítások"
@@ -224,7 +221,7 @@ msgstr "Még nincs edzés"
 
 #: src/app.rs:107
 msgid "Create exercise"
-msgstr "Új edzés"
+msgstr "Új edzés létrehozása"
 
 #: src/app.rs:117
 msgid "Timer"
@@ -319,7 +316,7 @@ msgstr "Edzés alapértelmezései"
 msgid "Warmup time"
 msgstr "Bemelegítés időtartama"
 
-#: src/settings.rs:68
+#: src/settings.rs:67
 msgid "Cannot find 'name' in settings dictionary"
 msgstr "'name' nem található a beállításkönyvtárban"
 
@@ -361,7 +358,7 @@ msgstr "Nem sikerült átváltani a szöveg doménre"
 
 #: src/setup.rs:31
 msgid "Could not connect to a display."
-msgstr "Nem sikerült csatlakozni a megjelenítőhöz"
+msgstr "Nem sikerült csatlakozni a megjelenítőhöz."
 
 #: src/shortcuts_window.rs:22
 msgid "Couldn't build the Help Overlay"

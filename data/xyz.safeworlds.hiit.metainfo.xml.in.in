@@ -82,7 +82,7 @@
     </release>
   </releases>
   <!-- Translators: this should not be translated -->
-  <developer_name translatable="no">safe worlds</developer_name>
+  <developer_name translate="no">safe worlds</developer_name>
   <translation type="gettext">@gettext-package@</translation>
   <launchable type="desktop-id">@app-id@.desktop</launchable>
 </component>
