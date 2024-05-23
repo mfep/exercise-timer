@@ -19,7 +19,7 @@ tokio = { version = "1.36", features = [
     "rt-multi-thread",
 ] }
 futures = "0.3.30"
-rodio = { version="0.18.0", default-features=false, features = ["wav"] }
+rodio = { version="0.18.1", default-features=false, features = ["wav"] }
 json = "0.12.4"
 
 [build-dependencies]
