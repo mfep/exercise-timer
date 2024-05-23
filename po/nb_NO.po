@@ -8,53 +8,57 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-22 20:07+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-05-24 01:09+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
+"exercise-timer/exercise-timer/nb_NO/>\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6-dev\n"
 
 #: data/resources/ui/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "Exercise"
-msgstr ""
+msgstr "Trening"
 
 #: data/resources/ui/help-overlay.ui:14
 msgctxt "shortcut window"
 msgid "Start/Stop exercise"
-msgstr ""
+msgstr "Start/stopp trening"
 
 #: data/resources/ui/help-overlay.ui:21
+#, fuzzy
 msgctxt "shortcut window"
 msgid "Reset exercise"
-msgstr ""
+msgstr "Tilbakestill trening"
 
 #: data/resources/ui/help-overlay.ui:30
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Generelt"
 
 #: data/resources/ui/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Vis snarveier"
 
 #: data/resources/ui/help-overlay.ui:40
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Avslutt"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:166 src/setup.rs:11
 msgid "Exercise Timer"
-msgstr ""
+msgstr "Treningstidsur"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:4
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
 msgid "Timer clock for high intensity interval training"
-msgstr ""
+msgstr "Tidsursklokke for høyintensitet- og intervalltrening"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/xyz.safeworlds.hiit.desktop.in.in:10
@@ -69,19 +73,19 @@ msgstr ""
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:10
 msgid "The height of the window"
-msgstr ""
+msgstr "Vindushøyden"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:14
 msgid "If the window is maximized"
-msgstr ""
+msgstr "Hvis vinduet maksimeres"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:18
 msgid "Default exercise setup, in JSON notation"
-msgstr ""
+msgstr "Forvalgt treningsoppsett, i JSON-notasjon"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:22
 msgid "List of exercise setups, in JSON notation"
-msgstr ""
+msgstr "Liste over øvelsesoppsett, i JSON-notasjon"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
 msgid "The duration of the warmup, in seconds"
@@ -107,7 +111,7 @@ msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
 msgid "Features:"
-msgstr ""
+msgstr "Funksjoner:"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
 msgid ""
@@ -158,7 +162,7 @@ msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:57
 msgid "Features"
-msgstr ""
+msgstr "Funksjoner"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:59
 msgid "Displaying remaining time in minutes:seconds format"
@@ -206,43 +210,43 @@ msgstr ""
 
 #: src/app.rs:74
 msgid "Exercise List"
-msgstr ""
+msgstr "Øvelsesliste"
 
 #: src/app.rs:104
 msgid "No exercise is created yet"
-msgstr ""
+msgstr "Ingen øvelse opprettet enda"
 
 #: src/app.rs:107
 msgid "Create exercise"
-msgstr ""
+msgstr "Opprett øvelse"
 
 #: src/app.rs:117
 msgid "Timer"
-msgstr ""
+msgstr "Tidsur"
 
 #: src/exercise_editor.rs:56
 msgid "New exercise"
-msgstr ""
+msgstr "Ny øvelse"
 
 #: src/exercise_editor.rs:57
 msgid "Edit exercise"
-msgstr ""
+msgstr "Rediger øvelse"
 
 #: src/exercise_editor.rs:62
 msgid "Cancel"
-msgstr ""
+msgstr "Avslutt"
 
 #: src/exercise_editor.rs:67
 msgid "Create"
-msgstr ""
+msgstr "Opprett"
 
 #: src/exercise_editor.rs:68
 msgid "Update"
-msgstr ""
+msgstr "Oppdater"
 
 #: src/exercise_editor.rs:79
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 #: src/exercise_editor.rs:83
 msgid "Number of sets"
@@ -250,64 +254,66 @@ msgstr ""
 
 #: src/exercise_editor.rs:93
 msgid "Rest time"
-msgstr ""
+msgstr "Hviletid"
 
 #: src/exercise_editor.rs:94 src/exercise_editor.rs:105
 #: src/settings_dialog.rs:37
 msgid "seconds"
-msgstr ""
+msgstr "sekunder"
 
 #: src/exercise_editor.rs:104
+#, fuzzy
 msgid "Exercise time"
-msgstr ""
+msgstr "Treningstid"
 
 #: src/exercise_setup.rs:95
 msgid "Sets"
-msgstr ""
+msgstr "Sett"
 
 #: src/exercise_setup.rs:104 src/exercise_timer.rs:173
 msgid "Exercise"
-msgstr ""
+msgstr "Øvelse"
 
 #: src/exercise_setup.rs:113 src/exercise_timer.rs:174
 msgid "Rest"
-msgstr ""
+msgstr "Hvile"
 
 #: src/exercise_timer.rs:120
 msgid "Finished!"
-msgstr ""
+msgstr "Fullført"
 
 #: src/exercise_timer.rs:172
 msgid "Warm up"
-msgstr ""
+msgstr "Oppvarming"
 
 #: src/exercise_timer.rs:239
 msgid "Remaining sets: {}"
-msgstr ""
+msgstr "Gjenstående sett: {}"
 
 #: src/exercise_timer/audio_player.rs:14
 msgid "Could not decode WAV"
-msgstr ""
+msgstr "Kunne ikke dekode WAV"
 
 #: src/exercise_timer/audio_player.rs:22
 msgid "Could not play audio"
-msgstr ""
+msgstr "Kunne ikke spille av lyd"
 
 #: src/exercise_timer/audio_player.rs:51
 msgid "Could not open data"
-msgstr ""
+msgstr "Kunne ikke åpne data"
 
 #: src/main.rs:19
 msgid "Could not create audio output stream"
-msgstr ""
+msgstr "Kunne ikke opprette lydutdatastrøm"
 
 #: src/settings_dialog.rs:32
+#, fuzzy
 msgid "Exercise defaults"
-msgstr ""
+msgstr "Øvelsesforvalg"
 
 #: src/settings_dialog.rs:36
 msgid "Warmup time"
-msgstr ""
+msgstr "Oppvarmingstid"
 
 #: src/settings.rs:67
 msgid "Cannot find 'name' in settings dictionary"
@@ -347,11 +353,11 @@ msgstr ""
 
 #: src/setup.rs:23
 msgid "Unable to switch to the text domain"
-msgstr ""
+msgstr "Kunne ikke bytte til tekstdomenet"
 
 #: src/setup.rs:31
 msgid "Could not connect to a display."
-msgstr ""
+msgstr "Kunne ikke koble til noen skjerm."
 
 #: src/shortcuts_window.rs:22
 msgid "Couldn't build the Help Overlay"
