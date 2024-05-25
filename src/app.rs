@@ -169,7 +169,8 @@ impl Component for AppModel {
                     .developers(config::DEVELOPERS)
                     .issue_url(config::ISSUE_TRACKER)
                     .license_type(gtk::License::Gpl30)
-                    // .translator_credits("translator-credits")
+                    // Translators: Replace this with your name for it to show up in the about window
+                    .translator_credits(gettext("translator_credits"))
                     .version(config::VERSION)
                     .website(config::HOMEPAGE)
                     .build();

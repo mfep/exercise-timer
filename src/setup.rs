@@ -28,7 +28,7 @@ fn setup_css() {
     provider.load_from_resource("/xyz/safeworlds/hiit/style.css");
 
     gtk::style_context_add_provider_for_display(
-        &gtk::gdk::Display::default().expect(&gettext("Could not connect to a display.")),
+        &gtk::gdk::Display::default().expect(&gettext("Could not connect to a display")),
         &provider,
         gtk::STYLE_PROVIDER_PRIORITY_APPLICATION,
     );

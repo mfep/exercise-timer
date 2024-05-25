@@ -14,8 +14,8 @@ homepage = 'https://github.com/mfep/exercise-timer'
 issue_tracker = homepage + '/issues'
 translate_page = 'https://hosted.weblate.org/projects/exercise-timer/exercise-timer/'
 copyright = '© 2023 Exercise Timer developers'
-developers = ['Lőrinc Serfőző']
-designers = ['Lőrinc Serfőző']
+developers = ['Lőrinc Serfőző https://the.safeworlds.xyz']
+designers = ['Lőrinc Serfőző https://the.safeworlds.xyz']
 
 dependency('glib-2.0', version: '>= 2.66')
 dependency('gio-2.0', version: '>= 2.66')

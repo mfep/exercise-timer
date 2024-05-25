@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 20:07+0200\n"
+"POT-Creation-Date: 2024-05-25 14:52+0200\n"
 "PO-Revision-Date: 2024-05-22 18:01+0000\n"
 "Last-Translator: Lőrinc Serfőző <lorinc.serfozo@mailbox.org>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/exercise-timer/"
@@ -154,48 +154,48 @@ msgstr "Edzések listája - világos mód"
 msgid "Timer - light mode"
 msgstr "Időzítő - világos mód"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:49
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:61
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:50
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:62
 msgid "Bug fixes"
 msgstr "Hibajavítások"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:51
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
 msgid "Allow time periods longer than 999 seconds"
 msgstr "999 másodpercnél hosszabb periódusok engedélyezése"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:57
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:58
 msgid "Features"
 msgstr "Funkciók"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:59
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:60
 msgid "Displaying remaining time in minutes:seconds format"
 msgstr "A fennmaradó idő kijelzése perc:másodperc formátumban"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:63
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
 msgid "Fix misleading Ctrl designators in shortcuts window"
 msgstr "Félrevezető Ctrl módosítók javítása a gyorsbillentyűk ablakban"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:65
 msgid "Fix timer overflow after finish"
 msgstr "Az időzítő túlcsordulásának javítása"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:66
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:67
 msgid "Miscellaneous changes"
 msgstr "Egyéb változtatások"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:68
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:69
 msgid "Updated application runtime to GNOME 46"
 msgstr "Futtatókörnyezet frissítése GNOME 46-ra"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:74
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:75
 msgid "Updated icon for better contrast on dark backgrounds"
 msgstr "Frissített ikon jobb kontraszt érdekében sötét háttereken"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:75
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:76
 msgid "Added branding color metadata"
 msgstr "Metaadatok hozzáadva a brand színekről"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:80
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:81
 msgid "Initial release of Exercise Timer"
 msgstr "Az Edzésóra kezdeti kiadása"
 
@@ -226,6 +226,11 @@ msgstr "Új edzés létrehozása"
 #: src/app.rs:117
 msgid "Timer"
 msgstr "Időzítő"
+
+#. Translators: Replace this with your name for it to show up in the about window
+#: src/app.rs:173
+msgid "translator_credits"
+msgstr ""
 
 #: src/exercise_editor.rs:56
 msgid "New exercise"
@@ -357,9 +362,11 @@ msgid "Unable to switch to the text domain"
 msgstr "Nem sikerült átváltani a szöveg doménre"
 
 #: src/setup.rs:31
-msgid "Could not connect to a display."
+#, fuzzy
+msgid "Could not connect to a display"
 msgstr "Nem sikerült csatlakozni a megjelenítőhöz."
 
 #: src/shortcuts_window.rs:22
-msgid "Couldn't build the Help Overlay"
+#, fuzzy
+msgid "Could not build the Help Overlay"
 msgstr "Nem sikerült létrehozni a Segítség ablakot"
