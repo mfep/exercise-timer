@@ -6,6 +6,7 @@
 [![License badge](https://img.shields.io/github/license/mfep/exercise-timer)](./LICENSE.txt)
 [![Flathub badge](https://img.shields.io/flathub/downloads/xyz.safeworlds.hiit?logo=flathub&logoColor=white)](https://flathub.org/apps/details/xyz.safeworlds.hiit)
 ![Platforms badge](https://img.shields.io/badge/platform-linux-informational)
+![Translations badge](https://hosted.weblate.org/widget/exercise-timer/exercise-timer/svg-badge.svg?native=1)
 
 Exercise timer is a simple utility to conduct interval training. It is built for the GNOME desktop using [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1.4/index.html) and [Relm4](https://relm4.org/).
 
@@ -40,10 +41,10 @@ $ sudo dnf install -y flatpak-builder
 $ flatpak remote-add --user --if-not-exists flathub-verified https://flathub.org/repo/flathub.flatpakrepo
 ```
 
-3. If not present, install the GNOME 45 Flatpak runtime and SDK and the Freedesktop SDK Rust and LLVM extensions.
+3. If not present, install the GNOME 46 Flatpak runtime and SDK and the Freedesktop SDK Rust and LLVM extensions.
 
 ```bash
-$ flatpak install --user org.gnome.{Sdk,Platform}//45 org.freedesktop.Sdk.Extension.{rust-stable,llvm16}//23.08
+$ flatpak install --user org.gnome.{Sdk,Platform}//46 org.freedesktop.Sdk.Extension.{rust-stable,llvm16}//23.08
 ```
 
 4. Clone the current repository.
@@ -61,7 +62,13 @@ $ flatpak-builder --user --install --force-clean build ./build-aux/xyz.safeworld
 
 ## 🧑‍🤝‍🧑 Contributing
 
-PRs and feedback in the form of issues is welcome. Please be considerate though, and try to provide complete reports and code.
+### Translations
+
+Exercise Timer is translated via [Weblate](https://hosted.weblate.org/projects/exercise-timer/exercise-timer/). Fixes to existing translations as well as translating to new languages are welcome!
+
+### Development
+
+PRs and feedback in the form of issues are most welcome.
 
 ## ✍️ License
 
