@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-25 14:52+0200\n"
-"PO-Revision-Date: 2024-05-22 18:01+0000\n"
+"PO-Revision-Date: 2024-05-26 13:09+0000\n"
 "Last-Translator: Lőrinc Serfőző <lorinc.serfozo@mailbox.org>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/hu/>\n"
@@ -230,7 +230,7 @@ msgstr "Időzítő"
 #. Translators: Replace this with your name for it to show up in the about window
 #: src/app.rs:173
 msgid "translator_credits"
-msgstr ""
+msgstr "Serfőző Lőrinc"
 
 #: src/exercise_editor.rs:56
 msgid "New exercise"
@@ -362,11 +362,9 @@ msgid "Unable to switch to the text domain"
 msgstr "Nem sikerült átváltani a szöveg doménre"
 
 #: src/setup.rs:31
-#, fuzzy
 msgid "Could not connect to a display"
-msgstr "Nem sikerült csatlakozni a megjelenítőhöz."
+msgstr "Nem sikerült csatlakozni a megjelenítőhöz"
 
 #: src/shortcuts_window.rs:22
-#, fuzzy
 msgid "Could not build the Help Overlay"
 msgstr "Nem sikerült létrehozni a Segítség ablakot"
