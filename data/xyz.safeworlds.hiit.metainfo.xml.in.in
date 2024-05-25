@@ -38,6 +38,7 @@
   </screenshots>
   <url type="homepage">@homepage@</url>
   <url type="bugtracker">@issue-tracker@</url>
+  <url type="translate">@translate-page@</url>
   <content_rating type="oars-1.0" />
   <branding>
     <color type="primary" scheme_preference="light">#faa298</color>
@@ -81,7 +82,6 @@
       </description>
     </release>
   </releases>
-  <!-- Translators: this should not be translated -->
   <developer_name translate="no">safe worlds</developer_name>
   <translation type="gettext">@gettext-package@</translation>
   <launchable type="desktop-id">@app-id@.desktop</launchable>
