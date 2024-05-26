@@ -66,6 +66,12 @@ $ flatpak-builder --user --install --force-clean build ./build-aux/xyz.safeworld
 
 Exercise Timer is translated via [Weblate](https://hosted.weblate.org/projects/exercise-timer/exercise-timer/). Fixes to existing translations as well as translating to new languages are welcome!
 
+<div align="center">
+  <a href="https://hosted.weblate.org/engage/exercise-timer/">
+    <img src="https://hosted.weblate.org/widget/exercise-timer/exercise-timer/multi-auto.svg" alt="Translation status" />
+  </a>
+</div>
+
 ### Development
 
 PRs and feedback in the form of issues are most welcome.
