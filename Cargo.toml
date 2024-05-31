@@ -12,7 +12,7 @@ relm4-components = "0.8.1"
 relm4-macros = "0.8.1"
 relm4-icons = { version = "0.8.2" }
 libadwaita = { version="0.6.0", features = ["v1_5"] }
-tokio = { version = "1.36", features = [
+tokio = { version = "1.38", features = [
     "rt",
     "macros",
     "time",
