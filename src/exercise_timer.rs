@@ -131,6 +131,14 @@ fn remaining_str_secs(remaining_s: usize) -> String {
     }
 }
 
+fn width_chars(remaining_s: usize, default: i32) -> i32 {
+    if remaining_s == 0 {
+        -1
+    } else {
+        default
+    }
+}
+
 pub struct ExerciseTimerInit {
     pub setup: ExerciseSetup,
     pub global_setup: GlobalExerciseSetup,
@@ -179,18 +187,21 @@ impl Component for ExerciseTimer {
                         set_orientation: gtk::Orientation::Horizontal,
                         set_halign: gtk::Align::Center,
                         gtk::Label {
-                            set_width_chars: 5,
+                            #[watch]
+                            set_width_chars: width_chars(model.remaining_s, 5),
                             set_xalign: 1.0,
                             #[watch]
                             set_label: &remaining_str_mins(model.remaining_s),
                         },
                         gtk::Label {
-                            set_width_chars: 1,
+                            #[watch]
+                            set_width_chars: width_chars(model.remaining_s, 1),
                             #[watch]
                             set_label: &remaining_str_colon(model.remaining_s),
                         },
                         gtk::Label {
-                            set_width_chars: 5,
+                            #[watch]
+                            set_width_chars: width_chars(model.remaining_s, 5),
                             set_xalign: 0.0,
                             #[watch]
                             set_label: &remaining_str_secs(model.remaining_s),
