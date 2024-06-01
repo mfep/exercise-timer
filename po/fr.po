@@ -1,0 +1,363 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hiit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: hiit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-25 14:52+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/resources/ui/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "Exercise"
+msgstr ""
+
+#: data/resources/ui/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Start/Stop exercise"
+msgstr ""
+
+#: data/resources/ui/help-overlay.ui:21
+msgctxt "shortcut window"
+msgid "Reset exercise"
+msgstr ""
+
+#: data/resources/ui/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: data/resources/ui/help-overlay.ui:33
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: data/resources/ui/help-overlay.ui:40
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.desktop.in.in:3
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:166 src/setup.rs:11
+msgid "Exercise Timer"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.desktop.in.in:4
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
+msgid "Timer clock for high intensity interval training"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/xyz.safeworlds.hiit.desktop.in.in:10
+msgid ""
+"Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
+"interval training;"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:6
+msgid "The width of the window"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:10
+msgid "The height of the window"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:14
+msgid "If the window is maximized"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:18
+msgid "Default exercise setup, in JSON notation"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:22
+msgid "List of exercise setups, in JSON notation"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:26
+msgid "The duration of the warmup, in seconds"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:31
+msgid "The volume of the beeping sound"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:9
+msgid "Exercise timer is a simple utility to conduct interval training."
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
+msgid ""
+"Following a short preparation period, a prescribed number of exercise sets "
+"are played. In between each exercise, there is a resting period."
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
+msgid "The app does not make an assumption about the kind of the exercise."
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
+msgid "Features:"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
+msgid ""
+"Save and recall presets containing the number of sets and the duration of "
+"the exercise and rest periods."
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
+msgid "Set the duration of the preparation in the settings."
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
+msgid "A beeping sound is played at- and prior to each transition."
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
+msgid "The volume of the sound can be adjusted."
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
+msgid "Light and dark mode follows the system's setting."
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
+msgid "Exercise list - dark mode"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
+msgid "Timer - dark mode"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
+msgid "Exercise list - light mode"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
+msgid "Timer - light mode"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:50
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:62
+msgid "Bug fixes"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
+msgid "Allow time periods longer than 999 seconds"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:58
+msgid "Features"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:60
+msgid "Displaying remaining time in minutes:seconds format"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
+msgid "Fix misleading Ctrl designators in shortcuts window"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:65
+msgid "Fix timer overflow after finish"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:67
+msgid "Miscellaneous changes"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:69
+msgid "Updated application runtime to GNOME 46"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:75
+msgid "Updated icon for better contrast on dark backgrounds"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:76
+msgid "Added branding color metadata"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:81
+msgid "Initial release of Exercise Timer"
+msgstr ""
+
+#: src/app.rs:57
+msgid "_Preferences"
+msgstr ""
+
+#: src/app.rs:58
+msgid "_Keyboard Shortcuts"
+msgstr ""
+
+#: src/app.rs:59
+msgid "_About Exercise Timer"
+msgstr ""
+
+#: src/app.rs:74
+msgid "Exercise List"
+msgstr ""
+
+#: src/app.rs:104
+msgid "No exercise is created yet"
+msgstr ""
+
+#: src/app.rs:107
+msgid "Create exercise"
+msgstr ""
+
+#: src/app.rs:117
+msgid "Timer"
+msgstr ""
+
+#. Translators: Replace this with your name for it to show up in the about window
+#: src/app.rs:173
+msgid "translator_credits"
+msgstr ""
+
+#: src/exercise_editor.rs:56
+msgid "New exercise"
+msgstr ""
+
+#: src/exercise_editor.rs:57
+msgid "Edit exercise"
+msgstr ""
+
+#: src/exercise_editor.rs:62
+msgid "Cancel"
+msgstr ""
+
+#: src/exercise_editor.rs:67
+msgid "Create"
+msgstr ""
+
+#: src/exercise_editor.rs:68
+msgid "Update"
+msgstr ""
+
+#: src/exercise_editor.rs:79
+msgid "Name"
+msgstr ""
+
+#: src/exercise_editor.rs:83
+msgid "Number of sets"
+msgstr ""
+
+#: src/exercise_editor.rs:93
+msgid "Rest time"
+msgstr ""
+
+#: src/exercise_editor.rs:94 src/exercise_editor.rs:105
+#: src/settings_dialog.rs:37
+msgid "seconds"
+msgstr ""
+
+#: src/exercise_editor.rs:104
+msgid "Exercise time"
+msgstr ""
+
+#: src/exercise_setup.rs:95
+msgid "Sets"
+msgstr ""
+
+#: src/exercise_setup.rs:104 src/exercise_timer.rs:173
+msgid "Exercise"
+msgstr ""
+
+#: src/exercise_setup.rs:113 src/exercise_timer.rs:174
+msgid "Rest"
+msgstr ""
+
+#: src/exercise_timer.rs:120
+msgid "Finished!"
+msgstr ""
+
+#: src/exercise_timer.rs:172
+msgid "Warm up"
+msgstr ""
+
+#: src/exercise_timer.rs:239
+msgid "Remaining sets: {}"
+msgstr ""
+
+#: src/exercise_timer/audio_player.rs:14
+msgid "Could not decode WAV"
+msgstr ""
+
+#: src/exercise_timer/audio_player.rs:22
+msgid "Could not play audio"
+msgstr ""
+
+#: src/exercise_timer/audio_player.rs:51
+msgid "Could not open data"
+msgstr ""
+
+#: src/main.rs:19
+msgid "Could not create audio output stream"
+msgstr ""
+
+#: src/settings_dialog.rs:32
+msgid "Exercise defaults"
+msgstr ""
+
+#: src/settings_dialog.rs:36
+msgid "Warmup time"
+msgstr ""
+
+#: src/settings.rs:67
+msgid "Cannot find 'name' in settings dictionary"
+msgstr ""
+
+#: src/settings.rs:72
+msgid "Cannot find 'sets' in settings dictionary"
+msgstr ""
+
+#: src/settings.rs:75
+msgid "Cannot find 'exercises_s' in settings dictionary"
+msgstr ""
+
+#: src/settings.rs:78
+msgid "Cannot find 'rest_s' in settings dictionary"
+msgstr ""
+
+#: src/settings.rs:86
+msgid "Could not parse default exercise setup"
+msgstr ""
+
+#: src/settings.rs:93
+msgid "Could not parse exercise list"
+msgstr ""
+
+#: src/settings.rs:111
+msgid "Could not update settings with exercise list"
+msgstr ""
+
+#: src/setup.rs:13
+msgid "Could not register resources"
+msgstr ""
+
+#: src/setup.rs:22
+msgid "Unable to bind the text domain"
+msgstr ""
+
+#: src/setup.rs:23
+msgid "Unable to switch to the text domain"
+msgstr ""
+
+#: src/setup.rs:31
+msgid "Could not connect to a display"
+msgstr ""
+
+#: src/shortcuts_window.rs:22
+msgid "Could not build the Help Overlay"
+msgstr ""
