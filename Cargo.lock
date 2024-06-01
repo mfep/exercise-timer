@@ -1296,9 +1296,9 @@ dependencies = [
 
 [[package]]
 name = "relm4-icons"
-version = "0.8.2"
+version = "0.8.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8603f50e9ed5ca2e3759a9c6033e4058c7b984f1bd22b1fc3b1a162c5612eb64"
+checksum = "d5738f52d978a211bd4b3ec3b37f1593297ad34f0f1789d8115eabe1df7958a8"
 dependencies = [
  "gtk4",
  "gvdb",
@@ -1527,9 +1527,9 @@ dependencies = [
 
 [[package]]
 name = "tokio"
-version = "1.37.0"
+version = "1.38.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1adbebffeca75fcfd058afa480fb6c0b81e165a0323f9c9d39c9697e37c46787"
+checksum = "ba4f4a02a7a80d6f274636f0aa95c7e383b912d41fe721a31f29e29698585a4a"
 dependencies = [
  "backtrace",
  "num_cpus",
@@ -1539,9 +1539,9 @@ dependencies = [
 
 [[package]]
 name = "tokio-macros"
-version = "2.2.0"
+version = "2.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5b8a1e28f2deaa14e508979454cb3a223b10b938b45af148bc0986de36f1923b"
+checksum = "5f5ae998a069d4b5aba8ee9dad856af7d520c3699e6159b185c2acd48155d39a"
 dependencies = [
  "proc-macro2",
  "quote",
