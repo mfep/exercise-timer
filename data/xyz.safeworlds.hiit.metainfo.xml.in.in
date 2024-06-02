@@ -45,7 +45,27 @@
     <color type="primary" scheme_preference="dark">#7f2c22</color>
   </branding>
   <releases>
-      <release version="1.2.1" date="2024-05-11">
+    <release version="1.3.0" date="2024-06-02">
+      <description>
+        <p>Features</p>
+        <ul>
+          <li>Added internationalization support</li>
+          <li>Added French translation</li>
+          <li>Added Hungarian translation</li>
+          <li>Added Norwegian Bokmål translation</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Fix too wide window when Finished</li>
+        </ul>
+        <p>Miscellaneous changes</p>
+        <ul>
+          <li>Added OARS-1.1 compatible content rating</li>
+          <li>Updated library dependencies</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.1" date="2024-05-11">
       <description>
         <p>Bug fixes</p>
         <ul>
