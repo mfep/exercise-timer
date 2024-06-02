@@ -32,6 +32,7 @@ appdata_conf.set('app-id', application_id)
 appdata_conf.set('homepage', homepage)
 appdata_conf.set('issue-tracker', issue_tracker)
 appdata_conf.set('translate-page', translate_page)
+appdata_conf.set('gettext-package', gettext_package)
 appdata_file = i18n.merge_file(
   input: configure_file(
     input: '@0@.metainfo.xml.in.in'.format(base_id),
