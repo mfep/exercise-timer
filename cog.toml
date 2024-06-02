@@ -7,7 +7,7 @@ branch_whitelist = ["main"]
 skip_ci = "[skip ci]"
 skip_untracked = false
 pre_bump_hooks = [
-    "grep version=\\\"{{version}}\\\" data/xyz.safeworlds.hiit.metainfo.xml.in",
+    "grep version=\\\"{{version}}\\\" data/xyz.safeworlds.hiit.metainfo.xml.in.in",
     "sed -i \"s|version: '[0-9]\\+.[0-9]\\+.[0-9]\\+'|version: '{{version}}'|\" meson.build"
 ]
 post_bump_hooks = []
