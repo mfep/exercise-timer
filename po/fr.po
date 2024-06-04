@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-25 14:52+0200\n"
+"POT-Creation-Date: 2024-06-04 18:56+0200\n"
 "PO-Revision-Date: 2024-06-01 19:57+0000\n"
 "Last-Translator: MariusCouet <marius@couet.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/exercise-timer/"
@@ -49,8 +49,9 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Quitter"
 
+#. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:166 src/setup.rs:11
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:174 src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "Exercise Timer"
 
@@ -81,11 +82,13 @@ msgid "If the window is maximized"
 msgstr "Si la fenêtre maximisé"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:18
-msgid "Default exercise setup, in JSON notation"
+#, fuzzy
+msgid "Default training setup, in JSON notation"
 msgstr "Configuration d'exercice par défaut, en JSON"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:22
-msgid "List of exercise setups, in JSON notation"
+#, fuzzy
+msgid "List of training setups, in JSON notation"
 msgstr "Liste des configurations d'exercices, en JSON"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
@@ -106,8 +109,8 @@ msgid ""
 "Following a short preparation period, a prescribed number of exercise sets "
 "are played. In between each exercise, there is a resting period."
 msgstr ""
-"Après une courte période de préparation, un nombre prescrit de séries d’"
-"exercices est lancé. Entre chaque exercice, il y a une période de repos."
+"Après une courte période de préparation, un nombre prescrit de séries "
+"d’exercices est lancé. Entre chaque exercice, il y a une période de repos."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
 msgid "The app does not make an assumption about the kind of the exercise."
@@ -158,173 +161,231 @@ msgid "Timer - light mode"
 msgstr "Minuteur - mode clair"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:50
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:62
-msgid "Bug fixes"
-msgstr "Correction de bugs"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
-msgid "Allow time periods longer than 999 seconds"
-msgstr "Autoriser des durées supérieures à 999 secondes"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:58
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:78
 msgid "Features"
 msgstr "Fonctionnalités"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:60
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
+msgid "Added internationalization support"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:53
+msgid "Added French translation"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:54
+msgid "Added Hungarian translation"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:55
+msgid "Added Norwegian Bokmål translation"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:57
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:70
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:82
+msgid "Bug fixes"
+msgstr "Correction de bugs"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:59
+msgid "Fix too wide window when Finished"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:61
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:87
+msgid "Miscellaneous changes"
+msgstr "Modifications diverses"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:63
+msgid "Added OARS-1.1 compatible content rating"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
+msgid "Updated library dependencies"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:72
+msgid "Allow time periods longer than 999 seconds"
+msgstr "Autoriser des durées supérieures à 999 secondes"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:80
 msgid "Displaying remaining time in minutes:seconds format"
 msgstr "Affichage du temps restant au format minutes:secondes"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:84
 msgid "Fix misleading Ctrl designators in shortcuts window"
 msgstr ""
 "Correction des désignateurs Ctrl trompeurs dans la fenêtre des raccourcis"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:65
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:85
 msgid "Fix timer overflow after finish"
 msgstr "Correction de l'overflow du minuteur après la fin"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:67
-msgid "Miscellaneous changes"
-msgstr "Modifications diverses"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:69
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:89
 msgid "Updated application runtime to GNOME 46"
 msgstr "Mise à jour du moteur d'exécution de l'application vers GNOME 46"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:75
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:95
 msgid "Updated icon for better contrast on dark backgrounds"
 msgstr ""
 "Icône mise à jour pour un meilleur contraste sur les arrière-plans sombres"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:76
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:96
 msgid "Added branding color metadata"
 msgstr "Métadonnées de couleur de marque ajoutées"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:81
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:101
 msgid "Initial release of Exercise Timer"
 msgstr "Version initiale d'Exercise Timer"
 
-#: src/app.rs:57
+#. Translators: The title of the preferences menu entry
+#: src/app.rs:58
 msgid "_Preferences"
 msgstr "_Préférences"
 
-#: src/app.rs:58
+#. Translators: The title of the keyboard shortcuts menu entry
+#: src/app.rs:60
 msgid "_Keyboard Shortcuts"
 msgstr "_Raccourcis clavier"
 
-#: src/app.rs:59
+#. Translators: The title of the about dialog menu entry
+#: src/app.rs:62
 msgid "_About Exercise Timer"
 msgstr "_A propos d'Exercise Timer"
 
-#: src/app.rs:74
-msgid "Exercise List"
-msgstr "Liste d'exercices"
+#. Translators: This is the title of the page which lists all trainings
+#: src/app.rs:78
+msgid "Training List"
+msgstr ""
 
-#: src/app.rs:104
-msgid "No exercise is created yet"
+#. Translators: The message which is shown on the background of the empty training list
+#: src/app.rs:109
+#, fuzzy
+msgid "No training is created yet"
 msgstr "Aucun exercice n'a été créé"
 
-#: src/app.rs:107
-msgid "Create exercise"
+#. Translators: Big label button to create the first training if none exists
+#: src/app.rs:113
+#, fuzzy
+msgid "Create training"
 msgstr "Créer un exercice"
 
-#: src/app.rs:117
+#. Translators: The name of the timer page
+#: src/app.rs:124
 msgid "Timer"
 msgstr "Minuterie"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:173
+#: src/app.rs:181
 msgid "translator_credits"
 msgstr "Marius Couet"
 
-#: src/exercise_editor.rs:56
-msgid "New exercise"
-msgstr "Nouvel exercice"
+#. Translators: The editor window's title when creating a new training
+#: src/training_editor.rs:57
+msgid "New training"
+msgstr ""
 
-#: src/exercise_editor.rs:57
-msgid "Edit exercise"
-msgstr "Modifier l'exercice"
+#. Translators: The editor window's title when modifying a training
+#: src/training_editor.rs:59
+msgid "Edit training"
+msgstr ""
 
-#: src/exercise_editor.rs:62
+#. Translators: Button to close the training editor window without modifications
+#: src/training_editor.rs:65
 msgid "Cancel"
 msgstr "Annuler"
 
-#: src/exercise_editor.rs:67
+#. Translators: Button to close the editor window and create a new training
+#: src/training_editor.rs:71
 msgid "Create"
 msgstr "Créer"
 
-#: src/exercise_editor.rs:68
+#. Translators: Button to close the editor window and update an existing training
+#: src/training_editor.rs:73
 msgid "Update"
 msgstr "Mise à jour"
 
-#: src/exercise_editor.rs:79
+#. Translators: The title of the field for the name of the training in the editor window
+#: src/training_editor.rs:85
 msgid "Name"
 msgstr "Nom"
 
-#: src/exercise_editor.rs:83
+#. Translators: The title of the field for the number of sets in the training in the editor window
+#: src/training_editor.rs:90
 msgid "Number of sets"
 msgstr "Nombre de sets"
 
-#: src/exercise_editor.rs:93
+#. Translators: The title of the field for the rest duration in the training in the editor window
+#: src/training_editor.rs:101
 msgid "Rest time"
 msgstr "Temps de repos"
 
-#: src/exercise_editor.rs:94 src/exercise_editor.rs:105
-#: src/settings_dialog.rs:37
+#. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
+#: src/training_editor.rs:103 src/training_editor.rs:116
+#: src/settings_dialog.rs:39
 msgid "seconds"
 msgstr "secondes"
 
-#: src/exercise_editor.rs:104
+#. Translators: The title of the field for the exercise duration in the training in the editor window
+#: src/training_editor.rs:114
 msgid "Exercise time"
 msgstr "Temps d'exercice"
 
-#: src/exercise_setup.rs:95
+#: src/training_setup.rs:95
 msgid "Sets"
 msgstr "Sets"
 
-#: src/exercise_setup.rs:104 src/exercise_timer.rs:173
+#. Translators: Shown on the timer page during exercise
+#: src/training_setup.rs:104 src/training_timer.rs:184
 msgid "Exercise"
 msgstr "Exercice"
 
-#: src/exercise_setup.rs:113 src/exercise_timer.rs:174
+#. Translators: Shown on the timer page during rest
+#: src/training_setup.rs:113 src/training_timer.rs:186
 msgid "Rest"
 msgstr "Repos"
 
-#: src/exercise_timer.rs:120
+#. Translators: Shown in the timer page when the training has come to the end
+#: src/training_timer.rs:121
 msgid "Finished!"
 msgstr "Fini!"
 
-#: src/exercise_timer.rs:172
-msgid "Warm up"
-msgstr "Echauffement"
+#. Translators: Shown on the timer page during preparation
+#: src/training_timer.rs:182
+msgid "Preparation"
+msgstr ""
 
-#: src/exercise_timer.rs:239
+#. Translators: Label showing the number of remaining sets on the timer page
+#: src/training_timer.rs:255
 msgid "Remaining sets: {}"
 msgstr "Sets restants : {}"
 
-#: src/exercise_timer/audio_player.rs:14
+#: src/training_timer/audio_player.rs:15
 msgid "Could not decode WAV"
 msgstr "Impossible de décoder WAV"
 
-#: src/exercise_timer/audio_player.rs:22
+#: src/training_timer/audio_player.rs:23
 msgid "Could not play audio"
 msgstr "Impossible de lire l'audio"
 
-#: src/exercise_timer/audio_player.rs:51
+#: src/training_timer/audio_player.rs:52
 msgid "Could not open data"
 msgstr "Impossible d'ouvrir les données"
 
-#: src/main.rs:19
+#: src/main.rs:20
 msgid "Could not create audio output stream"
 msgstr "Impossible de créer un flux de sortie audio"
 
-#: src/settings_dialog.rs:32
-msgid "Exercise defaults"
+#. Translators: The title of the preferences group for the training default settings
+#: src/settings_dialog.rs:33
+#, fuzzy
+msgid "Training defaults"
 msgstr "Valeurs par défaut de l'exercice"
 
-#: src/settings_dialog.rs:36
-msgid "Warmup time"
-msgstr "Temps d'échauffement"
+#. Translators: The title of the edit field to set the time (in seconds) for the preparation period
+#: src/settings_dialog.rs:38
+msgid "Preparation time"
+msgstr ""
 
 #: src/settings.rs:67
 msgid "Cannot find 'name' in settings dictionary"
@@ -336,7 +397,8 @@ msgstr "Impossible de trouver 'sets' dans le dictionnaire des paramètres"
 
 #: src/settings.rs:75
 msgid "Cannot find 'exercises_s' in settings dictionary"
-msgstr "Impossible de trouver 'exercises_s' dans le dictionnaire des paramètres"
+msgstr ""
+"Impossible de trouver 'exercises_s' dans le dictionnaire des paramètres"
 
 #: src/settings.rs:78
 msgid "Cannot find 'rest_s' in settings dictionary"
@@ -373,3 +435,18 @@ msgstr "Impossible de se connecter à un écran"
 #: src/shortcuts_window.rs:22
 msgid "Could not build the Help Overlay"
 msgstr "Impossible de créer la superposition d'aide"
+
+#~ msgid "Exercise List"
+#~ msgstr "Liste d'exercices"
+
+#~ msgid "New exercise"
+#~ msgstr "Nouvel exercice"
+
+#~ msgid "Edit exercise"
+#~ msgstr "Modifier l'exercice"
+
+#~ msgid "Warm up"
+#~ msgstr "Echauffement"
+
+#~ msgid "Warmup time"
+#~ msgstr "Temps d'échauffement"

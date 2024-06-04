@@ -1,12 +1,12 @@
 mod app;
 mod config;
-mod exercise_editor;
-mod exercise_setup;
-mod exercise_timer;
 mod settings;
 mod settings_dialog;
 mod setup;
 mod shortcuts_window;
+mod training_editor;
+mod training_setup;
+mod training_timer;
 use gettextrs::gettext;
 use relm4::{actions::AccelsPlus, gtk::prelude::*};
 
@@ -15,6 +15,7 @@ relm4::new_stateless_action!(QuitAction, AppActionGroup, "quit");
 
 fn main() {
     setup::setup();
+    // Translators: Error message when cannot connect to the audio output
     let (_stream, stream_handle) =
         rodio::OutputStream::try_default().expect(&gettext("Could not create audio output stream"));
     let app = relm4::main_adw_application();

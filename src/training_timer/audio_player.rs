@@ -11,7 +11,8 @@ pub struct AudioPlayerModel {
 impl AudioPlayerModel {
     fn play_ping(&self, times: u32) {
         let cursor = std::io::Cursor::new(self.ping_bytes.clone());
-        let decoder = rodio::Decoder::new_wav(cursor).expect(&gettext("Could not decode WAV"));
+        let decoder = rodio::Decoder::new_wav(cursor)
+            .unwrap_or_else(|err| panic!("{}: {}", gettext("Could not decode WAV"), err));
         let new_duration = decoder.total_duration().unwrap() * times;
         let d = decoder
             .repeat_infinite()

@@ -1,5 +1,5 @@
-use crate::exercise_editor::*;
 use crate::settings;
+use crate::training_editor::*;
 use futures::prelude::*;
 use gettextrs::gettext;
 use relm4::{
@@ -11,36 +11,36 @@ use relm4_icons::icon_names;
 use std::time::Duration;
 
 #[derive(Debug, Clone)]
-pub struct ExerciseSetup {
+pub struct TrainingSetup {
     pub name: String,
     pub exercise_s: usize,
     pub rest_s: usize,
     pub sets: usize,
 }
 
-impl ExerciseSetup {
+impl TrainingSetup {
     pub fn total_duration(&self) -> Duration {
         Duration::from_secs((self.exercise_s * self.sets + self.rest_s * (self.sets - 1)) as u64)
     }
 }
 
-impl Default for ExerciseSetup {
+impl Default for TrainingSetup {
     fn default() -> Self {
         settings::load_default_exercise_setup()
     }
 }
 
 #[derive(Debug)]
-pub enum ExerciseSetupInput {
+pub enum TrainingSetupInput {
     Edit(gtk::Root),
-    Update(ExerciseSetup),
+    Update(TrainingSetup),
     Load,
 }
 
 #[derive(Debug)]
-pub enum ExerciseSetupOutput {
+pub enum TrainingSetupOutput {
     Remove(DynamicIndex),
-    Load(ExerciseSetup),
+    Load(TrainingSetup),
 }
 
 fn format_duration(d: &Duration) -> String {
@@ -51,10 +51,10 @@ fn format_duration(d: &Duration) -> String {
 }
 
 #[relm4::factory(pub)]
-impl FactoryComponent for ExerciseSetup {
-    type Init = ExerciseSetup;
-    type Input = ExerciseSetupInput;
-    type Output = ExerciseSetupOutput;
+impl FactoryComponent for TrainingSetup {
+    type Init = TrainingSetup;
+    type Input = TrainingSetupInput;
+    type Output = TrainingSetupOutput;
     type CommandOutput = ();
     type ParentWidget = gtk::Box;
 
@@ -127,20 +127,20 @@ impl FactoryComponent for ExerciseSetup {
                             gtk::Button {
                                 set_icon_name: icon_names::EDIT,
                                 connect_clicked[sender] => move |btn| {
-                                    sender.input(ExerciseSetupInput::Edit(btn.root().unwrap()));
+                                    sender.input(TrainingSetupInput::Edit(btn.root().unwrap()));
                                 },
                             },
                             gtk::Button {
                                 set_class_active: ("destructive-action", true),
                                 set_icon_name: icon_names::ENTRY_CLEAR,
                                 connect_clicked[sender, index] => move |_| {
-                                    sender.output(ExerciseSetupOutput::Remove(index.clone())).unwrap();
+                                    sender.output(TrainingSetupOutput::Remove(index.clone())).unwrap();
                                 },
                             },
                             gtk::Button {
                                 set_class_active: ("suggested-action", true),
                                 set_icon_name: icon_names::PLAY,
-                                connect_clicked => ExerciseSetupInput::Load,
+                                connect_clicked => TrainingSetupInput::Load,
                             },
                         },
                     },
@@ -159,24 +159,24 @@ impl FactoryComponent for ExerciseSetup {
 
     fn update(&mut self, message: Self::Input, sender: relm4::FactorySender<Self>) {
         match message {
-            ExerciseSetupInput::Edit(root) => {
-                let mut editor = ExerciseEditor::builder()
+            TrainingSetupInput::Edit(root) => {
+                let mut editor = TrainingEditor::builder()
                     .transient_for(root)
-                    .launch((ExerciseEditorRole::Edit, self.clone()))
+                    .launch((TrainingEditorRole::Edit, self.clone()))
                     .into_stream();
                 relm4::spawn_local(async move {
-                    if let Some(ExerciseEditorOutput::Create(setup)) = editor.next().await.unwrap()
+                    if let Some(TrainingEditorOutput::Create(setup)) = editor.next().await.unwrap()
                     {
-                        sender.input(ExerciseSetupInput::Update(setup));
+                        sender.input(TrainingSetupInput::Update(setup));
                     }
                 });
             }
-            ExerciseSetupInput::Update(setup) => {
+            TrainingSetupInput::Update(setup) => {
                 *self = setup;
             }
-            ExerciseSetupInput::Load => {
+            TrainingSetupInput::Load => {
                 sender
-                    .output(ExerciseSetupOutput::Load(self.clone()))
+                    .output(TrainingSetupOutput::Load(self.clone()))
                     .unwrap();
             }
         }

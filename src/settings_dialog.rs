@@ -1,6 +1,6 @@
 use crate::{
-    exercise_editor::{SPIN_ROW_STEP, SPIN_ROW_UPPER},
     settings::*,
+    training_editor::{SPIN_ROW_STEP, SPIN_ROW_UPPER},
 };
 
 use gettextrs::gettext;
@@ -16,7 +16,7 @@ pub struct SettingsDialogModel;
 
 #[relm4::component(pub)]
 impl Component for SettingsDialogModel {
-    type Init = GlobalExerciseSetup;
+    type Init = GlobalTrainingSetup;
     type Input = ();
     type Output = ();
     type CommandOutput = ();
@@ -29,11 +29,13 @@ impl Component for SettingsDialogModel {
             set_search_enabled: false,
             add = &adw::PreferencesPage {
                 add = &adw::PreferencesGroup {
-                    set_title: &gettext("Exercise defaults"),
+                    // Translators: The title of the preferences group for the training default settings
+                    set_title: &gettext("Training defaults"),
                     gtk::ListBox {
                         add_css_class: "boxed-list",
                         adw::SpinRow {
-                            set_title: &gettext("Warmup time"),
+                            // Translators: The title of the edit field to set the time (in seconds) for the preparation period
+                            set_title: &gettext("Preparation time"),
                             set_subtitle: &gettext("seconds"),
                             #[wrap(Some)]
                             #[name = "warmup_adjust"]

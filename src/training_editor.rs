@@ -1,4 +1,4 @@
-use crate::exercise_setup::*;
+use crate::training_setup::*;
 use gettextrs::gettext;
 use relm4::{
     adw::{self, prelude::*},
@@ -7,8 +7,8 @@ use relm4::{
 };
 
 #[derive(Debug)]
-pub struct ExerciseEditor {
-    role: ExerciseEditorRole,
+pub struct TrainingEditor {
+    role: TrainingEditorRole,
     name: StringBinding,
     sets: U32Binding,
     exercise_s: U32Binding,
@@ -16,20 +16,20 @@ pub struct ExerciseEditor {
 }
 
 #[derive(Debug)]
-pub enum ExerciseEditorRole {
+pub enum TrainingEditorRole {
     New,
     Edit,
 }
 
 #[derive(Debug)]
-pub enum ExerciseEditorInput {
+pub enum TrainingEditorInput {
     Create,
     Cancel,
 }
 
 #[derive(Debug)]
-pub enum ExerciseEditorOutput {
-    Create(ExerciseSetup),
+pub enum TrainingEditorOutput {
+    Create(TrainingSetup),
 }
 
 pub const SPIN_ROW_LOWER: f64 = 1f64;
@@ -37,10 +37,10 @@ pub const SPIN_ROW_UPPER: f64 = 1000000f64;
 pub const SPIN_ROW_STEP: f64 = 1f64;
 
 #[relm4::component(pub)]
-impl relm4::SimpleComponent for ExerciseEditor {
-    type Init = (ExerciseEditorRole, ExerciseSetup);
-    type Input = ExerciseEditorInput;
-    type Output = Option<ExerciseEditorOutput>;
+impl relm4::SimpleComponent for TrainingEditor {
+    type Init = (TrainingEditorRole, TrainingSetup);
+    type Input = TrainingEditorInput;
+    type Output = Option<TrainingEditorOutput>;
 
     view! {
         window = adw::Window {
@@ -53,22 +53,27 @@ impl relm4::SimpleComponent for ExerciseEditor {
                     #[wrap(Some)]
                     set_title_widget = &adw::WindowTitle {
                         set_title: &match model.role {
-                            ExerciseEditorRole::New => gettext("New exercise"),
-                            ExerciseEditorRole::Edit => gettext("Edit exercise"),
+                            // Translators: The editor window's title when creating a new training
+                            TrainingEditorRole::New => gettext("New training"),
+                            // Translators: The editor window's title when modifying a training
+                            TrainingEditorRole::Edit => gettext("Edit training"),
                         },
                     },
                     set_show_end_title_buttons: false,
                     pack_start = &gtk::Button {
+                        // Translators: Button to close the training editor window without modifications
                         set_label: &gettext("Cancel"),
-                        connect_clicked => ExerciseEditorInput::Cancel,
+                        connect_clicked => TrainingEditorInput::Cancel,
                     },
                     pack_end = &gtk::Button {
                         set_label: &match model.role {
-                            ExerciseEditorRole::New => gettext("Create"),
-                            ExerciseEditorRole::Edit => gettext("Update"),
+                            // Translators: Button to close the editor window and create a new training
+                            TrainingEditorRole::New => gettext("Create"),
+                            // Translators: Button to close the editor window and update an existing training
+                            TrainingEditorRole::Edit => gettext("Update"),
                         },
                         set_class_active: ("suggested-action", true),
-                        connect_clicked => ExerciseEditorInput::Create,
+                        connect_clicked => TrainingEditorInput::Create,
                     }
                 },
                 gtk::Box {
@@ -76,10 +81,12 @@ impl relm4::SimpleComponent for ExerciseEditor {
                     set_class_active: ("card", true),
                     set_orientation: gtk::Orientation::Vertical,
                     adw::EntryRow {
+                        // Translators: The title of the field for the name of the training in the editor window
                         set_title: &gettext("Name"),
                         add_binding: (&model.name, "text"),
                     },
                     adw::SpinRow {
+                        // Translators: The title of the field for the number of sets in the training in the editor window
                         set_title: &gettext("Number of sets"),
                         #[wrap(Some)]
                         set_adjustment = &gtk::Adjustment {
@@ -90,7 +97,9 @@ impl relm4::SimpleComponent for ExerciseEditor {
                         },
                     },
                     adw::SpinRow {
+                        // Translators: The title of the field for the rest duration in the training in the editor window
                         set_title: &gettext("Rest time"),
+                        // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
                         set_subtitle: &gettext("seconds"),
                         #[wrap(Some)]
                         set_adjustment = &gtk::Adjustment {
@@ -101,7 +110,9 @@ impl relm4::SimpleComponent for ExerciseEditor {
                         },
                     },
                     adw::SpinRow {
+                        // Translators: The title of the field for the exercise duration in the training in the editor window
                         set_title: &gettext("Exercise time"),
+                        // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
                         set_subtitle: &gettext("seconds"),
                         #[wrap(Some)]
                         set_adjustment = &gtk::Adjustment {
@@ -121,7 +132,7 @@ impl relm4::SimpleComponent for ExerciseEditor {
         root: Self::Root,
         sender: relm4::ComponentSender<Self>,
     ) -> relm4::ComponentParts<Self> {
-        let model = ExerciseEditor {
+        let model = TrainingEditor {
             name: StringBinding::new(init.1.name.clone()),
             sets: U32Binding::new(init.1.sets as u32),
             rest_s: U32Binding::new(init.1.rest_s as u32),
@@ -134,10 +145,10 @@ impl relm4::SimpleComponent for ExerciseEditor {
 
     fn update(&mut self, message: Self::Input, sender: relm4::ComponentSender<Self>) {
         match message {
-            ExerciseEditorInput::Cancel => sender.output(None).unwrap(),
-            ExerciseEditorInput::Create => {
+            TrainingEditorInput::Cancel => sender.output(None).unwrap(),
+            TrainingEditorInput::Create => {
                 sender
-                    .output(Some(ExerciseEditorOutput::Create(ExerciseSetup {
+                    .output(Some(TrainingEditorOutput::Create(TrainingSetup {
                         name: self.name.get(),
                         exercise_s: self.exercise_s.get() as usize,
                         rest_s: self.rest_s.get() as usize,

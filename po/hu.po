@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-25 14:52+0200\n"
+"POT-Creation-Date: 2024-06-04 18:56+0200\n"
 "PO-Revision-Date: 2024-05-26 13:09+0000\n"
 "Last-Translator: Lőrinc Serfőző <lorinc.serfozo@mailbox.org>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/exercise-timer/"
@@ -47,8 +47,9 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Kilépés"
 
+#. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:166 src/setup.rs:11
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:174 src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "Edzésóra"
 
@@ -79,11 +80,13 @@ msgid "If the window is maximized"
 msgstr "Igaz, ha az ablak maximalizált"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:18
-msgid "Default exercise setup, in JSON notation"
+#, fuzzy
+msgid "Default training setup, in JSON notation"
 msgstr "Alapértelmezett edzés, JSON formátumban"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:22
-msgid "List of exercise setups, in JSON notation"
+#, fuzzy
+msgid "List of training setups, in JSON notation"
 msgstr "Az edzések listája, JSON formátumban"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
@@ -155,171 +158,229 @@ msgid "Timer - light mode"
 msgstr "Időzítő - világos mód"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:50
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:62
-msgid "Bug fixes"
-msgstr "Hibajavítások"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
-msgid "Allow time periods longer than 999 seconds"
-msgstr "999 másodpercnél hosszabb periódusok engedélyezése"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:58
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:78
 msgid "Features"
 msgstr "Funkciók"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:60
-msgid "Displaying remaining time in minutes:seconds format"
-msgstr "A fennmaradó idő kijelzése perc:másodperc formátumban"
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
+msgid "Added internationalization support"
+msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
-msgid "Fix misleading Ctrl designators in shortcuts window"
-msgstr "Félrevezető Ctrl módosítók javítása a gyorsbillentyűk ablakban"
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:53
+msgid "Added French translation"
+msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:65
-msgid "Fix timer overflow after finish"
-msgstr "Az időzítő túlcsordulásának javítása"
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:54
+msgid "Added Hungarian translation"
+msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:67
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:55
+msgid "Added Norwegian Bokmål translation"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:57
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:70
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:82
+msgid "Bug fixes"
+msgstr "Hibajavítások"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:59
+msgid "Fix too wide window when Finished"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:61
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:87
 msgid "Miscellaneous changes"
 msgstr "Egyéb változtatások"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:69
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:63
+msgid "Added OARS-1.1 compatible content rating"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
+msgid "Updated library dependencies"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:72
+msgid "Allow time periods longer than 999 seconds"
+msgstr "999 másodpercnél hosszabb periódusok engedélyezése"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:80
+msgid "Displaying remaining time in minutes:seconds format"
+msgstr "A fennmaradó idő kijelzése perc:másodperc formátumban"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:84
+msgid "Fix misleading Ctrl designators in shortcuts window"
+msgstr "Félrevezető Ctrl módosítók javítása a gyorsbillentyűk ablakban"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:85
+msgid "Fix timer overflow after finish"
+msgstr "Az időzítő túlcsordulásának javítása"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:89
 msgid "Updated application runtime to GNOME 46"
 msgstr "Futtatókörnyezet frissítése GNOME 46-ra"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:75
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:95
 msgid "Updated icon for better contrast on dark backgrounds"
 msgstr "Frissített ikon jobb kontraszt érdekében sötét háttereken"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:76
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:96
 msgid "Added branding color metadata"
 msgstr "Metaadatok hozzáadva a brand színekről"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:81
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:101
 msgid "Initial release of Exercise Timer"
 msgstr "Az Edzésóra kezdeti kiadása"
 
-#: src/app.rs:57
+#. Translators: The title of the preferences menu entry
+#: src/app.rs:58
 msgid "_Preferences"
 msgstr "_Beállítások"
 
-#: src/app.rs:58
+#. Translators: The title of the keyboard shortcuts menu entry
+#: src/app.rs:60
 msgid "_Keyboard Shortcuts"
 msgstr "_Gyorsbillentyűk"
 
-#: src/app.rs:59
+#. Translators: The title of the about dialog menu entry
+#: src/app.rs:62
 msgid "_About Exercise Timer"
 msgstr "Az Edzésóráról"
 
-#: src/app.rs:74
-msgid "Exercise List"
-msgstr "Edzéslista"
+#. Translators: This is the title of the page which lists all trainings
+#: src/app.rs:78
+msgid "Training List"
+msgstr ""
 
-#: src/app.rs:104
-msgid "No exercise is created yet"
+#. Translators: The message which is shown on the background of the empty training list
+#: src/app.rs:109
+#, fuzzy
+msgid "No training is created yet"
 msgstr "Még nincs edzés"
 
-#: src/app.rs:107
-msgid "Create exercise"
+#. Translators: Big label button to create the first training if none exists
+#: src/app.rs:113
+#, fuzzy
+msgid "Create training"
 msgstr "Új edzés létrehozása"
 
-#: src/app.rs:117
+#. Translators: The name of the timer page
+#: src/app.rs:124
 msgid "Timer"
 msgstr "Időzítő"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:173
+#: src/app.rs:181
 msgid "translator_credits"
 msgstr "Serfőző Lőrinc"
 
-#: src/exercise_editor.rs:56
-msgid "New exercise"
-msgstr "Új edzés"
+#. Translators: The editor window's title when creating a new training
+#: src/training_editor.rs:57
+msgid "New training"
+msgstr ""
 
-#: src/exercise_editor.rs:57
-msgid "Edit exercise"
-msgstr "Edzés szerkesztése"
+#. Translators: The editor window's title when modifying a training
+#: src/training_editor.rs:59
+msgid "Edit training"
+msgstr ""
 
-#: src/exercise_editor.rs:62
+#. Translators: Button to close the training editor window without modifications
+#: src/training_editor.rs:65
 msgid "Cancel"
 msgstr "Mégse"
 
-#: src/exercise_editor.rs:67
+#. Translators: Button to close the editor window and create a new training
+#: src/training_editor.rs:71
 msgid "Create"
 msgstr "Kész"
 
-#: src/exercise_editor.rs:68
+#. Translators: Button to close the editor window and update an existing training
+#: src/training_editor.rs:73
 msgid "Update"
 msgstr "Módosít"
 
-#: src/exercise_editor.rs:79
+#. Translators: The title of the field for the name of the training in the editor window
+#: src/training_editor.rs:85
 msgid "Name"
 msgstr "Név"
 
-#: src/exercise_editor.rs:83
+#. Translators: The title of the field for the number of sets in the training in the editor window
+#: src/training_editor.rs:90
 msgid "Number of sets"
 msgstr "Szettek száma"
 
-#: src/exercise_editor.rs:93
+#. Translators: The title of the field for the rest duration in the training in the editor window
+#: src/training_editor.rs:101
 msgid "Rest time"
 msgstr "Pihenőidő"
 
-#: src/exercise_editor.rs:94 src/exercise_editor.rs:105
-#: src/settings_dialog.rs:37
+#. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
+#: src/training_editor.rs:103 src/training_editor.rs:116
+#: src/settings_dialog.rs:39
 msgid "seconds"
 msgstr "másodperc"
 
-#: src/exercise_editor.rs:104
+#. Translators: The title of the field for the exercise duration in the training in the editor window
+#: src/training_editor.rs:114
 msgid "Exercise time"
 msgstr "Gyakorlat ideje"
 
-#: src/exercise_setup.rs:95
+#: src/training_setup.rs:95
 msgid "Sets"
 msgstr "Szettek"
 
-#: src/exercise_setup.rs:104 src/exercise_timer.rs:173
+#. Translators: Shown on the timer page during exercise
+#: src/training_setup.rs:104 src/training_timer.rs:184
 msgid "Exercise"
 msgstr "Gyakorlat"
 
-#: src/exercise_setup.rs:113 src/exercise_timer.rs:174
+#. Translators: Shown on the timer page during rest
+#: src/training_setup.rs:113 src/training_timer.rs:186
 msgid "Rest"
 msgstr "Pihenés"
 
-#: src/exercise_timer.rs:120
+#. Translators: Shown in the timer page when the training has come to the end
+#: src/training_timer.rs:121
 msgid "Finished!"
 msgstr "Kész!"
 
-#: src/exercise_timer.rs:172
-msgid "Warm up"
-msgstr "Felkészülés"
+#. Translators: Shown on the timer page during preparation
+#: src/training_timer.rs:182
+msgid "Preparation"
+msgstr ""
 
-#: src/exercise_timer.rs:239
+#. Translators: Label showing the number of remaining sets on the timer page
+#: src/training_timer.rs:255
 msgid "Remaining sets: {}"
 msgstr "Hátralévő szettek: {}"
 
-#: src/exercise_timer/audio_player.rs:14
+#: src/training_timer/audio_player.rs:15
 msgid "Could not decode WAV"
 msgstr "Nem sikerült dekódolni a WAV fájlt"
 
-#: src/exercise_timer/audio_player.rs:22
+#: src/training_timer/audio_player.rs:23
 msgid "Could not play audio"
 msgstr "Nem sikerült hangot lejátszani"
 
-#: src/exercise_timer/audio_player.rs:51
+#: src/training_timer/audio_player.rs:52
 msgid "Could not open data"
 msgstr "Nem sikerült betölteni az adatot"
 
-#: src/main.rs:19
+#: src/main.rs:20
 msgid "Could not create audio output stream"
 msgstr "Nem sikerült létrehozni a hangkimentetet"
 
-#: src/settings_dialog.rs:32
-msgid "Exercise defaults"
+#. Translators: The title of the preferences group for the training default settings
+#: src/settings_dialog.rs:33
+#, fuzzy
+msgid "Training defaults"
 msgstr "Edzés alapértelmezései"
 
-#: src/settings_dialog.rs:36
-msgid "Warmup time"
-msgstr "Bemelegítés időtartama"
+#. Translators: The title of the edit field to set the time (in seconds) for the preparation period
+#: src/settings_dialog.rs:38
+msgid "Preparation time"
+msgstr ""
 
 #: src/settings.rs:67
 msgid "Cannot find 'name' in settings dictionary"
@@ -368,3 +429,18 @@ msgstr "Nem sikerült csatlakozni a megjelenítőhöz"
 #: src/shortcuts_window.rs:22
 msgid "Could not build the Help Overlay"
 msgstr "Nem sikerült létrehozni a Segítség ablakot"
+
+#~ msgid "Exercise List"
+#~ msgstr "Edzéslista"
+
+#~ msgid "New exercise"
+#~ msgstr "Új edzés"
+
+#~ msgid "Edit exercise"
+#~ msgstr "Edzés szerkesztése"
+
+#~ msgid "Warm up"
+#~ msgstr "Felkészülés"
+
+#~ msgid "Warmup time"
+#~ msgstr "Bemelegítés időtartama"

@@ -14,12 +14,12 @@
             <summary>If the window is maximized</summary>
         </key>
         <key name="default-exercise-json" type="s">
-            <default>"{\"name\": \"Exercise\", \"sets\": 5, \"warmup_s\": 5, \"exercise_s\": 60, \"rest_s\": 20}"</default>
-            <summary>Default exercise setup, in JSON notation</summary>
+            <default>"{\"name\": \"Training\", \"sets\": 5, \"warmup_s\": 5, \"exercise_s\": 60, \"rest_s\": 20}"</default>
+            <summary>Default training setup, in JSON notation</summary>
         </key>
         <key name="exercise-json-list" type="s">
             <default>"[]"</default>
-            <summary>List of exercise setups, in JSON notation</summary>
+            <summary>List of training setups, in JSON notation</summary>
         </key>
         <key name="warmup-s" type="u">
             <default>5</default>

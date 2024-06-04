@@ -1,10 +1,10 @@
 use crate::config;
-use crate::exercise_editor::*;
-use crate::exercise_setup::*;
-use crate::exercise_timer::*;
 use crate::settings;
 use crate::settings_dialog::*;
 use crate::shortcuts_window::*;
+use crate::training_editor::*;
+use crate::training_setup::*;
+use crate::training_timer::*;
 use futures::prelude::*;
 use gettextrs::gettext;
 use relm4::actions::AccelsPlus;
@@ -20,9 +20,9 @@ use relm4_icons::icon_names;
 #[derive(Debug)]
 pub enum AppModelInput {
     PromptNewExercise,
-    CreateExerciseSetup(ExerciseSetup),
+    CreateExerciseSetup(TrainingSetup),
     RemoveExerciseSetup(DynamicIndex),
-    LoadExercise(ExerciseSetup),
+    LoadExercise(TrainingSetup),
     Popped,
     StartStop,
     Reset,
@@ -36,11 +36,11 @@ relm4::new_stateless_action!(StartStopAction, WindowActionGroup, "start-stop");
 relm4::new_stateless_action!(ResetAction, WindowActionGroup, "reset");
 
 pub struct AppModel {
-    exercise_timer: Option<Controller<ExerciseTimer>>,
-    list_exercises: relm4::factory::FactoryVecDeque<ExerciseSetup>,
+    exercise_timer: Option<Controller<TrainingTimer>>,
+    list_exercises: relm4::factory::FactoryVecDeque<TrainingSetup>,
     output_stream: rodio::OutputStreamHandle,
     window_geometry: settings::WindowGeometry,
-    global_settings: settings::GlobalExerciseSetup,
+    global_settings: settings::GlobalTrainingSetup,
     shortcuts_window: Controller<ShortcutsWindowModel>,
 }
 
@@ -54,8 +54,11 @@ impl Component for AppModel {
     menu! {
         primary_menu: {
             section! {
+                // Translators: The title of the preferences menu entry
                 &gettext("_Preferences") => PreferencesAction,
+                // Translators: The title of the keyboard shortcuts menu entry
                 &gettext("_Keyboard Shortcuts") => ShortcutsAction,
+                // Translators: The title of the about dialog menu entry
                 &gettext("_About Exercise Timer") => AboutAction,
             }
         }
@@ -71,7 +74,8 @@ impl Component for AppModel {
             #[name = "navigation_view"]
             adw::NavigationView {
                 add = &adw::NavigationPage {
-                    set_title: &gettext("Exercise List"),
+                    // Translators: This is the title of the page which lists all trainings
+                    set_title: &gettext("Training List"),
                     #[wrap(Some)]
                     set_child = &adw::ToolbarView {
                         add_top_bar = &adw::HeaderBar {
@@ -85,7 +89,7 @@ impl Component for AppModel {
                             },
                         },
                         #[wrap(Some)]
-                        #[name = "exercise_list_stack"]
+                        #[name = "training_list_stack"]
                         set_content = &gtk::Stack {
                             #[name = "exercise_list_scrolled"]
                             gtk::ScrolledWindow {
@@ -98,13 +102,15 @@ impl Component for AppModel {
                                     set_spacing: 8,
                                 }
                             },
-                            #[name = "exercise_list_status"]
+                            #[name = "training_list_status"]
                             adw::StatusPage {
                                 set_icon_name: Some(icon_names::WEIGHT2),
-                                set_title: &gettext("No exercise is created yet"),
+                                // Translators: The message which is shown on the background of the empty training list
+                                set_title: &gettext("No training is created yet"),
                                 gtk::Button {
                                     set_css_classes: &["suggested-action", "pill"],
-                                    set_label: &gettext("Create exercise"),
+                                    // Translators: Big label button to create the first training if none exists
+                                    set_label: &gettext("Create training"),
                                     set_halign: gtk::Align::Center,
                                     connect_clicked => AppModelInput::PromptNewExercise,
                                 }
@@ -114,6 +120,7 @@ impl Component for AppModel {
                 },
                 #[name = "main_navigation_page"]
                 add = &adw::NavigationPage {
+                    // Translators: The name of the timer page
                     set_title: &gettext("Timer"),
                     #[wrap(Some)]
                     #[name = "main_view"]
@@ -134,8 +141,8 @@ impl Component for AppModel {
         let mut list_exercises = relm4::factory::FactoryVecDeque::builder()
             .launch(gtk::Box::default())
             .forward(sender.input_sender(), |output| match output {
-                ExerciseSetupOutput::Remove(index) => AppModelInput::RemoveExerciseSetup(index),
-                ExerciseSetupOutput::Load(exercise_setup) => {
+                TrainingSetupOutput::Remove(index) => AppModelInput::RemoveExerciseSetup(index),
+                TrainingSetupOutput::Load(exercise_setup) => {
                     AppModelInput::LoadExercise(exercise_setup)
                 }
             });
@@ -150,7 +157,7 @@ impl Component for AppModel {
             list_exercises,
             output_stream: init,
             window_geometry: settings::WindowGeometry::new_from_gsettings(),
-            global_settings: settings::GlobalExerciseSetup::new_from_gsettings(),
+            global_settings: settings::GlobalTrainingSetup::new_from_gsettings(),
             shortcuts_window: ShortcutsWindowModel::builder()
                 .transient_for(&root)
                 .launch(())
@@ -163,7 +170,8 @@ impl Component for AppModel {
                 let about_window = adw::AboutWindow::builder()
                     .transient_for(&root)
                     .application_icon(config::APP_ID)
-                    .application_name(&gettext("Exercise Timer"))
+                    // Translators: The name of the application. Feel free to localize it!
+                    .application_name(gettext("Exercise Timer"))
                     .copyright(config::COPYRIGHT)
                     .designers(config::DESIGNERS)
                     .developers(config::DEVELOPERS)
@@ -236,14 +244,14 @@ impl Component for AppModel {
         match message {
             AppModelInput::PromptNewExercise => {
                 if let Some(timer) = self.exercise_timer.as_ref() {
-                    timer.sender().emit(ExerciseTimerInput::Pause);
+                    timer.sender().emit(TrainingTimerInput::Pause);
                 }
-                let mut editor = ExerciseEditor::builder()
+                let mut editor = TrainingEditor::builder()
                     .transient_for(root.widget_ref())
-                    .launch((ExerciseEditorRole::New, ExerciseSetup::default()))
+                    .launch((TrainingEditorRole::New, TrainingSetup::default()))
                     .into_stream();
                 relm4::spawn_local(async move {
-                    if let Some(ExerciseEditorOutput::Create(setup)) = editor.next().await.unwrap()
+                    if let Some(TrainingEditorOutput::Create(setup)) = editor.next().await.unwrap()
                     {
                         sender.input(AppModelInput::CreateExerciseSetup(setup));
                     }
@@ -258,7 +266,7 @@ impl Component for AppModel {
             }
             AppModelInput::LoadExercise(setup) => {
                 self.exercise_timer = Some(
-                    ExerciseTimer::builder()
+                    TrainingTimer::builder()
                         .launch(ExerciseTimerInit {
                             setup,
                             global_setup: self.global_settings.clone(),
@@ -276,12 +284,12 @@ impl Component for AppModel {
             }
             AppModelInput::StartStop => {
                 if let Some(controller) = &self.exercise_timer {
-                    controller.emit(ExerciseTimerInput::StartStop);
+                    controller.emit(TrainingTimerInput::StartStop);
                 }
             }
             AppModelInput::Reset => {
                 if let Some(controller) = &self.exercise_timer {
-                    controller.emit(ExerciseTimerInput::Reset);
+                    controller.emit(TrainingTimerInput::Reset);
                 }
             }
         }
@@ -292,11 +300,11 @@ impl Component for AppModel {
 fn update_status_visible(widgets: &AppModelWidgets, model: &AppModel) {
     if model.list_exercises.is_empty() {
         widgets
-            .exercise_list_stack
-            .set_visible_child(&widgets.exercise_list_status);
+            .training_list_stack
+            .set_visible_child(&widgets.training_list_status);
     } else {
         widgets
-            .exercise_list_stack
+            .training_list_stack
             .set_visible_child(&widgets.exercise_list_scrolled);
     }
 }

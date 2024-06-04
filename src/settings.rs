@@ -1,4 +1,4 @@
-use crate::exercise_setup::*;
+use crate::training_setup::*;
 use gettextrs::gettext;
 use relm4::{
     self,
@@ -36,12 +36,12 @@ impl Drop for WindowGeometry {
 }
 
 #[derive(Clone, Debug, Default)]
-pub struct GlobalExerciseSetup {
+pub struct GlobalTrainingSetup {
     pub warmup_s: U32Binding,
     pub beep_volume: F64Binding,
 }
 
-impl GlobalExerciseSetup {
+impl GlobalTrainingSetup {
     pub fn new_from_gsettings() -> Self {
         let settings = gio::Settings::new(crate::config::APP_ID);
         Self {
@@ -51,7 +51,7 @@ impl GlobalExerciseSetup {
     }
 }
 
-impl Drop for GlobalExerciseSetup {
+impl Drop for GlobalTrainingSetup {
     fn drop(&mut self) {
         let settings = gio::Settings::new(crate::config::APP_ID);
         settings.delay();
@@ -61,11 +61,11 @@ impl Drop for GlobalExerciseSetup {
     }
 }
 
-fn parse_json_to_exercise_setup(value: &json::JsonValue) -> ExerciseSetup {
+fn parse_json_to_exercise_setup(value: &json::JsonValue) -> TrainingSetup {
     let name = value["name"]
         .as_str()
         .expect(&gettext("Cannot find 'name' in settings dictionary"));
-    ExerciseSetup {
+    TrainingSetup {
         name: gettext(name),
         sets: value["sets"]
             .as_usize()
@@ -79,7 +79,7 @@ fn parse_json_to_exercise_setup(value: &json::JsonValue) -> ExerciseSetup {
     }
 }
 
-pub fn load_default_exercise_setup() -> ExerciseSetup {
+pub fn load_default_exercise_setup() -> TrainingSetup {
     let settings = gio::Settings::new(crate::config::APP_ID);
     let raw_json = settings.string("default-exercise-json");
     parse_json_to_exercise_setup(
@@ -87,14 +87,14 @@ pub fn load_default_exercise_setup() -> ExerciseSetup {
     )
 }
 
-pub fn load_exercise_list_from_gsettings() -> Vec<ExerciseSetup> {
+pub fn load_exercise_list_from_gsettings() -> Vec<TrainingSetup> {
     let settings = gio::Settings::new(crate::config::APP_ID);
     let raw_json = settings.string("exercise-json-list");
     let parsed = json::parse(&raw_json).expect(&gettext("Could not parse exercise list"));
     parsed.members().map(parse_json_to_exercise_setup).collect()
 }
 
-pub fn save_exercise_list_to_gsettings<'a>(exercises: impl Iterator<Item = &'a ExerciseSetup>) {
+pub fn save_exercise_list_to_gsettings<'a>(exercises: impl Iterator<Item = &'a TrainingSetup>) {
     let settings = gio::Settings::new(crate::config::APP_ID);
     let json_list: Vec<json::JsonValue> = exercises
         .map(|exercise| {

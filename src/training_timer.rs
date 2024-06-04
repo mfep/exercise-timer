@@ -12,22 +12,22 @@ use relm4::{
 use relm4_icons::icon_names;
 use timer::{TimerModel, TimerOutput};
 
-use crate::{exercise_setup::ExerciseSetup, settings::GlobalExerciseSetup};
+use crate::{settings::GlobalTrainingSetup, training_setup::TrainingSetup};
 use audio_player::{AudioPlayerInput, AudioPlayerModel};
 
 use self::audio_player::AudioPlayerModelInit;
 
 #[derive(PartialEq)]
-enum ExerciseState {
+enum TrainingState {
     Warmup,
     Exercise,
     Rest,
 }
 
-pub struct ExerciseTimer {
-    setup: ExerciseSetup,
-    global_setup: GlobalExerciseSetup,
-    state: ExerciseState,
+pub struct TrainingTimer {
+    setup: TrainingSetup,
+    global_setup: GlobalTrainingSetup,
+    state: TrainingState,
     remaining_sets: usize,
     remaining_s: usize,
     running: bool,
@@ -35,20 +35,20 @@ pub struct ExerciseTimer {
     audio_player: relm4::WorkerController<AudioPlayerModel>,
 }
 
-impl ExerciseTimer {
+impl TrainingTimer {
     fn new(
-        exercise: ExerciseSetup,
-        global_setup: GlobalExerciseSetup,
+        exercise: TrainingSetup,
+        global_setup: GlobalTrainingSetup,
         output: rodio::OutputStreamHandle,
-        sender: &ComponentSender<ExerciseTimer>,
+        sender: &ComponentSender<TrainingTimer>,
     ) -> Self {
         let warmup_s = global_setup.warmup_s.get() as usize;
         let beep_volume = global_setup.beep_volume.get();
         Self {
             state: if warmup_s > 0 {
-                ExerciseState::Warmup
+                TrainingState::Warmup
             } else {
-                ExerciseState::Exercise
+                TrainingState::Exercise
             },
             global_setup,
             remaining_sets: exercise.sets,
@@ -65,16 +65,16 @@ impl ExerciseTimer {
                     output_stream: output,
                     volume: beep_volume,
                 })
-                .forward(sender.input_sender(), |_msg| ExerciseTimerInput::Tick),
+                .forward(sender.input_sender(), |_msg| TrainingTimerInput::Tick),
         }
     }
 
-    fn reset(&mut self, sender: &ComponentSender<ExerciseTimer>) {
+    fn reset(&mut self, sender: &ComponentSender<TrainingTimer>) {
         let warmup_s = self.global_setup.warmup_s.get() as usize;
         self.state = if warmup_s > 0 {
-            ExerciseState::Warmup
+            TrainingState::Warmup
         } else {
-            ExerciseState::Exercise
+            TrainingState::Exercise
         };
         self.remaining_sets = self.setup.sets;
         self.remaining_s = if warmup_s > 0 {
@@ -88,7 +88,7 @@ impl ExerciseTimer {
 }
 
 #[derive(Debug)]
-pub enum ExerciseTimerInput {
+pub enum TrainingTimerInput {
     Tick,
     StartStop,
     Pause,
@@ -96,13 +96,13 @@ pub enum ExerciseTimerInput {
 }
 
 fn build_timer(
-    sender: &ComponentSender<ExerciseTimer>,
+    sender: &ComponentSender<TrainingTimer>,
 ) -> Option<relm4::WorkerController<TimerModel>> {
     Some(
         TimerModel::builder()
             .detach_worker(())
             .forward(sender.input_sender(), |timer_output| match timer_output {
-                TimerOutput::Tick => ExerciseTimerInput::Tick,
+                TimerOutput::Tick => TrainingTimerInput::Tick,
             }),
     )
 }
@@ -117,6 +117,7 @@ fn remaining_str_mins(remaining_s: usize) -> String {
 
 fn remaining_str_colon(remaining_s: usize) -> String {
     if remaining_s == 0 {
+        // Translators: Shown in the timer page when the training has come to the end
         gettext("Finished!")
     } else {
         String::from(":")
@@ -140,15 +141,15 @@ fn width_chars(remaining_s: usize, default: i32) -> i32 {
 }
 
 pub struct ExerciseTimerInit {
-    pub setup: ExerciseSetup,
-    pub global_setup: GlobalExerciseSetup,
+    pub setup: TrainingSetup,
+    pub global_setup: GlobalTrainingSetup,
     pub output_handle: rodio::OutputStreamHandle,
 }
 
 #[relm4::component(pub)]
-impl Component for ExerciseTimer {
+impl Component for TrainingTimer {
     type Init = ExerciseTimerInit;
-    type Input = ExerciseTimerInput;
+    type Input = TrainingTimerInput;
     type Output = ();
     type CommandOutput = ();
 
@@ -163,11 +164,11 @@ impl Component for ExerciseTimer {
                     add_css_class: "timer",
                     add_css_class: "card",
                     #[watch]
-                    set_class_active: ("timer-warmup", model.state == ExerciseState::Warmup),
+                    set_class_active: ("timer-warmup", model.state == TrainingState::Warmup),
                     #[watch]
-                    set_class_active: ("timer-exercise", model.state == ExerciseState::Exercise),
+                    set_class_active: ("timer-exercise", model.state == TrainingState::Exercise),
                     #[watch]
-                    set_class_active: ("timer-rest", model.state == ExerciseState::Rest),
+                    set_class_active: ("timer-rest", model.state == TrainingState::Rest),
                     set_spacing: 5,
                     set_orientation: gtk::Orientation::Vertical,
                     set_valign: gtk::Align::Center,
@@ -177,9 +178,12 @@ impl Component for ExerciseTimer {
                         add_css_class: "title-2",
                         #[watch]
                         set_label: &match model.state {
-                            ExerciseState::Warmup => gettext("Warm up"),
-                            ExerciseState::Exercise => gettext("Exercise"),
-                            ExerciseState::Rest => gettext("Rest"),
+                            // Translators: Shown on the timer page during preparation
+                            TrainingState::Warmup => gettext("Preparation"),
+                            // Translators: Shown on the timer page during exercise
+                            TrainingState::Exercise => gettext("Exercise"),
+                            // Translators: Shown on the timer page during rest
+                            TrainingState::Rest => gettext("Rest"),
                         },
                     },
                     gtk::Box {
@@ -215,7 +219,7 @@ impl Component for ExerciseTimer {
                             set_css_classes: &["circular", "large-button"],
                             set_icon_name: icon_names::REFRESH,
                             set_valign: gtk::Align::Center,
-                            connect_clicked => ExerciseTimerInput::Reset,
+                            connect_clicked => TrainingTimerInput::Reset,
                             #[watch]
                             set_class_active: ("suggested-action", model.remaining_s == 0),
                         },
@@ -223,7 +227,7 @@ impl Component for ExerciseTimer {
                             set_css_classes: &["circular", "huge-button"],
                             #[watch]
                             set_sensitive: model.remaining_s != 0,
-                            connect_clicked => ExerciseTimerInput::StartStop,
+                            connect_clicked => TrainingTimerInput::StartStop,
                             gtk::Image {
                                 #[watch]
                                 set_icon_name: Some(if model.running { icon_names::PAUSE } else { icon_names::PLAY }),
@@ -247,6 +251,7 @@ impl Component for ExerciseTimer {
                 gtk::Label {
                     #[watch]
                     set_label: &if false {
+                        // Translators: Label showing the number of remaining sets on the timer page
                         gettext("Remaining sets: {}")
                     } else {
                         gettext!("Remaining sets: {}", model.remaining_sets)
@@ -261,7 +266,7 @@ impl Component for ExerciseTimer {
         root: Self::Root,
         sender: relm4::ComponentSender<Self>,
     ) -> ComponentParts<Self> {
-        let model = ExerciseTimer::new(init.setup, init.global_setup, init.output_handle, &sender);
+        let model = TrainingTimer::new(init.setup, init.global_setup, init.output_handle, &sender);
         let audio_sender = model.audio_player.sender();
         let widgets = view_output!();
         widgets
@@ -280,7 +285,7 @@ impl Component for ExerciseTimer {
         _root: &Self::Root,
     ) {
         match message {
-            ExerciseTimerInput::StartStop => {
+            TrainingTimerInput::StartStop => {
                 if self.remaining_s == 0 && self.remaining_sets == 0 {
                     return;
                 } else if self.running {
@@ -290,34 +295,34 @@ impl Component for ExerciseTimer {
                 }
                 self.running = !self.running;
             }
-            ExerciseTimerInput::Pause => {
+            TrainingTimerInput::Pause => {
                 self.timer = None;
                 self.running = false;
             }
-            ExerciseTimerInput::Tick => {
+            TrainingTimerInput::Tick => {
                 assert!(self.running);
                 self.remaining_s -= 1;
                 if self.remaining_s == 0 {
                     match self.state {
-                        ExerciseState::Warmup => {
-                            self.state = ExerciseState::Exercise;
+                        TrainingState::Warmup => {
+                            self.state = TrainingState::Exercise;
                             self.remaining_s = self.setup.exercise_s;
                             self.audio_player.emit(AudioPlayerInput::NextExercise);
                         }
-                        ExerciseState::Exercise => {
+                        TrainingState::Exercise => {
                             self.remaining_sets -= 1;
                             if self.remaining_sets == 0 {
                                 self.timer = None;
                                 self.running = false;
                                 self.audio_player.emit(AudioPlayerInput::Finished);
                             } else {
-                                self.state = ExerciseState::Rest;
+                                self.state = TrainingState::Rest;
                                 self.remaining_s = self.setup.rest_s;
                                 self.audio_player.emit(AudioPlayerInput::NextRest);
                             }
                         }
-                        ExerciseState::Rest => {
-                            self.state = ExerciseState::Exercise;
+                        TrainingState::Rest => {
+                            self.state = TrainingState::Exercise;
                             self.remaining_s = self.setup.exercise_s;
                             self.audio_player.emit(AudioPlayerInput::NextExercise);
                         }
@@ -326,7 +331,7 @@ impl Component for ExerciseTimer {
                     self.audio_player.emit(AudioPlayerInput::Ping);
                 }
             }
-            ExerciseTimerInput::Reset => {
+            TrainingTimerInput::Reset => {
                 self.reset(&sender);
             }
         }
