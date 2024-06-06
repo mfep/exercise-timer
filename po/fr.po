@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-04 18:56+0200\n"
-"PO-Revision-Date: 2024-06-01 19:57+0000\n"
+"PO-Revision-Date: 2024-06-07 18:11+0000\n"
 "Last-Translator: MariusCouet <marius@couet.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/fr/>\n"
@@ -167,19 +167,19 @@ msgstr "Fonctionnalités"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
 msgid "Added internationalization support"
-msgstr ""
+msgstr "Prise en charge de l'internationalisation ajoutée"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:53
 msgid "Added French translation"
-msgstr ""
+msgstr "Traduction française ajoutée"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:54
 msgid "Added Hungarian translation"
-msgstr ""
+msgstr "Ajout de la traduction hongroise"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:55
 msgid "Added Norwegian Bokmål translation"
-msgstr ""
+msgstr "Ajout de la traduction norvégienne bokmål"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:57
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:70
@@ -189,7 +189,7 @@ msgstr "Correction de bugs"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:59
 msgid "Fix too wide window when Finished"
-msgstr ""
+msgstr "Correction d'une fenêtre trop large une fois terminé"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:61
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:87
@@ -198,11 +198,11 @@ msgstr "Modifications diverses"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:63
 msgid "Added OARS-1.1 compatible content rating"
-msgstr ""
+msgstr "Ajout de la classification du contenu compatible OARS-1.1"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
 msgid "Updated library dependencies"
-msgstr ""
+msgstr "Dépendances des bibliothèques mises à jour"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:72
 msgid "Allow time periods longer than 999 seconds"
