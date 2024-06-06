@@ -175,7 +175,7 @@ impl Component for TrainingTimer {
                     set_margin_all: 20,
                     set_vexpand: true,
                     gtk::Label {
-                        add_css_class: "title-2",
+                        add_css_class: "timer-title",
                         #[watch]
                         set_label: &match model.state {
                             // Translators: Shown on the timer page during preparation
@@ -192,7 +192,7 @@ impl Component for TrainingTimer {
                         set_halign: gtk::Align::Center,
                         gtk::Label {
                             #[watch]
-                            set_width_chars: width_chars(model.remaining_s, 5),
+                            set_width_chars: width_chars(model.remaining_s, 2),
                             set_xalign: 1.0,
                             #[watch]
                             set_label: &remaining_str_mins(model.remaining_s),
@@ -205,7 +205,7 @@ impl Component for TrainingTimer {
                         },
                         gtk::Label {
                             #[watch]
-                            set_width_chars: width_chars(model.remaining_s, 5),
+                            set_width_chars: width_chars(model.remaining_s, 2),
                             set_xalign: 0.0,
                             #[watch]
                             set_label: &remaining_str_secs(model.remaining_s),

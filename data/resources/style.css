@@ -1,5 +1,5 @@
 .timer {
-    padding: 20px;
+    padding: 1.75em;
 }
 .timer-warmup {
     background: #63452c;
@@ -13,14 +13,17 @@
     background: #1a5fb4;
     color: #ffffff;
 }
+.timer-title {
+    font-size: 2em;
+}
 .timer-label {
-    font-size: 72px;
+    font-size: 4em;
 }
 .large-button {
-    padding: 6px;
-    -gtk-icon-size: 18px;
+    padding: 0.75em;
+    -gtk-icon-size: 1.5em;
 }
 .huge-button {
-    padding: 12px;
-    -gtk-icon-size: 36px;
+    padding: 1.5em;
+    -gtk-icon-size: 3em;
 }
