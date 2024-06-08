@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-08 11:17+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-06-09 18:09+0000\n"
+"Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/exercise-timer/"
+"exercise-timer/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
@@ -38,19 +41,19 @@ msgstr ""
 #: data/resources/ui/help-overlay.ui:34
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Generale"
 
 #. Translators: The name of the shortcut key to open the shortcuts window
 #: data/resources/ui/help-overlay.ui:38
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Mostra scorciatoie"
 
 #. Translators: The name of the shortcut key to quit the application
 #: data/resources/ui/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Esci"
 
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
@@ -233,17 +236,17 @@ msgstr ""
 #. Translators: The title of the preferences menu entry
 #: src/app.rs:58
 msgid "_Preferences"
-msgstr ""
+msgstr "_Preferenze"
 
 #. Translators: The title of the keyboard shortcuts menu entry
 #: src/app.rs:60
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Scorciatoie da tastiera"
 
 #. Translators: The title of the about dialog menu entry
 #: src/app.rs:62
 msgid "_About Exercise Timer"
-msgstr ""
+msgstr "_ Informazioni sul Exercise Timer"
 
 #. Translators: This is the title of the page which lists all trainings
 #: src/app.rs:78
@@ -268,7 +271,7 @@ msgstr ""
 #. Translators: Replace this with your name for it to show up in the about window
 #: src/app.rs:181
 msgid "translator_credits"
-msgstr ""
+msgstr "Albano Battistella"
 
 #. Translators: The editor window's title when creating a new training
 #: src/training_editor.rs:57
@@ -283,22 +286,22 @@ msgstr ""
 #. Translators: Button to close the training editor window without modifications
 #: src/training_editor.rs:65
 msgid "Cancel"
-msgstr ""
+msgstr "Annulla"
 
 #. Translators: Button to close the editor window and create a new training
 #: src/training_editor.rs:71
 msgid "Create"
-msgstr ""
+msgstr "Crea"
 
 #. Translators: Button to close the editor window and update an existing training
 #: src/training_editor.rs:73
 msgid "Update"
-msgstr ""
+msgstr "Aggiornamento"
 
 #. Translators: The title of the field for the name of the training in the editor window
 #: src/training_editor.rs:85
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. Translators: The title of the field for the number of sets in the training in the editor window
 #: src/training_editor.rs:90
@@ -308,13 +311,13 @@ msgstr ""
 #. Translators: The title of the field for the rest duration in the training in the editor window
 #: src/training_editor.rs:101
 msgid "Rest time"
-msgstr ""
+msgstr "Tempo di riposo"
 
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: src/training_editor.rs:103 src/training_editor.rs:116
 #: src/settings_dialog.rs:39
 msgid "seconds"
-msgstr ""
+msgstr "secondi"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: src/training_editor.rs:114
@@ -333,17 +336,17 @@ msgstr ""
 #. Translators: Shown on the timer page during rest
 #: src/training_setup.rs:113 src/training_timer.rs:186
 msgid "Rest"
-msgstr ""
+msgstr "Riposo"
 
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:121
 msgid "Finished!"
-msgstr ""
+msgstr "Finito!"
 
 #. Translators: Shown on the timer page during preparation
 #: src/training_timer.rs:182
 msgid "Preparation"
-msgstr ""
+msgstr "Preparazione"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:255
@@ -353,12 +356,12 @@ msgstr ""
 #. Translators: Error message printed to the console when an error occurs with WAV decoding
 #: src/training_timer/audio_player.rs:16
 msgid "Could not decode WAV"
-msgstr ""
+msgstr "Impossibile decodificare WAV"
 
 #. Translators: Error message printed to the console when an error occurs with audio playback
 #: src/training_timer/audio_player.rs:25
 msgid "Could not play audio"
-msgstr ""
+msgstr "Impossibile riprodurre l'audio"
 
 #. Translators: Error message printed to the console when cannot load data from resource
 #: src/training_timer/audio_player.rs:55
@@ -433,7 +436,7 @@ msgstr ""
 #. Translators: Error message printed to the console when there is no Display to apply the custom CSS to
 #: src/setup.rs:41
 msgid "Could not connect to a display"
-msgstr ""
+msgstr "Impossibile connettersi a un display"
 
 #. Translators: Error message printed to the console, when the Shortcuts window cannot be built from resource
 #: src/shortcuts_window.rs:23
