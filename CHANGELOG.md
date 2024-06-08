@@ -2,6 +2,24 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.3.1](https://github.com/mfep/exercise-timer/compare/b1efaa48604752b972a103f7d1b77b23ed6d1467..v1.3.1) - 2024-06-08
+#### Bug Fixes
+- **(UI)** Updated terminology: exercise -> training - ([b1efaa4](https://github.com/mfep/exercise-timer/commit/b1efaa48604752b972a103f7d1b77b23ed6d1467)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Updated Hungarian translation - ([b6ffbc3](https://github.com/mfep/exercise-timer/commit/b6ffbc3478d8ba6b49c1b5aa963effd00b68fd32)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Translated using Weblate (French) - ([4c6a451](https://github.com/mfep/exercise-timer/commit/4c6a451af0437cf33893ea36d522175c5dd3c8b4)) - MariusCouet
+- **(ui)** Better margin for 'Remaining sets' - ([4d9415b](https://github.com/mfep/exercise-timer/commit/4d9415bcf8269c15ed6da1b8c58ae1b78e388855)) - [@mfep](https://github.com/mfep)
+- **(ui)** Updated translatable string in help-overlay - ([62adf80](https://github.com/mfep/exercise-timer/commit/62adf808d04c94b5bc69a7df13d97fa28c62722e)) - [@mfep](https://github.com/mfep)
+- **(ui)** Units in em in CSS - ([91a5746](https://github.com/mfep/exercise-timer/commit/91a574686bc50332aad7e919f4ef0e83f3fa6bd6)) - [@mfep](https://github.com/mfep)
+- Consistent error handling - ([9d772b3](https://github.com/mfep/exercise-timer/commit/9d772b39969469f6050704d2de23c81d10fb0b04)) - [@mfep](https://github.com/mfep)
+#### Miscellaneous Chores
+- **(docs)** Updated screenshots - ([aab9400](https://github.com/mfep/exercise-timer/commit/aab940026e8789cb09c8b4ac765327c0f3b49eb1)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Updated pot - ([594632a](https://github.com/mfep/exercise-timer/commit/594632a4d4eec9a5b350387375bd795d8192c860)) - [@mfep](https://github.com/mfep)
+- Updated release - ([3847f2b](https://github.com/mfep/exercise-timer/commit/3847f2bcee6b560e917a845ad5f1064f473e437c)) - [@mfep](https://github.com/mfep)
+#### Refactoring
+- More terminology changes in code - ([8f4d456](https://github.com/mfep/exercise-timer/commit/8f4d456f61fc8506e7a0a15dd4adb4f8bb996948)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.3.0](https://github.com/mfep/exercise-timer/compare/b956698634fc433ab1f08c890ff0701f24c0e232..v1.3.0) - 2024-06-02
 #### Bug Fixes
 - **(i18n)** Added fr to LINGUAS - ([5a7957b](https://github.com/mfep/exercise-timer/commit/5a7957bc19369bd7329c5fcbe6054284096527a4)) - [@mfep](https://github.com/mfep)
