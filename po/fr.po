@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-08 11:10+0200\n"
+"POT-Creation-Date: 2024-06-08 11:17+0200\n"
 "PO-Revision-Date: 2024-06-07 18:11+0000\n"
 "Last-Translator: MariusCouet <marius@couet.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/exercise-timer/"
@@ -19,32 +19,41 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 5.6-dev\n"
 
-#: data/resources/ui/help-overlay.ui:11
+#. Translators: The title of the shortcuts group which lists the training-related shortcuts
+#: data/resources/ui/help-overlay.ui:12
+#, fuzzy
 msgctxt "shortcut window"
-msgid "Exercise"
-msgstr "Exercice"
+msgid "Training"
+msgstr "Valeurs par défaut de l'exercice"
 
-#: data/resources/ui/help-overlay.ui:14
+#. Translators: The name of the shortcut key to start and stop the training timer
+#: data/resources/ui/help-overlay.ui:16
+#, fuzzy
 msgctxt "shortcut window"
-msgid "Start/Stop exercise"
+msgid "Start/Stop training"
 msgstr "Commencer/Arreter l'exercice"
 
-#: data/resources/ui/help-overlay.ui:21
+#. Translators: The name of the shortcut key to start the training from the beginning
+#: data/resources/ui/help-overlay.ui:24
+#, fuzzy
 msgctxt "shortcut window"
-msgid "Reset exercise"
-msgstr "Recommencer l'exercice"
+msgid "Reset training"
+msgstr "Créer un exercice"
 
-#: data/resources/ui/help-overlay.ui:30
+#. Translators: The title of the shortcuts group which lists general application shortcuts
+#: data/resources/ui/help-overlay.ui:34
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Général"
 
-#: data/resources/ui/help-overlay.ui:33
+#. Translators: The name of the shortcut key to open the shortcuts window
+#: data/resources/ui/help-overlay.ui:38
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Afficher les raccourcis"
 
-#: data/resources/ui/help-overlay.ui:40
+#. Translators: The name of the shortcut key to quit the application
+#: data/resources/ui/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Quitter"
@@ -455,6 +464,14 @@ msgstr "Impossible de se connecter à un écran"
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr "Impossible de créer la superposition d'aide"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Exercise"
+#~ msgstr "Exercice"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Reset exercise"
+#~ msgstr "Recommencer l'exercice"
 
 #~ msgid "Exercise List"
 #~ msgstr "Liste d'exercices"

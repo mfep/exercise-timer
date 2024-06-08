@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-08 11:10+0200\n"
+"POT-Creation-Date: 2024-06-08 11:17+0200\n"
 "PO-Revision-Date: 2024-05-24 01:09+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
@@ -19,33 +19,41 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.6-dev\n"
 
-#: data/resources/ui/help-overlay.ui:11
-msgctxt "shortcut window"
-msgid "Exercise"
-msgstr "Trening"
-
-#: data/resources/ui/help-overlay.ui:14
-msgctxt "shortcut window"
-msgid "Start/Stop exercise"
-msgstr "Start/stopp trening"
-
-#: data/resources/ui/help-overlay.ui:21
+#. Translators: The title of the shortcuts group which lists the training-related shortcuts
+#: data/resources/ui/help-overlay.ui:12
 #, fuzzy
 msgctxt "shortcut window"
-msgid "Reset exercise"
-msgstr "Tilbakestill trening"
+msgid "Training"
+msgstr "Øvelsesforvalg"
 
-#: data/resources/ui/help-overlay.ui:30
+#. Translators: The name of the shortcut key to start and stop the training timer
+#: data/resources/ui/help-overlay.ui:16
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Start/Stop training"
+msgstr "Start/stopp trening"
+
+#. Translators: The name of the shortcut key to start the training from the beginning
+#: data/resources/ui/help-overlay.ui:24
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Reset training"
+msgstr "Opprett øvelse"
+
+#. Translators: The title of the shortcuts group which lists general application shortcuts
+#: data/resources/ui/help-overlay.ui:34
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Generelt"
 
-#: data/resources/ui/help-overlay.ui:33
+#. Translators: The name of the shortcut key to open the shortcuts window
+#: data/resources/ui/help-overlay.ui:38
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Vis snarveier"
 
-#: data/resources/ui/help-overlay.ui:40
+#. Translators: The name of the shortcut key to quit the application
+#: data/resources/ui/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Avslutt"
@@ -445,6 +453,15 @@ msgstr "Kunne ikke koble til noen skjerm."
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr ""
+
+#~ msgctxt "shortcut window"
+#~ msgid "Exercise"
+#~ msgstr "Trening"
+
+#, fuzzy
+#~ msgctxt "shortcut window"
+#~ msgid "Reset exercise"
+#~ msgstr "Tilbakestill trening"
 
 #~ msgid "Exercise List"
 #~ msgstr "Øvelsesliste"
