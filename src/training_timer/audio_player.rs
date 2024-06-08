@@ -12,6 +12,7 @@ impl AudioPlayerModel {
     fn play_ping(&self, times: u32) {
         let cursor = std::io::Cursor::new(self.ping_bytes.clone());
         let decoder = rodio::Decoder::new_wav(cursor)
+            // Translators: Error message printed to the console when an error occurs with WAV decoding
             .unwrap_or_else(|err| panic!("{}: {}", gettext("Could not decode WAV"), err));
         let new_duration = decoder.total_duration().unwrap() * times;
         let d = decoder
@@ -20,7 +21,8 @@ impl AudioPlayerModel {
             .amplify(self.volume as f32);
         self.output_stream
             .play_raw(d.convert_samples())
-            .expect(&gettext("Could not play audio"));
+            // Translators: Error message printed to the console when an error occurs with audio playback
+            .unwrap_or_else(|err| panic!("{}: {}", gettext("Could not play audio"), err));
     }
 }
 
@@ -49,7 +51,8 @@ impl relm4::Worker for AudioPlayerModel {
             "/xyz/safeworlds/hiit/audio/ping.wav",
             gio::ResourceLookupFlags::NONE,
         )
-        .expect(&gettext("Could not open data"));
+        // Translators: Error message printed to the console when cannot load data from resource
+        .unwrap_or_else(|err| panic!("{}: {}", gettext("Could not open resource data"), err));
         Self {
             output_stream: init.output_stream,
             volume: init.volume,

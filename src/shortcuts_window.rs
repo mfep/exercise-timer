@@ -19,7 +19,8 @@ pub enum ShortcutsWindowInput {
 fn build_shortcuts_window() -> gtk::ShortcutsWindow {
     gtk::Builder::from_resource("/xyz/safeworlds/hiit/gtk/help-overlay.ui")
         .object("help_overlay")
-        .expect(&gettext("Could not build the Help Overlay"))
+        // Translators: Error message printed to the console, when the Shortcuts window cannot be built from resource
+        .unwrap_or_else(|| panic!("{}", gettext("Could not build the Help Overlay")))
 }
 
 #[relm4::component(pub)]

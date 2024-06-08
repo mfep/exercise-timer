@@ -15,9 +15,14 @@ relm4::new_stateless_action!(QuitAction, AppActionGroup, "quit");
 
 fn main() {
     setup::setup();
-    // Translators: Error message when cannot connect to the audio output
-    let (_stream, stream_handle) =
-        rodio::OutputStream::try_default().expect(&gettext("Could not create audio output stream"));
+    let (_stream, stream_handle) = rodio::OutputStream::try_default().unwrap_or_else(|err| {
+        panic!(
+            "{}: {}",
+            // Translators: Error message when cannot connect to the audio output
+            gettext("Could not create audio output stream"),
+            err
+        )
+    });
     let app = relm4::main_adw_application();
 
     let mut actions = relm4::actions::RelmActionGroup::<AppActionGroup>::new();

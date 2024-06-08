@@ -61,37 +61,55 @@ impl Drop for GlobalTrainingSetup {
     }
 }
 
-fn parse_json_to_exercise_setup(value: &json::JsonValue) -> TrainingSetup {
+fn parse_json_to_training_setup(value: &json::JsonValue) -> TrainingSetup {
     let name = value["name"]
         .as_str()
-        .expect(&gettext("Cannot find 'name' in settings dictionary"));
+        // Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
+        .unwrap_or_else(|| panic!("{}", gettext("Cannot find 'name' in settings dictionary")));
+    let sets = value["sets"]
+        .as_usize()
+        // Translators: Error message printed to the console when key 'sets' is not found in the JSON formatted training
+        .unwrap_or_else(|| panic!("{}", gettext("Cannot find 'sets' in settings dictionary")));
+    let exercise_s = value["exercise_s"].as_usize().unwrap_or_else(|| {
+        panic!(
+            "{}",
+            // Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
+            gettext("Cannot find 'exercise_s' in settings dictionary")
+        )
+    });
+    let rest_s = value["rest_s"]
+        .as_usize()
+        // Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
+        .unwrap_or_else(|| panic!("{}", gettext("Cannot find 'rest_s' in settings dictionary")));
+
     TrainingSetup {
         name: gettext(name),
-        sets: value["sets"]
-            .as_usize()
-            .expect(&gettext("Cannot find 'sets' in settings dictionary")),
-        exercise_s: value["exercise_s"]
-            .as_usize()
-            .expect(&gettext("Cannot find 'exercises_s' in settings dictionary")),
-        rest_s: value["rest_s"]
-            .as_usize()
-            .expect(&gettext("Cannot find 'rest_s' in settings dictionary")),
+        sets,
+        exercise_s,
+        rest_s,
     }
 }
 
 pub fn load_default_exercise_setup() -> TrainingSetup {
     let settings = gio::Settings::new(crate::config::APP_ID);
     let raw_json = settings.string("default-exercise-json");
-    parse_json_to_exercise_setup(
-        &json::parse(&raw_json).expect(&gettext("Could not parse default exercise setup")),
-    )
+    parse_json_to_training_setup(&json::parse(&raw_json).unwrap_or_else(|err| {
+        panic!(
+            "{}: {}",
+            // Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
+            gettext("Could not parse default training setup"),
+            err
+        )
+    }))
 }
 
 pub fn load_training_list_from_gsettings() -> Vec<TrainingSetup> {
     let settings = gio::Settings::new(crate::config::APP_ID);
     let raw_json = settings.string("exercise-json-list");
-    let parsed = json::parse(&raw_json).expect(&gettext("Could not parse exercise list"));
-    parsed.members().map(parse_json_to_exercise_setup).collect()
+    let parsed = json::parse(&raw_json)
+        // Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be parsed
+        .unwrap_or_else(|err| panic!("{}: {}", gettext("Could not parse exercise list"), err));
+    parsed.members().map(parse_json_to_training_setup).collect()
 }
 
 pub fn save_training_list_to_gsettings<'a>(exercises: impl Iterator<Item = &'a TrainingSetup>) {
@@ -108,5 +126,12 @@ pub fn save_training_list_to_gsettings<'a>(exercises: impl Iterator<Item = &'a T
         .collect();
     settings
         .set("exercise-json-list", json::stringify(json_list))
-        .expect(&gettext("Could not update settings with exercise list"));
+        .unwrap_or_else(|err| {
+            panic!(
+                "{}: {}",
+                // Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be written to the settings
+                gettext("Could not update settings with training list"),
+                err
+            )
+        });
 }
