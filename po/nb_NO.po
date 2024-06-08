@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-04 18:56+0200\n"
+"POT-Creation-Date: 2024-06-08 11:10+0200\n"
 "PO-Revision-Date: 2024-05-24 01:09+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
@@ -353,19 +353,24 @@ msgstr ""
 msgid "Remaining sets: {}"
 msgstr "Gjenstående sett: {}"
 
-#: src/training_timer/audio_player.rs:15
+#. Translators: Error message printed to the console when an error occurs with WAV decoding
+#: src/training_timer/audio_player.rs:16
 msgid "Could not decode WAV"
 msgstr "Kunne ikke dekode WAV"
 
-#: src/training_timer/audio_player.rs:23
+#. Translators: Error message printed to the console when an error occurs with audio playback
+#: src/training_timer/audio_player.rs:25
 msgid "Could not play audio"
 msgstr "Kunne ikke spille av lyd"
 
-#: src/training_timer/audio_player.rs:52
-msgid "Could not open data"
+#. Translators: Error message printed to the console when cannot load data from resource
+#: src/training_timer/audio_player.rs:55
+#, fuzzy
+msgid "Could not open resource data"
 msgstr "Kunne ikke åpne data"
 
-#: src/main.rs:20
+#. Translators: Error message when cannot connect to the audio output
+#: src/main.rs:22
 msgid "Could not create audio output stream"
 msgstr "Kunne ikke opprette lydutdatastrøm"
 
@@ -380,52 +385,64 @@ msgstr "Øvelsesforvalg"
 msgid "Preparation time"
 msgstr ""
 
-#: src/settings.rs:67
+#. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
+#: src/settings.rs:68
 msgid "Cannot find 'name' in settings dictionary"
 msgstr ""
 
+#. Translators: Error message printed to the console when key 'sets' is not found in the JSON formatted training
 #: src/settings.rs:72
 msgid "Cannot find 'sets' in settings dictionary"
 msgstr ""
 
-#: src/settings.rs:75
-msgid "Cannot find 'exercises_s' in settings dictionary"
+#. Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
+#: src/settings.rs:77
+msgid "Cannot find 'exercise_s' in settings dictionary"
 msgstr ""
 
-#: src/settings.rs:78
+#. Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
+#: src/settings.rs:83
 msgid "Cannot find 'rest_s' in settings dictionary"
 msgstr ""
 
-#: src/settings.rs:86
-msgid "Could not parse default exercise setup"
+#. Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
+#: src/settings.rs:100
+msgid "Could not parse default training setup"
 msgstr ""
 
-#: src/settings.rs:93
+#. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be parsed
+#: src/settings.rs:111
 msgid "Could not parse exercise list"
 msgstr ""
 
-#: src/settings.rs:111
-msgid "Could not update settings with exercise list"
+#. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be written to the settings
+#: src/settings.rs:133
+msgid "Could not update settings with training list"
 msgstr ""
 
-#: src/setup.rs:13
+#. Translators: Error message printed to the console when the GIO resource file cannot be registered
+#: src/setup.rs:14
 msgid "Could not register resources"
 msgstr ""
 
-#: src/setup.rs:22
+#. Translators: Error message printed to the console when the i18n text domain cannot be bound
+#: src/setup.rs:23
 msgid "Unable to bind the text domain"
 msgstr ""
 
-#: src/setup.rs:23
+#. Translators: Error message printed to the console when the i18n text domain cannot be switched to
+#: src/setup.rs:28
 msgid "Unable to switch to the text domain"
 msgstr "Kunne ikke bytte til tekstdomenet"
 
-#: src/setup.rs:31
+#. Translators: Error message printed to the console when there is no Display to apply the custom CSS to
+#: src/setup.rs:41
 #, fuzzy
 msgid "Could not connect to a display"
 msgstr "Kunne ikke koble til noen skjerm."
 
-#: src/shortcuts_window.rs:22
+#. Translators: Error message printed to the console, when the Shortcuts window cannot be built from resource
+#: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr ""
 

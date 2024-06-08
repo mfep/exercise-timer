@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-04 18:56+0200\n"
+"POT-Creation-Date: 2024-06-08 11:10+0200\n"
 "PO-Revision-Date: 2024-06-07 18:11+0000\n"
 "Last-Translator: MariusCouet <marius@couet.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/exercise-timer/"
@@ -360,19 +360,24 @@ msgstr ""
 msgid "Remaining sets: {}"
 msgstr "Sets restants : {}"
 
-#: src/training_timer/audio_player.rs:15
+#. Translators: Error message printed to the console when an error occurs with WAV decoding
+#: src/training_timer/audio_player.rs:16
 msgid "Could not decode WAV"
 msgstr "Impossible de décoder WAV"
 
-#: src/training_timer/audio_player.rs:23
+#. Translators: Error message printed to the console when an error occurs with audio playback
+#: src/training_timer/audio_player.rs:25
 msgid "Could not play audio"
 msgstr "Impossible de lire l'audio"
 
-#: src/training_timer/audio_player.rs:52
-msgid "Could not open data"
+#. Translators: Error message printed to the console when cannot load data from resource
+#: src/training_timer/audio_player.rs:55
+#, fuzzy
+msgid "Could not open resource data"
 msgstr "Impossible d'ouvrir les données"
 
-#: src/main.rs:20
+#. Translators: Error message when cannot connect to the audio output
+#: src/main.rs:22
 msgid "Could not create audio output stream"
 msgstr "Impossible de créer un flux de sortie audio"
 
@@ -387,52 +392,67 @@ msgstr "Valeurs par défaut de l'exercice"
 msgid "Preparation time"
 msgstr ""
 
-#: src/settings.rs:67
+#. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
+#: src/settings.rs:68
 msgid "Cannot find 'name' in settings dictionary"
 msgstr "Impossible de trouver 'nom' dans le dictionnaire des paramètres"
 
+#. Translators: Error message printed to the console when key 'sets' is not found in the JSON formatted training
 #: src/settings.rs:72
 msgid "Cannot find 'sets' in settings dictionary"
 msgstr "Impossible de trouver 'sets' dans le dictionnaire des paramètres"
 
-#: src/settings.rs:75
-msgid "Cannot find 'exercises_s' in settings dictionary"
+#. Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
+#: src/settings.rs:77
+#, fuzzy
+msgid "Cannot find 'exercise_s' in settings dictionary"
 msgstr ""
 "Impossible de trouver 'exercises_s' dans le dictionnaire des paramètres"
 
-#: src/settings.rs:78
+#. Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
+#: src/settings.rs:83
 msgid "Cannot find 'rest_s' in settings dictionary"
 msgstr "Impossible de trouver 'rest_s' dans le dictionnaire des paramètres"
 
-#: src/settings.rs:86
-msgid "Could not parse default exercise setup"
+#. Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
+#: src/settings.rs:100
+#, fuzzy
+msgid "Could not parse default training setup"
 msgstr "Impossible d'analyser la configuration d'exercice par défaut"
 
-#: src/settings.rs:93
+#. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be parsed
+#: src/settings.rs:111
 msgid "Could not parse exercise list"
 msgstr "Impossible d'analyser la liste d'exercices"
 
-#: src/settings.rs:111
-msgid "Could not update settings with exercise list"
+#. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be written to the settings
+#: src/settings.rs:133
+#, fuzzy
+msgid "Could not update settings with training list"
 msgstr "Impossible de mettre à jour les paramètres avec la liste d'exercices"
 
-#: src/setup.rs:13
+#. Translators: Error message printed to the console when the GIO resource file cannot be registered
+#: src/setup.rs:14
 msgid "Could not register resources"
 msgstr "Impossible d'enregistrer les ressources"
 
-#: src/setup.rs:22
+#. Translators: Error message printed to the console when the i18n text domain cannot be bound
+#: src/setup.rs:23
 msgid "Unable to bind the text domain"
 msgstr "Impossible de lier le domaine de texte"
 
-#: src/setup.rs:23
+#. Translators: Error message printed to the console when the i18n text domain cannot be switched to
+#: src/setup.rs:28
 msgid "Unable to switch to the text domain"
 msgstr "Impossible de passer au domaine texte"
 
-#: src/setup.rs:31
+#. Translators: Error message printed to the console when there is no Display to apply the custom CSS to
+#: src/setup.rs:41
 msgid "Could not connect to a display"
 msgstr "Impossible de se connecter à un écran"
 
-#: src/shortcuts_window.rs:22
+#. Translators: Error message printed to the console, when the Shortcuts window cannot be built from resource
+#: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr "Impossible de créer la superposition d'aide"
 

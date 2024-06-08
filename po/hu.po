@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-04 18:56+0200\n"
+"POT-Creation-Date: 2024-06-08 11:10+0200\n"
 "PO-Revision-Date: 2024-05-26 13:09+0000\n"
 "Last-Translator: Lőrinc Serfőző <lorinc.serfozo@mailbox.org>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/exercise-timer/"
@@ -355,19 +355,24 @@ msgstr ""
 msgid "Remaining sets: {}"
 msgstr "Hátralévő szettek: {}"
 
-#: src/training_timer/audio_player.rs:15
+#. Translators: Error message printed to the console when an error occurs with WAV decoding
+#: src/training_timer/audio_player.rs:16
 msgid "Could not decode WAV"
 msgstr "Nem sikerült dekódolni a WAV fájlt"
 
-#: src/training_timer/audio_player.rs:23
+#. Translators: Error message printed to the console when an error occurs with audio playback
+#: src/training_timer/audio_player.rs:25
 msgid "Could not play audio"
 msgstr "Nem sikerült hangot lejátszani"
 
-#: src/training_timer/audio_player.rs:52
-msgid "Could not open data"
+#. Translators: Error message printed to the console when cannot load data from resource
+#: src/training_timer/audio_player.rs:55
+#, fuzzy
+msgid "Could not open resource data"
 msgstr "Nem sikerült betölteni az adatot"
 
-#: src/main.rs:20
+#. Translators: Error message when cannot connect to the audio output
+#: src/main.rs:22
 msgid "Could not create audio output stream"
 msgstr "Nem sikerült létrehozni a hangkimentetet"
 
@@ -382,51 +387,66 @@ msgstr "Edzés alapértelmezései"
 msgid "Preparation time"
 msgstr ""
 
-#: src/settings.rs:67
+#. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
+#: src/settings.rs:68
 msgid "Cannot find 'name' in settings dictionary"
 msgstr "'name' nem található a beállításkönyvtárban"
 
+#. Translators: Error message printed to the console when key 'sets' is not found in the JSON formatted training
 #: src/settings.rs:72
 msgid "Cannot find 'sets' in settings dictionary"
 msgstr "'sets' nem található a beállításkönyvtárban"
 
-#: src/settings.rs:75
-msgid "Cannot find 'exercises_s' in settings dictionary"
+#. Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
+#: src/settings.rs:77
+#, fuzzy
+msgid "Cannot find 'exercise_s' in settings dictionary"
 msgstr "'exercises_s' nem található a beállításkönyvtárban"
 
-#: src/settings.rs:78
+#. Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
+#: src/settings.rs:83
 msgid "Cannot find 'rest_s' in settings dictionary"
 msgstr "'rest_s' nem található a beállításkönyvtárban"
 
-#: src/settings.rs:86
-msgid "Could not parse default exercise setup"
+#. Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
+#: src/settings.rs:100
+#, fuzzy
+msgid "Could not parse default training setup"
 msgstr "Nem sikerült beolvasni az alapértelmezett edzés beállítást"
 
-#: src/settings.rs:93
+#. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be parsed
+#: src/settings.rs:111
 msgid "Could not parse exercise list"
 msgstr "Nem sikerült beolvasni az edzések listáját"
 
-#: src/settings.rs:111
-msgid "Could not update settings with exercise list"
+#. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be written to the settings
+#: src/settings.rs:133
+#, fuzzy
+msgid "Could not update settings with training list"
 msgstr "Nem sikerült frissíteni a mentett edzések listájáz"
 
-#: src/setup.rs:13
+#. Translators: Error message printed to the console when the GIO resource file cannot be registered
+#: src/setup.rs:14
 msgid "Could not register resources"
 msgstr "Nem sikerült regisztrálni az erőforrásokat"
 
-#: src/setup.rs:22
+#. Translators: Error message printed to the console when the i18n text domain cannot be bound
+#: src/setup.rs:23
 msgid "Unable to bind the text domain"
 msgstr "Nem sikerült betölteni a szöveg domént"
 
-#: src/setup.rs:23
+#. Translators: Error message printed to the console when the i18n text domain cannot be switched to
+#: src/setup.rs:28
 msgid "Unable to switch to the text domain"
 msgstr "Nem sikerült átváltani a szöveg doménre"
 
-#: src/setup.rs:31
+#. Translators: Error message printed to the console when there is no Display to apply the custom CSS to
+#: src/setup.rs:41
 msgid "Could not connect to a display"
 msgstr "Nem sikerült csatlakozni a megjelenítőhöz"
 
-#: src/shortcuts_window.rs:22
+#. Translators: Error message printed to the console, when the Shortcuts window cannot be built from resource
+#: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr "Nem sikerült létrehozni a Segítség ablakot"
 
