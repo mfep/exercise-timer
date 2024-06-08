@@ -6,37 +6,33 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-08 11:17+0200\n"
-"PO-Revision-Date: 2024-05-26 13:09+0000\n"
-"Last-Translator: Lőrinc Serfőző <lorinc.serfozo@mailbox.org>\n"
-"Language-Team: Hungarian <https://hosted.weblate.org/projects/exercise-timer/"
-"exercise-timer/hu/>\n"
+"PO-Revision-Date: 2024-06-08 11:24+0200\n"
+"Last-Translator:  <>\n"
+"Language-Team: Hungarian\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6-dev\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 46.1\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Training"
-msgstr "Edzés alapértelmezései"
+msgstr "Edzés"
 
 #. Translators: The name of the shortcut key to start and stop the training timer
 #: data/resources/ui/help-overlay.ui:16
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Start/Stop training"
 msgstr "Edzés elindítása/megállítása"
 
 #. Translators: The name of the shortcut key to start the training from the beginning
 #: data/resources/ui/help-overlay.ui:24
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Reset training"
-msgstr "Új edzés létrehozása"
+msgstr "Edzés újrakezdése"
 
 #. Translators: The title of the shortcuts group which lists general application shortcuts
 #: data/resources/ui/help-overlay.ui:34
@@ -89,12 +85,10 @@ msgid "If the window is maximized"
 msgstr "Igaz, ha az ablak maximalizált"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:18
-#, fuzzy
 msgid "Default training setup, in JSON notation"
 msgstr "Alapértelmezett edzés, JSON formátumban"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:22
-#, fuzzy
 msgid "List of training setups, in JSON notation"
 msgstr "Az edzések listája, JSON formátumban"
 
@@ -173,19 +167,19 @@ msgstr "Funkciók"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
 msgid "Added internationalization support"
-msgstr ""
+msgstr "Nyelvi fordítások támogatva"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:53
 msgid "Added French translation"
-msgstr ""
+msgstr "Francia fordítás hozzáadva"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:54
 msgid "Added Hungarian translation"
-msgstr ""
+msgstr "Magyar fordítás hozzáadva"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:55
 msgid "Added Norwegian Bokmål translation"
-msgstr ""
+msgstr "Norvég Bokmål fordítás hozzáadva"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:57
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:70
@@ -195,7 +189,7 @@ msgstr "Hibajavítások"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:59
 msgid "Fix too wide window when Finished"
-msgstr ""
+msgstr "Túl széles ablak az edzés befejezésekor javítva"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:61
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:87
@@ -204,11 +198,11 @@ msgstr "Egyéb változtatások"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:63
 msgid "Added OARS-1.1 compatible content rating"
-msgstr ""
+msgstr "OARS-1.1 kompatibilis tartalombesorolás hozzáadva"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
 msgid "Updated library dependencies"
-msgstr ""
+msgstr "Könyvtárfüggőségek frissítve"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:72
 msgid "Allow time periods longer than 999 seconds"
@@ -260,17 +254,15 @@ msgstr "Az Edzésóráról"
 #. Translators: This is the title of the page which lists all trainings
 #: src/app.rs:78
 msgid "Training List"
-msgstr ""
+msgstr "Edzéslista"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:109
-#, fuzzy
 msgid "No training is created yet"
 msgstr "Még nincs edzés"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:113
-#, fuzzy
 msgid "Create training"
 msgstr "Új edzés létrehozása"
 
@@ -287,12 +279,12 @@ msgstr "Serfőző Lőrinc"
 #. Translators: The editor window's title when creating a new training
 #: src/training_editor.rs:57
 msgid "New training"
-msgstr ""
+msgstr "Új edzés"
 
 #. Translators: The editor window's title when modifying a training
 #: src/training_editor.rs:59
 msgid "Edit training"
-msgstr ""
+msgstr "Edzés módosítása"
 
 #. Translators: Button to close the training editor window without modifications
 #: src/training_editor.rs:65
@@ -357,7 +349,7 @@ msgstr "Kész!"
 #. Translators: Shown on the timer page during preparation
 #: src/training_timer.rs:182
 msgid "Preparation"
-msgstr ""
+msgstr "Felkészülés"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:255
@@ -376,7 +368,6 @@ msgstr "Nem sikerült hangot lejátszani"
 
 #. Translators: Error message printed to the console when cannot load data from resource
 #: src/training_timer/audio_player.rs:55
-#, fuzzy
 msgid "Could not open resource data"
 msgstr "Nem sikerült betölteni az adatot"
 
@@ -387,14 +378,13 @@ msgstr "Nem sikerült létrehozni a hangkimentetet"
 
 #. Translators: The title of the preferences group for the training default settings
 #: src/settings_dialog.rs:33
-#, fuzzy
 msgid "Training defaults"
 msgstr "Edzés alapértelmezései"
 
 #. Translators: The title of the edit field to set the time (in seconds) for the preparation period
 #: src/settings_dialog.rs:38
 msgid "Preparation time"
-msgstr ""
+msgstr "Felkészülési idő"
 
 #. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
 #: src/settings.rs:68
@@ -408,9 +398,8 @@ msgstr "'sets' nem található a beállításkönyvtárban"
 
 #. Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
 #: src/settings.rs:77
-#, fuzzy
 msgid "Cannot find 'exercise_s' in settings dictionary"
-msgstr "'exercises_s' nem található a beállításkönyvtárban"
+msgstr "'exercise_s' nem található a beállításkönyvtárban"
 
 #. Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
 #: src/settings.rs:83
@@ -419,7 +408,6 @@ msgstr "'rest_s' nem található a beállításkönyvtárban"
 
 #. Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
 #: src/settings.rs:100
-#, fuzzy
 msgid "Could not parse default training setup"
 msgstr "Nem sikerült beolvasni az alapértelmezett edzés beállítást"
 
@@ -430,9 +418,8 @@ msgstr "Nem sikerült beolvasni az edzések listáját"
 
 #. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be written to the settings
 #: src/settings.rs:133
-#, fuzzy
 msgid "Could not update settings with training list"
-msgstr "Nem sikerült frissíteni a mentett edzések listájáz"
+msgstr "Nem sikerült frissíteni a mentett edzések listáját"
 
 #. Translators: Error message printed to the console when the GIO resource file cannot be registered
 #: src/setup.rs:14
