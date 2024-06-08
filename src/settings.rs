@@ -87,14 +87,14 @@ pub fn load_default_exercise_setup() -> TrainingSetup {
     )
 }
 
-pub fn load_exercise_list_from_gsettings() -> Vec<TrainingSetup> {
+pub fn load_training_list_from_gsettings() -> Vec<TrainingSetup> {
     let settings = gio::Settings::new(crate::config::APP_ID);
     let raw_json = settings.string("exercise-json-list");
     let parsed = json::parse(&raw_json).expect(&gettext("Could not parse exercise list"));
     parsed.members().map(parse_json_to_exercise_setup).collect()
 }
 
-pub fn save_exercise_list_to_gsettings<'a>(exercises: impl Iterator<Item = &'a TrainingSetup>) {
+pub fn save_training_list_to_gsettings<'a>(exercises: impl Iterator<Item = &'a TrainingSetup>) {
     let settings = gio::Settings::new(crate::config::APP_ID);
     let json_list: Vec<json::JsonValue> = exercises
         .map(|exercise| {

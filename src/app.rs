@@ -19,10 +19,10 @@ use relm4_icons::icon_names;
 
 #[derive(Debug)]
 pub enum AppModelInput {
-    PromptNewExercise,
-    CreateExerciseSetup(TrainingSetup),
-    RemoveExerciseSetup(DynamicIndex),
-    LoadExercise(TrainingSetup),
+    PromptNewTraining,
+    CreateTrainingSetup(TrainingSetup),
+    RemoveTrainingSetup(DynamicIndex),
+    LoadTraining(TrainingSetup),
     Popped,
     StartStop,
     Reset,
@@ -36,8 +36,8 @@ relm4::new_stateless_action!(StartStopAction, WindowActionGroup, "start-stop");
 relm4::new_stateless_action!(ResetAction, WindowActionGroup, "reset");
 
 pub struct AppModel {
-    exercise_timer: Option<Controller<TrainingTimer>>,
-    list_exercises: relm4::factory::FactoryVecDeque<TrainingSetup>,
+    training_timer: Option<Controller<TrainingTimer>>,
+    list_trainings: relm4::factory::FactoryVecDeque<TrainingSetup>,
     output_stream: rodio::OutputStreamHandle,
     window_geometry: settings::WindowGeometry,
     global_settings: settings::GlobalTrainingSetup,
@@ -81,7 +81,7 @@ impl Component for AppModel {
                         add_top_bar = &adw::HeaderBar {
                             pack_start = &gtk::Button {
                                 set_icon_name: icon_names::PLUS,
-                                connect_clicked => AppModelInput::PromptNewExercise,
+                                connect_clicked => AppModelInput::PromptNewTraining,
                             },
                             pack_end = &gtk::MenuButton {
                                 set_icon_name: "open-menu-symbolic",
@@ -91,11 +91,11 @@ impl Component for AppModel {
                         #[wrap(Some)]
                         #[name = "training_list_stack"]
                         set_content = &gtk::Stack {
-                            #[name = "exercise_list_scrolled"]
+                            #[name = "training_list_scrolled"]
                             gtk::ScrolledWindow {
                                 set_vexpand: true,
                                 #[local_ref]
-                                list_exercises -> gtk::Box {
+                                list_trainings -> gtk::Box {
                                     set_orientation: gtk::Orientation::Vertical,
                                     set_margin_start: 12,
                                     set_margin_end: 12,
@@ -112,7 +112,7 @@ impl Component for AppModel {
                                     // Translators: Big label button to create the first training if none exists
                                     set_label: &gettext("Create training"),
                                     set_halign: gtk::Align::Center,
-                                    connect_clicked => AppModelInput::PromptNewExercise,
+                                    connect_clicked => AppModelInput::PromptNewTraining,
                                 }
                             },
                         },
@@ -138,23 +138,23 @@ impl Component for AppModel {
         root: Self::Root,
         sender: ComponentSender<Self>,
     ) -> ComponentParts<Self> {
-        let mut list_exercises = relm4::factory::FactoryVecDeque::builder()
+        let mut list_trainings = relm4::factory::FactoryVecDeque::builder()
             .launch(gtk::Box::default())
             .forward(sender.input_sender(), |output| match output {
-                TrainingSetupOutput::Remove(index) => AppModelInput::RemoveExerciseSetup(index),
-                TrainingSetupOutput::Load(exercise_setup) => {
-                    AppModelInput::LoadExercise(exercise_setup)
+                TrainingSetupOutput::Remove(index) => AppModelInput::RemoveTrainingSetup(index),
+                TrainingSetupOutput::Load(training_setup) => {
+                    AppModelInput::LoadTraining(training_setup)
                 }
             });
         {
-            let mut guard = list_exercises.guard();
-            for exercise_setup in settings::load_exercise_list_from_gsettings().into_iter() {
-                guard.push_back(exercise_setup);
+            let mut guard = list_trainings.guard();
+            for training_setup in settings::load_training_list_from_gsettings().into_iter() {
+                guard.push_back(training_setup);
             }
         }
         let model = AppModel {
-            exercise_timer: None,
-            list_exercises,
+            training_timer: None,
+            list_trainings,
             output_stream: init,
             window_geometry: settings::WindowGeometry::new_from_gsettings(),
             global_settings: settings::GlobalTrainingSetup::new_from_gsettings(),
@@ -220,7 +220,7 @@ impl Component for AppModel {
         actions.add_action(shortcuts_action);
         actions.add_action(start_stop_action);
         actions.add_action(reset_action);
-        let list_exercises = model.list_exercises.widget();
+        let list_trainings = model.list_trainings.widget();
         let widgets = view_output!();
         actions.register_for_widget(&widgets.main_window);
         relm4::main_application()
@@ -242,8 +242,8 @@ impl Component for AppModel {
         root: &Self::Root,
     ) {
         match message {
-            AppModelInput::PromptNewExercise => {
-                if let Some(timer) = self.exercise_timer.as_ref() {
+            AppModelInput::PromptNewTraining => {
+                if let Some(timer) = self.training_timer.as_ref() {
                     timer.sender().emit(TrainingTimerInput::Pause);
                 }
                 let mut editor = TrainingEditor::builder()
@@ -253,21 +253,21 @@ impl Component for AppModel {
                 relm4::spawn_local(async move {
                     if let Some(TrainingEditorOutput::Create(setup)) = editor.next().await.unwrap()
                     {
-                        sender.input(AppModelInput::CreateExerciseSetup(setup));
+                        sender.input(AppModelInput::CreateTrainingSetup(setup));
                     }
                 });
             }
-            AppModelInput::RemoveExerciseSetup(index) => {
+            AppModelInput::RemoveTrainingSetup(index) => {
                 let index = index.current_index();
-                self.list_exercises.guard().remove(index);
+                self.list_trainings.guard().remove(index);
             }
-            AppModelInput::CreateExerciseSetup(setup) => {
-                self.list_exercises.guard().push_back(setup);
+            AppModelInput::CreateTrainingSetup(setup) => {
+                self.list_trainings.guard().push_back(setup);
             }
-            AppModelInput::LoadExercise(setup) => {
-                self.exercise_timer = Some(
+            AppModelInput::LoadTraining(setup) => {
+                self.training_timer = Some(
                     TrainingTimer::builder()
-                        .launch(ExerciseTimerInit {
+                        .launch(TrainingTimerInit {
                             setup,
                             global_setup: self.global_settings.clone(),
                             output_handle: self.output_stream.clone(),
@@ -276,19 +276,19 @@ impl Component for AppModel {
                 );
                 widgets
                     .main_view
-                    .set_content(Some(self.exercise_timer.as_ref().unwrap().widget()));
+                    .set_content(Some(self.training_timer.as_ref().unwrap().widget()));
                 widgets.navigation_view.push(&widgets.main_navigation_page);
             }
             AppModelInput::Popped => {
-                self.exercise_timer = None;
+                self.training_timer = None;
             }
             AppModelInput::StartStop => {
-                if let Some(controller) = &self.exercise_timer {
+                if let Some(controller) = &self.training_timer {
                     controller.emit(TrainingTimerInput::StartStop);
                 }
             }
             AppModelInput::Reset => {
-                if let Some(controller) = &self.exercise_timer {
+                if let Some(controller) = &self.training_timer {
                     controller.emit(TrainingTimerInput::Reset);
                 }
             }
@@ -298,19 +298,19 @@ impl Component for AppModel {
 }
 
 fn update_status_visible(widgets: &AppModelWidgets, model: &AppModel) {
-    if model.list_exercises.is_empty() {
+    if model.list_trainings.is_empty() {
         widgets
             .training_list_stack
             .set_visible_child(&widgets.training_list_status);
     } else {
         widgets
             .training_list_stack
-            .set_visible_child(&widgets.exercise_list_scrolled);
+            .set_visible_child(&widgets.training_list_scrolled);
     }
 }
 
 impl Drop for AppModel {
     fn drop(&mut self) {
-        settings::save_exercise_list_to_gsettings(self.list_exercises.iter());
+        settings::save_training_list_to_gsettings(self.list_trainings.iter());
     }
 }

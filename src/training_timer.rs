@@ -140,7 +140,7 @@ fn width_chars(remaining_s: usize, default: i32) -> i32 {
     }
 }
 
-pub struct ExerciseTimerInit {
+pub struct TrainingTimerInit {
     pub setup: TrainingSetup,
     pub global_setup: GlobalTrainingSetup,
     pub output_handle: rodio::OutputStreamHandle,
@@ -148,7 +148,7 @@ pub struct ExerciseTimerInit {
 
 #[relm4::component(pub)]
 impl Component for TrainingTimer {
-    type Init = ExerciseTimerInit;
+    type Init = TrainingTimerInit;
     type Input = TrainingTimerInput;
     type Output = ();
     type CommandOutput = ();
