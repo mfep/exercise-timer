@@ -45,6 +45,24 @@
     <color type="primary" scheme_preference="dark">#7f2c22</color>
   </branding>
   <releases>
+    <release version="1.3.1" date="2024-06-08">
+      <description>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Updated terminology: from "exercise" to "training"</li>
+          <li>Updated Hungarian translation</li>
+          <li>Translated using Weblate (French)</li>
+          <li>Better margin for 'Remaining sets'</li>
+          <li>Updated translatable strings in help-overlay</li>
+          <li>Adaptive font sizes in the Timer Page</li>
+          <li>Consistent error handling and messages</li>
+        </ul>
+        <p>Miscellaneous Changes</p>
+        <ul>
+          <li>Updated screenshots</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.3.0" date="2024-06-02">
       <description>
         <p>Features</p>
