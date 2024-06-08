@@ -8,60 +8,63 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-08 11:17+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-06-09 18:09+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/exercise-timer/"
+"exercise-timer/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "Training"
-msgstr ""
+msgstr "Treeni"
 
 #. Translators: The name of the shortcut key to start and stop the training timer
 #: data/resources/ui/help-overlay.ui:16
 msgctxt "shortcut window"
 msgid "Start/Stop training"
-msgstr ""
+msgstr "Aloita/lopeta treeni"
 
 #. Translators: The name of the shortcut key to start the training from the beginning
 #: data/resources/ui/help-overlay.ui:24
 msgctxt "shortcut window"
 msgid "Reset training"
-msgstr ""
+msgstr "Nollaa treeni"
 
 #. Translators: The title of the shortcuts group which lists general application shortcuts
 #: data/resources/ui/help-overlay.ui:34
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Yleiset"
 
 #. Translators: The name of the shortcut key to open the shortcuts window
 #: data/resources/ui/help-overlay.ui:38
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Näytä pikanäppäimet"
 
 #. Translators: The name of the shortcut key to quit the application
 #: data/resources/ui/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Lopeta"
 
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:174 src/setup.rs:11
 msgid "Exercise Timer"
-msgstr ""
+msgstr "Harjoitusajastin"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:4
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
 msgid "Timer clock for high intensity interval training"
-msgstr ""
+msgstr "Ajastinkello korkean intensiteetin aikavälitreeniin"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/xyz.safeworlds.hiit.desktop.in.in:10
@@ -72,7 +75,7 @@ msgstr ""
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:6
 msgid "The width of the window"
-msgstr ""
+msgstr "Ikkunan leveys"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:10
 msgid "The height of the window"
@@ -80,7 +83,7 @@ msgstr ""
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:14
 msgid "If the window is maximized"
-msgstr ""
+msgstr "Onko ikkuna suurennettu"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:18
 msgid "Default training setup, in JSON notation"
@@ -114,7 +117,7 @@ msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
 msgid "Features:"
-msgstr ""
+msgstr "Ominaisuudet:"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
 msgid ""
@@ -140,24 +143,24 @@ msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
 msgid "Exercise list - dark mode"
-msgstr ""
+msgstr "Treeniluettelo - tumma tila"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
 msgid "Timer - dark mode"
-msgstr ""
+msgstr "Ajastin - tumma tila"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
 msgid "Exercise list - light mode"
-msgstr ""
+msgstr "Treeniluettelo - vaalea tila"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
 msgid "Timer - light mode"
-msgstr ""
+msgstr "Ajastin - vaalea tila"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:50
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:78
 msgid "Features"
-msgstr ""
+msgstr "Ominaisuudet"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
 msgid "Added internationalization support"
@@ -233,122 +236,122 @@ msgstr ""
 #. Translators: The title of the preferences menu entry
 #: src/app.rs:58
 msgid "_Preferences"
-msgstr ""
+msgstr "_Asetukset"
 
 #. Translators: The title of the keyboard shortcuts menu entry
 #: src/app.rs:60
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Pikanäppäimet"
 
 #. Translators: The title of the about dialog menu entry
 #: src/app.rs:62
 msgid "_About Exercise Timer"
-msgstr ""
+msgstr "_Tietoja - Treeniajastin"
 
 #. Translators: This is the title of the page which lists all trainings
 #: src/app.rs:78
 msgid "Training List"
-msgstr ""
+msgstr "Treeniluettelo"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:109
 msgid "No training is created yet"
-msgstr ""
+msgstr "Ei vielä yhtäkään treeniä"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:113
 msgid "Create training"
-msgstr ""
+msgstr "Luo treeni"
 
 #. Translators: The name of the timer page
 #: src/app.rs:124
 msgid "Timer"
-msgstr ""
+msgstr "Ajastin"
 
 #. Translators: Replace this with your name for it to show up in the about window
 #: src/app.rs:181
 msgid "translator_credits"
-msgstr ""
+msgstr "Jiri Grönroos"
 
 #. Translators: The editor window's title when creating a new training
 #: src/training_editor.rs:57
 msgid "New training"
-msgstr ""
+msgstr "Uusi treeni"
 
 #. Translators: The editor window's title when modifying a training
 #: src/training_editor.rs:59
 msgid "Edit training"
-msgstr ""
+msgstr "Muokkaa treeniä"
 
 #. Translators: Button to close the training editor window without modifications
 #: src/training_editor.rs:65
 msgid "Cancel"
-msgstr ""
+msgstr "Peru"
 
 #. Translators: Button to close the editor window and create a new training
 #: src/training_editor.rs:71
 msgid "Create"
-msgstr ""
+msgstr "Luo"
 
 #. Translators: Button to close the editor window and update an existing training
 #: src/training_editor.rs:73
 msgid "Update"
-msgstr ""
+msgstr "Päivitä"
 
 #. Translators: The title of the field for the name of the training in the editor window
 #: src/training_editor.rs:85
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #. Translators: The title of the field for the number of sets in the training in the editor window
 #: src/training_editor.rs:90
 msgid "Number of sets"
-msgstr ""
+msgstr "Settien määrä"
 
 #. Translators: The title of the field for the rest duration in the training in the editor window
 #: src/training_editor.rs:101
 msgid "Rest time"
-msgstr ""
+msgstr "Lepoaika"
 
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: src/training_editor.rs:103 src/training_editor.rs:116
 #: src/settings_dialog.rs:39
 msgid "seconds"
-msgstr ""
+msgstr "sekuntia"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: src/training_editor.rs:114
 msgid "Exercise time"
-msgstr ""
+msgstr "Harjoitusaika"
 
 #: src/training_setup.rs:95
 msgid "Sets"
-msgstr ""
+msgstr "Setit"
 
 #. Translators: Shown on the timer page during exercise
 #: src/training_setup.rs:104 src/training_timer.rs:184
 msgid "Exercise"
-msgstr ""
+msgstr "Harjoitus"
 
 #. Translators: Shown on the timer page during rest
 #: src/training_setup.rs:113 src/training_timer.rs:186
 msgid "Rest"
-msgstr ""
+msgstr "Lepo"
 
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:121
 msgid "Finished!"
-msgstr ""
+msgstr "Valmis!"
 
 #. Translators: Shown on the timer page during preparation
 #: src/training_timer.rs:182
 msgid "Preparation"
-msgstr ""
+msgstr "Valmistelu"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:255
 msgid "Remaining sets: {}"
-msgstr ""
+msgstr "Settejä jäljellä: {}"
 
 #. Translators: Error message printed to the console when an error occurs with WAV decoding
 #: src/training_timer/audio_player.rs:16
@@ -373,12 +376,12 @@ msgstr ""
 #. Translators: The title of the preferences group for the training default settings
 #: src/settings_dialog.rs:33
 msgid "Training defaults"
-msgstr ""
+msgstr "Treenioletukset"
 
 #. Translators: The title of the edit field to set the time (in seconds) for the preparation period
 #: src/settings_dialog.rs:38
 msgid "Preparation time"
-msgstr ""
+msgstr "Valmisteluaika"
 
 #. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
 #: src/settings.rs:68
