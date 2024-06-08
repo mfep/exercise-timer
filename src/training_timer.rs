@@ -255,7 +255,8 @@ impl Component for TrainingTimer {
                         gettext("Remaining sets: {}")
                     } else {
                         gettext!("Remaining sets: {}", model.remaining_sets)
-                    }
+                    },
+                    set_margin_bottom: 12,
                 },
             },
         }
