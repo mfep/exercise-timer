@@ -1,0 +1,455 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hiit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# twlvnn kraftwerk <kraft_werk@tutanota.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: hiit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-08 11:17+0200\n"
+"PO-Revision-Date: 2024-06-22 19:03+0200\n"
+"Last-Translator: twlvnn kraftwerk <kraft_werk@tutanota.com>\n"
+"Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 46.1\n"
+
+#. Translators: The title of the shortcuts group which lists the training-related shortcuts
+#: data/resources/ui/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "Training"
+msgstr "Тренировка"
+
+#. Translators: The name of the shortcut key to start and stop the training timer
+#: data/resources/ui/help-overlay.ui:16
+msgctxt "shortcut window"
+msgid "Start/Stop training"
+msgstr "Стартиране/спиране на тренировката"
+
+#. Translators: The name of the shortcut key to start the training from the beginning
+#: data/resources/ui/help-overlay.ui:24
+msgctxt "shortcut window"
+msgid "Reset training"
+msgstr "Занулиране на тренировката"
+
+#. Translators: The title of the shortcuts group which lists general application shortcuts
+#: data/resources/ui/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Общи"
+
+#. Translators: The name of the shortcut key to open the shortcuts window
+#: data/resources/ui/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Показване на клавишните комбинации"
+
+#. Translators: The name of the shortcut key to quit the application
+#: data/resources/ui/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Спиране на програмата"
+
+#. Translators: The name of the application. Feel free to localize it!
+#: data/xyz.safeworlds.hiit.desktop.in.in:3
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:174 src/setup.rs:11
+msgid "Exercise Timer"
+msgstr "Таймер за упражнения"
+
+#: data/xyz.safeworlds.hiit.desktop.in.in:4
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
+msgid "Timer clock for high intensity interval training"
+msgstr "Часовник с таймер за високоинтензивна интервална тренировка"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/xyz.safeworlds.hiit.desktop.in.in:10
+msgid ""
+"Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
+"interval training;"
+msgstr ""
+"инструмент;спорт;тренировка;високоинтензивна интервална тренировка;трениране;"
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:6
+msgid "The width of the window"
+msgstr "Широчина на прозореца"
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:10
+msgid "The height of the window"
+msgstr "Височина на прозореца"
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:14
+msgid "If the window is maximized"
+msgstr "Дали прозореца е максимизиран"
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:18
+msgid "Default training setup, in JSON notation"
+msgstr "Стандартните настройки за трениране в JSON формат"
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:22
+msgid "List of training setups, in JSON notation"
+msgstr "Списък с настройки за трениране в JSON формат"
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:26
+msgid "The duration of the warmup, in seconds"
+msgstr "Продължителността на загрявката в секунди"
+
+#: data/xyz.safeworlds.hiit.gschema.xml.in:31
+msgid "The volume of the beeping sound"
+msgstr "Силата на звука за пиукащия звук"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:9
+msgid "Exercise timer is a simple utility to conduct interval training."
+msgstr ""
+"„Таймер за упражнения“ е проста програма за провеждане на интервално "
+"трениране."
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
+msgid ""
+"Following a short preparation period, a prescribed number of exercise sets "
+"are played. In between each exercise, there is a resting period."
+msgstr ""
+"След кратък подготвителен период се изпълняват определен брой серии. Между "
+"всяко упражнение има почивка."
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
+msgid "The app does not make an assumption about the kind of the exercise."
+msgstr "Приложението не прави предположение за вида на упражнението."
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
+msgid "Features:"
+msgstr "Функции:"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
+msgid ""
+"Save and recall presets containing the number of sets and the duration of "
+"the exercise and rest periods."
+msgstr ""
+"Записвайте и връщайте настройки съдържащи броя на сериите и "
+"продължителността на упражненията и периодите на почивка."
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
+msgid "Set the duration of the preparation in the settings."
+msgstr "Задайте продължителността на подготовката в настройките."
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
+msgid "A beeping sound is played at- and prior to each transition."
+msgstr ""
+"Възпроизвежда се пиукащ звук в началото и края на всяка част от тренировката."
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
+msgid "The volume of the sound can be adjusted."
+msgstr "Силата на звука може да се наглася."
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
+msgid "Light and dark mode follows the system's setting."
+msgstr "Светлият и тъмният режим следват настройките на системата."
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
+msgid "Exercise list - dark mode"
+msgstr "Списък с упражнения — тъмен режим"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
+msgid "Timer - dark mode"
+msgstr "Таймер — тъмен режим"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
+msgid "Exercise list - light mode"
+msgstr "Списък с упражнения — светъл режим"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
+msgid "Timer - light mode"
+msgstr "Таймер — светъл режим"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:50
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:78
+msgid "Features"
+msgstr "Функции"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
+msgid "Added internationalization support"
+msgstr "Добавена е способност за интернационализация"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:53
+msgid "Added French translation"
+msgstr "Добавен е френски превод"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:54
+msgid "Added Hungarian translation"
+msgstr "Добавен е унгарски превод"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:55
+msgid "Added Norwegian Bokmål translation"
+msgstr "Добавен е превод на норвежки (книжовен)"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:57
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:70
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:82
+msgid "Bug fixes"
+msgstr "Поправени грешки"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:59
+msgid "Fix too wide window when Finished"
+msgstr ""
+"Поправена е грешка, където прозореца е твърде широк след края на тренировките"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:61
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:87
+msgid "Miscellaneous changes"
+msgstr "Други промени"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:63
+msgid "Added OARS-1.1 compatible content rating"
+msgstr "Добавен е съвместима с OARS-1.1 категория на съдържанието"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
+msgid "Updated library dependencies"
+msgstr "Обновени са зависимите библиотеки"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:72
+msgid "Allow time periods longer than 999 seconds"
+msgstr "Позволяване на периоди от време, по-дълги от 999 секунди"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:80
+msgid "Displaying remaining time in minutes:seconds format"
+msgstr "Показване на оставащото време във формат минути:секунди"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:84
+msgid "Fix misleading Ctrl designators in shortcuts window"
+msgstr ""
+"Поправена е грешка за заблубдаващи Ctrl обозначения в прозореца за клавишни "
+"комбинации"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:85
+msgid "Fix timer overflow after finish"
+msgstr "Поправена е грешка при препълване в таймера след края на тренировките"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:89
+msgid "Updated application runtime to GNOME 46"
+msgstr "Обновена е средата за изпълнение на приложението до GNOME 46"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:95
+msgid "Updated icon for better contrast on dark backgrounds"
+msgstr "Обновена е иконата за по-добър контраст на тъмни фонове"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:96
+msgid "Added branding color metadata"
+msgstr "Добавени са метаданни за цвета на търговската марката"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:101
+msgid "Initial release of Exercise Timer"
+msgstr "Първоначално издание на „Таймер за упражнения“"
+
+#. Translators: The title of the preferences menu entry
+#: src/app.rs:58
+msgid "_Preferences"
+msgstr "_Настройки"
+
+#. Translators: The title of the keyboard shortcuts menu entry
+#: src/app.rs:60
+msgid "_Keyboard Shortcuts"
+msgstr "_Клавишни комбинации"
+
+#. Translators: The title of the about dialog menu entry
+#: src/app.rs:62
+msgid "_About Exercise Timer"
+msgstr "_Относно „Таймер за упражнения“"
+
+#. Translators: This is the title of the page which lists all trainings
+#: src/app.rs:78
+msgid "Training List"
+msgstr "Списък с тренировки"
+
+#. Translators: The message which is shown on the background of the empty training list
+#: src/app.rs:109
+msgid "No training is created yet"
+msgstr "Няма тренировки"
+
+#. Translators: Big label button to create the first training if none exists
+#: src/app.rs:113
+msgid "Create training"
+msgstr "Създаване на тренировка"
+
+#. Translators: The name of the timer page
+#: src/app.rs:124
+msgid "Timer"
+msgstr "Таймер"
+
+#. Translators: Replace this with your name for it to show up in the about window
+#: src/app.rs:181
+msgid "translator_credits"
+msgstr "twlvnn kraftwerk <kraft_werk@tutanota.com>"
+
+#. Translators: The editor window's title when creating a new training
+#: src/training_editor.rs:57
+msgid "New training"
+msgstr "Нова тренировка"
+
+#. Translators: The editor window's title when modifying a training
+#: src/training_editor.rs:59
+msgid "Edit training"
+msgstr "Редактиране на тренировката"
+
+#. Translators: Button to close the training editor window without modifications
+#: src/training_editor.rs:65
+msgid "Cancel"
+msgstr "Отказване"
+
+#. Translators: Button to close the editor window and create a new training
+#: src/training_editor.rs:71
+msgid "Create"
+msgstr "Създаване"
+
+#. Translators: Button to close the editor window and update an existing training
+#: src/training_editor.rs:73
+msgid "Update"
+msgstr "Обновяване"
+
+#. Translators: The title of the field for the name of the training in the editor window
+#: src/training_editor.rs:85
+msgid "Name"
+msgstr "Име"
+
+#. Translators: The title of the field for the number of sets in the training in the editor window
+#: src/training_editor.rs:90
+msgid "Number of sets"
+msgstr "Брой серии"
+
+#. Translators: The title of the field for the rest duration in the training in the editor window
+#: src/training_editor.rs:101
+msgid "Rest time"
+msgstr "Време за почивката"
+
+#. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
+#: src/training_editor.rs:103 src/training_editor.rs:116
+#: src/settings_dialog.rs:39
+msgid "seconds"
+msgstr "секунди"
+
+#. Translators: The title of the field for the exercise duration in the training in the editor window
+#: src/training_editor.rs:114
+msgid "Exercise time"
+msgstr "Време за упражнението"
+
+#: src/training_setup.rs:95
+msgid "Sets"
+msgstr "Серии"
+
+#. Translators: Shown on the timer page during exercise
+#: src/training_setup.rs:104 src/training_timer.rs:184
+msgid "Exercise"
+msgstr "Упражняване"
+
+#. Translators: Shown on the timer page during rest
+#: src/training_setup.rs:113 src/training_timer.rs:186
+msgid "Rest"
+msgstr "Почивка"
+
+#. Translators: Shown in the timer page when the training has come to the end
+#: src/training_timer.rs:121
+msgid "Finished!"
+msgstr "Край!"
+
+#. Translators: Shown on the timer page during preparation
+#: src/training_timer.rs:182
+msgid "Preparation"
+msgstr "Пригответе се"
+
+#. Translators: Label showing the number of remaining sets on the timer page
+#: src/training_timer.rs:255
+msgid "Remaining sets: {}"
+msgstr "Оставащи серии: {}"
+
+#. Translators: Error message printed to the console when an error occurs with WAV decoding
+#: src/training_timer/audio_player.rs:16
+msgid "Could not decode WAV"
+msgstr "WAV не може да се декодира"
+
+#. Translators: Error message printed to the console when an error occurs with audio playback
+#: src/training_timer/audio_player.rs:25
+msgid "Could not play audio"
+msgstr "Звукът не може да се пусне"
+
+#. Translators: Error message printed to the console when cannot load data from resource
+#: src/training_timer/audio_player.rs:55
+msgid "Could not open resource data"
+msgstr "Данните за ресурсите не може да се отворят"
+
+#. Translators: Error message when cannot connect to the audio output
+#: src/main.rs:22
+msgid "Could not create audio output stream"
+msgstr "Звуковият изход не може да се създаде"
+
+#. Translators: The title of the preferences group for the training default settings
+#: src/settings_dialog.rs:33
+msgid "Training defaults"
+msgstr "Стандартни настройки за трениране"
+
+#. Translators: The title of the edit field to set the time (in seconds) for the preparation period
+#: src/settings_dialog.rs:38
+msgid "Preparation time"
+msgstr "Време за подготовяне"
+
+#. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
+#: src/settings.rs:68
+msgid "Cannot find 'name' in settings dictionary"
+msgstr "„name“ не може да бъде намерено в речника на настройките"
+
+#. Translators: Error message printed to the console when key 'sets' is not found in the JSON formatted training
+#: src/settings.rs:72
+msgid "Cannot find 'sets' in settings dictionary"
+msgstr "„sets“ не може да бъде намерено в речника на настройките"
+
+#. Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
+#: src/settings.rs:77
+msgid "Cannot find 'exercise_s' in settings dictionary"
+msgstr "„exercise_s“ не може да бъде намерено в речника на настройките"
+
+#. Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
+#: src/settings.rs:83
+msgid "Cannot find 'rest_s' in settings dictionary"
+msgstr "„rest_s“ не може да бъде намерено в речника на настройките"
+
+#. Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
+#: src/settings.rs:100
+msgid "Could not parse default training setup"
+msgstr "Стандартните настройки за трениране не може да се разчетат"
+
+#. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be parsed
+#: src/settings.rs:111
+msgid "Could not parse exercise list"
+msgstr "Списъкът с упражнения не може да се разчете"
+
+#. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be written to the settings
+#: src/settings.rs:133
+msgid "Could not update settings with training list"
+msgstr "Настройките не може да се обновят със списъка с успражнения"
+
+#. Translators: Error message printed to the console when the GIO resource file cannot be registered
+#: src/setup.rs:14
+msgid "Could not register resources"
+msgstr "Ресурсите не може да се регистрират"
+
+#. Translators: Error message printed to the console when the i18n text domain cannot be bound
+#: src/setup.rs:23
+msgid "Unable to bind the text domain"
+msgstr "Текстовият домейн не може да се свърже"
+
+#. Translators: Error message printed to the console when the i18n text domain cannot be switched to
+#: src/setup.rs:28
+msgid "Unable to switch to the text domain"
+msgstr "Текстовият домейн не може да се превключи"
+
+#. Translators: Error message printed to the console when there is no Display to apply the custom CSS to
+#: src/setup.rs:41
+msgid "Could not connect to a display"
+msgstr "Не може да се свърже с екран"
+
+#. Translators: Error message printed to the console, when the Shortcuts window cannot be built from resource
+#: src/shortcuts_window.rs:23
+msgid "Could not build the Help Overlay"
+msgstr "Прозорецът „Помощ“ не може да се компилира"
