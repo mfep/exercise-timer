@@ -2,6 +2,29 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.4.0](https://github.com/mfep/exercise-timer/compare/ffca0ef421e8575104c2c7c668fff455f58355ac..v1.4.0) - 2024-07-14
+#### Bug Fixes
+- **(i18n)** Update Hungarian translation - ([5767a0f](https://github.com/mfep/exercise-timer/commit/5767a0f0a6d7cdfeb57fdee10120503d30a9c0ad)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Remove changelog from translation - ([7067544](https://github.com/mfep/exercise-timer/commit/7067544c9e9a9d42f1678cae343679ff9bb6424f)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Add missing languages in LINGUAS - ([cb9d9b5](https://github.com/mfep/exercise-timer/commit/cb9d9b547d640d279e2039afbb74c0c175e8097e)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Translated using Weblate (Hindi) - ([5ed4062](https://github.com/mfep/exercise-timer/commit/5ed406297abd007711e5c64d7af9507a4a6500bc)) - Scrambled777
+- **(i18n)** Translated using Weblate (Finnish) - ([052ae59](https://github.com/mfep/exercise-timer/commit/052ae598e2c1c3aea2739edc027c1821b9ba2772)) - Jiri Grönroos
+- **(i18n)** Translated using Weblate (Italian) - ([4cdf391](https://github.com/mfep/exercise-timer/commit/4cdf391ef15d3dbbfff68cbcb7d8bd222ac47eb8)) - albanobattistella
+#### Features
+- **(i18n)** Added Bulgarian translation (#16) - ([2285986](https://github.com/mfep/exercise-timer/commit/2285986cdf9399422814eff8204633492dfe92f7)) - twlvnn
+- **(i18n)** Added translation using Weblate (Finnish) - ([23e233c](https://github.com/mfep/exercise-timer/commit/23e233ce0c786e5a5392199d3567731ad5596db3)) - Jiri Grönroos
+- **(i18n)** Added translation using Weblate (Italian) - ([f1cfca0](https://github.com/mfep/exercise-timer/commit/f1cfca0d97f27001f036707099bb886508908349)) - albanobattistella
+- **(i18n)** Added translation using Weblate (Hindi) - ([ffca0ef](https://github.com/mfep/exercise-timer/commit/ffca0ef421e8575104c2c7c668fff455f58355ac)) - Scrambled777
+- **(ui)** Add tooltips to image buttons - ([810ea8d](https://github.com/mfep/exercise-timer/commit/810ea8d4158a147f0ef9f09203b9e4bec590d91c)) - [@mfep](https://github.com/mfep)
+#### Miscellaneous Chores
+- **(dependencies)** Update dependencies - ([0778b0d](https://github.com/mfep/exercise-timer/commit/0778b0d232b408a75b7605979c95c9289e09c749)) - [@mfep](https://github.com/mfep)
+- **(docs)** Add DOAP - ([4cea183](https://github.com/mfep/exercise-timer/commit/4cea1834f2a95f4186a1b526c4d4db9d0cb69129)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update summary - ([0a971a8](https://github.com/mfep/exercise-timer/commit/0a971a80e5a7b71c1acc7e62e1f9bdf6d83a29b9)) - [@mfep](https://github.com/mfep)
+- **(docs)** Reference GNOME Code of Conduct - ([f5932c2](https://github.com/mfep/exercise-timer/commit/f5932c26f140565fe71dc1258e1b9ce96d396580)) - [@mfep](https://github.com/mfep)
+- Updated release - ([14d1558](https://github.com/mfep/exercise-timer/commit/14d155833d154d5564c1f3a583938c3c25c5cb3d)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.3.1](https://github.com/mfep/exercise-timer/compare/b1efaa48604752b972a103f7d1b77b23ed6d1467..v1.3.1) - 2024-06-08
 #### Bug Fixes
 - **(UI)** Updated terminology: exercise -> training - ([b1efaa4](https://github.com/mfep/exercise-timer/commit/b1efaa48604752b972a103f7d1b77b23ed6d1467)) - [@mfep](https://github.com/mfep)
