@@ -46,6 +46,30 @@
     <color type="primary" scheme_preference="dark">#7f2c22</color>
   </branding>
   <releases>
+    <release version="1.4.0" date="2024-07-14">
+    </release>
+      <description translate="no">
+        <p>Bug fixes</p>
+        <ul>
+          <li>Update Hungarian translation</li>
+          <li>Translated using Weblate (Hindi)</li>
+          <li>Translated using Weblate (Finnish)</li>
+          <li>Translated using Weblate (Italian)</li>
+        </ul>
+        <p>Features</p>
+        <ul>
+          <li>Added Bulgarian translation</li>
+          <li>Added translation using Weblate (Finnish)</li>
+          <li>Added translation using Weblate (Italian)</li>
+          <li>Added translation using Weblate (Hindi)</li>
+          <li>Add tooltips to image buttons</li>
+        </ul>
+        <p>Miscellaneous changes</p>
+        <ul>
+          <li>Update dependencies</li>
+          <li>Update summary</li>
+        </ul>
+      </description>
     <release version="1.3.1" date="2024-06-08">
       <description translate="no">
         <p>Bug fixes</p>
