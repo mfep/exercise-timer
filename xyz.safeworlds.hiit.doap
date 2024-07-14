@@ -1,0 +1,19 @@
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">Exercise Timer (xyz.safeworlds.hiit)</name>
+  <shortdesc xml:lang="en">Timer clock for high intensity interval training</shortdesc>
+  <homepage rdf:resource="https://github.com/mfep/exercise-timer" />
+  <bug-database rdf:resource="https://github.com/mfep/exercise-timer/issues"/>
+  <programming-language>Rust</programming-language>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Lőrinc Serfőző</foaf:name>
+      <foaf:mbox rdf:resource="mailto:lorinc.serfozo@mailbox.org" />
+    </foaf:Person>
+  </maintainer>
+</Project>
