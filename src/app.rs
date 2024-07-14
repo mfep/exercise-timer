@@ -82,10 +82,14 @@ impl Component for AppModel {
                             pack_start = &gtk::Button {
                                 set_icon_name: icon_names::PLUS,
                                 connect_clicked => AppModelInput::PromptNewTraining,
+                                // Translators: tooltip for the add training image button
+                                set_tooltip: &gettext("Add training"),
                             },
                             pack_end = &gtk::MenuButton {
                                 set_icon_name: "open-menu-symbolic",
                                 set_menu_model: Some(&primary_menu),
+                                // Translators: tooltip for main menu image button
+                                set_tooltip: &gettext("Main menu"),
                             },
                         },
                         #[wrap(Some)]

@@ -222,6 +222,8 @@ impl Component for TrainingTimer {
                             connect_clicked => TrainingTimerInput::Reset,
                             #[watch]
                             set_class_active: ("suggested-action", model.remaining_s == 0),
+                            // Translators: tooltip text for the reset button
+                            set_tooltip: &gettext("Start training from the beginning"),
                         },
                         gtk::Button {
                             set_css_classes: &["circular", "huge-button"],
@@ -232,6 +234,10 @@ impl Component for TrainingTimer {
                                 #[watch]
                                 set_icon_name: Some(if model.running { icon_names::PAUSE } else { icon_names::PLAY }),
                             },
+                            #[watch]
+                            // Translators: tooltip text for the pause/resume button
+                            set_tooltip: &if model.running { gettext("Pause training") } else { gettext("Resume training") },
+
                         },
                         #[name = "volume_button"]
                         gtk::ScaleButton {
@@ -244,7 +250,9 @@ impl Component for TrainingTimer {
                                 connect_value_changed[audio_sender] => move |adj| {
                                     audio_sender.emit(AudioPlayerInput::SetVolume(adj.value()))
                                 },
-                            }
+                            },
+                            // Translators: tooltip text for the volume button
+                            set_tooltip: &gettext("Set volume"),
                         }
                     }
                 },

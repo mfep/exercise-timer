@@ -129,6 +129,8 @@ impl FactoryComponent for TrainingSetup {
                                 connect_clicked[sender] => move |btn| {
                                     sender.input(TrainingSetupInput::Edit(btn.root().unwrap()));
                                 },
+                                // Translators: tooltip text for exercise card button to open the training editor
+                                set_tooltip: &gettext("Edit training"),
                             },
                             gtk::Button {
                                 set_class_active: ("destructive-action", true),
@@ -136,11 +138,15 @@ impl FactoryComponent for TrainingSetup {
                                 connect_clicked[sender, index] => move |_| {
                                     sender.output(TrainingSetupOutput::Remove(index.clone())).unwrap();
                                 },
+                                // Translators: tooltip text for exercise card button to delete the training
+                                set_tooltip: &gettext("Delete training"),
                             },
                             gtk::Button {
                                 set_class_active: ("suggested-action", true),
                                 set_icon_name: icon_names::PLAY,
                                 connect_clicked => TrainingSetupInput::Load,
+                                // Translators: tooltip text for exercise card button to start the training timer
+                                set_tooltip: &gettext("Start training"),
                             },
                         },
                     },
