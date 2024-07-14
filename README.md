@@ -76,6 +76,10 @@ Exercise Timer is translated via [Weblate](https://hosted.weblate.org/projects/e
 
 PRs and feedback in the form of issues are most welcome.
 
+### Code of Conduct
+
+This project follows the [GNOME Code of Conduct](https://conduct.gnome.org/).
+
 ## ✍️ License
 
 This work is licensed under the GNU GPLv3. See [LICENSE](./LICENSE) for details.
