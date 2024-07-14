@@ -4,7 +4,8 @@
   <metadata_license>CC0</metadata_license>
   <project_license>GPL-3.0</project_license>
   <name>Exercise Timer</name>
-  <summary>Timer clock for high intensity interval training</summary>
+  <!-- Translators: App summary, at most 35 characters, imperative style -->
+  <summary>Train and rest with high intensity</summary>
   <description>
     <p>Exercise timer is a simple utility to conduct interval training.</p>
     <p>Following a short preparation period, a prescribed number of exercise sets are played. In between each exercise, there is a resting period.</p>

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-14 11:49+0200\n"
+"POT-Creation-Date: 2024-07-14 12:34+0200\n"
 "PO-Revision-Date: 2024-06-09 18:09+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/exercise-timer/"
@@ -62,7 +62,6 @@ msgid "Exercise Timer"
 msgstr "Harjoitusajastin"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:4
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
 msgid "Timer clock for high intensity interval training"
 msgstr "Ajastinkello korkean intensiteetin aikavälitreeniin"
 
@@ -101,59 +100,64 @@ msgstr ""
 msgid "The volume of the beeping sound"
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:9
-msgid "Exercise timer is a simple utility to conduct interval training."
+#. Translators: App summary, at most 35 characters, imperative style
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
+msgid "Train and rest with high intensity"
 msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
+msgid "Exercise timer is a simple utility to conduct interval training."
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
 msgid ""
 "Following a short preparation period, a prescribed number of exercise sets "
 "are played. In between each exercise, there is a resting period."
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
 msgid "The app does not make an assumption about the kind of the exercise."
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
 msgstr "Ominaisuudet:"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise and rest periods."
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid "Set the duration of the preparation in the settings."
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "A beeping sound is played at- and prior to each transition."
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "The volume of the sound can be adjusted."
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:19
 msgid "Light and dark mode follows the system's setting."
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:25
 msgid "Exercise list - dark mode"
 msgstr "Treeniluettelo - tumma tila"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:29
 msgid "Timer - dark mode"
 msgstr "Ajastin - tumma tila"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:33
 msgid "Exercise list - light mode"
 msgstr "Treeniluettelo - vaalea tila"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:37
 msgid "Timer - light mode"
 msgstr "Ajastin - vaalea tila"
 

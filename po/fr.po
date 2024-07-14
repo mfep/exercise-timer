@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-14 11:49+0200\n"
+"POT-Creation-Date: 2024-07-14 12:34+0200\n"
 "PO-Revision-Date: 2024-06-07 18:11+0000\n"
 "Last-Translator: MariusCouet <marius@couet.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/exercise-timer/"
@@ -65,7 +65,6 @@ msgid "Exercise Timer"
 msgstr "Exercise Timer"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:4
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
 msgid "Timer clock for high intensity interval training"
 msgstr "Minuteur d'entraînement fractionné à haute intensité"
 
@@ -108,12 +107,17 @@ msgstr "Durée d'échauffement, en secondes"
 msgid "The volume of the beeping sound"
 msgstr "Volume du bip"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:9
+#. Translators: App summary, at most 35 characters, imperative style
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
+msgid "Train and rest with high intensity"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
 msgid "Exercise timer is a simple utility to conduct interval training."
 msgstr ""
 "Exercise timer est une application simple pour l'entraînement fractionné."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
 msgid ""
 "Following a short preparation period, a prescribed number of exercise sets "
 "are played. In between each exercise, there is a resting period."
@@ -121,15 +125,15 @@ msgstr ""
 "Après une courte période de préparation, un nombre prescrit de séries "
 "d’exercices est lancé. Entre chaque exercice, il y a une période de repos."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
 msgid "The app does not make an assumption about the kind of the exercise."
 msgstr "L'application ne fait pas d'assomption sur le type d'exercice."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
 msgstr "Fonctionnalités :"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise and rest periods."
@@ -137,35 +141,35 @@ msgstr ""
 "Enregistrez et rappelez les préréglages contenant le nombre de séries et la "
 "durée des périodes d'exercice et de repos."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid "Set the duration of the preparation in the settings."
 msgstr "Réglez la durée de la préparation dans les paramètres."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "A beeping sound is played at- and prior to each transition."
 msgstr "Un signal sonore est émis avant et pendant chaque transition."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "The volume of the sound can be adjusted."
 msgstr "Le volume du son peut être réglé."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:19
 msgid "Light and dark mode follows the system's setting."
 msgstr "Les modes clair et sombre suivent les paramètres du système."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:25
 msgid "Exercise list - dark mode"
 msgstr "Liste d'exercices - mode sombre"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:29
 msgid "Timer - dark mode"
 msgstr "Minuterie - mode sombre"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:33
 msgid "Exercise list - light mode"
 msgstr "Liste d'exercices - mode clair"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:37
 msgid "Timer - light mode"
 msgstr "Minuteur - mode clair"
 

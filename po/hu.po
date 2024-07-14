@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-14 11:49+0200\n"
+"POT-Creation-Date: 2024-07-14 12:34+0200\n"
 "PO-Revision-Date: 2024-06-08 11:24+0200\n"
 "Last-Translator:  <>\n"
 "Language-Team: Hungarian\n"
@@ -59,7 +59,6 @@ msgid "Exercise Timer"
 msgstr "Edzésóra"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:4
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
 msgid "Timer clock for high intensity interval training"
 msgstr "Időzítő intenzív intervallumedzéshez"
 
@@ -100,11 +99,16 @@ msgstr "A bemelegítés időtartama, másodpercekben"
 msgid "The volume of the beeping sound"
 msgstr "A sípolás hangereje"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:9
+#. Translators: App summary, at most 35 characters, imperative style
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
+msgid "Train and rest with high intensity"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
 msgid "Exercise timer is a simple utility to conduct interval training."
 msgstr "Az Edzésórával egyszerűen időzíthetők az intervallum edzések."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
 msgid ""
 "Following a short preparation period, a prescribed number of exercise sets "
 "are played. In between each exercise, there is a resting period."
@@ -112,15 +116,15 @@ msgstr ""
 "A felkészülési időt követően az előírt számú gyakorlat szett következik. A "
 "gyakorlatok közé pihenőidő van ütemezve."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
 msgid "The app does not make an assumption about the kind of the exercise."
 msgstr "Az app nem tesz különbséget a gyakorlatok típusa között."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
 msgstr "Funkciók:"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise and rest periods."
@@ -128,35 +132,35 @@ msgstr ""
 "Az edzések, melyek tartalmazzák a szettek számát, a gyakorlat és a pihenés "
 "idejét, elmenthetők és betölthetők."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid "Set the duration of the preparation in the settings."
 msgstr "A felkészülési idő a Beállításokban módosítható."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "A beeping sound is played at- and prior to each transition."
 msgstr "Sípoló hang jelzi a periódusok végét."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "The volume of the sound can be adjusted."
 msgstr "A síp hangereje állítható."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:19
 msgid "Light and dark mode follows the system's setting."
 msgstr "A világos és sötét megjelenés követi a rendszerbeállítást."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:25
 msgid "Exercise list - dark mode"
 msgstr "Edzések listája - sötét mód"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:29
 msgid "Timer - dark mode"
 msgstr "Időzítő - sötét mód"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:33
 msgid "Exercise list - light mode"
 msgstr "Edzések listája - világos mód"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:37
 msgid "Timer - light mode"
 msgstr "Időzítő - világos mód"
 

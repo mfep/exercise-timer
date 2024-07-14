@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-14 11:49+0200\n"
+"POT-Creation-Date: 2024-07-14 12:34+0200\n"
 "PO-Revision-Date: 2024-06-18 06:09+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/exercise-timer/"
@@ -62,7 +62,6 @@ msgid "Exercise Timer"
 msgstr "व्यायाम टाइमर"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:4
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
 msgid "Timer clock for high intensity interval training"
 msgstr "उच्च तीव्रता अंतराल प्रशिक्षण के लिए टाइमर घड़ी"
 
@@ -102,11 +101,16 @@ msgstr "वार्मअप की अवधि, सेकंड में"
 msgid "The volume of the beeping sound"
 msgstr "बीप की ध्वनि की आवाज"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:9
+#. Translators: App summary, at most 35 characters, imperative style
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
+msgid "Train and rest with high intensity"
+msgstr ""
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
 msgid "Exercise timer is a simple utility to conduct interval training."
 msgstr "व्यायाम टाइमर अंतराल प्रशिक्षण संचालित करने के लिए एक सरल उपयोगिता है।"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
 msgid ""
 "Following a short preparation period, a prescribed number of exercise sets "
 "are played. In between each exercise, there is a resting period."
@@ -114,50 +118,50 @@ msgstr ""
 "एक छोटी तैयारी अवधि के बाद, निर्धारित संख्या में व्यायाम सेट चलायें जाते हैं। प्रत्येक व्यायाम "
 "के बीच में, आराम का समय होता है।"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
 msgid "The app does not make an assumption about the kind of the exercise."
 msgstr "ऐप व्यायाम के प्रकार के बारे में कोई धारणा नहीं बनाता है।"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
 msgstr "विशेषताएं:"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise and rest periods."
 msgstr ""
 "सेटों की संख्या और व्यायाम की अवधि तथा विश्राम अवधि वाले प्रीसेट को सहेजें और याद करें।"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid "Set the duration of the preparation in the settings."
 msgstr "सेटिंग्स में तैयारी की अवधि निर्धारित करें।"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "A beeping sound is played at- and prior to each transition."
 msgstr "प्रत्येक परिवर्तन के समय और उससे पहले एक बीप ध्वनि बजाई जाती है।"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "The volume of the sound can be adjusted."
 msgstr "ध्वनि की आवाज को समायोजित किया जा सकता है।"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:19
 msgid "Light and dark mode follows the system's setting."
 msgstr "हल्के और गहरे रंग के मोड सिस्टम की सेटिंग का अनुसरण करते हैं।"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:25
 msgid "Exercise list - dark mode"
 msgstr "व्यायाम सूची - गहरा मोड"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:29
 msgid "Timer - dark mode"
 msgstr "टाइमर - गहरा मोड"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:33
 msgid "Exercise list - light mode"
 msgstr "व्यायाम सूची - हल्का मोड"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:37
 msgid "Timer - light mode"
 msgstr "टाइमर - हल्का मोड"
 
