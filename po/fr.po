@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-08 11:17+0200\n"
+"POT-Creation-Date: 2024-07-14 11:49+0200\n"
 "PO-Revision-Date: 2024-06-07 18:11+0000\n"
 "Last-Translator: MariusCouet <marius@couet.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/exercise-timer/"
@@ -60,7 +60,7 @@ msgstr "Quitter"
 
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:174 src/setup.rs:11
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:178 src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "Exercise Timer"
 
@@ -169,84 +169,6 @@ msgstr "Liste d'exercices - mode clair"
 msgid "Timer - light mode"
 msgstr "Minuteur - mode clair"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:50
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:78
-msgid "Features"
-msgstr "Fonctionnalités"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
-msgid "Added internationalization support"
-msgstr "Prise en charge de l'internationalisation ajoutée"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:53
-msgid "Added French translation"
-msgstr "Traduction française ajoutée"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:54
-msgid "Added Hungarian translation"
-msgstr "Ajout de la traduction hongroise"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:55
-msgid "Added Norwegian Bokmål translation"
-msgstr "Ajout de la traduction norvégienne bokmål"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:57
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:70
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:82
-msgid "Bug fixes"
-msgstr "Correction de bugs"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:59
-msgid "Fix too wide window when Finished"
-msgstr "Correction d'une fenêtre trop large une fois terminé"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:61
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:87
-msgid "Miscellaneous changes"
-msgstr "Modifications diverses"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:63
-msgid "Added OARS-1.1 compatible content rating"
-msgstr "Ajout de la classification du contenu compatible OARS-1.1"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
-msgid "Updated library dependencies"
-msgstr "Dépendances des bibliothèques mises à jour"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:72
-msgid "Allow time periods longer than 999 seconds"
-msgstr "Autoriser des durées supérieures à 999 secondes"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:80
-msgid "Displaying remaining time in minutes:seconds format"
-msgstr "Affichage du temps restant au format minutes:secondes"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:84
-msgid "Fix misleading Ctrl designators in shortcuts window"
-msgstr ""
-"Correction des désignateurs Ctrl trompeurs dans la fenêtre des raccourcis"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:85
-msgid "Fix timer overflow after finish"
-msgstr "Correction de l'overflow du minuteur après la fin"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:89
-msgid "Updated application runtime to GNOME 46"
-msgstr "Mise à jour du moteur d'exécution de l'application vers GNOME 46"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:95
-msgid "Updated icon for better contrast on dark backgrounds"
-msgstr ""
-"Icône mise à jour pour un meilleur contraste sur les arrière-plans sombres"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:96
-msgid "Added branding color metadata"
-msgstr "Métadonnées de couleur de marque ajoutées"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:101
-msgid "Initial release of Exercise Timer"
-msgstr "Version initiale d'Exercise Timer"
-
 #. Translators: The title of the preferences menu entry
 #: src/app.rs:58
 msgid "_Preferences"
@@ -267,25 +189,36 @@ msgstr "_A propos d'Exercise Timer"
 msgid "Training List"
 msgstr ""
 
+#. Translators: tooltip for the add training image button
+#: src/app.rs:86
+#, fuzzy
+msgid "Add training"
+msgstr "Valeurs par défaut de l'exercice"
+
+#. Translators: tooltip for main menu image button
+#: src/app.rs:92
+msgid "Main menu"
+msgstr ""
+
 #. Translators: The message which is shown on the background of the empty training list
-#: src/app.rs:109
+#: src/app.rs:113
 #, fuzzy
 msgid "No training is created yet"
 msgstr "Aucun exercice n'a été créé"
 
 #. Translators: Big label button to create the first training if none exists
-#: src/app.rs:113
+#: src/app.rs:117
 #, fuzzy
 msgid "Create training"
 msgstr "Créer un exercice"
 
 #. Translators: The name of the timer page
-#: src/app.rs:124
+#: src/app.rs:128
 msgid "Timer"
 msgstr "Minuterie"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:181
+#: src/app.rs:185
 msgid "translator_credits"
 msgstr "Marius Couet"
 
@@ -295,7 +228,8 @@ msgid "New training"
 msgstr ""
 
 #. Translators: The editor window's title when modifying a training
-#: src/training_editor.rs:59
+#. Translators: tooltip text for exercise card button to open the training editor
+#: src/training_editor.rs:59 src/training_setup.rs:133
 msgid "Edit training"
 msgstr ""
 
@@ -354,6 +288,18 @@ msgstr "Exercice"
 msgid "Rest"
 msgstr "Repos"
 
+#. Translators: tooltip text for exercise card button to delete the training
+#: src/training_setup.rs:142
+#, fuzzy
+msgid "Delete training"
+msgstr "Créer un exercice"
+
+#. Translators: tooltip text for exercise card button to start the training timer
+#: src/training_setup.rs:149
+#, fuzzy
+msgid "Start training"
+msgstr "Commencer/Arreter l'exercice"
+
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:121
 msgid "Finished!"
@@ -364,8 +310,29 @@ msgstr "Fini!"
 msgid "Preparation"
 msgstr ""
 
-#. Translators: Label showing the number of remaining sets on the timer page
+#. Translators: tooltip text for the reset button
+#: src/training_timer.rs:226
+msgid "Start training from the beginning"
+msgstr ""
+
+#. Translators: tooltip text for the pause/resume button
+#: src/training_timer.rs:239
+#, fuzzy
+msgid "Pause training"
+msgstr "Créer un exercice"
+
+#: src/training_timer.rs:239
+#, fuzzy
+msgid "Resume training"
+msgstr "Créer un exercice"
+
+#. Translators: tooltip text for the volume button
 #: src/training_timer.rs:255
+msgid "Set volume"
+msgstr ""
+
+#. Translators: Label showing the number of remaining sets on the timer page
+#: src/training_timer.rs:263
 msgid "Remaining sets: {}"
 msgstr "Sets restants : {}"
 
@@ -464,6 +431,70 @@ msgstr "Impossible de se connecter à un écran"
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr "Impossible de créer la superposition d'aide"
+
+#~ msgid "Bug fixes"
+#~ msgstr "Correction de bugs"
+
+#, fuzzy
+#~ msgid "Updated Hungarian translation"
+#~ msgstr "Ajout de la traduction hongroise"
+
+#, fuzzy
+#~ msgid "Miscellaneous Changes"
+#~ msgstr "Modifications diverses"
+
+#~ msgid "Features"
+#~ msgstr "Fonctionnalités"
+
+#~ msgid "Added internationalization support"
+#~ msgstr "Prise en charge de l'internationalisation ajoutée"
+
+#~ msgid "Added French translation"
+#~ msgstr "Traduction française ajoutée"
+
+#~ msgid "Added Hungarian translation"
+#~ msgstr "Ajout de la traduction hongroise"
+
+#~ msgid "Added Norwegian Bokmål translation"
+#~ msgstr "Ajout de la traduction norvégienne bokmål"
+
+#~ msgid "Fix too wide window when Finished"
+#~ msgstr "Correction d'une fenêtre trop large une fois terminé"
+
+#~ msgid "Miscellaneous changes"
+#~ msgstr "Modifications diverses"
+
+#~ msgid "Added OARS-1.1 compatible content rating"
+#~ msgstr "Ajout de la classification du contenu compatible OARS-1.1"
+
+#~ msgid "Updated library dependencies"
+#~ msgstr "Dépendances des bibliothèques mises à jour"
+
+#~ msgid "Allow time periods longer than 999 seconds"
+#~ msgstr "Autoriser des durées supérieures à 999 secondes"
+
+#~ msgid "Displaying remaining time in minutes:seconds format"
+#~ msgstr "Affichage du temps restant au format minutes:secondes"
+
+#~ msgid "Fix misleading Ctrl designators in shortcuts window"
+#~ msgstr ""
+#~ "Correction des désignateurs Ctrl trompeurs dans la fenêtre des raccourcis"
+
+#~ msgid "Fix timer overflow after finish"
+#~ msgstr "Correction de l'overflow du minuteur après la fin"
+
+#~ msgid "Updated application runtime to GNOME 46"
+#~ msgstr "Mise à jour du moteur d'exécution de l'application vers GNOME 46"
+
+#~ msgid "Updated icon for better contrast on dark backgrounds"
+#~ msgstr ""
+#~ "Icône mise à jour pour un meilleur contraste sur les arrière-plans sombres"
+
+#~ msgid "Added branding color metadata"
+#~ msgstr "Métadonnées de couleur de marque ajoutées"
+
+#~ msgid "Initial release of Exercise Timer"
+#~ msgstr "Version initiale d'Exercise Timer"
 
 #~ msgctxt "shortcut window"
 #~ msgid "Exercise"

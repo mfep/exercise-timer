@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-08 11:17+0200\n"
+"POT-Creation-Date: 2024-07-14 11:49+0200\n"
 "PO-Revision-Date: 2024-06-09 18:09+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/exercise-timer/"
@@ -57,7 +57,7 @@ msgstr "Esci"
 
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:174 src/setup.rs:11
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:178 src/setup.rs:11
 msgid "Exercise Timer"
 msgstr ""
 
@@ -157,82 +157,6 @@ msgstr ""
 msgid "Timer - light mode"
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:50
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:78
-msgid "Features"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
-msgid "Added internationalization support"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:53
-msgid "Added French translation"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:54
-msgid "Added Hungarian translation"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:55
-msgid "Added Norwegian Bokmål translation"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:57
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:70
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:82
-msgid "Bug fixes"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:59
-msgid "Fix too wide window when Finished"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:61
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:87
-msgid "Miscellaneous changes"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:63
-msgid "Added OARS-1.1 compatible content rating"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
-msgid "Updated library dependencies"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:72
-msgid "Allow time periods longer than 999 seconds"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:80
-msgid "Displaying remaining time in minutes:seconds format"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:84
-msgid "Fix misleading Ctrl designators in shortcuts window"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:85
-msgid "Fix timer overflow after finish"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:89
-msgid "Updated application runtime to GNOME 46"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:95
-msgid "Updated icon for better contrast on dark backgrounds"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:96
-msgid "Added branding color metadata"
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:101
-msgid "Initial release of Exercise Timer"
-msgstr ""
-
 #. Translators: The title of the preferences menu entry
 #: src/app.rs:58
 msgid "_Preferences"
@@ -253,23 +177,33 @@ msgstr "_ Informazioni sul Exercise Timer"
 msgid "Training List"
 msgstr ""
 
+#. Translators: tooltip for the add training image button
+#: src/app.rs:86
+msgid "Add training"
+msgstr ""
+
+#. Translators: tooltip for main menu image button
+#: src/app.rs:92
+msgid "Main menu"
+msgstr ""
+
 #. Translators: The message which is shown on the background of the empty training list
-#: src/app.rs:109
+#: src/app.rs:113
 msgid "No training is created yet"
 msgstr ""
 
 #. Translators: Big label button to create the first training if none exists
-#: src/app.rs:113
+#: src/app.rs:117
 msgid "Create training"
 msgstr ""
 
 #. Translators: The name of the timer page
-#: src/app.rs:124
+#: src/app.rs:128
 msgid "Timer"
 msgstr ""
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:181
+#: src/app.rs:185
 msgid "translator_credits"
 msgstr "Albano Battistella"
 
@@ -279,7 +213,8 @@ msgid "New training"
 msgstr ""
 
 #. Translators: The editor window's title when modifying a training
-#: src/training_editor.rs:59
+#. Translators: tooltip text for exercise card button to open the training editor
+#: src/training_editor.rs:59 src/training_setup.rs:133
 msgid "Edit training"
 msgstr ""
 
@@ -338,6 +273,16 @@ msgstr ""
 msgid "Rest"
 msgstr "Riposo"
 
+#. Translators: tooltip text for exercise card button to delete the training
+#: src/training_setup.rs:142
+msgid "Delete training"
+msgstr ""
+
+#. Translators: tooltip text for exercise card button to start the training timer
+#: src/training_setup.rs:149
+msgid "Start training"
+msgstr ""
+
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:121
 msgid "Finished!"
@@ -348,8 +293,27 @@ msgstr "Finito!"
 msgid "Preparation"
 msgstr "Preparazione"
 
-#. Translators: Label showing the number of remaining sets on the timer page
+#. Translators: tooltip text for the reset button
+#: src/training_timer.rs:226
+msgid "Start training from the beginning"
+msgstr ""
+
+#. Translators: tooltip text for the pause/resume button
+#: src/training_timer.rs:239
+msgid "Pause training"
+msgstr ""
+
+#: src/training_timer.rs:239
+msgid "Resume training"
+msgstr ""
+
+#. Translators: tooltip text for the volume button
 #: src/training_timer.rs:255
+msgid "Set volume"
+msgstr ""
+
+#. Translators: Label showing the number of remaining sets on the timer page
+#: src/training_timer.rs:263
 msgid "Remaining sets: {}"
 msgstr ""
 

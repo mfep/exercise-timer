@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-08 11:17+0200\n"
+"POT-Creation-Date: 2024-07-14 11:49+0200\n"
 "PO-Revision-Date: 2024-06-08 11:24+0200\n"
 "Last-Translator:  <>\n"
 "Language-Team: Hungarian\n"
@@ -54,7 +54,7 @@ msgstr "Kilépés"
 
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:174 src/setup.rs:11
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:178 src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "Edzésóra"
 
@@ -160,82 +160,6 @@ msgstr "Edzések listája - világos mód"
 msgid "Timer - light mode"
 msgstr "Időzítő - világos mód"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:50
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:78
-msgid "Features"
-msgstr "Funkciók"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
-msgid "Added internationalization support"
-msgstr "Nyelvi fordítások támogatva"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:53
-msgid "Added French translation"
-msgstr "Francia fordítás hozzáadva"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:54
-msgid "Added Hungarian translation"
-msgstr "Magyar fordítás hozzáadva"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:55
-msgid "Added Norwegian Bokmål translation"
-msgstr "Norvég Bokmål fordítás hozzáadva"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:57
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:70
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:82
-msgid "Bug fixes"
-msgstr "Hibajavítások"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:59
-msgid "Fix too wide window when Finished"
-msgstr "Túl széles ablak az edzés befejezésekor javítva"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:61
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:87
-msgid "Miscellaneous changes"
-msgstr "Egyéb változtatások"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:63
-msgid "Added OARS-1.1 compatible content rating"
-msgstr "OARS-1.1 kompatibilis tartalombesorolás hozzáadva"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
-msgid "Updated library dependencies"
-msgstr "Könyvtárfüggőségek frissítve"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:72
-msgid "Allow time periods longer than 999 seconds"
-msgstr "999 másodpercnél hosszabb periódusok engedélyezése"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:80
-msgid "Displaying remaining time in minutes:seconds format"
-msgstr "A fennmaradó idő kijelzése perc:másodperc formátumban"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:84
-msgid "Fix misleading Ctrl designators in shortcuts window"
-msgstr "Félrevezető Ctrl módosítók javítása a gyorsbillentyűk ablakban"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:85
-msgid "Fix timer overflow after finish"
-msgstr "Az időzítő túlcsordulásának javítása"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:89
-msgid "Updated application runtime to GNOME 46"
-msgstr "Futtatókörnyezet frissítése GNOME 46-ra"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:95
-msgid "Updated icon for better contrast on dark backgrounds"
-msgstr "Frissített ikon jobb kontraszt érdekében sötét háttereken"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:96
-msgid "Added branding color metadata"
-msgstr "Metaadatok hozzáadva a brand színekről"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:101
-msgid "Initial release of Exercise Timer"
-msgstr "Az Edzésóra kezdeti kiadása"
-
 #. Translators: The title of the preferences menu entry
 #: src/app.rs:58
 msgid "_Preferences"
@@ -256,23 +180,34 @@ msgstr "Az Edzésóráról"
 msgid "Training List"
 msgstr "Edzéslista"
 
+#. Translators: tooltip for the add training image button
+#: src/app.rs:86
+#, fuzzy
+msgid "Add training"
+msgstr "Edzés módosítása"
+
+#. Translators: tooltip for main menu image button
+#: src/app.rs:92
+msgid "Main menu"
+msgstr ""
+
 #. Translators: The message which is shown on the background of the empty training list
-#: src/app.rs:109
+#: src/app.rs:113
 msgid "No training is created yet"
 msgstr "Még nincs edzés"
 
 #. Translators: Big label button to create the first training if none exists
-#: src/app.rs:113
+#: src/app.rs:117
 msgid "Create training"
 msgstr "Új edzés létrehozása"
 
 #. Translators: The name of the timer page
-#: src/app.rs:124
+#: src/app.rs:128
 msgid "Timer"
 msgstr "Időzítő"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:181
+#: src/app.rs:185
 msgid "translator_credits"
 msgstr "Serfőző Lőrinc"
 
@@ -282,7 +217,8 @@ msgid "New training"
 msgstr "Új edzés"
 
 #. Translators: The editor window's title when modifying a training
-#: src/training_editor.rs:59
+#. Translators: tooltip text for exercise card button to open the training editor
+#: src/training_editor.rs:59 src/training_setup.rs:133
 msgid "Edit training"
 msgstr "Edzés módosítása"
 
@@ -341,6 +277,18 @@ msgstr "Gyakorlat"
 msgid "Rest"
 msgstr "Pihenés"
 
+#. Translators: tooltip text for exercise card button to delete the training
+#: src/training_setup.rs:142
+#, fuzzy
+msgid "Delete training"
+msgstr "Edzés újrakezdése"
+
+#. Translators: tooltip text for exercise card button to start the training timer
+#: src/training_setup.rs:149
+#, fuzzy
+msgid "Start training"
+msgstr "Edzés elindítása/megállítása"
+
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:121
 msgid "Finished!"
@@ -351,8 +299,29 @@ msgstr "Kész!"
 msgid "Preparation"
 msgstr "Felkészülés"
 
-#. Translators: Label showing the number of remaining sets on the timer page
+#. Translators: tooltip text for the reset button
+#: src/training_timer.rs:226
+msgid "Start training from the beginning"
+msgstr ""
+
+#. Translators: tooltip text for the pause/resume button
+#: src/training_timer.rs:239
+#, fuzzy
+msgid "Pause training"
+msgstr "Edzés újrakezdése"
+
+#: src/training_timer.rs:239
+#, fuzzy
+msgid "Resume training"
+msgstr "Edzés újrakezdése"
+
+#. Translators: tooltip text for the volume button
 #: src/training_timer.rs:255
+msgid "Set volume"
+msgstr ""
+
+#. Translators: Label showing the number of remaining sets on the timer page
+#: src/training_timer.rs:263
 msgid "Remaining sets: {}"
 msgstr "Hátralévő szettek: {}"
 
@@ -445,6 +414,68 @@ msgstr "Nem sikerült csatlakozni a megjelenítőhöz"
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr "Nem sikerült létrehozni a Segítség ablakot"
+
+#~ msgid "Bug fixes"
+#~ msgstr "Hibajavítások"
+
+#, fuzzy
+#~ msgid "Updated Hungarian translation"
+#~ msgstr "Magyar fordítás hozzáadva"
+
+#, fuzzy
+#~ msgid "Miscellaneous Changes"
+#~ msgstr "Egyéb változtatások"
+
+#~ msgid "Features"
+#~ msgstr "Funkciók"
+
+#~ msgid "Added internationalization support"
+#~ msgstr "Nyelvi fordítások támogatva"
+
+#~ msgid "Added French translation"
+#~ msgstr "Francia fordítás hozzáadva"
+
+#~ msgid "Added Hungarian translation"
+#~ msgstr "Magyar fordítás hozzáadva"
+
+#~ msgid "Added Norwegian Bokmål translation"
+#~ msgstr "Norvég Bokmål fordítás hozzáadva"
+
+#~ msgid "Fix too wide window when Finished"
+#~ msgstr "Túl széles ablak az edzés befejezésekor javítva"
+
+#~ msgid "Miscellaneous changes"
+#~ msgstr "Egyéb változtatások"
+
+#~ msgid "Added OARS-1.1 compatible content rating"
+#~ msgstr "OARS-1.1 kompatibilis tartalombesorolás hozzáadva"
+
+#~ msgid "Updated library dependencies"
+#~ msgstr "Könyvtárfüggőségek frissítve"
+
+#~ msgid "Allow time periods longer than 999 seconds"
+#~ msgstr "999 másodpercnél hosszabb periódusok engedélyezése"
+
+#~ msgid "Displaying remaining time in minutes:seconds format"
+#~ msgstr "A fennmaradó idő kijelzése perc:másodperc formátumban"
+
+#~ msgid "Fix misleading Ctrl designators in shortcuts window"
+#~ msgstr "Félrevezető Ctrl módosítók javítása a gyorsbillentyűk ablakban"
+
+#~ msgid "Fix timer overflow after finish"
+#~ msgstr "Az időzítő túlcsordulásának javítása"
+
+#~ msgid "Updated application runtime to GNOME 46"
+#~ msgstr "Futtatókörnyezet frissítése GNOME 46-ra"
+
+#~ msgid "Updated icon for better contrast on dark backgrounds"
+#~ msgstr "Frissített ikon jobb kontraszt érdekében sötét háttereken"
+
+#~ msgid "Added branding color metadata"
+#~ msgstr "Metaadatok hozzáadva a brand színekről"
+
+#~ msgid "Initial release of Exercise Timer"
+#~ msgstr "Az Edzésóra kezdeti kiadása"
 
 #~ msgctxt "shortcut window"
 #~ msgid "Exercise"

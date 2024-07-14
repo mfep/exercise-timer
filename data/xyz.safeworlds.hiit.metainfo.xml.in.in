@@ -46,7 +46,7 @@
   </branding>
   <releases>
     <release version="1.3.1" date="2024-06-08">
-      <description>
+      <description translate="no">
         <p>Bug fixes</p>
         <ul>
           <li>Updated terminology: from "exercise" to "training"</li>
@@ -64,7 +64,7 @@
       </description>
     </release>
     <release version="1.3.0" date="2024-06-02">
-      <description>
+      <description translate="no">
         <p>Features</p>
         <ul>
           <li>Added internationalization support</li>
@@ -84,7 +84,7 @@
       </description>
     </release>
     <release version="1.2.1" date="2024-05-11">
-      <description>
+      <description translate="no">
         <p>Bug fixes</p>
         <ul>
           <li>Allow time periods longer than 999 seconds</li>
@@ -92,7 +92,7 @@
       </description>
     </release>
     <release version="1.2.0" date="2024-04-29">
-      <description>
+      <description translate="no">
         <p>Features</p>
         <ul>
           <li>Displaying remaining time in minutes:seconds format</li>
@@ -109,13 +109,13 @@
       </description>
     </release>
     <release version="1.1.0" date="2024-04-12">
-      <description>
+      <description translate="no">
         <p>Updated icon for better contrast on dark backgrounds</p>
         <p>Added branding color metadata</p>
       </description>
     </release>
     <release version="1.0.0" date="2023-11-26">
-      <description>
+      <description translate="no">
         <p>Initial release of Exercise Timer</p>
       </description>
     </release>

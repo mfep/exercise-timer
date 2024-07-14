@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-08 11:17+0200\n"
+"POT-Creation-Date: 2024-07-14 11:49+0200\n"
 "PO-Revision-Date: 2024-06-18 06:09+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/exercise-timer/"
@@ -57,7 +57,7 @@ msgstr "बंद करें"
 
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:174 src/setup.rs:11
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:178 src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "व्यायाम टाइमर"
 
@@ -72,8 +72,7 @@ msgid ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
 "interval training;"
 msgstr ""
-"गनोम;जीटीके;उपयोगिता;खेल;व्यायाम;HIIT;प्रशिक्षण;व्यायाम;उच्च तीव्रता अंतराल "
-"प्रशिक्षण;"
+"गनोम;जीटीके;उपयोगिता;खेल;व्यायाम;HIIT;प्रशिक्षण;व्यायाम;उच्च तीव्रता अंतराल प्रशिक्षण;"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:6
 msgid "The width of the window"
@@ -112,8 +111,8 @@ msgid ""
 "Following a short preparation period, a prescribed number of exercise sets "
 "are played. In between each exercise, there is a resting period."
 msgstr ""
-"एक छोटी तैयारी अवधि के बाद, निर्धारित संख्या में व्यायाम सेट चलायें जाते हैं।"
-" प्रत्येक व्यायाम के बीच में, आराम का समय होता है।"
+"एक छोटी तैयारी अवधि के बाद, निर्धारित संख्या में व्यायाम सेट चलायें जाते हैं। प्रत्येक व्यायाम "
+"के बीच में, आराम का समय होता है।"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
 msgid "The app does not make an assumption about the kind of the exercise."
@@ -128,8 +127,7 @@ msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise and rest periods."
 msgstr ""
-"सेटों की संख्या और व्यायाम की अवधि तथा विश्राम अवधि वाले प्रीसेट को सहेजें "
-"और याद करें।"
+"सेटों की संख्या और व्यायाम की अवधि तथा विश्राम अवधि वाले प्रीसेट को सहेजें और याद करें।"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
 msgid "Set the duration of the preparation in the settings."
@@ -163,82 +161,6 @@ msgstr "व्यायाम सूची - हल्का मोड"
 msgid "Timer - light mode"
 msgstr "टाइमर - हल्का मोड"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:50
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:78
-msgid "Features"
-msgstr "विशेषताएं"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:52
-msgid "Added internationalization support"
-msgstr "अंतर्राष्ट्रीयकरण समर्थन जोड़ा गया"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:53
-msgid "Added French translation"
-msgstr "फ्रेंच अनुवाद जोड़ा गया"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:54
-msgid "Added Hungarian translation"
-msgstr "हंगेरियन अनुवाद जोड़ा गया"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:55
-msgid "Added Norwegian Bokmål translation"
-msgstr "नॉर्वेजियन बोकमाल अनुवाद जोड़ा गया"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:57
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:70
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:82
-msgid "Bug fixes"
-msgstr "बग समाधान"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:59
-msgid "Fix too wide window when Finished"
-msgstr "समाप्त होने पर बहुत चौड़ी खिड़की को ठीक किया गया"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:61
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:87
-msgid "Miscellaneous changes"
-msgstr "विविध परिवर्तन"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:63
-msgid "Added OARS-1.1 compatible content rating"
-msgstr "OARS-1.1 संगत सामग्री रेटिंग जोड़ी गई"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:64
-msgid "Updated library dependencies"
-msgstr "अद्यतित लाइब्रेरी निर्भरताएं"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:72
-msgid "Allow time periods longer than 999 seconds"
-msgstr "999 सेकंड से अधिक समय अवधि की अनुमति देता है"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:80
-msgid "Displaying remaining time in minutes:seconds format"
-msgstr "शेष समय को मिनट:सेकंड प्रारूप में प्रदर्शित करना"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:84
-msgid "Fix misleading Ctrl designators in shortcuts window"
-msgstr "शॉर्टकट खिड़की में भ्रामक Ctrl पदनामकर्ता को ठीक किया गया"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:85
-msgid "Fix timer overflow after finish"
-msgstr "समाप्ति के बाद टाइमर ओवरफ़्लो को ठीक किया गया"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:89
-msgid "Updated application runtime to GNOME 46"
-msgstr "अनुप्रयोग रनटाइम को GNOME 46 में अपडेट किया गया"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:95
-msgid "Updated icon for better contrast on dark backgrounds"
-msgstr "गहरे रंग की पृष्ठभूमि पर बेहतर विषमता के लिए अद्यतित आइकन"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:96
-msgid "Added branding color metadata"
-msgstr "ब्रांडिंग रंग मेटाडेटा जोड़ा गया"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:101
-msgid "Initial release of Exercise Timer"
-msgstr "**व्यायाम टाइमर** की प्रारंभिक रिलीज"
-
 #. Translators: The title of the preferences menu entry
 #: src/app.rs:58
 msgid "_Preferences"
@@ -259,23 +181,34 @@ msgstr "**व्यायाम टाइमर** के बारे में 
 msgid "Training List"
 msgstr "प्रशिक्षण सूची"
 
+#. Translators: tooltip for the add training image button
+#: src/app.rs:86
+#, fuzzy
+msgid "Add training"
+msgstr "प्रशिक्षण संपादित करें"
+
+#. Translators: tooltip for main menu image button
+#: src/app.rs:92
+msgid "Main menu"
+msgstr ""
+
 #. Translators: The message which is shown on the background of the empty training list
-#: src/app.rs:109
+#: src/app.rs:113
 msgid "No training is created yet"
 msgstr "अभी तक कोई प्रशिक्षण नहीं बनाया गया है"
 
 #. Translators: Big label button to create the first training if none exists
-#: src/app.rs:113
+#: src/app.rs:117
 msgid "Create training"
 msgstr "प्रशिक्षण बनाएं"
 
 #. Translators: The name of the timer page
-#: src/app.rs:124
+#: src/app.rs:128
 msgid "Timer"
 msgstr "टाइमर"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:181
+#: src/app.rs:185
 msgid "translator_credits"
 msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
@@ -285,7 +218,8 @@ msgid "New training"
 msgstr "नया प्रशिक्षण"
 
 #. Translators: The editor window's title when modifying a training
-#: src/training_editor.rs:59
+#. Translators: tooltip text for exercise card button to open the training editor
+#: src/training_editor.rs:59 src/training_setup.rs:133
 msgid "Edit training"
 msgstr "प्रशिक्षण संपादित करें"
 
@@ -344,6 +278,18 @@ msgstr "व्यायाम"
 msgid "Rest"
 msgstr "विश्राम"
 
+#. Translators: tooltip text for exercise card button to delete the training
+#: src/training_setup.rs:142
+#, fuzzy
+msgid "Delete training"
+msgstr "प्रशिक्षण रीसेट करें"
+
+#. Translators: tooltip text for exercise card button to start the training timer
+#: src/training_setup.rs:149
+#, fuzzy
+msgid "Start training"
+msgstr "प्रशिक्षण शुरू/बंद करें"
+
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:121
 msgid "Finished!"
@@ -354,8 +300,29 @@ msgstr "समाप्त!"
 msgid "Preparation"
 msgstr "तैयारी"
 
-#. Translators: Label showing the number of remaining sets on the timer page
+#. Translators: tooltip text for the reset button
+#: src/training_timer.rs:226
+msgid "Start training from the beginning"
+msgstr ""
+
+#. Translators: tooltip text for the pause/resume button
+#: src/training_timer.rs:239
+#, fuzzy
+msgid "Pause training"
+msgstr "प्रशिक्षण रीसेट करें"
+
+#: src/training_timer.rs:239
+#, fuzzy
+msgid "Resume training"
+msgstr "प्रशिक्षण रीसेट करें"
+
+#. Translators: tooltip text for the volume button
 #: src/training_timer.rs:255
+msgid "Set volume"
+msgstr ""
+
+#. Translators: Label showing the number of remaining sets on the timer page
+#: src/training_timer.rs:263
 msgid "Remaining sets: {}"
 msgstr "शेष सेट: {}"
 
@@ -448,3 +415,65 @@ msgstr "डिस्प्ले से नहीं जुड़ सके"
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr "सहायता उपरिशायी का निर्माण नहीं किया जा सका"
+
+#~ msgid "Bug fixes"
+#~ msgstr "बग समाधान"
+
+#, fuzzy
+#~ msgid "Updated Hungarian translation"
+#~ msgstr "हंगेरियन अनुवाद जोड़ा गया"
+
+#, fuzzy
+#~ msgid "Miscellaneous Changes"
+#~ msgstr "विविध परिवर्तन"
+
+#~ msgid "Features"
+#~ msgstr "विशेषताएं"
+
+#~ msgid "Added internationalization support"
+#~ msgstr "अंतर्राष्ट्रीयकरण समर्थन जोड़ा गया"
+
+#~ msgid "Added French translation"
+#~ msgstr "फ्रेंच अनुवाद जोड़ा गया"
+
+#~ msgid "Added Hungarian translation"
+#~ msgstr "हंगेरियन अनुवाद जोड़ा गया"
+
+#~ msgid "Added Norwegian Bokmål translation"
+#~ msgstr "नॉर्वेजियन बोकमाल अनुवाद जोड़ा गया"
+
+#~ msgid "Fix too wide window when Finished"
+#~ msgstr "समाप्त होने पर बहुत चौड़ी खिड़की को ठीक किया गया"
+
+#~ msgid "Miscellaneous changes"
+#~ msgstr "विविध परिवर्तन"
+
+#~ msgid "Added OARS-1.1 compatible content rating"
+#~ msgstr "OARS-1.1 संगत सामग्री रेटिंग जोड़ी गई"
+
+#~ msgid "Updated library dependencies"
+#~ msgstr "अद्यतित लाइब्रेरी निर्भरताएं"
+
+#~ msgid "Allow time periods longer than 999 seconds"
+#~ msgstr "999 सेकंड से अधिक समय अवधि की अनुमति देता है"
+
+#~ msgid "Displaying remaining time in minutes:seconds format"
+#~ msgstr "शेष समय को मिनट:सेकंड प्रारूप में प्रदर्शित करना"
+
+#~ msgid "Fix misleading Ctrl designators in shortcuts window"
+#~ msgstr "शॉर्टकट खिड़की में भ्रामक Ctrl पदनामकर्ता को ठीक किया गया"
+
+#~ msgid "Fix timer overflow after finish"
+#~ msgstr "समाप्ति के बाद टाइमर ओवरफ़्लो को ठीक किया गया"
+
+#~ msgid "Updated application runtime to GNOME 46"
+#~ msgstr "अनुप्रयोग रनटाइम को GNOME 46 में अपडेट किया गया"
+
+#~ msgid "Updated icon for better contrast on dark backgrounds"
+#~ msgstr "गहरे रंग की पृष्ठभूमि पर बेहतर विषमता के लिए अद्यतित आइकन"
+
+#~ msgid "Added branding color metadata"
+#~ msgstr "ब्रांडिंग रंग मेटाडेटा जोड़ा गया"
+
+#~ msgid "Initial release of Exercise Timer"
+#~ msgstr "**व्यायाम टाइमर** की प्रारंभिक रिलीज"
