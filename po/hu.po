@@ -102,7 +102,7 @@ msgstr "A sípolás hangereje"
 #. Translators: App summary, at most 35 characters, imperative style
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
 msgid "Train and rest with high intensity"
-msgstr ""
+msgstr "Edzz magas intenzitáson"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
 msgid "Exercise timer is a simple utility to conduct interval training."
@@ -186,14 +186,13 @@ msgstr "Edzéslista"
 
 #. Translators: tooltip for the add training image button
 #: src/app.rs:86
-#, fuzzy
 msgid "Add training"
-msgstr "Edzés módosítása"
+msgstr "Új edzés"
 
 #. Translators: tooltip for main menu image button
 #: src/app.rs:92
 msgid "Main menu"
-msgstr ""
+msgstr "Főmenü"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:113
@@ -283,15 +282,13 @@ msgstr "Pihenés"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: src/training_setup.rs:142
-#, fuzzy
 msgid "Delete training"
-msgstr "Edzés újrakezdése"
+msgstr "Edzés törlése"
 
 #. Translators: tooltip text for exercise card button to start the training timer
 #: src/training_setup.rs:149
-#, fuzzy
 msgid "Start training"
-msgstr "Edzés elindítása/megállítása"
+msgstr "Edzés elindítása"
 
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:121
@@ -306,23 +303,21 @@ msgstr "Felkészülés"
 #. Translators: tooltip text for the reset button
 #: src/training_timer.rs:226
 msgid "Start training from the beginning"
-msgstr ""
+msgstr "Edzés újrakezdése"
 
 #. Translators: tooltip text for the pause/resume button
 #: src/training_timer.rs:239
-#, fuzzy
 msgid "Pause training"
-msgstr "Edzés újrakezdése"
+msgstr "Edzés szüneteltetése"
 
 #: src/training_timer.rs:239
-#, fuzzy
 msgid "Resume training"
-msgstr "Edzés újrakezdése"
+msgstr "Edzés folytatása"
 
 #. Translators: tooltip text for the volume button
 #: src/training_timer.rs:255
 msgid "Set volume"
-msgstr ""
+msgstr "Hangerő beállítása"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:263
