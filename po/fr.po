@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-14 12:34+0200\n"
-"PO-Revision-Date: 2024-06-07 18:11+0000\n"
+"PO-Revision-Date: 2024-07-18 12:09+0000\n"
 "Last-Translator: MariusCouet <marius@couet.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/fr/>\n"
@@ -17,28 +17,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6-dev\n"
+"X-Generator: Weblate 5.7-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Training"
-msgstr "Valeurs par défaut de l'exercice"
+msgstr "Entrainement"
 
 #. Translators: The name of the shortcut key to start and stop the training timer
 #: data/resources/ui/help-overlay.ui:16
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Start/Stop training"
-msgstr "Commencer/Arreter l'exercice"
+msgstr "Commencer/Arreter l'entrainement"
 
 #. Translators: The name of the shortcut key to start the training from the beginning
 #: data/resources/ui/help-overlay.ui:24
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Reset training"
-msgstr "Créer un exercice"
+msgstr "Recommencer l'entrainement"
 
 #. Translators: The title of the shortcuts group which lists general application shortcuts
 #: data/resources/ui/help-overlay.ui:34
@@ -90,12 +87,10 @@ msgid "If the window is maximized"
 msgstr "Si la fenêtre maximisé"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:18
-#, fuzzy
 msgid "Default training setup, in JSON notation"
 msgstr "Configuration d'exercice par défaut, en JSON"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:22
-#, fuzzy
 msgid "List of training setups, in JSON notation"
 msgstr "Liste des configurations d'exercices, en JSON"
 
@@ -110,7 +105,7 @@ msgstr "Volume du bip"
 #. Translators: App summary, at most 35 characters, imperative style
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
 msgid "Train and rest with high intensity"
-msgstr ""
+msgstr "Entrainement et repos a haute intensité"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
 msgid "Exercise timer is a simple utility to conduct interval training."
@@ -191,30 +186,27 @@ msgstr "_A propos d'Exercise Timer"
 #. Translators: This is the title of the page which lists all trainings
 #: src/app.rs:78
 msgid "Training List"
-msgstr ""
+msgstr "Liste d'entrainement"
 
 #. Translators: tooltip for the add training image button
 #: src/app.rs:86
-#, fuzzy
 msgid "Add training"
-msgstr "Valeurs par défaut de l'exercice"
+msgstr "Ajout d'entrainement"
 
 #. Translators: tooltip for main menu image button
 #: src/app.rs:92
 msgid "Main menu"
-msgstr ""
+msgstr "Menu principal"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:113
-#, fuzzy
 msgid "No training is created yet"
 msgstr "Aucun exercice n'a été créé"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:117
-#, fuzzy
 msgid "Create training"
-msgstr "Créer un exercice"
+msgstr "Créer un entrainement"
 
 #. Translators: The name of the timer page
 #: src/app.rs:128
@@ -229,13 +221,13 @@ msgstr "Marius Couet"
 #. Translators: The editor window's title when creating a new training
 #: src/training_editor.rs:57
 msgid "New training"
-msgstr ""
+msgstr "Nouvel entrainement"
 
 #. Translators: The editor window's title when modifying a training
 #. Translators: tooltip text for exercise card button to open the training editor
 #: src/training_editor.rs:59 src/training_setup.rs:133
 msgid "Edit training"
-msgstr ""
+msgstr "Modifier entrainement"
 
 #. Translators: Button to close the training editor window without modifications
 #: src/training_editor.rs:65
@@ -294,15 +286,13 @@ msgstr "Repos"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: src/training_setup.rs:142
-#, fuzzy
 msgid "Delete training"
-msgstr "Créer un exercice"
+msgstr "Supprimer un entrainement"
 
 #. Translators: tooltip text for exercise card button to start the training timer
 #: src/training_setup.rs:149
-#, fuzzy
 msgid "Start training"
-msgstr "Commencer/Arreter l'exercice"
+msgstr "Commencer l'entrainement"
 
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:121
@@ -312,28 +302,26 @@ msgstr "Fini!"
 #. Translators: Shown on the timer page during preparation
 #: src/training_timer.rs:182
 msgid "Preparation"
-msgstr ""
+msgstr "Préparation"
 
 #. Translators: tooltip text for the reset button
 #: src/training_timer.rs:226
 msgid "Start training from the beginning"
-msgstr ""
+msgstr "Commencer l'entrainement depuis le début"
 
 #. Translators: tooltip text for the pause/resume button
 #: src/training_timer.rs:239
-#, fuzzy
 msgid "Pause training"
-msgstr "Créer un exercice"
+msgstr "Mettre en pause l'entrainement"
 
 #: src/training_timer.rs:239
-#, fuzzy
 msgid "Resume training"
-msgstr "Créer un exercice"
+msgstr "Continuer l'entrainement"
 
 #. Translators: tooltip text for the volume button
 #: src/training_timer.rs:255
 msgid "Set volume"
-msgstr ""
+msgstr "Définir le volume"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:263
@@ -352,7 +340,6 @@ msgstr "Impossible de lire l'audio"
 
 #. Translators: Error message printed to the console when cannot load data from resource
 #: src/training_timer/audio_player.rs:55
-#, fuzzy
 msgid "Could not open resource data"
 msgstr "Impossible d'ouvrir les données"
 
@@ -363,14 +350,13 @@ msgstr "Impossible de créer un flux de sortie audio"
 
 #. Translators: The title of the preferences group for the training default settings
 #: src/settings_dialog.rs:33
-#, fuzzy
 msgid "Training defaults"
-msgstr "Valeurs par défaut de l'exercice"
+msgstr "Valeurs par défaut de l'entrainement"
 
 #. Translators: The title of the edit field to set the time (in seconds) for the preparation period
 #: src/settings_dialog.rs:38
 msgid "Preparation time"
-msgstr ""
+msgstr "Temps de préparation"
 
 #. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
 #: src/settings.rs:68
@@ -384,10 +370,8 @@ msgstr "Impossible de trouver 'sets' dans le dictionnaire des paramètres"
 
 #. Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
 #: src/settings.rs:77
-#, fuzzy
 msgid "Cannot find 'exercise_s' in settings dictionary"
-msgstr ""
-"Impossible de trouver 'exercises_s' dans le dictionnaire des paramètres"
+msgstr "Impossible de trouver 'exercises_s' dans le dictionnaire des paramètres"
 
 #. Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
 #: src/settings.rs:83
@@ -396,7 +380,6 @@ msgstr "Impossible de trouver 'rest_s' dans le dictionnaire des paramètres"
 
 #. Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
 #: src/settings.rs:100
-#, fuzzy
 msgid "Could not parse default training setup"
 msgstr "Impossible d'analyser la configuration d'exercice par défaut"
 
@@ -407,7 +390,6 @@ msgstr "Impossible d'analyser la liste d'exercices"
 
 #. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be written to the settings
 #: src/settings.rs:133
-#, fuzzy
 msgid "Could not update settings with training list"
 msgstr "Impossible de mettre à jour les paramètres avec la liste d'exercices"
 
