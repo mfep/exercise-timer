@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-14 12:34+0200\n"
-"PO-Revision-Date: 2024-06-18 06:09+0000\n"
+"PO-Revision-Date: 2024-07-20 06:09+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/hi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6-dev\n"
+"X-Generator: Weblate 5.7-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
@@ -71,7 +71,7 @@ msgid ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
 "interval training;"
 msgstr ""
-"गनोम;जीटीके;उपयोगिता;खेल;व्यायाम;HIIT;प्रशिक्षण;व्यायाम;उच्च तीव्रता अंतराल प्रशिक्षण;"
+"गनोम;जीटीके;उपयोगिता;खेल;Exercise;HIIT;प्रशिक्षण;व्यायाम;उच्च तीव्रता अंतराल प्रशिक्षण;"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:6
 msgid "The width of the window"
@@ -104,7 +104,7 @@ msgstr "बीप की ध्वनि की आवाज"
 #. Translators: App summary, at most 35 characters, imperative style
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
 msgid "Train and rest with high intensity"
-msgstr ""
+msgstr "उच्च तीव्रता के साथ प्रशिक्षण लें और आराम करें"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
 msgid "Exercise timer is a simple utility to conduct interval training."
@@ -178,7 +178,7 @@ msgstr "कीबोर्ड शॉर्टकट (_K)"
 #. Translators: The title of the about dialog menu entry
 #: src/app.rs:62
 msgid "_About Exercise Timer"
-msgstr "**व्यायाम टाइमर** के बारे में (_A)"
+msgstr "व्यायाम टाइमर के बारे में (_A)"
 
 #. Translators: This is the title of the page which lists all trainings
 #: src/app.rs:78
@@ -187,14 +187,13 @@ msgstr "प्रशिक्षण सूची"
 
 #. Translators: tooltip for the add training image button
 #: src/app.rs:86
-#, fuzzy
 msgid "Add training"
-msgstr "प्रशिक्षण संपादित करें"
+msgstr "प्रशिक्षण जोड़ें"
 
 #. Translators: tooltip for main menu image button
 #: src/app.rs:92
 msgid "Main menu"
-msgstr ""
+msgstr "मुख्य मेनू"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:113
@@ -284,15 +283,13 @@ msgstr "विश्राम"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: src/training_setup.rs:142
-#, fuzzy
 msgid "Delete training"
-msgstr "प्रशिक्षण रीसेट करें"
+msgstr "प्रशिक्षण मिटाएं"
 
 #. Translators: tooltip text for exercise card button to start the training timer
 #: src/training_setup.rs:149
-#, fuzzy
 msgid "Start training"
-msgstr "प्रशिक्षण शुरू/बंद करें"
+msgstr "प्रशिक्षण शुरू करें"
 
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:121
@@ -307,23 +304,21 @@ msgstr "तैयारी"
 #. Translators: tooltip text for the reset button
 #: src/training_timer.rs:226
 msgid "Start training from the beginning"
-msgstr ""
+msgstr "शुरुआत से ही प्रशिक्षण शुरू करें"
 
 #. Translators: tooltip text for the pause/resume button
 #: src/training_timer.rs:239
-#, fuzzy
 msgid "Pause training"
-msgstr "प्रशिक्षण रीसेट करें"
+msgstr "प्रशिक्षण रोकें"
 
 #: src/training_timer.rs:239
-#, fuzzy
 msgid "Resume training"
-msgstr "प्रशिक्षण रीसेट करें"
+msgstr "प्रशिक्षण फिर से शुरू करें"
 
 #. Translators: tooltip text for the volume button
 #: src/training_timer.rs:255
 msgid "Set volume"
-msgstr ""
+msgstr "वॉल्यूम निर्धारित करें"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:263
