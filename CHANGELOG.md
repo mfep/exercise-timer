@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.4.1](https://github.com/mfep/exercise-timer/compare/535e025963c9caaf69b0504bbf4da17526d14a93..v1.4.1) - 2024-07-27
+#### Bug Fixes
+- **(i18n)** Translated using Weblate (Hindi) - ([be9422c](https://github.com/mfep/exercise-timer/commit/be9422c9ee50e2f288d0905047c9c5fdf8635e8e)) - Scrambled777
+- **(i18n)** Translated using Weblate (French) - ([535e025](https://github.com/mfep/exercise-timer/commit/535e025963c9caaf69b0504bbf4da17526d14a93)) - MariusCouet
+#### Miscellaneous Chores
+- **(dependencies)** Updated cargo dependencies - ([40ce87d](https://github.com/mfep/exercise-timer/commit/40ce87dbbe40295a0079200d11d92290a943c11d)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update release in metainfo - ([7e82db7](https://github.com/mfep/exercise-timer/commit/7e82db7ab992150350e330070afbefa1346a05ce)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.4.0](https://github.com/mfep/exercise-timer/compare/ffca0ef421e8575104c2c7c668fff455f58355ac..v1.4.0) - 2024-07-14
 #### Bug Fixes
 - **(i18n)** Update Hungarian translation - ([5767a0f](https://github.com/mfep/exercise-timer/commit/5767a0f0a6d7cdfeb57fdee10120503d30a9c0ad)) - [@mfep](https://github.com/mfep)
