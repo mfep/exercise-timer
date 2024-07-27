@@ -46,6 +46,19 @@
     <color type="primary" scheme_preference="dark">#7f2c22</color>
   </branding>
   <releases>
+    <release version="1.4.1" date="2024-07-27">
+      <description translate="no">
+        <p>Bug fixes</p>
+        <ul>
+          <li>Translated using Weblate (Hindi)</li>
+          <li>Translated using Weblate (French)</li>
+        </ul>
+        <p>Miscellaneous changes</p>
+        <ul>
+          <li>Update cargo dependencies</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.4.0" date="2024-07-14">
       <description translate="no">
         <p>Bug fixes</p>
