@@ -2,6 +2,7 @@ use crate::settings;
 use crate::training_editor::*;
 use futures::prelude::*;
 use gettextrs::gettext;
+use libadwaita::prelude::AdwDialogExt;
 use relm4::{
     gtk::{self, prelude::*},
     prelude::*,
@@ -165,10 +166,10 @@ impl FactoryComponent for TrainingSetup {
     fn update(&mut self, message: Self::Input, sender: relm4::FactorySender<Self>) {
         match message {
             TrainingSetupInput::Edit(root) => {
-                let mut editor = TrainingEditor::builder()
-                    .transient_for(root)
-                    .launch((TrainingEditorRole::Edit, self.clone()))
-                    .into_stream();
+                let editor = TrainingEditor::builder()
+                    .launch((TrainingEditorRole::Edit, self.clone()));
+                editor.widget().present(&root.toplevel_window().unwrap());
+                let mut editor = editor.into_stream();
                 relm4::spawn_local(async move {
                     if let Some(TrainingEditorOutput::Create(setup)) = editor.next().await.unwrap()
                     {

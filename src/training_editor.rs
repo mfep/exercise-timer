@@ -43,11 +43,9 @@ impl relm4::SimpleComponent for TrainingEditor {
     type Output = Option<TrainingEditorOutput>;
 
     view! {
-        window = adw::Window {
-            set_modal: true,
-            set_visible: true,
-            set_default_width: 400,
-            gtk::Box {
+        window = adw::Dialog {
+            #[wrap(Some)]
+            set_child = &gtk::Box {
                 set_orientation: gtk::Orientation::Vertical,
                 adw::HeaderBar {
                     #[wrap(Some)]
@@ -78,7 +76,6 @@ impl relm4::SimpleComponent for TrainingEditor {
                 },
                 adw::Clamp {
                     set_margin_all: 20,
-                    set_size_request: (300, 0),
                     gtk::Box
                     {
                         set_orientation: gtk::Orientation::Vertical,

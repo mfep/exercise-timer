@@ -250,10 +250,10 @@ impl Component for AppModel {
                 if let Some(timer) = self.training_timer.as_ref() {
                     timer.sender().emit(TrainingTimerInput::Pause);
                 }
-                let mut editor = TrainingEditor::builder()
-                    .transient_for(root.widget_ref())
-                    .launch((TrainingEditorRole::New, TrainingSetup::default()))
-                    .into_stream();
+                let editor = TrainingEditor::builder()
+                    .launch((TrainingEditorRole::New, TrainingSetup::default()));
+                editor.widget().present(root.widget_ref());
+                let mut editor = editor.into_stream();
                 relm4::spawn_local(async move {
                     if let Some(TrainingEditorOutput::Create(setup)) = editor.next().await.unwrap()
                     {
