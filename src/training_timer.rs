@@ -223,7 +223,7 @@ impl Component for TrainingTimer {
                             #[watch]
                             set_class_active: ("suggested-action", model.remaining_s == 0),
                             // Translators: tooltip text for the reset button
-                            set_tooltip: &gettext("Start training from the beginning"),
+                            set_tooltip: &gettext("Restart Training"),
                         },
                         gtk::Button {
                             set_css_classes: &["circular", "huge-button"],
@@ -236,7 +236,7 @@ impl Component for TrainingTimer {
                             },
                             #[watch]
                             // Translators: tooltip text for the pause/resume button
-                            set_tooltip: &if model.running { gettext("Pause training") } else { gettext("Resume training") },
+                            set_tooltip: &if model.running { gettext("Pause Training") } else { gettext("Resume Training") },
 
                         },
                         #[name = "volume_button"]
@@ -252,7 +252,7 @@ impl Component for TrainingTimer {
                                 },
                             },
                             // Translators: tooltip text for the volume button
-                            set_tooltip: &gettext("Set volume"),
+                            set_tooltip: &gettext("Set Volume"),
                         }
                     }
                 },
@@ -260,9 +260,9 @@ impl Component for TrainingTimer {
                     #[watch]
                     set_label: &if false {
                         // Translators: Label showing the number of remaining sets on the timer page
-                        gettext("Remaining sets: {}")
+                        gettext("Remaining Sets: {}")
                     } else {
-                        gettext!("Remaining sets: {}", model.remaining_sets)
+                        gettext!("Remaining Sets: {}", model.remaining_sets)
                     },
                     set_margin_bottom: 12,
                 },

@@ -54,9 +54,9 @@ impl relm4::SimpleComponent for TrainingEditor {
                     set_title_widget = &adw::WindowTitle {
                         set_title: &match model.role {
                             // Translators: The editor window's title when creating a new training
-                            TrainingEditorRole::New => gettext("New training"),
+                            TrainingEditorRole::New => gettext("New Training"),
                             // Translators: The editor window's title when modifying a training
-                            TrainingEditorRole::Edit => gettext("Edit training"),
+                            TrainingEditorRole::Edit => gettext("Edit Training"),
                         },
                     },
                     set_show_end_title_buttons: false,
@@ -87,7 +87,7 @@ impl relm4::SimpleComponent for TrainingEditor {
                     },
                     adw::SpinRow {
                         // Translators: The title of the field for the number of sets in the training in the editor window
-                        set_title: &gettext("Number of sets"),
+                        set_title: &gettext("Number of Sets"),
                         #[wrap(Some)]
                         set_adjustment = &gtk::Adjustment {
                             set_lower: SPIN_ROW_LOWER,
@@ -98,7 +98,7 @@ impl relm4::SimpleComponent for TrainingEditor {
                     },
                     adw::SpinRow {
                         // Translators: The title of the field for the rest duration in the training in the editor window
-                        set_title: &gettext("Rest time"),
+                        set_title: &gettext("Rest Time"),
                         // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
                         set_subtitle: &gettext("seconds"),
                         #[wrap(Some)]
@@ -111,7 +111,7 @@ impl relm4::SimpleComponent for TrainingEditor {
                     },
                     adw::SpinRow {
                         // Translators: The title of the field for the exercise duration in the training in the editor window
-                        set_title: &gettext("Exercise time"),
+                        set_title: &gettext("Exercise Time"),
                         // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
                         set_subtitle: &gettext("seconds"),
                         #[wrap(Some)]
