@@ -166,8 +166,8 @@ impl FactoryComponent for TrainingSetup {
     fn update(&mut self, message: Self::Input, sender: relm4::FactorySender<Self>) {
         match message {
             TrainingSetupInput::Edit(root) => {
-                let editor = TrainingEditor::builder()
-                    .launch((TrainingEditorRole::Edit, self.clone()));
+                let editor =
+                    TrainingEditor::builder().launch((TrainingEditorRole::Edit, self.clone()));
                 editor.widget().present(&root.toplevel_window().unwrap());
                 let mut editor = editor.into_stream();
                 relm4::spawn_local(async move {

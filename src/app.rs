@@ -231,8 +231,9 @@ impl Component for AppModel {
             .set_accelerators_for_action::<PreferencesAction>(&["<Control>comma"]);
         relm4::main_application()
             .set_accelerators_for_action::<ShortcutsAction>(&["<Control>question"]);
-        relm4::main_application().set_accelerators_for_action::<StartStopAction>(&["space"]);
-        relm4::main_application().set_accelerators_for_action::<ResetAction>(&["r"]);
+        relm4::main_application()
+            .set_accelerators_for_action::<StartStopAction>(&["<Control>space"]);
+        relm4::main_application().set_accelerators_for_action::<ResetAction>(&["<Control>r"]);
 
         update_status_visible(&widgets, &model);
         ComponentParts { model, widgets }

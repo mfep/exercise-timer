@@ -15,7 +15,7 @@
                 <!-- Translators: The name of the shortcut key to start and stop the training timer -->
                 <property name="title" translatable="yes" context="shortcut window">Start/Stop training</property>
                 <property name="action-name">win.start-stop</property>
-                <property name="accelerator">space</property>
+                <property name="accelerator">&lt;primary&gt;space</property>
               </object>
             </child>
             <child>
@@ -23,7 +23,7 @@
                 <!-- Translators: The name of the shortcut key to start the training from the beginning -->
                 <property name="title" translatable="yes" context="shortcut window">Reset training</property>
                 <property name="action-name">win.reset</property>
-                <property name="accelerator">r</property>
+                <property name="accelerator">&lt;primary&gt;r</property>
               </object>
             </child>
           </object>
