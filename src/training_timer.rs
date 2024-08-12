@@ -120,7 +120,7 @@ fn remaining_str_colon(remaining_s: usize) -> String {
         // Translators: Shown in the timer page when the training has come to the end
         gettext("Finished!")
     } else {
-        String::from(":")
+        String::from("∶")
     }
 }
 
