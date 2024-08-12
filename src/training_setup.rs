@@ -121,7 +121,6 @@ impl FactoryComponent for TrainingSetup {
                     #[wrap(Some)]
                     set_end_widget = &gtk::Box {
                         gtk::Box {
-                            set_class_active: ("linked", true),
                             set_orientation: gtk::Orientation::Horizontal,
                             set_valign: gtk::Align::End,
                             gtk::Button {
@@ -129,20 +128,20 @@ impl FactoryComponent for TrainingSetup {
                                 connect_clicked[sender] => move |btn| {
                                     sender.input(TrainingSetupInput::Edit(btn.root().unwrap()));
                                 },
+                                set_margin_end: 10,
                                 // Translators: tooltip text for exercise card button to open the training editor
                                 set_tooltip: &gettext("Edit Training"),
                             },
                             gtk::Button {
-                                set_class_active: ("destructive-action", true),
-                                set_icon_name: icon_names::ENTRY_CLEAR,
+                                set_icon_name: "edit-delete",
                                 connect_clicked[sender, index] => move |_| {
                                     sender.output(TrainingSetupOutput::Remove(index.clone())).unwrap();
                                 },
+                                set_margin_end: 10,
                                 // Translators: tooltip text for exercise card button to delete the training
                                 set_tooltip: &gettext("Delete Training"),
                             },
                             gtk::Button {
-                                set_class_active: ("suggested-action", true),
                                 set_icon_name: icon_names::PLAY,
                                 connect_clicked => TrainingSetupInput::Load,
                                 // Translators: tooltip text for exercise card button to start the training timer
