@@ -76,52 +76,62 @@ impl relm4::SimpleComponent for TrainingEditor {
                         connect_clicked => TrainingEditorInput::Create,
                     }
                 },
-                gtk::Box {
+                adw::Clamp {
                     set_margin_all: 20,
-                    set_class_active: ("card", true),
-                    set_orientation: gtk::Orientation::Vertical,
-                    adw::EntryRow {
-                        // Translators: The title of the field for the name of the training in the editor window
-                        set_title: &gettext("Name"),
-                        add_binding: (&model.name, "text"),
-                    },
-                    adw::SpinRow {
-                        // Translators: The title of the field for the number of sets in the training in the editor window
-                        set_title: &gettext("Number of Sets"),
-                        #[wrap(Some)]
-                        set_adjustment = &gtk::Adjustment {
-                            set_lower: SPIN_ROW_LOWER,
-                            set_upper: SPIN_ROW_UPPER,
-                            set_step_increment: SPIN_ROW_STEP,
-                            add_binding: (&model.sets, "value"),
+                    set_size_request: (300, 0),
+                    gtk::Box
+                    {
+                        set_orientation: gtk::Orientation::Vertical,
+                        adw::PreferencesGroup
+                        {
+                            set_margin_bottom: 10,
+                            adw::EntryRow {
+                                // Translators: The title of the field for the name of the training in the editor window
+                                set_title: &gettext("Name"),
+                                add_binding: (&model.name, "text"),
+                            },
                         },
-                    },
-                    adw::SpinRow {
-                        // Translators: The title of the field for the rest duration in the training in the editor window
-                        set_title: &gettext("Rest Time"),
-                        // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
-                        set_subtitle: &gettext("seconds"),
-                        #[wrap(Some)]
-                        set_adjustment = &gtk::Adjustment {
-                            set_lower: SPIN_ROW_LOWER,
-                            set_upper: SPIN_ROW_UPPER,
-                            set_step_increment: SPIN_ROW_STEP,
-                            add_binding: (&model.rest_s, "value"),
+                        adw::PreferencesGroup
+                        {
+                            adw::SpinRow {
+                                // Translators: The title of the field for the number of sets in the training in the editor window
+                                set_title: &gettext("Number of Sets"),
+                                #[wrap(Some)]
+                                set_adjustment = &gtk::Adjustment {
+                                    set_lower: SPIN_ROW_LOWER,
+                                    set_upper: SPIN_ROW_UPPER,
+                                    set_step_increment: SPIN_ROW_STEP,
+                                    add_binding: (&model.sets, "value"),
+                                },
+                            },
+                            adw::SpinRow {
+                                // Translators: The title of the field for the rest duration in the training in the editor window
+                                set_title: &gettext("Rest Time"),
+                                // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
+                                set_subtitle: &gettext("seconds"),
+                                #[wrap(Some)]
+                                set_adjustment = &gtk::Adjustment {
+                                    set_lower: SPIN_ROW_LOWER,
+                                    set_upper: SPIN_ROW_UPPER,
+                                    set_step_increment: SPIN_ROW_STEP,
+                                    add_binding: (&model.rest_s, "value"),
+                                },
+                            },
+                            adw::SpinRow {
+                                // Translators: The title of the field for the exercise duration in the training in the editor window
+                                set_title: &gettext("Exercise Time"),
+                                // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
+                                set_subtitle: &gettext("seconds"),
+                                #[wrap(Some)]
+                                set_adjustment = &gtk::Adjustment {
+                                    set_lower: SPIN_ROW_LOWER,
+                                    set_upper: SPIN_ROW_UPPER,
+                                    set_step_increment: SPIN_ROW_STEP,
+                                    add_binding: (&model.exercise_s, "value"),
+                                },
+                            },
                         },
-                    },
-                    adw::SpinRow {
-                        // Translators: The title of the field for the exercise duration in the training in the editor window
-                        set_title: &gettext("Exercise Time"),
-                        // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
-                        set_subtitle: &gettext("seconds"),
-                        #[wrap(Some)]
-                        set_adjustment = &gtk::Adjustment {
-                            set_lower: SPIN_ROW_LOWER,
-                            set_upper: SPIN_ROW_UPPER,
-                            set_step_increment: SPIN_ROW_STEP,
-                            add_binding: (&model.exercise_s, "value"),
-                        },
-                    },
+                    }
                 }
             }
         }
