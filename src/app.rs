@@ -80,7 +80,7 @@ impl Component for AppModel {
                     set_child = &adw::ToolbarView {
                         add_top_bar = &adw::HeaderBar {
                             pack_start = &gtk::Button {
-                                set_icon_name: icon_names::PLUS,
+                                set_icon_name: "list-add",
                                 connect_clicked => AppModelInput::PromptNewTraining,
                                 // Translators: tooltip for the add training image button
                                 set_tooltip: &gettext("Add Training"),
