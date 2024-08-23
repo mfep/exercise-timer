@@ -33,6 +33,6 @@ jobs:
     - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v6
       with:
         bundle: exercise-timer.flatpak
-        manifest-path: build-aux/xyz.safeworlds.hiit.Devel.yml
+        manifest-path: build-aux/xyz.safeworlds.hiit.Devel.json
         run-tests: true
         cache-key: flatpak-builder-${{ github.sha }}
