@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-26 19:32+0200\n"
-"PO-Revision-Date: 2024-06-08 11:24+0200\n"
+"POT-Creation-Date: 2024-08-26 19:26+0200\n"
+"PO-Revision-Date: 2024-08-26 19:29+0200\n"
 "Last-Translator:  <>\n"
 "Language-Team: Hungarian\n"
 "Language: hu\n"
@@ -181,13 +181,11 @@ msgstr "Edzéslista"
 
 #. Translators: tooltip for the add training image button
 #: src/app.rs:82
-#, fuzzy
 msgid "Add Training"
-msgstr "Új edzés"
+msgstr "Új Edzés"
 
 #. Translators: tooltip for main menu image button
 #: src/app.rs:88
-#, fuzzy
 msgid "Main Menu"
 msgstr "Főmenü"
 
@@ -213,14 +211,12 @@ msgstr "Serfőző Lőrinc"
 
 #. Translators: The editor window's title when creating a new training
 #: src/training_editor.rs:56
-#, fuzzy
 msgid "New Training"
-msgstr "Új edzés"
+msgstr "Új Edzés"
 
 #. Translators: The editor window's title when modifying a training
 #. Translators: tooltip text for exercise card button to open the training editor
 #: src/training_editor.rs:58 src/training_setup.rs:163
-#, fuzzy
 msgid "Edit Training"
 msgstr "Edzés módosítása"
 
@@ -246,13 +242,11 @@ msgstr "Név"
 
 #. Translators: The title of the field for the number of sets in the training in the editor window
 #: src/training_editor.rs:96
-#, fuzzy
 msgid "Number of Sets"
-msgstr "Szettek száma"
+msgstr "Szettek Száma"
 
 #. Translators: The title of the field for the rest duration in the training in the editor window
 #: src/training_editor.rs:107
-#, fuzzy
 msgid "Rest Time"
 msgstr "Pihenőidő"
 
@@ -264,15 +258,14 @@ msgstr "másodperc"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: src/training_editor.rs:120
-#, fuzzy
 msgid "Exercise Time"
-msgstr "Edzésóra"
+msgstr "Edzésidő"
 
 #. Translators: The title of the field for the preparation duration in the training in the editor window
 #: src/training_editor.rs:133
 #, fuzzy
 msgid "Preparation Time"
-msgstr "Felkészülési idő"
+msgstr "Felkészülési Idő"
 
 #. Translators: the label of the number of sets row in the training list item
 #: src/training_setup.rs:100
@@ -289,7 +282,7 @@ msgstr "Gyakorlat"
 #: src/training_setup.rs:119 src/training_setup.rs:134
 #: src/training_setup.rs:148
 msgid "{} s"
-msgstr ""
+msgstr "{} s"
 
 #. Translators: the label of the rest time row in the training list item
 #. Translators: Shown on the timer page during rest
@@ -305,15 +298,13 @@ msgstr "Felkészülés"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: src/training_setup.rs:172
-#, fuzzy
 msgid "Delete Training"
-msgstr "Edzés törlése"
+msgstr "Edzés Törlése"
 
 #. Translators: tooltip text for exercise card button to start the training timer
 #: src/training_setup.rs:178
-#, fuzzy
 msgid "Start Training"
-msgstr "Edzés elindítása"
+msgstr "Edzés Elindítása"
 
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:119
@@ -322,32 +313,27 @@ msgstr "Kész!"
 
 #. Translators: tooltip text for the reset button
 #: src/training_timer.rs:224
-#, fuzzy
 msgid "Restart Training"
-msgstr "Edzés elindítása"
+msgstr "Edzés Újraindítása"
 
 #. Translators: tooltip text for the pause/resume button
 #: src/training_timer.rs:237
-#, fuzzy
 msgid "Pause Training"
-msgstr "Edzés szüneteltetése"
+msgstr "Edzés Szüneteltetése"
 
 #: src/training_timer.rs:237
-#, fuzzy
 msgid "Resume Training"
-msgstr "Edzés folytatása"
+msgstr "Edzés Folytatása"
 
 #. Translators: tooltip text for the volume button
 #: src/training_timer.rs:253
-#, fuzzy
 msgid "Set Volume"
-msgstr "Hangerő beállítása"
+msgstr "Hangerő Beállítása"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:261
-#, fuzzy
 msgid "Remaining Sets: {}"
-msgstr "Hátralévő szettek: {}"
+msgstr "Hátralévő Szettek: {}"
 
 #. Translators: Error message printed to the console when an error occurs with WAV decoding
 #: src/training_timer/audio_player.rs:16
