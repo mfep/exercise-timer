@@ -10,7 +10,6 @@ src/training_timer.rs
 src/training_timer/audio_player.rs
 src/training_timer/timer.rs
 src/main.rs
-src/settings_dialog.rs
 src/settings.rs
 src/setup.rs
 src/shortcuts_window.rs

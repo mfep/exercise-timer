@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-14 12:34+0200\n"
+"POT-Creation-Date: 2024-08-26 19:32+0200\n"
 "PO-Revision-Date: 2024-06-08 11:24+0200\n"
 "Last-Translator:  <>\n"
 "Language-Team: Hungarian\n"
@@ -54,7 +54,7 @@ msgstr "Kilépés"
 
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:178 src/setup.rs:11
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:174 src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "Edzésóra"
 
@@ -164,164 +164,189 @@ msgstr "Edzések listája - világos mód"
 msgid "Timer - light mode"
 msgstr "Időzítő - világos mód"
 
-#. Translators: The title of the preferences menu entry
-#: src/app.rs:58
-msgid "_Preferences"
-msgstr "_Beállítások"
-
 #. Translators: The title of the keyboard shortcuts menu entry
-#: src/app.rs:60
+#: src/app.rs:56
 msgid "_Keyboard Shortcuts"
 msgstr "_Gyorsbillentyűk"
 
 #. Translators: The title of the about dialog menu entry
-#: src/app.rs:62
+#: src/app.rs:58
 msgid "_About Exercise Timer"
 msgstr "Az Edzésóráról"
 
 #. Translators: This is the title of the page which lists all trainings
-#: src/app.rs:78
+#: src/app.rs:74
 msgid "Training List"
 msgstr "Edzéslista"
 
 #. Translators: tooltip for the add training image button
-#: src/app.rs:86
-msgid "Add training"
+#: src/app.rs:82
+#, fuzzy
+msgid "Add Training"
 msgstr "Új edzés"
 
 #. Translators: tooltip for main menu image button
-#: src/app.rs:92
-msgid "Main menu"
+#: src/app.rs:88
+#, fuzzy
+msgid "Main Menu"
 msgstr "Főmenü"
 
 #. Translators: The message which is shown on the background of the empty training list
-#: src/app.rs:113
+#: src/app.rs:109
 msgid "No training is created yet"
 msgstr "Még nincs edzés"
 
 #. Translators: Big label button to create the first training if none exists
-#: src/app.rs:117
+#: src/app.rs:113
 msgid "Create training"
 msgstr "Új edzés létrehozása"
 
 #. Translators: The name of the timer page
-#: src/app.rs:128
+#: src/app.rs:124
 msgid "Timer"
 msgstr "Időzítő"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:185
+#: src/app.rs:181
 msgid "translator_credits"
 msgstr "Serfőző Lőrinc"
 
 #. Translators: The editor window's title when creating a new training
-#: src/training_editor.rs:57
-msgid "New training"
+#: src/training_editor.rs:56
+#, fuzzy
+msgid "New Training"
 msgstr "Új edzés"
 
 #. Translators: The editor window's title when modifying a training
 #. Translators: tooltip text for exercise card button to open the training editor
-#: src/training_editor.rs:59 src/training_setup.rs:133
-msgid "Edit training"
+#: src/training_editor.rs:58 src/training_setup.rs:163
+#, fuzzy
+msgid "Edit Training"
 msgstr "Edzés módosítása"
 
 #. Translators: Button to close the training editor window without modifications
-#: src/training_editor.rs:65
+#: src/training_editor.rs:64
 msgid "Cancel"
 msgstr "Mégse"
 
 #. Translators: Button to close the editor window and create a new training
-#: src/training_editor.rs:71
+#: src/training_editor.rs:70
 msgid "Create"
 msgstr "Kész"
 
 #. Translators: Button to close the editor window and update an existing training
-#: src/training_editor.rs:73
+#: src/training_editor.rs:72
 msgid "Update"
 msgstr "Módosít"
 
 #. Translators: The title of the field for the name of the training in the editor window
-#: src/training_editor.rs:85
+#: src/training_editor.rs:88
 msgid "Name"
 msgstr "Név"
 
 #. Translators: The title of the field for the number of sets in the training in the editor window
-#: src/training_editor.rs:90
-msgid "Number of sets"
+#: src/training_editor.rs:96
+#, fuzzy
+msgid "Number of Sets"
 msgstr "Szettek száma"
 
 #. Translators: The title of the field for the rest duration in the training in the editor window
-#: src/training_editor.rs:101
-msgid "Rest time"
+#: src/training_editor.rs:107
+#, fuzzy
+msgid "Rest Time"
 msgstr "Pihenőidő"
 
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
-#: src/training_editor.rs:103 src/training_editor.rs:116
-#: src/settings_dialog.rs:39
+#: src/training_editor.rs:109 src/training_editor.rs:122
+#: src/training_editor.rs:135
 msgid "seconds"
 msgstr "másodperc"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
-#: src/training_editor.rs:114
-msgid "Exercise time"
-msgstr "Gyakorlat ideje"
+#: src/training_editor.rs:120
+#, fuzzy
+msgid "Exercise Time"
+msgstr "Edzésóra"
 
-#: src/training_setup.rs:95
+#. Translators: The title of the field for the preparation duration in the training in the editor window
+#: src/training_editor.rs:133
+#, fuzzy
+msgid "Preparation Time"
+msgstr "Felkészülési idő"
+
+#. Translators: the label of the number of sets row in the training list item
+#: src/training_setup.rs:100
 msgid "Sets"
 msgstr "Szettek"
 
+#. Translators: the label of the exercise time row in the training list item
 #. Translators: Shown on the timer page during exercise
-#: src/training_setup.rs:104 src/training_timer.rs:184
+#: src/training_setup.rs:110 src/training_timer.rs:182
 msgid "Exercise"
 msgstr "Gyakorlat"
 
+#. Translators: the format label for indicating the number of seconds in the training list item. Please use a short abbreviation for seconds, e.g. "s".
+#: src/training_setup.rs:119 src/training_setup.rs:134
+#: src/training_setup.rs:148
+msgid "{} s"
+msgstr ""
+
+#. Translators: the label of the rest time row in the training list item
 #. Translators: Shown on the timer page during rest
-#: src/training_setup.rs:113 src/training_timer.rs:186
+#: src/training_setup.rs:125 src/training_timer.rs:184
 msgid "Rest"
 msgstr "Pihenés"
 
-#. Translators: tooltip text for exercise card button to delete the training
-#: src/training_setup.rs:142
-msgid "Delete training"
-msgstr "Edzés törlése"
-
-#. Translators: tooltip text for exercise card button to start the training timer
-#: src/training_setup.rs:149
-msgid "Start training"
-msgstr "Edzés elindítása"
-
-#. Translators: Shown in the timer page when the training has come to the end
-#: src/training_timer.rs:121
-msgid "Finished!"
-msgstr "Kész!"
-
+#. Translators: the label of the preparation time row in the training list item
 #. Translators: Shown on the timer page during preparation
-#: src/training_timer.rs:182
+#: src/training_setup.rs:139 src/training_timer.rs:180
 msgid "Preparation"
 msgstr "Felkészülés"
 
+#. Translators: tooltip text for exercise card button to delete the training
+#: src/training_setup.rs:172
+#, fuzzy
+msgid "Delete Training"
+msgstr "Edzés törlése"
+
+#. Translators: tooltip text for exercise card button to start the training timer
+#: src/training_setup.rs:178
+#, fuzzy
+msgid "Start Training"
+msgstr "Edzés elindítása"
+
+#. Translators: Shown in the timer page when the training has come to the end
+#: src/training_timer.rs:119
+msgid "Finished!"
+msgstr "Kész!"
+
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:226
-msgid "Start training from the beginning"
-msgstr "Edzés újrakezdése"
+#: src/training_timer.rs:224
+#, fuzzy
+msgid "Restart Training"
+msgstr "Edzés elindítása"
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:239
-msgid "Pause training"
+#: src/training_timer.rs:237
+#, fuzzy
+msgid "Pause Training"
 msgstr "Edzés szüneteltetése"
 
-#: src/training_timer.rs:239
-msgid "Resume training"
+#: src/training_timer.rs:237
+#, fuzzy
+msgid "Resume Training"
 msgstr "Edzés folytatása"
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:255
-msgid "Set volume"
+#: src/training_timer.rs:253
+#, fuzzy
+msgid "Set Volume"
 msgstr "Hangerő beállítása"
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:263
-msgid "Remaining sets: {}"
+#: src/training_timer.rs:261
+#, fuzzy
+msgid "Remaining Sets: {}"
 msgstr "Hátralévő szettek: {}"
 
 #. Translators: Error message printed to the console when an error occurs with WAV decoding
@@ -340,47 +365,37 @@ msgid "Could not open resource data"
 msgstr "Nem sikerült betölteni az adatot"
 
 #. Translators: Error message when cannot connect to the audio output
-#: src/main.rs:22
+#: src/main.rs:21
 msgid "Could not create audio output stream"
 msgstr "Nem sikerült létrehozni a hangkimentetet"
 
-#. Translators: The title of the preferences group for the training default settings
-#: src/settings_dialog.rs:33
-msgid "Training defaults"
-msgstr "Edzés alapértelmezései"
-
-#. Translators: The title of the edit field to set the time (in seconds) for the preparation period
-#: src/settings_dialog.rs:38
-msgid "Preparation time"
-msgstr "Felkészülési idő"
-
 #. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
-#: src/settings.rs:68
+#: src/settings.rs:65
 msgid "Cannot find 'name' in settings dictionary"
 msgstr "'name' nem található a beállításkönyvtárban"
 
 #. Translators: Error message printed to the console when key 'sets' is not found in the JSON formatted training
-#: src/settings.rs:72
+#: src/settings.rs:69
 msgid "Cannot find 'sets' in settings dictionary"
 msgstr "'sets' nem található a beállításkönyvtárban"
 
 #. Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
-#: src/settings.rs:77
+#: src/settings.rs:74
 msgid "Cannot find 'exercise_s' in settings dictionary"
 msgstr "'exercise_s' nem található a beállításkönyvtárban"
 
 #. Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
-#: src/settings.rs:83
+#: src/settings.rs:80
 msgid "Cannot find 'rest_s' in settings dictionary"
 msgstr "'rest_s' nem található a beállításkönyvtárban"
 
 #. Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
-#: src/settings.rs:100
+#: src/settings.rs:99
 msgid "Could not parse default training setup"
 msgstr "Nem sikerült beolvasni az alapértelmezett edzés beállítást"
 
 #. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be parsed
-#: src/settings.rs:111
+#: src/settings.rs:110
 msgid "Could not parse exercise list"
 msgstr "Nem sikerült beolvasni az edzések listáját"
 
@@ -413,6 +428,21 @@ msgstr "Nem sikerült csatlakozni a megjelenítőhöz"
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr "Nem sikerült létrehozni a Segítség ablakot"
+
+#~ msgid "Edit training"
+#~ msgstr "Edzés módosítása"
+
+#~ msgid "Exercise time"
+#~ msgstr "Gyakorlat ideje"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Beállítások"
+
+#~ msgid "Start training from the beginning"
+#~ msgstr "Edzés újrakezdése"
+
+#~ msgid "Training defaults"
+#~ msgstr "Edzés alapértelmezései"
 
 #~ msgid "Bug fixes"
 #~ msgstr "Hibajavítások"
