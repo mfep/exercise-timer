@@ -236,7 +236,7 @@ impl Component for AppModel {
                 }
                 let editor = TrainingEditor::builder()
                     .launch((TrainingEditorRole::New, TrainingSetup::default()));
-                editor.widget().present(root.widget_ref());
+                editor.widget().present(Some(root.widget_ref()));
                 let mut editor = editor.into_stream();
                 relm4::spawn_local(async move {
                     if let Some(TrainingEditorOutput::Create(setup)) = editor.next().await.unwrap()

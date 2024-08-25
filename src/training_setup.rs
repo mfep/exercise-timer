@@ -197,7 +197,9 @@ impl FactoryComponent for TrainingSetup {
             TrainingSetupInput::Edit(root) => {
                 let editor =
                     TrainingEditor::builder().launch((TrainingEditorRole::Edit, self.clone()));
-                editor.widget().present(&root.toplevel_window().unwrap());
+                editor
+                    .widget()
+                    .present(Some(&root.toplevel_window().unwrap()));
                 let mut editor = editor.into_stream();
                 relm4::spawn_local(async move {
                     if let Some(TrainingEditorOutput::Create(setup)) = editor.next().await.unwrap()
