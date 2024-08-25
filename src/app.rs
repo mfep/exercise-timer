@@ -1,6 +1,5 @@
 use crate::config;
 use crate::settings;
-use crate::settings_dialog::*;
 use crate::shortcuts_window::*;
 use crate::training_editor::*;
 use crate::training_setup::*;
@@ -29,7 +28,6 @@ pub enum AppModelInput {
 }
 
 relm4::new_action_group!(WindowActionGroup, "win");
-relm4::new_stateless_action!(PreferencesAction, WindowActionGroup, "preferences");
 relm4::new_stateless_action!(ShortcutsAction, WindowActionGroup, "show-help-overlay");
 relm4::new_stateless_action!(AboutAction, WindowActionGroup, "about");
 relm4::new_stateless_action!(StartStopAction, WindowActionGroup, "start-stop");
@@ -54,8 +52,6 @@ impl Component for AppModel {
     menu! {
         primary_menu: {
             section! {
-                // Translators: The title of the preferences menu entry
-                &gettext("_Preferences") => PreferencesAction,
                 // Translators: The title of the keyboard shortcuts menu entry
                 &gettext("_Keyboard Shortcuts") => ShortcutsAction,
                 // Translators: The title of the about dialog menu entry
@@ -189,16 +185,6 @@ impl Component for AppModel {
                 about_window.present();
             })
         };
-        let preferences_action = {
-            let root = root.clone();
-            let global_settings = model.global_settings.clone();
-            relm4::actions::RelmAction::<PreferencesAction>::new_stateless(move |_| {
-                SettingsDialogModel::builder()
-                    .transient_for(&root)
-                    .launch(global_settings.clone())
-                    .detach();
-            })
-        };
         let shortcuts_action = {
             let shortcuts_window_sender = model.shortcuts_window.sender().clone();
             relm4::actions::RelmAction::<ShortcutsAction>::new_stateless(move |_| {
@@ -220,15 +206,12 @@ impl Component for AppModel {
             })
         };
         actions.add_action(about_action);
-        actions.add_action(preferences_action);
         actions.add_action(shortcuts_action);
         actions.add_action(start_stop_action);
         actions.add_action(reset_action);
         let list_trainings = model.list_trainings.widget();
         let widgets = view_output!();
         actions.register_for_widget(&widgets.main_window);
-        relm4::main_application()
-            .set_accelerators_for_action::<PreferencesAction>(&["<Control>comma"]);
         relm4::main_application()
             .set_accelerators_for_action::<ShortcutsAction>(&["<Control>question"]);
         relm4::main_application()

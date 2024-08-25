@@ -19,7 +19,7 @@ use self::audio_player::AudioPlayerModelInit;
 
 #[derive(PartialEq)]
 enum TrainingState {
-    Warmup,
+    Preparation,
     Exercise,
     Rest,
 }
@@ -37,29 +37,28 @@ pub struct TrainingTimer {
 
 impl TrainingTimer {
     fn new(
-        exercise: TrainingSetup,
+        setup: TrainingSetup,
         global_setup: GlobalTrainingSetup,
         output: rodio::OutputStreamHandle,
         sender: &ComponentSender<TrainingTimer>,
     ) -> Self {
-        let warmup_s = global_setup.warmup_s.get() as usize;
         let beep_volume = global_setup.beep_volume.get();
         Self {
-            state: if warmup_s > 0 {
-                TrainingState::Warmup
+            state: if setup.prepare_s > 0 {
+                TrainingState::Preparation
             } else {
                 TrainingState::Exercise
             },
             global_setup,
-            remaining_sets: exercise.sets,
-            remaining_s: if warmup_s > 0 {
-                warmup_s
+            remaining_sets: setup.sets,
+            remaining_s: if setup.prepare_s > 0 {
+                setup.prepare_s
             } else {
-                exercise.exercise_s
+                setup.exercise_s
             },
             running: true,
             timer: build_timer(sender),
-            setup: exercise,
+            setup,
             audio_player: AudioPlayerModel::builder()
                 .detach_worker(AudioPlayerModelInit {
                     output_stream: output,
@@ -70,15 +69,14 @@ impl TrainingTimer {
     }
 
     fn reset(&mut self, sender: &ComponentSender<TrainingTimer>) {
-        let warmup_s = self.global_setup.warmup_s.get() as usize;
-        self.state = if warmup_s > 0 {
-            TrainingState::Warmup
+        self.state = if self.setup.prepare_s > 0 {
+            TrainingState::Preparation
         } else {
             TrainingState::Exercise
         };
         self.remaining_sets = self.setup.sets;
-        self.remaining_s = if warmup_s > 0 {
-            warmup_s
+        self.remaining_s = if self.setup.prepare_s > 0 {
+            self.setup.prepare_s
         } else {
             self.setup.exercise_s
         };
@@ -164,7 +162,7 @@ impl Component for TrainingTimer {
                     add_css_class: "timer",
                     add_css_class: "card",
                     #[watch]
-                    set_class_active: ("timer-warmup", model.state == TrainingState::Warmup),
+                    set_class_active: ("timer-warmup", model.state == TrainingState::Preparation),
                     #[watch]
                     set_class_active: ("timer-exercise", model.state == TrainingState::Exercise),
                     #[watch]
@@ -179,7 +177,7 @@ impl Component for TrainingTimer {
                         #[watch]
                         set_label: &match model.state {
                             // Translators: Shown on the timer page during preparation
-                            TrainingState::Warmup => gettext("Preparation"),
+                            TrainingState::Preparation => gettext("Preparation"),
                             // Translators: Shown on the timer page during exercise
                             TrainingState::Exercise => gettext("Exercise"),
                             // Translators: Shown on the timer page during rest
@@ -313,7 +311,7 @@ impl Component for TrainingTimer {
                 self.remaining_s -= 1;
                 if self.remaining_s == 0 {
                     match self.state {
-                        TrainingState::Warmup => {
+                        TrainingState::Preparation => {
                             self.state = TrainingState::Exercise;
                             self.remaining_s = self.setup.exercise_s;
                             self.audio_player.emit(AudioPlayerInput::NextExercise);

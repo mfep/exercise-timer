@@ -13,6 +13,7 @@ pub struct TrainingEditor {
     sets: U32Binding,
     exercise_s: U32Binding,
     rest_s: U32Binding,
+    prepare_s: U32Binding,
 }
 
 #[derive(Debug)]
@@ -127,6 +128,19 @@ impl relm4::SimpleComponent for TrainingEditor {
                                     add_binding: (&model.exercise_s, "value"),
                                 },
                             },
+                            adw::SpinRow {
+                                // Translators: The title of the field for the preparation duration in the training in the editor window
+                                set_title: &gettext("Preparation Time"),
+                                // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
+                                set_subtitle: &gettext("seconds"),
+                                #[wrap(Some)]
+                                set_adjustment = &gtk::Adjustment {
+                                    set_lower: 0.0,
+                                    set_upper: SPIN_ROW_UPPER,
+                                    set_step_increment: SPIN_ROW_STEP,
+                                    add_binding: (&model.prepare_s, "value"),
+                                },
+                            },
                         },
                     }
                 }
@@ -144,6 +158,7 @@ impl relm4::SimpleComponent for TrainingEditor {
             sets: U32Binding::new(init.1.sets as u32),
             rest_s: U32Binding::new(init.1.rest_s as u32),
             exercise_s: U32Binding::new(init.1.exercise_s as u32),
+            prepare_s: U32Binding::new(init.1.prepare_s as u32),
             role: init.0,
         };
         let widgets = view_output!();
@@ -160,6 +175,7 @@ impl relm4::SimpleComponent for TrainingEditor {
                         exercise_s: self.exercise_s.get() as usize,
                         rest_s: self.rest_s.get() as usize,
                         sets: self.sets.get() as usize,
+                        prepare_s: self.prepare_s.get() as usize,
                     })))
                     .unwrap();
             }

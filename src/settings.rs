@@ -37,7 +37,6 @@ impl Drop for WindowGeometry {
 
 #[derive(Clone, Debug, Default)]
 pub struct GlobalTrainingSetup {
-    pub warmup_s: U32Binding,
     pub beep_volume: F64Binding,
 }
 
@@ -45,7 +44,6 @@ impl GlobalTrainingSetup {
     pub fn new_from_gsettings() -> Self {
         let settings = gio::Settings::new(crate::config::APP_ID);
         Self {
-            warmup_s: U32Binding::new(settings.uint("warmup-s")),
             beep_volume: F64Binding::new(settings.double("beep-volume")),
         }
     }
@@ -55,7 +53,6 @@ impl Drop for GlobalTrainingSetup {
     fn drop(&mut self) {
         let settings = gio::Settings::new(crate::config::APP_ID);
         settings.delay();
-        let _ = settings.set_uint("warmup-s", self.warmup_s.get());
         let _ = settings.set_double("beep-volume", self.beep_volume.get());
         settings.apply();
     }
@@ -81,16 +78,18 @@ fn parse_json_to_training_setup(value: &json::JsonValue) -> TrainingSetup {
         .as_usize()
         // Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
         .unwrap_or_else(|| panic!("{}", gettext("Cannot find 'rest_s' in settings dictionary")));
+    let prepare_s = value["prepare_s"].as_usize().unwrap_or(5);
 
     TrainingSetup {
         name: gettext(name),
         sets,
         exercise_s,
         rest_s,
+        prepare_s,
     }
 }
 
-pub fn load_default_exercise_setup() -> TrainingSetup {
+pub fn load_default_training_setup() -> TrainingSetup {
     let settings = gio::Settings::new(crate::config::APP_ID);
     let raw_json = settings.string("default-exercise-json");
     parse_json_to_training_setup(&json::parse(&raw_json).unwrap_or_else(|err| {
@@ -115,12 +114,13 @@ pub fn load_training_list_from_gsettings() -> Vec<TrainingSetup> {
 pub fn save_training_list_to_gsettings<'a>(exercises: impl Iterator<Item = &'a TrainingSetup>) {
     let settings = gio::Settings::new(crate::config::APP_ID);
     let json_list: Vec<json::JsonValue> = exercises
-        .map(|exercise| {
+        .map(|training| {
             json::object! {
-                name: exercise.name.clone(),
-                sets: exercise.sets,
-                exercise_s: exercise.exercise_s,
-                rest_s: exercise.rest_s,
+                name: training.name.clone(),
+                sets: training.sets,
+                exercise_s: training.exercise_s,
+                rest_s: training.rest_s,
+                prepare_s: training.prepare_s,
             }
         })
         .collect();

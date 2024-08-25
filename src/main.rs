@@ -1,7 +1,6 @@
 mod app;
 mod config;
 mod settings;
-mod settings_dialog;
 mod setup;
 mod shortcuts_window;
 mod training_editor;

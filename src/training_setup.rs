@@ -17,17 +17,20 @@ pub struct TrainingSetup {
     pub exercise_s: usize,
     pub rest_s: usize,
     pub sets: usize,
+    pub prepare_s: usize,
 }
 
 impl TrainingSetup {
     pub fn total_duration(&self) -> Duration {
-        Duration::from_secs((self.exercise_s * self.sets + self.rest_s * (self.sets - 1)) as u64)
+        Duration::from_secs(
+            (self.exercise_s * self.sets + self.rest_s * (self.sets - 1) + self.prepare_s) as u64,
+        )
     }
 }
 
 impl Default for TrainingSetup {
     fn default() -> Self {
-        settings::load_default_exercise_setup()
+        settings::load_default_training_setup()
     }
 }
 
@@ -93,6 +96,7 @@ impl FactoryComponent for TrainingSetup {
                         set_column_spacing: 24,
                         attach[0, 0, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,
+                            // Translators: the label of the number of sets row in the training list item
                             set_label: &gettext("Sets"),
                         },
                         attach[1, 0, 1, 1] = &gtk::Label {
@@ -102,22 +106,47 @@ impl FactoryComponent for TrainingSetup {
                         },
                         attach[0, 1, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,
+                            // Translators: the label of the exercise time row in the training list item
                             set_label: &gettext("Exercise"),
                         },
                         attach[1, 1, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,
                             #[watch]
-                            set_label: &format!("{} s", self.exercise_s),
+                            set_label: &if true {
+                                gettext!("{} s", self.exercise_s)
+                            } else {
+                                // Translators: the format label for indicating the number of seconds in the training list item. Please use a short abbreviation for seconds, e.g. "s".
+                                gettext("{} s")
+                            },
                         },
                         attach[0, 2, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,
+                            // Translators: the label of the rest time row in the training list item
                             set_label: &gettext("Rest"),
                         },
                         attach[1, 2, 1, 1] = &gtk::Label {
                             set_halign: gtk::Align::Start,
                             #[watch]
-                            set_label: &format!("{} s", self.rest_s),
+                            set_label: &if true {
+                                gettext!("{} s", self.rest_s)
+                            } else {
+                                // Translators: the format label for indicating the number of seconds in the training list item. Please use a short abbreviation for seconds, e.g. "s".
+                                gettext("{} s")
+                            },                        },
+                        attach[0, 3, 1, 1] = &gtk::Label {
+                            set_halign: gtk::Align::Start,
+                            // Translators: the label of the preparation time row in the training list item
+                            set_label: &gettext("Preparation"),
                         },
+                        attach[1, 3, 1, 1] = &gtk::Label {
+                            set_halign: gtk::Align::Start,
+                            #[watch]
+                            set_label: &if true {
+                                gettext!("{} s", self.prepare_s)
+                            } else {
+                                // Translators: the format label for indicating the number of seconds in the training list item. Please use a short abbreviation for seconds, e.g. "s".
+                                gettext("{} s")
+                            },                        },
                     },
                     #[wrap(Some)]
                     set_end_widget = &gtk::Box {
