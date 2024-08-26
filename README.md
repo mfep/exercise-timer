@@ -6,9 +6,10 @@
 [![License badge](https://img.shields.io/github/license/mfep/exercise-timer)](./LICENSE.txt)
 [![Flathub badge](https://img.shields.io/flathub/downloads/xyz.safeworlds.hiit?logo=flathub&logoColor=white)](https://flathub.org/apps/details/xyz.safeworlds.hiit)
 ![Platforms badge](https://img.shields.io/badge/platform-linux-informational)
-![Translations badge](https://hosted.weblate.org/widget/exercise-timer/exercise-timer/svg-badge.svg?native=1)
+[![Translations badge](https://hosted.weblate.org/widget/exercise-timer/exercise-timer/svg-badge.svg?native=1)](https://hosted.weblate.org/projects/exercise-timer/exercise-timer/)
+[![dependency status](https://deps.rs/repo/github/mfep/exercise-timer/status.svg)](https://deps.rs/repo/github/mfep/exercise-timer)
 
-Exercise timer is a simple utility to conduct interval training. It is built for the GNOME desktop using [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1.4/index.html) and [Relm4](https://relm4.org/).
+Exercise Timer is a simple utility to conduct interval training. It is built for the GNOME desktop using [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1.4/index.html) and [Relm4](https://relm4.org/).
 
 ![A screenshot of Exercise Timer's exercise list UI](./data/screenshots/dark_exercise_list.png) ![A screenshot of Exercise Timer's timer UI](./data/screenshots/dark_timer.png)
 
@@ -25,7 +26,7 @@ Exercise timer is a simple utility to conduct interval training. It is built for
 
 The recommended way of installing Exercise Timer is via Flathub.
 
-<a href="https://flathub.org/apps/details/xyz.safeworlds.hiit" target="_blank"><img alt="Download on Flathub" src="https://flathub.org/assets/badges/flathub-badge-en.png" title="Download on Flathub" width="240"></a>
+<a href="https://flathub.org/apps/details/xyz.safeworlds.hiit" target="_blank"><img width='240' alt='Get it on Flathub' src='https://flathub.org/api/badge?locale=en'/></a>
 
 ## 🛠️ Building the Flatpak
 
