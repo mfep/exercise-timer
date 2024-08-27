@@ -2,6 +2,32 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.5.0](https://github.com/mfep/exercise-timer/compare/56c44b117494f4b6eb7bece9aa0a826bf1ad18b0..v1.5.0) - 2024-08-27
+#### Bug Fixes
+- **(UI)** Use ratio symbol in timer view - ([f714e4b](https://github.com/mfep/exercise-timer/commit/f714e4b250eaeecddfc9774be7afd57499d6c812)) - [@mfep](https://github.com/mfep)
+- **(UI)** Use list-add icon - ([e5d11a4](https://github.com/mfep/exercise-timer/commit/e5d11a4eeb9e71eeb1f11f3bc5716968a09b94e3)) - [@mfep](https://github.com/mfep)
+- **(UI)** Shortcuts require Ctrl modifier - ([cc9ce91](https://github.com/mfep/exercise-timer/commit/cc9ce9163991808580b5f9b71570b637a29ccd13)) - [@mfep](https://github.com/mfep)
+- **(UI)** Traning editor uses libadwaita 1.5 Dialog - ([5029f97](https://github.com/mfep/exercise-timer/commit/5029f97aa11784fa7acef2c4a9624aa11d295af0)) - [@mfep](https://github.com/mfep)
+- **(UI)** Use PreferenceGroups in training_editor - ([7e4e14b](https://github.com/mfep/exercise-timer/commit/7e4e14b87ef02fa8fdb05015e7e0b0d04941f148)) - [@mfep](https://github.com/mfep)
+- **(UI)** Unlinked buttons in training list - ([1ac083f](https://github.com/mfep/exercise-timer/commit/1ac083ff0601ac7eadeb8e32954ec7e1269d14dd)) - [@mfep](https://github.com/mfep)
+- **(UI)** Title case tooltips - ([9c612eb](https://github.com/mfep/exercise-timer/commit/9c612ebed02cb249bf09624a1cd042f039078fd1)) - [@mfep](https://github.com/mfep)
+- **(docs)** Fix features phrasing - ([29e8682](https://github.com/mfep/exercise-timer/commit/29e8682c1b5ee52508cd478a8fd38bc720ae9c9f)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Translated using Weblate (Hungarian) - ([c6b164e](https://github.com/mfep/exercise-timer/commit/c6b164ec714058db43b64f1fa2e1bc45125fdc8a)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Update Hungarian translation - ([aba6414](https://github.com/mfep/exercise-timer/commit/aba64145abdc92ea2999a24d46f1d409bc72d337)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Translated using Weblate (Finnish) - ([56c44b1](https://github.com/mfep/exercise-timer/commit/56c44b117494f4b6eb7bece9aa0a826bf1ad18b0)) - Jiri Grönroos
+- Support Builder by switching to online Flatpak build - ([f456e74](https://github.com/mfep/exercise-timer/commit/f456e7424ef59e93bc134e6138137cf9453122aa)) - [@mfep](https://github.com/mfep)
+#### Features
+- Preparation time is added as a per-training option - ([9322fd2](https://github.com/mfep/exercise-timer/commit/9322fd22542ca9e1b1c5e597ccdf1f1b7d3ed495)) - [@mfep](https://github.com/mfep)
+#### Miscellaneous Chores
+- **(CI)** Run CI on all branches - ([8df7221](https://github.com/mfep/exercise-timer/commit/8df722157b51646e92c86f14f4108dfa78008bb2)) - [@mfep](https://github.com/mfep)
+- **(dependencies)** Update cargo dependencies - ([50691d2](https://github.com/mfep/exercise-timer/commit/50691d2fb32108660df85b2ef4b00f42aa4d9a27)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update release in metainfo - ([cf6e907](https://github.com/mfep/exercise-timer/commit/cf6e907fdfcc25c21467827c5c3abfd7ccf39e9a)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update README and screenshots - ([4a08048](https://github.com/mfep/exercise-timer/commit/4a0804808a21e9d08f31f61b155a82982837c0ac)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Update po files - ([5825e91](https://github.com/mfep/exercise-timer/commit/5825e9191a5507c30540ed291635040363892c49)) - [@mfep](https://github.com/mfep)
+- Remove unneeded icon - ([535beda](https://github.com/mfep/exercise-timer/commit/535beda7c3a322949dedc2f1e75521fff11e3c41)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.4.1](https://github.com/mfep/exercise-timer/compare/535e025963c9caaf69b0504bbf4da17526d14a93..v1.4.1) - 2024-07-27
 #### Bug Fixes
 - **(i18n)** Translated using Weblate (Hindi) - ([be9422c](https://github.com/mfep/exercise-timer/commit/be9422c9ee50e2f288d0905047c9c5fdf8635e8e)) - Scrambled777
