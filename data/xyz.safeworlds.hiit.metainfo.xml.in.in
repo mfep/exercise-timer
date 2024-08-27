@@ -12,8 +12,7 @@
     <p>The app does not make an assumption about the kind of the exercise.</p>
     <p>Features:</p>
     <ul>
-      <li>Save and recall presets containing the number of sets and the duration of the exercise and rest periods.</li>
-      <li>Set the duration of the preparation in the settings.</li>
+      <li>Save and recall presets containing the number of sets and the duration of the exercise, rest and preparation periods.</li>
       <li>A beeping sound is played at- and prior to each transition.</li>
       <li>The volume of the sound can be adjusted.</li>
       <li>Light and dark mode follows the system's setting.</li>

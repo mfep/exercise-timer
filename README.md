@@ -16,8 +16,7 @@ Exercise Timer is a simple utility to conduct interval training. It is built for
 </div>
 
 ## 🏋️ Features 
-- 💾 Save and recall presets containing the number of sets and the duration of the exercise and rest periods. 
-- ⏲️ Set the duration of the preparation in the settings.
+- 💾 Save and recall presets containing the number of sets and the duration of the exercise, rest and preparation periods. 
 - 🔊 A beeping sound is played at- and prior to each transition. 
 - 🗣️ The volume of the sound can be adjusted.
 - ☯️ Light and dark mode follows the system's setting.
