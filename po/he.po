@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-26 19:32+0200\n"
-"PO-Revision-Date: 2024-09-15 10:30+0000\n"
+"PO-Revision-Date: 2024-09-16 11:09+0000\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gnome.org>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/he/>\n"
@@ -89,11 +89,11 @@ msgstr "האם החלון מוגדל"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:18
 msgid "Default training setup, in JSON notation"
-msgstr "הגדרת אימון ברירת מחדל, בפורמט JSON"
+msgstr "הגדרת אימון ברירת מחדל, בתבנית JSON"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:22
 msgid "List of training setups, in JSON notation"
-msgstr "רשימת הגדרות אימון, בפורמט JSON"
+msgstr "רשימת הגדרות אימון, בתבנית JSON"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
 msgid "The duration of the warmup, in seconds"
