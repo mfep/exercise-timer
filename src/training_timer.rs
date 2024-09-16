@@ -188,6 +188,7 @@ impl Component for TrainingTimer {
                         add_css_class: "timer-label",
                         set_orientation: gtk::Orientation::Horizontal,
                         set_halign: gtk::Align::Center,
+                        set_direction: gtk::TextDirection::Ltr,
                         gtk::Label {
                             #[watch]
                             set_width_chars: width_chars(model.remaining_s, 2),
