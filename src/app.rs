@@ -167,8 +167,7 @@ impl Component for AppModel {
         let about_action = {
             let root = root.clone();
             relm4::actions::RelmAction::<AboutAction>::new_stateless(move |_| {
-                let about_window = adw::AboutWindow::builder()
-                    .transient_for(&root)
+                let about_dialog = adw::AboutDialog::builder()
                     .application_icon(config::APP_ID)
                     // Translators: The name of the application. Feel free to localize it!
                     .application_name(gettext("Exercise Timer"))
@@ -182,7 +181,7 @@ impl Component for AppModel {
                     .version(config::VERSION)
                     .website(config::HOMEPAGE)
                     .build();
-                about_window.present();
+                about_dialog.present(Some(&root));
             })
         };
         let shortcuts_action = {
