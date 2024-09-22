@@ -2,6 +2,21 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.6.0](https://github.com/mfep/exercise-timer/compare/2a7376ed2844b40d69b7b719d8ff0be344628f6a..v1.6.0) - 2024-09-22
+#### Bug Fixes
+- **(UI)** set timer box to be ltr always (#24) - ([67aa51b](https://github.com/mfep/exercise-timer/commit/67aa51bf85f4cccf6f60b2bed7a513fab26bf3d9)) - Yosef Or Boczko
+- **(i18n)** Updated LINGUAS - ([2dc4e67](https://github.com/mfep/exercise-timer/commit/2dc4e673854a77d1fa5e68b0781f2d0b9766f450)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Translated using Weblate (Hebrew) - ([a77706f](https://github.com/mfep/exercise-timer/commit/a77706f84082e9ed3c46dfb5160f99fa32c88a20)) - Yosef Or Boczko
+- **(i18n)** Translated using Weblate (Hebrew) - ([9eaf70b](https://github.com/mfep/exercise-timer/commit/9eaf70bb90a83612eba314abb3dcbb2039f4b2eb)) - Yosef Or Boczko
+#### Features
+- **(UI)** Port to AdwAboutDialog (#25) - ([6dd13f2](https://github.com/mfep/exercise-timer/commit/6dd13f2580d587f400653c683b1e490313d2f922)) - Ivan Tkachuk
+- **(i18n)** Added translation using Weblate (Hebrew) - ([2a7376e](https://github.com/mfep/exercise-timer/commit/2a7376ed2844b40d69b7b719d8ff0be344628f6a)) - Yosef Or Boczko
+#### Miscellaneous Chores
+- **(dependencies)** Updated Flatpak to GNOME 47 runtime - ([790ddd4](https://github.com/mfep/exercise-timer/commit/790ddd42f7bc64b07c7a0c7003e387c0cf56c0eb)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update release in metainfo - ([5cf7cba](https://github.com/mfep/exercise-timer/commit/5cf7cba123af7c8720d1cfbaed971a752b1470a4)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.5.0](https://github.com/mfep/exercise-timer/compare/56c44b117494f4b6eb7bece9aa0a826bf1ad18b0..v1.5.0) - 2024-08-27
 #### Bug Fixes
 - **(UI)** Use ratio symbol in timer view - ([f714e4b](https://github.com/mfep/exercise-timer/commit/f714e4b250eaeecddfc9774be7afd57499d6c812)) - [@mfep](https://github.com/mfep)
