@@ -45,6 +45,23 @@
     <color type="primary" scheme_preference="dark">#7f2c22</color>
   </branding>
   <releases>
+    <release version="1.6.0" date="2024-09-22">
+      <description translate="no">
+        <p>Bug fixes</p>
+        <ul>
+          <li>Fix the display of the timer in right-to-left languages</li>
+        </ul>
+        <p>Features</p>
+        <ul>
+          <li>Add Hebrew translation</li>
+          <li>Use AdwAboutDialog</li>
+        </ul>
+        <p>Miscellaneous changes</p>
+        <ul>
+          <li>Update runtime to GNOME 47</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.5.0" date="2024-08-27">
       <description translate="no">
         <p>Bug fixes</p>
