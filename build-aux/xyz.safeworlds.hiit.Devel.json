@@ -1,11 +1,11 @@
 {
     "id" : "xyz.safeworlds.hiit.Devel",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "46",
+    "runtime-version" : "47",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable",
-        "org.freedesktop.Sdk.Extension.llvm16"
+        "org.freedesktop.Sdk.Extension.llvm18"
     ],
     "command" : "hiit",
     "finish-args" : [
@@ -19,11 +19,11 @@
         "--env=RUST_BACKTRACE=1"
     ],
     "build-options" : {
-        "append-path" : "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm16/bin",
+        "append-path" : "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm18/bin",
         "build-args": [
             "--share=network"
         ],
-        "prepend-ld-library-path" : "/usr/lib/sdk/llvm16/lib",
+        "prepend-ld-library-path" : "/usr/lib/sdk/llvm18/lib",
         "env" : {
             "CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER" : "clang",
             "CARGO_REGISTRIES_CRATES_IO_PROTOCOL" : "sparse",
