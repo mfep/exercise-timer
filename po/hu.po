@@ -6,16 +6,15 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-10 17:10+0100\n"
-"PO-Revision-Date: 2024-08-26 18:30+0000\n"
-"Last-Translator: Lőrinc Serfőző <lorinc.serfozo@mailbox.org>\n"
-"Language-Team: Hungarian <https://hosted.weblate.org/projects/exercise-timer/"
-"exercise-timer/hu/>\n"
+"PO-Revision-Date: 2024-11-10 17:14+0100\n"
+"Last-Translator:  <>\n"
+"Language-Team: Hungarian\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.7.1-dev\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 47.0\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
@@ -128,13 +127,12 @@ msgid "Features:"
 msgstr "Funkciók:"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
-#, fuzzy
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise, rest and preparation periods."
 msgstr ""
-"Az edzések, melyek tartalmazzák a szettek számát, a gyakorlat és a pihenés "
-"idejét, elmenthetők és betölthetők."
+"Az edzések, melyek tartalmazzák a szettek számát, a gyakorlat, a pihenés és "
+"a felkészülés idejét, elmenthetők és betölthetők."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid "A beeping sound is played at- and prior to each transition."
@@ -157,9 +155,8 @@ msgid "Timer - dark mode"
 msgstr "Időzítő - sötét mód"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
-#, fuzzy
 msgid "New training dialog - light mode"
-msgstr "Edzések listája - világos mód"
+msgstr "Új edzés dialógus - világos mód"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
 msgid "Timer - light mode"
@@ -187,15 +184,13 @@ msgstr "Főmenü"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:109
-#, fuzzy
 msgid "No Training Yet"
-msgstr "Új Edzés"
+msgstr "Még Nincs Edzés"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:113
-#, fuzzy
 msgid "Create Training"
-msgstr "Új edzés létrehozása"
+msgstr "Új Edzés Létrehozása"
 
 #. Translators: The name of the timer page
 #: src/app.rs:124
