@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-26 19:32+0200\n"
+"POT-Creation-Date: 2024-11-10 17:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,9 +53,11 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr ""
 
+#. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:174 src/setup.rs:11
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:74 src/app.rs:173
+#: src/setup.rs:11
 msgid "Exercise Timer"
 msgstr ""
 
@@ -124,38 +126,34 @@ msgstr ""
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
-"the exercise and rest periods."
+"the exercise, rest and preparation periods."
 msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
-msgid "Set the duration of the preparation in the settings."
-msgstr ""
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "A beeping sound is played at- and prior to each transition."
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "The volume of the sound can be adjusted."
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:19
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "Light and dark mode follows the system's setting."
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:25
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
 msgid "Exercise list - dark mode"
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:29
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
 msgid "Timer - dark mode"
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:33
-msgid "Exercise list - light mode"
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
+msgid "New training dialog - light mode"
 msgstr ""
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:37
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
 msgid "Timer - light mode"
 msgstr ""
 
@@ -167,11 +165,6 @@ msgstr ""
 #. Translators: The title of the about dialog menu entry
 #: src/app.rs:58
 msgid "_About Exercise Timer"
-msgstr ""
-
-#. Translators: This is the title of the page which lists all trainings
-#: src/app.rs:74
-msgid "Training List"
 msgstr ""
 
 #. Translators: tooltip for the add training image button
@@ -186,12 +179,12 @@ msgstr ""
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:109
-msgid "No training is created yet"
+msgid "No Training Yet"
 msgstr ""
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:113
-msgid "Create training"
+msgid "Create Training"
 msgstr ""
 
 #. Translators: The name of the timer page
@@ -200,7 +193,7 @@ msgid "Timer"
 msgstr ""
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:181
+#: src/app.rs:180
 msgid "translator_credits"
 msgstr ""
 
@@ -211,7 +204,7 @@ msgstr ""
 
 #. Translators: The editor window's title when modifying a training
 #. Translators: tooltip text for exercise card button to open the training editor
-#: src/training_editor.rs:58 src/training_setup.rs:163
+#: src/training_editor.rs:58 src/training_setup.rs:136
 msgid "Edit Training"
 msgstr ""
 
@@ -262,41 +255,28 @@ msgid "Preparation Time"
 msgstr ""
 
 #. Translators: the label of the number of sets row in the training list item
-#: src/training_setup.rs:100
+#: src/training_setup.rs:101
 msgid "Sets"
 msgstr ""
 
 #. Translators: the label of the exercise time row in the training list item
 #. Translators: Shown on the timer page during exercise
-#: src/training_setup.rs:110 src/training_timer.rs:182
+#: src/training_setup.rs:111 src/training_timer.rs:182
 msgid "Exercise"
 msgstr ""
 
 #. Translators: the format label for indicating the number of seconds in the training list item. Please use a short abbreviation for seconds, e.g. "s".
-#: src/training_setup.rs:119 src/training_setup.rs:134
-#: src/training_setup.rs:148
+#: src/training_setup.rs:120
 msgid "{} s"
 msgstr ""
 
-#. Translators: the label of the rest time row in the training list item
-#. Translators: Shown on the timer page during rest
-#: src/training_setup.rs:125 src/training_timer.rs:184
-msgid "Rest"
-msgstr ""
-
-#. Translators: the label of the preparation time row in the training list item
-#. Translators: Shown on the timer page during preparation
-#: src/training_setup.rs:139 src/training_timer.rs:180
-msgid "Preparation"
-msgstr ""
-
 #. Translators: tooltip text for exercise card button to delete the training
-#: src/training_setup.rs:172
+#: src/training_setup.rs:145
 msgid "Delete Training"
 msgstr ""
 
 #. Translators: tooltip text for exercise card button to start the training timer
-#: src/training_setup.rs:178
+#: src/training_setup.rs:151
 msgid "Start Training"
 msgstr ""
 
@@ -305,27 +285,37 @@ msgstr ""
 msgid "Finished!"
 msgstr ""
 
+#. Translators: Shown on the timer page during preparation
+#: src/training_timer.rs:180
+msgid "Preparation"
+msgstr ""
+
+#. Translators: Shown on the timer page during rest
+#: src/training_timer.rs:184
+msgid "Rest"
+msgstr ""
+
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:224
+#: src/training_timer.rs:225
 msgid "Restart Training"
 msgstr ""
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:237
+#: src/training_timer.rs:238
 msgid "Pause Training"
 msgstr ""
 
-#: src/training_timer.rs:237
+#: src/training_timer.rs:238
 msgid "Resume Training"
 msgstr ""
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:253
+#: src/training_timer.rs:254
 msgid "Set Volume"
 msgstr ""
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:261
+#: src/training_timer.rs:262
 msgid "Remaining Sets: {}"
 msgstr ""
 

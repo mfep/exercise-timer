@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-26 19:26+0200\n"
+"POT-Creation-Date: 2024-11-10 17:10+0100\n"
 "PO-Revision-Date: 2024-08-26 18:30+0000\n"
 "Last-Translator: Lőrinc Serfőző <lorinc.serfozo@mailbox.org>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/exercise-timer/"
@@ -53,9 +53,11 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Kilépés"
 
+#. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:174 src/setup.rs:11
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:74 src/app.rs:173
+#: src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "Edzésóra"
 
@@ -126,42 +128,40 @@ msgid "Features:"
 msgstr "Funkciók:"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
+#, fuzzy
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
-"the exercise and rest periods."
+"the exercise, rest and preparation periods."
 msgstr ""
 "Az edzések, melyek tartalmazzák a szettek számát, a gyakorlat és a pihenés "
 "idejét, elmenthetők és betölthetők."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
-msgid "Set the duration of the preparation in the settings."
-msgstr "A felkészülési idő a Beállításokban módosítható."
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "A beeping sound is played at- and prior to each transition."
 msgstr "Sípoló hang jelzi a periódusok végét."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "The volume of the sound can be adjusted."
 msgstr "A síp hangereje állítható."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:19
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "Light and dark mode follows the system's setting."
 msgstr "A világos és sötét megjelenés követi a rendszerbeállítást."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:25
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
 msgid "Exercise list - dark mode"
 msgstr "Edzések listája - sötét mód"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:29
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
 msgid "Timer - dark mode"
 msgstr "Időzítő - sötét mód"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:33
-msgid "Exercise list - light mode"
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
+#, fuzzy
+msgid "New training dialog - light mode"
 msgstr "Edzések listája - világos mód"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:37
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
 msgid "Timer - light mode"
 msgstr "Időzítő - világos mód"
 
@@ -175,11 +175,6 @@ msgstr "_Gyorsbillentyűk"
 msgid "_About Exercise Timer"
 msgstr "Az Edzésóráról"
 
-#. Translators: This is the title of the page which lists all trainings
-#: src/app.rs:74
-msgid "Training List"
-msgstr "Edzéslista"
-
 #. Translators: tooltip for the add training image button
 #: src/app.rs:82
 msgid "Add Training"
@@ -192,12 +187,14 @@ msgstr "Főmenü"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:109
-msgid "No training is created yet"
-msgstr "Még nincs edzés"
+#, fuzzy
+msgid "No Training Yet"
+msgstr "Új Edzés"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:113
-msgid "Create training"
+#, fuzzy
+msgid "Create Training"
 msgstr "Új edzés létrehozása"
 
 #. Translators: The name of the timer page
@@ -206,7 +203,7 @@ msgid "Timer"
 msgstr "Időzítő"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:181
+#: src/app.rs:180
 msgid "translator_credits"
 msgstr "Serfőző Lőrinc"
 
@@ -217,7 +214,7 @@ msgstr "Új Edzés"
 
 #. Translators: The editor window's title when modifying a training
 #. Translators: tooltip text for exercise card button to open the training editor
-#: src/training_editor.rs:58 src/training_setup.rs:163
+#: src/training_editor.rs:58 src/training_setup.rs:136
 msgid "Edit Training"
 msgstr "Edzés módosítása"
 
@@ -268,41 +265,28 @@ msgid "Preparation Time"
 msgstr "Felkészülési Idő"
 
 #. Translators: the label of the number of sets row in the training list item
-#: src/training_setup.rs:100
+#: src/training_setup.rs:101
 msgid "Sets"
 msgstr "Szettek"
 
 #. Translators: the label of the exercise time row in the training list item
 #. Translators: Shown on the timer page during exercise
-#: src/training_setup.rs:110 src/training_timer.rs:182
+#: src/training_setup.rs:111 src/training_timer.rs:182
 msgid "Exercise"
 msgstr "Gyakorlat"
 
 #. Translators: the format label for indicating the number of seconds in the training list item. Please use a short abbreviation for seconds, e.g. "s".
-#: src/training_setup.rs:119 src/training_setup.rs:134
-#: src/training_setup.rs:148
+#: src/training_setup.rs:120
 msgid "{} s"
 msgstr "{} s"
 
-#. Translators: the label of the rest time row in the training list item
-#. Translators: Shown on the timer page during rest
-#: src/training_setup.rs:125 src/training_timer.rs:184
-msgid "Rest"
-msgstr "Pihenés"
-
-#. Translators: the label of the preparation time row in the training list item
-#. Translators: Shown on the timer page during preparation
-#: src/training_setup.rs:139 src/training_timer.rs:180
-msgid "Preparation"
-msgstr "Felkészülés"
-
 #. Translators: tooltip text for exercise card button to delete the training
-#: src/training_setup.rs:172
+#: src/training_setup.rs:145
 msgid "Delete Training"
 msgstr "Edzés Törlése"
 
 #. Translators: tooltip text for exercise card button to start the training timer
-#: src/training_setup.rs:178
+#: src/training_setup.rs:151
 msgid "Start Training"
 msgstr "Edzés Elindítása"
 
@@ -311,27 +295,37 @@ msgstr "Edzés Elindítása"
 msgid "Finished!"
 msgstr "Kész!"
 
+#. Translators: Shown on the timer page during preparation
+#: src/training_timer.rs:180
+msgid "Preparation"
+msgstr "Felkészülés"
+
+#. Translators: Shown on the timer page during rest
+#: src/training_timer.rs:184
+msgid "Rest"
+msgstr "Pihenés"
+
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:224
+#: src/training_timer.rs:225
 msgid "Restart Training"
 msgstr "Edzés Újraindítása"
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:237
+#: src/training_timer.rs:238
 msgid "Pause Training"
 msgstr "Edzés Szüneteltetése"
 
-#: src/training_timer.rs:237
+#: src/training_timer.rs:238
 msgid "Resume Training"
 msgstr "Edzés Folytatása"
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:253
+#: src/training_timer.rs:254
 msgid "Set Volume"
 msgstr "Hangerő Beállítása"
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:261
+#: src/training_timer.rs:262
 msgid "Remaining Sets: {}"
 msgstr "Hátralévő Szettek: {}"
 
@@ -414,6 +408,15 @@ msgstr "Nem sikerült csatlakozni a megjelenítőhöz"
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr "Nem sikerült létrehozni a Segítség ablakot"
+
+#~ msgid "Set the duration of the preparation in the settings."
+#~ msgstr "A felkészülési idő a Beállításokban módosítható."
+
+#~ msgid "Training List"
+#~ msgstr "Edzéslista"
+
+#~ msgid "No training is created yet"
+#~ msgstr "Még nincs edzés"
 
 #~ msgid "Edit training"
 #~ msgstr "Edzés módosítása"
