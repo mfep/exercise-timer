@@ -2,6 +2,23 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.6.1](https://github.com/mfep/exercise-timer/compare/0a5022b07ef3c97dfa4cd200c710281f10089009..v1.6.1) - 2024-11-10
+#### Bug Fixes
+- **(UI)** Show less info in training setup card - ([8406d1d](https://github.com/mfep/exercise-timer/commit/8406d1decc43659e24c99553dd735562f26e3c8e)) - [@mfep](https://github.com/mfep)
+- **(UI)** Text fixes in main view - ([6a19300](https://github.com/mfep/exercise-timer/commit/6a1930048c0b08a1713efaf2f22eb562b627d5f6)) - [@mfep](https://github.com/mfep)
+- **(UI)** Increase default window size - ([50f8892](https://github.com/mfep/exercise-timer/commit/50f8892c5a0e89c6fc65364681c0fab2cfdfc7e9)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update copyright year - ([753e7b1](https://github.com/mfep/exercise-timer/commit/753e7b1a1f5c195cff180cda792c60d7df32ca57)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update README.md to Gnome 47 (#26) - ([0a5022b](https://github.com/mfep/exercise-timer/commit/0a5022b07ef3c97dfa4cd200c710281f10089009)) - Stepan Kashuba
+- **(i18n)** Update POs - ([85b7ef7](https://github.com/mfep/exercise-timer/commit/85b7ef7c6c37df848acb70f3defdf95c557e7191)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Translated using Weblate (Italian) - ([a22d3a4](https://github.com/mfep/exercise-timer/commit/a22d3a45dad3bf53f76e3e389f9417d6a6eab31e)) - albanobattistella
+- Update Hungarian translation - ([c4ad9bb](https://github.com/mfep/exercise-timer/commit/c4ad9bbf027b65124524a6c8848644066d8f50ee)) - [@mfep](https://github.com/mfep)
+#### Features
+- **(i18n)** Added Russian translation (#27) - ([417983a](https://github.com/mfep/exercise-timer/commit/417983ad933dfde13becc32c0009d6fad9494345)) - Stepan Kashuba
+#### Miscellaneous Chores
+- **(docs)** Update release in metainfo - ([6a4ddb3](https://github.com/mfep/exercise-timer/commit/6a4ddb35796f41f6b48c6f61213c78b4596ff4a9)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.6.0](https://github.com/mfep/exercise-timer/compare/2a7376ed2844b40d69b7b719d8ff0be344628f6a..v1.6.0) - 2024-09-22
 #### Bug Fixes
 - **(UI)** set timer box to be ltr always (#24) - ([67aa51b](https://github.com/mfep/exercise-timer/commit/67aa51bf85f4cccf6f60b2bed7a513fab26bf3d9)) - Yosef Or Boczko
