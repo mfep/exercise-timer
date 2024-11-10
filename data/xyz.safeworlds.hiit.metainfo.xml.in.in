@@ -45,6 +45,22 @@
     <color type="primary" scheme_preference="dark">#7f2c22</color>
   </branding>
   <releases>
+    <release version="1.6.1" date="2024-11-10">
+      <description translate="no">
+        <p>Bug fixes</p>
+        <ul>
+          <li>Show less info in training setup card</li>
+          <li>Text fixes in main view</li>
+          <li>Increase default window size</li>
+          <li>Update Hungarian translation</li>
+          <li>Update Italian translation</li>
+        </ul>
+        <p>Features</p>
+        <ul>
+          <li>Add Russian translation</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.6.0" date="2024-09-22">
       <description translate="no">
         <p>Bug fixes</p>
