@@ -91,6 +91,7 @@ impl FactoryComponent for TrainingSetup {
                 gtk::CenterBox {
                     set_hexpand: true,
                     set_orientation: gtk::Orientation::Horizontal,
+                    set_margin_top: 5,
                     #[wrap(Some)]
                     set_start_widget = &gtk::Grid {
                         set_column_spacing: 24,
@@ -119,34 +120,6 @@ impl FactoryComponent for TrainingSetup {
                                 gettext("{} s")
                             },
                         },
-                        attach[0, 2, 1, 1] = &gtk::Label {
-                            set_halign: gtk::Align::Start,
-                            // Translators: the label of the rest time row in the training list item
-                            set_label: &gettext("Rest"),
-                        },
-                        attach[1, 2, 1, 1] = &gtk::Label {
-                            set_halign: gtk::Align::Start,
-                            #[watch]
-                            set_label: &if true {
-                                gettext!("{} s", self.rest_s)
-                            } else {
-                                // Translators: the format label for indicating the number of seconds in the training list item. Please use a short abbreviation for seconds, e.g. "s".
-                                gettext("{} s")
-                            },                        },
-                        attach[0, 3, 1, 1] = &gtk::Label {
-                            set_halign: gtk::Align::Start,
-                            // Translators: the label of the preparation time row in the training list item
-                            set_label: &gettext("Preparation"),
-                        },
-                        attach[1, 3, 1, 1] = &gtk::Label {
-                            set_halign: gtk::Align::Start,
-                            #[watch]
-                            set_label: &if true {
-                                gettext!("{} s", self.prepare_s)
-                            } else {
-                                // Translators: the format label for indicating the number of seconds in the training list item. Please use a short abbreviation for seconds, e.g. "s".
-                                gettext("{} s")
-                            },                        },
                     },
                     #[wrap(Some)]
                     set_end_widget = &gtk::Box {
