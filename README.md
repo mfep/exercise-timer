@@ -47,7 +47,7 @@ $ flatpak remote-add --user --if-not-exists flathub-verified https://flathub.org
 $ flatpak install --user org.gnome.{Sdk,Platform}//47 org.freedesktop.Sdk.Extension.{rust-stable,llvm18}//24.08
 ```
 
-4. Clone the current repository.
+4. Clone the current repository. Be aware that the binary assets are hosted in git LFS. **git LFS must be installed on the system to perform a proper checkout!**
 
 ```bash
 $ git clone https://github.com/mfep/exercise-timer.git
