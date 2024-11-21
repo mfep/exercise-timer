@@ -106,7 +106,7 @@ impl Component for AppModel {
                             adw::StatusPage {
                                 set_icon_name: Some(icon_names::WEIGHT2),
                                 // Translators: The message which is shown on the background of the empty training list
-                                set_title: &gettext("No Training Yet"),
+                                set_title: &gettext("No Trainings"),
                                 gtk::Button {
                                     set_css_classes: &["suggested-action", "pill"],
                                     // Translators: Big label button to create the first training if none exists

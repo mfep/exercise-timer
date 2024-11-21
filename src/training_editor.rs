@@ -106,7 +106,7 @@ impl relm4::SimpleComponent for TrainingEditor {
                                 // Translators: The title of the field for the rest duration in the training in the editor window
                                 set_title: &gettext("Rest Time"),
                                 // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
-                                set_subtitle: &gettext("seconds"),
+                                set_subtitle: &gettext("Seconds"),
                                 #[wrap(Some)]
                                 set_adjustment = &gtk::Adjustment {
                                     set_lower: SPIN_ROW_LOWER,
@@ -119,7 +119,7 @@ impl relm4::SimpleComponent for TrainingEditor {
                                 // Translators: The title of the field for the exercise duration in the training in the editor window
                                 set_title: &gettext("Exercise Time"),
                                 // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
-                                set_subtitle: &gettext("seconds"),
+                                set_subtitle: &gettext("Seconds"),
                                 #[wrap(Some)]
                                 set_adjustment = &gtk::Adjustment {
                                     set_lower: SPIN_ROW_LOWER,
@@ -132,7 +132,7 @@ impl relm4::SimpleComponent for TrainingEditor {
                                 // Translators: The title of the field for the preparation duration in the training in the editor window
                                 set_title: &gettext("Preparation Time"),
                                 // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
-                                set_subtitle: &gettext("seconds"),
+                                set_subtitle: &gettext("Seconds"),
                                 #[wrap(Some)]
                                 set_adjustment = &gtk::Adjustment {
                                     set_lower: 0.0,
