@@ -93,33 +93,13 @@ impl FactoryComponent for TrainingSetup {
                     set_orientation: gtk::Orientation::Horizontal,
                     set_margin_top: 5,
                     #[wrap(Some)]
-                    set_start_widget = &gtk::Grid {
-                        set_column_spacing: 24,
-                        attach[0, 0, 1, 1] = &gtk::Label {
-                            set_halign: gtk::Align::Start,
-                            // Translators: the label of the number of sets row in the training list item
-                            set_label: &gettext("Sets"),
-                        },
-                        attach[1, 0, 1, 1] = &gtk::Label {
-                            set_halign: gtk::Align::Start,
-                            #[watch]
-                            set_label: &self.sets.to_string(),
-                        },
-                        attach[0, 1, 1, 1] = &gtk::Label {
-                            set_halign: gtk::Align::Start,
-                            // Translators: the label of the exercise time row in the training list item
-                            set_label: &gettext("Exercise"),
-                        },
-                        attach[1, 1, 1, 1] = &gtk::Label {
-                            set_halign: gtk::Align::Start,
-                            #[watch]
-                            set_label: &if true {
-                                gettext!("{} s", self.exercise_s)
-                            } else {
-                                // Translators: the format label for indicating the number of seconds in the training list item. Please use a short abbreviation for seconds, e.g. "s".
-                                gettext("{} s")
-                            },
-                        },
+                    set_start_widget = &gtk::Label {
+                        #[watch]
+                        set_label: &if true {
+                            gettext!("{} × {} s", self.sets, self.exercise_s + self.rest_s)
+                        } else {
+                            gettext("{} × {} s")
+                        }
                     },
                     #[wrap(Some)]
                     set_end_widget = &gtk::Box {
