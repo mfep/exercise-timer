@@ -83,6 +83,43 @@ impl TrainingTimer {
         self.running = true;
         self.timer = build_timer(sender);
     }
+
+    fn is_finished(&self) -> bool {
+        self.remaining_s == 0
+    }
+
+    fn remaining_str_mins(&self) -> String {
+        if self.remaining_s == 0 {
+            String::from("")
+        } else {
+            format!("{:02}", self.remaining_s / 60)
+        }
+    }
+
+    fn remaining_str_colon(&self) -> String {
+        if self.is_finished() {
+            // Translators: Shown in the timer page when the training has come to the end
+            gettext("Finished!")
+        } else {
+            String::from("∶")
+        }
+    }
+
+    fn remaining_str_secs(&self) -> String {
+        if self.is_finished() {
+            String::from("")
+        } else {
+            format!("{:02}", self.remaining_s % 60)
+        }
+    }
+
+    fn width_chars(&self, default: i32) -> i32 {
+        if self.is_finished() {
+            -1
+        } else {
+            default
+        }
+    }
 }
 
 #[derive(Debug)]
@@ -103,39 +140,6 @@ fn build_timer(
                 TimerOutput::Tick => TrainingTimerInput::Tick,
             }),
     )
-}
-
-fn remaining_str_mins(remaining_s: usize) -> String {
-    if remaining_s == 0 {
-        String::from("")
-    } else {
-        format!("{:02}", remaining_s / 60)
-    }
-}
-
-fn remaining_str_colon(remaining_s: usize) -> String {
-    if remaining_s == 0 {
-        // Translators: Shown in the timer page when the training has come to the end
-        gettext("Finished!")
-    } else {
-        String::from("∶")
-    }
-}
-
-fn remaining_str_secs(remaining_s: usize) -> String {
-    if remaining_s == 0 {
-        String::from("")
-    } else {
-        format!("{:02}", remaining_s % 60)
-    }
-}
-
-fn width_chars(remaining_s: usize, default: i32) -> i32 {
-    if remaining_s == 0 {
-        -1
-    } else {
-        default
-    }
 }
 
 pub struct TrainingTimerInit {
@@ -191,23 +195,23 @@ impl Component for TrainingTimer {
                         set_direction: gtk::TextDirection::Ltr,
                         gtk::Label {
                             #[watch]
-                            set_width_chars: width_chars(model.remaining_s, 2),
+                            set_width_chars: model.width_chars(2),
                             set_xalign: 1.0,
                             #[watch]
-                            set_label: &remaining_str_mins(model.remaining_s),
+                            set_label: &model.remaining_str_mins(),
                         },
                         gtk::Label {
                             #[watch]
-                            set_width_chars: width_chars(model.remaining_s, 1),
+                            set_width_chars: model.width_chars(1),
                             #[watch]
-                            set_label: &remaining_str_colon(model.remaining_s),
+                            set_label: &model.remaining_str_colon(),
                         },
                         gtk::Label {
                             #[watch]
-                            set_width_chars: width_chars(model.remaining_s, 2),
+                            set_width_chars: model.width_chars(2),
                             set_xalign: 0.0,
                             #[watch]
-                            set_label: &remaining_str_secs(model.remaining_s),
+                            set_label: &model.remaining_str_secs(),
                         },
                     },
                     gtk::Box {
@@ -220,14 +224,12 @@ impl Component for TrainingTimer {
                             set_valign: gtk::Align::Center,
                             connect_clicked => TrainingTimerInput::Reset,
                             #[watch]
-                            set_class_active: ("suggested-action", model.remaining_s == 0),
+                            set_class_active: ("huge-button", model.is_finished()),
                             // Translators: tooltip text for the reset button
                             set_tooltip: &gettext("Restart Training"),
                         },
                         gtk::Button {
                             set_css_classes: &["circular", "huge-button"],
-                            #[watch]
-                            set_sensitive: model.remaining_s != 0,
                             connect_clicked => TrainingTimerInput::StartStop,
                             gtk::Image {
                                 #[watch]
@@ -236,7 +238,8 @@ impl Component for TrainingTimer {
                             #[watch]
                             // Translators: tooltip text for the pause/resume button
                             set_tooltip: &if model.running { gettext("Pause Training") } else { gettext("Resume Training") },
-
+                            #[watch]
+                            set_visible: !model.is_finished(),
                         },
                         #[name = "volume_button"]
                         gtk::ScaleButton {
@@ -252,12 +255,16 @@ impl Component for TrainingTimer {
                             },
                             // Translators: tooltip text for the volume button
                             set_tooltip: &gettext("Set Volume"),
+                            #[watch]
+                            set_visible: !model.is_finished(),
                         }
                     }
                 },
                 gtk::Label {
                     #[watch]
-                    set_label: &if false {
+                    set_label: &if model.is_finished() {
+                        String::default()
+                    } else if false {
                         // Translators: Label showing the number of remaining sets on the timer page
                         gettext("Remaining Sets: {}")
                     } else {
