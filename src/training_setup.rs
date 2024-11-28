@@ -116,7 +116,7 @@ impl FactoryComponent for TrainingSetup {
                                 set_tooltip: &gettext("Edit Training"),
                             },
                             gtk::Button {
-                                set_icon_name: "edit-delete",
+                                set_icon_name: "user-trash-symbolic",
                                 connect_clicked[sender, index] => move |_| {
                                     sender.output(TrainingSetupOutput::Remove(index.clone())).unwrap();
                                 },
