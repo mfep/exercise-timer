@@ -66,9 +66,6 @@ impl FactoryComponent for TrainingSetup {
         gtk::Box {
             set_hexpand: true,
             set_class_active: ("card", true),
-            set_margin_top: 5,
-            set_margin_start: 5,
-            set_margin_end: 5,
             inline_css: "padding: 10px",
             gtk::Box {
                 set_orientation: gtk::Orientation::Vertical,

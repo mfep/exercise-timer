@@ -76,13 +76,13 @@ impl relm4::SimpleComponent for TrainingEditor {
                     }
                 },
                 adw::Clamp {
-                    set_margin_all: 20,
+                    set_margin_all: 12,
                     gtk::Box
                     {
                         set_orientation: gtk::Orientation::Vertical,
                         adw::PreferencesGroup
                         {
-                            set_margin_bottom: 10,
+                            set_margin_bottom: 12,
                             adw::EntryRow {
                                 // Translators: The title of the field for the name of the training in the editor window
                                 set_title: &gettext("Name"),
