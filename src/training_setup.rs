@@ -38,13 +38,11 @@ impl Default for TrainingSetup {
 pub enum TrainingSetupInput {
     Edit(gtk::Root),
     Update(TrainingSetup),
-    Load,
 }
 
 #[derive(Debug)]
 pub enum TrainingSetupOutput {
     Remove(DynamicIndex),
-    Load(TrainingSetup),
 }
 
 fn format_duration(d: &Duration) -> String {
@@ -60,13 +58,12 @@ impl FactoryComponent for TrainingSetup {
     type Input = TrainingSetupInput;
     type Output = TrainingSetupOutput;
     type CommandOutput = ();
-    type ParentWidget = gtk::Box;
+    type ParentWidget = gtk::ListBox;
 
     view! {
-        gtk::Box {
-            set_hexpand: true,
-            set_class_active: ("card", true),
-            inline_css: "padding: 10px",
+        gtk::ListBoxRow {
+            inline_css: "padding: 12px",
+            set_activatable: true,
             gtk::Box {
                 set_orientation: gtk::Orientation::Vertical,
                 gtk::CenterBox {
@@ -117,15 +114,8 @@ impl FactoryComponent for TrainingSetup {
                                 connect_clicked[sender, index] => move |_| {
                                     sender.output(TrainingSetupOutput::Remove(index.clone())).unwrap();
                                 },
-                                set_margin_end: 10,
                                 // Translators: tooltip text for exercise card button to delete the training
                                 set_tooltip: &gettext("Delete Training"),
-                            },
-                            gtk::Button {
-                                set_icon_name: icon_names::PLAY,
-                                connect_clicked => TrainingSetupInput::Load,
-                                // Translators: tooltip text for exercise card button to start the training timer
-                                set_tooltip: &gettext("Start Training"),
                             },
                         },
                     },
@@ -160,11 +150,6 @@ impl FactoryComponent for TrainingSetup {
             }
             TrainingSetupInput::Update(setup) => {
                 *self = setup;
-            }
-            TrainingSetupInput::Load => {
-                sender
-                    .output(TrainingSetupOutput::Load(self.clone()))
-                    .unwrap();
             }
         }
     }

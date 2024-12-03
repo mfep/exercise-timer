@@ -21,7 +21,7 @@ pub enum AppModelInput {
     PromptNewTraining,
     CreateTrainingSetup(TrainingSetup),
     RemoveTrainingSetup(DynamicIndex),
-    LoadTraining(TrainingSetup),
+    LoadTraining(usize),
     Popped,
     StartStop,
     Reset,
@@ -93,14 +93,20 @@ impl Component for AppModel {
                         set_content = &gtk::Stack {
                             #[name = "training_list_scrolled"]
                             gtk::ScrolledWindow {
-                                set_vexpand: true,
-                                #[local_ref]
-                                list_trainings -> gtk::Box {
-                                    set_orientation: gtk::Orientation::Vertical,
-                                    set_margin_start: 12,
-                                    set_margin_end: 12,
-                                    set_spacing: 8,
-                                }
+                                adw::Clamp
+                                {
+                                    #[local_ref]
+                                    list_trainings -> gtk::ListBox {
+                                        set_margin_all: 30,
+                                        set_size_request: (200, -1),
+                                        set_selection_mode: gtk::SelectionMode::None,
+                                        set_valign: gtk::Align::Start,
+                                        set_css_classes: &["boxed-list"],
+                                        connect_row_activated[sender] => move |_, row| {
+                                            sender.input(AppModelInput::LoadTraining(row.index() as usize));
+                                        },
+                                    }
+                                },
                             },
                             #[name = "training_list_status"]
                             adw::StatusPage {
@@ -139,12 +145,9 @@ impl Component for AppModel {
         sender: ComponentSender<Self>,
     ) -> ComponentParts<Self> {
         let mut list_trainings = relm4::factory::FactoryVecDeque::builder()
-            .launch(gtk::Box::default())
+            .launch(gtk::ListBox::default())
             .forward(sender.input_sender(), |output| match output {
                 TrainingSetupOutput::Remove(index) => AppModelInput::RemoveTrainingSetup(index),
-                TrainingSetupOutput::Load(training_setup) => {
-                    AppModelInput::LoadTraining(training_setup)
-                }
             });
         {
             let mut guard = list_trainings.guard();
@@ -251,20 +254,22 @@ impl Component for AppModel {
             AppModelInput::CreateTrainingSetup(setup) => {
                 self.list_trainings.guard().push_back(setup);
             }
-            AppModelInput::LoadTraining(setup) => {
-                self.training_timer = Some(
-                    TrainingTimer::builder()
-                        .launch(TrainingTimerInit {
-                            setup,
-                            global_setup: self.global_settings.clone(),
-                            output_handle: self.output_stream.clone(),
-                        })
-                        .detach(),
-                );
-                widgets
-                    .main_view
-                    .set_content(Some(self.training_timer.as_ref().unwrap().widget()));
-                widgets.navigation_view.push(&widgets.main_navigation_page);
+            AppModelInput::LoadTraining(idx) => {
+                if let Some(setup) = self.list_trainings.get(idx) {
+                    self.training_timer = Some(
+                        TrainingTimer::builder()
+                            .launch(TrainingTimerInit {
+                                setup: setup.clone(),
+                                global_setup: self.global_settings.clone(),
+                                output_handle: self.output_stream.clone(),
+                            })
+                            .detach(),
+                    );
+                    widgets
+                        .main_view
+                        .set_content(Some(self.training_timer.as_ref().unwrap().widget()));
+                    widgets.navigation_view.push(&widgets.main_navigation_page);
+                }
             }
             AppModelInput::Popped => {
                 self.training_timer = None;
