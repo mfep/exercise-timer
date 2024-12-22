@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-10 17:10+0100\n"
-"PO-Revision-Date: 2024-10-14 11:16+0000\n"
+"PO-Revision-Date: 2024-12-23 12:00+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/it/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
@@ -132,13 +132,12 @@ msgid "Features:"
 msgstr "Caratteristiche:"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
-#, fuzzy
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise, rest and preparation periods."
 msgstr ""
 "Salva e richiama le preimpostazioni contenenti il numero di serie e la "
-"durata dei periodi di esercizio e di riposo."
+"durata dei periodi di esercizio, riposo e preparazione."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid "A beeping sound is played at- and prior to each transition."
@@ -161,9 +160,8 @@ msgid "Timer - dark mode"
 msgstr "Timer - modalità scura"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
-#, fuzzy
 msgid "New training dialog - light mode"
-msgstr "Elenco degli esercizi - modalità chiara"
+msgstr "Nuova finestra di dialogo di allenamento - modalità chiara"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
 msgid "Timer - light mode"
@@ -191,13 +189,11 @@ msgstr "Menù principale"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:109
-#, fuzzy
 msgid "No Training Yet"
-msgstr "Nuovo allenamento"
+msgstr "Nessun allenamento"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:113
-#, fuzzy
 msgid "Create Training"
 msgstr "Crea allenamento"
 
