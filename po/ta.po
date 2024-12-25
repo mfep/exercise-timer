@@ -8,49 +8,52 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-10 17:10+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-12-26 10:00+0000\n"
+"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/exercise-timer/"
+"exercise-timer/ta/>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "Training"
-msgstr ""
+msgstr "பயிற்சி"
 
 #. Translators: The name of the shortcut key to start and stop the training timer
 #: data/resources/ui/help-overlay.ui:16
 msgctxt "shortcut window"
 msgid "Start/Stop training"
-msgstr ""
+msgstr "தொடக்க/நிறுத்த பயிற்சியை நிறுத்துங்கள்"
 
 #. Translators: The name of the shortcut key to start the training from the beginning
 #: data/resources/ui/help-overlay.ui:24
 msgctxt "shortcut window"
 msgid "Reset training"
-msgstr ""
+msgstr "பயிற்சியை மீட்டமை"
 
 #. Translators: The title of the shortcuts group which lists general application shortcuts
 #: data/resources/ui/help-overlay.ui:34
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "பொது"
 
 #. Translators: The name of the shortcut key to open the shortcuts window
 #: data/resources/ui/help-overlay.ui:38
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "குறுக்குவழிகளைக் காட்டு"
 
 #. Translators: The name of the shortcut key to quit the application
 #: data/resources/ui/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "வெளியேறு"
 
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
@@ -58,11 +61,11 @@ msgstr ""
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:74 src/app.rs:173
 #: src/setup.rs:11
 msgid "Exercise Timer"
-msgstr ""
+msgstr "டைமரை உடற்பயிற்சி செய்யுங்கள்"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:4
 msgid "Timer clock for high intensity interval training"
-msgstr ""
+msgstr "அதிக தீவிரம் இடைவெளி பயிற்சிக்கான நேரங்குறிகருவி கடிகாரம்"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/xyz.safeworlds.hiit.desktop.in.in:10
@@ -70,330 +73,337 @@ msgid ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
 "interval training;"
 msgstr ""
+"க்னோம்; சி.டி.கே; பயன்பாடு; விளையாட்டு; உடற்பயிற்சி; HIIT; பயிற்சி; உடற்பயிற்சி; அதிக "
+"தீவிரம் இடைவெளி பயிற்சி;"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:6
 msgid "The width of the window"
-msgstr ""
+msgstr "சாளரத்தின் அகலம்"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:10
 msgid "The height of the window"
-msgstr ""
+msgstr "சாளரத்தின் உயரம்"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:14
 msgid "If the window is maximized"
-msgstr ""
+msgstr "சாளரம் அதிகரிக்கப்பட்டால்"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:18
 msgid "Default training setup, in JSON notation"
-msgstr ""
+msgstr "இயல்புநிலை பயிற்சி அமைப்பு, சாதொபொகு குறியீட்டில்"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:22
 msgid "List of training setups, in JSON notation"
-msgstr ""
+msgstr "சாதொபொகு குறியீட்டில், பயிற்சி அமைப்புகளின் பட்டியல்"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
 msgid "The duration of the warmup, in seconds"
-msgstr ""
+msgstr "விநாடிகளில், வெப்பமயமாதலின் காலம்"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
 msgid "The volume of the beeping sound"
-msgstr ""
+msgstr "பீப்பிங் ஒலியின் அளவு"
 
 #. Translators: App summary, at most 35 characters, imperative style
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
 msgid "Train and rest with high intensity"
-msgstr ""
+msgstr "ரயில் மற்றும் அதிக தீவிரத்துடன் ஓய்வெடுங்கள்"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
 msgid "Exercise timer is a simple utility to conduct interval training."
 msgstr ""
+"உடற்பயிற்சி நேரங்குறிகருவி என்பது இடைவெளி பயிற்சியை நடத்துவதற்கான எளிய பயன்பாடு."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
 msgid ""
 "Following a short preparation period, a prescribed number of exercise sets "
 "are played. In between each exercise, there is a resting period."
 msgstr ""
+"ஒரு குறுகிய தயாரிப்பு காலத்தைத் தொடர்ந்து, ஒரு குறிப்பிட்ட எண்ணிக்கையிலான உடற்பயிற்சி "
+"தொகுப்புகள் இயக்கப்படுகின்றன. ஒவ்வொரு உடற்பயிற்சிக்கும் இடையில், ஒரு ஓய்வு காலம் உள்ளது."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
 msgid "The app does not make an assumption about the kind of the exercise."
-msgstr ""
+msgstr "பயன்பாடு உடற்பயிற்சியைப் பற்றி ஒரு அனுமானத்தை ஏற்படுத்தாது."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
-msgstr ""
+msgstr "அம்சங்கள்:"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise, rest and preparation periods."
 msgstr ""
+"செட்டுகளின் எண்ணிக்கை மற்றும் உடற்பயிற்சியின் காலம், ஓய்வு மற்றும் தயாரிப்பு காலங்களைக் கொண்ட "
+"முன்னமைவுகளை சேமித்து நினைவுபடுத்துங்கள்."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid "A beeping sound is played at- and prior to each transition."
-msgstr ""
+msgstr "ஒவ்வொரு மாற்றத்திற்கும் முன்பே ஒரு பீப்பிங் ஒலி இயக்கப்படுகிறது."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "The volume of the sound can be adjusted."
-msgstr ""
+msgstr "ஒலியின் அளவை சரிசெய்யலாம்."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "Light and dark mode follows the system's setting."
-msgstr ""
+msgstr "ஒளி மற்றும் இருண்ட பயன்முறை கணினியின் அமைப்பைப் பின்பற்றுகிறது."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
 msgid "Exercise list - dark mode"
-msgstr ""
+msgstr "உடற்பயிற்சி பட்டியல் - இருண்ட பயன்முறை"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
 msgid "Timer - dark mode"
-msgstr ""
+msgstr "நேரங்குறிகருவி - இருண்ட பயன்முறை"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
 msgid "New training dialog - light mode"
-msgstr ""
+msgstr "புதிய பயிற்சி உரையாடல் - ஒளி பயன்முறை"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
 msgid "Timer - light mode"
-msgstr ""
+msgstr "நேரங்குறிகருவி - ஒளி பயன்முறை"
 
 #. Translators: The title of the keyboard shortcuts menu entry
 #: src/app.rs:56
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "விசைப்பலகை குறுக்குவழிகள்"
 
 #. Translators: The title of the about dialog menu entry
 #: src/app.rs:58
 msgid "_About Exercise Timer"
-msgstr ""
+msgstr "_About உடற்பயிற்சி நேரங்குறிகருவி"
 
 #. Translators: tooltip for the add training image button
 #: src/app.rs:82
 msgid "Add Training"
-msgstr ""
+msgstr "பயிற்சி சேர்க்கவும்"
 
 #. Translators: tooltip for main menu image button
 #: src/app.rs:88
 msgid "Main Menu"
-msgstr ""
+msgstr "பட்டியல் விளையாடுங்கள்"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:109
 msgid "No Training Yet"
-msgstr ""
+msgstr "இன்னும் பயிற்சி இல்லை"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:113
 msgid "Create Training"
-msgstr ""
+msgstr "பயிற்சியை உருவாக்கவும்"
 
 #. Translators: The name of the timer page
 #: src/app.rs:124
 msgid "Timer"
-msgstr ""
+msgstr "நேரங்குறிகருவி"
 
 #. Translators: Replace this with your name for it to show up in the about window
 #: src/app.rs:180
 msgid "translator_credits"
-msgstr ""
+msgstr "மொழிபெயர்ப்பாளர்_ கிரெடிட்ச்"
 
 #. Translators: The editor window's title when creating a new training
 #: src/training_editor.rs:56
 msgid "New Training"
-msgstr ""
+msgstr "புதிய பயிற்சி"
 
 #. Translators: The editor window's title when modifying a training
 #. Translators: tooltip text for exercise card button to open the training editor
 #: src/training_editor.rs:58 src/training_setup.rs:136
 msgid "Edit Training"
-msgstr ""
+msgstr "பயிற்சியைத் திருத்து"
 
 #. Translators: Button to close the training editor window without modifications
 #: src/training_editor.rs:64
 msgid "Cancel"
-msgstr ""
+msgstr "ரத்துசெய்"
 
 #. Translators: Button to close the editor window and create a new training
 #: src/training_editor.rs:70
 msgid "Create"
-msgstr ""
+msgstr "உருவாக்கு"
 
 #. Translators: Button to close the editor window and update an existing training
 #: src/training_editor.rs:72
 msgid "Update"
-msgstr ""
+msgstr "புதுப்பிப்பு"
 
 #. Translators: The title of the field for the name of the training in the editor window
 #: src/training_editor.rs:88
 msgid "Name"
-msgstr ""
+msgstr "பெயர்"
 
 #. Translators: The title of the field for the number of sets in the training in the editor window
 #: src/training_editor.rs:96
 msgid "Number of Sets"
-msgstr ""
+msgstr "தொகுப்புகளின் எண்ணிக்கை"
 
 #. Translators: The title of the field for the rest duration in the training in the editor window
 #: src/training_editor.rs:107
 msgid "Rest Time"
-msgstr ""
+msgstr "ஓய்வு நேரம்"
 
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: src/training_editor.rs:109 src/training_editor.rs:122
 #: src/training_editor.rs:135
 msgid "seconds"
-msgstr ""
+msgstr "நொடிகள்"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: src/training_editor.rs:120
 msgid "Exercise Time"
-msgstr ""
+msgstr "உடற்பயிற்சி நேரம்"
 
 #. Translators: The title of the field for the preparation duration in the training in the editor window
 #: src/training_editor.rs:133
 msgid "Preparation Time"
-msgstr ""
+msgstr "தயாரிப்பு நேரம்"
 
 #. Translators: the label of the number of sets row in the training list item
 #: src/training_setup.rs:101
 msgid "Sets"
-msgstr ""
+msgstr "செட்"
 
 #. Translators: the label of the exercise time row in the training list item
 #. Translators: Shown on the timer page during exercise
 #: src/training_setup.rs:111 src/training_timer.rs:182
 msgid "Exercise"
-msgstr ""
+msgstr "உடற்பயிற்சி"
 
 #. Translators: the format label for indicating the number of seconds in the training list item. Please use a short abbreviation for seconds, e.g. "s".
 #: src/training_setup.rs:120
 msgid "{} s"
-msgstr ""
+msgstr "{} கள்"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: src/training_setup.rs:145
 msgid "Delete Training"
-msgstr ""
+msgstr "பயிற்சியை நீக்கு"
 
 #. Translators: tooltip text for exercise card button to start the training timer
 #: src/training_setup.rs:151
 msgid "Start Training"
-msgstr ""
+msgstr "பயிற்சியைத் தொடங்குங்கள்"
 
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:119
 msgid "Finished!"
-msgstr ""
+msgstr "முடிந்தது!"
 
 #. Translators: Shown on the timer page during preparation
 #: src/training_timer.rs:180
 msgid "Preparation"
-msgstr ""
+msgstr "தயாரிப்பு"
 
 #. Translators: Shown on the timer page during rest
 #: src/training_timer.rs:184
 msgid "Rest"
-msgstr ""
+msgstr "ஓய்வு"
 
 #. Translators: tooltip text for the reset button
 #: src/training_timer.rs:225
 msgid "Restart Training"
-msgstr ""
+msgstr "பயிற்சியை மறுதொடக்கம் செய்யுங்கள்"
 
 #. Translators: tooltip text for the pause/resume button
 #: src/training_timer.rs:238
 msgid "Pause Training"
-msgstr ""
+msgstr "இடைநிறுத்த பயிற்சி"
 
 #: src/training_timer.rs:238
 msgid "Resume Training"
-msgstr ""
+msgstr "மீண்டும் பயிற்சியைத் தொடங்குங்கள்"
 
 #. Translators: tooltip text for the volume button
 #: src/training_timer.rs:254
 msgid "Set Volume"
-msgstr ""
+msgstr "தொகுதி அமைக்கவும்"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:262
 msgid "Remaining Sets: {}"
-msgstr ""
+msgstr "மீதமுள்ள தொகுப்புகள்: {}"
 
 #. Translators: Error message printed to the console when an error occurs with WAV decoding
 #: src/training_timer/audio_player.rs:16
 msgid "Could not decode WAV"
-msgstr ""
+msgstr "WAV ஐ டிகோட் செய்ய முடியவில்லை"
 
 #. Translators: Error message printed to the console when an error occurs with audio playback
 #: src/training_timer/audio_player.rs:25
 msgid "Could not play audio"
-msgstr ""
+msgstr "ஆடியோவை இயக்க முடியவில்லை"
 
 #. Translators: Error message printed to the console when cannot load data from resource
 #: src/training_timer/audio_player.rs:55
 msgid "Could not open resource data"
-msgstr ""
+msgstr "வள தரவைத் திறக்க முடியவில்லை"
 
 #. Translators: Error message when cannot connect to the audio output
 #: src/main.rs:21
 msgid "Could not create audio output stream"
-msgstr ""
+msgstr "ஆடியோ வெளியீட்டு ச்ட்ரீமை உருவாக்க முடியவில்லை"
 
 #. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
 #: src/settings.rs:65
 msgid "Cannot find 'name' in settings dictionary"
-msgstr ""
+msgstr "அமைப்புகள் அகராதியில் 'பெயர்' கண்டுபிடிக்க முடியவில்லை"
 
 #. Translators: Error message printed to the console when key 'sets' is not found in the JSON formatted training
 #: src/settings.rs:69
 msgid "Cannot find 'sets' in settings dictionary"
-msgstr ""
+msgstr "அமைப்புகள் அகராதியில் 'செட்' கண்டுபிடிக்க முடியவில்லை"
 
 #. Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
 #: src/settings.rs:74
 msgid "Cannot find 'exercise_s' in settings dictionary"
-msgstr ""
+msgstr "அமைப்புகள் அகராதியில் 'உடற்பயிற்சி_எச்' கண்டுபிடிக்க முடியவில்லை"
 
 #. Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
 #: src/settings.rs:80
 msgid "Cannot find 'rest_s' in settings dictionary"
-msgstr ""
+msgstr "அமைப்புகள் அகராதியில் 'REST_S' ஐக் கண்டுபிடிக்க முடியவில்லை"
 
 #. Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
 #: src/settings.rs:99
 msgid "Could not parse default training setup"
-msgstr ""
+msgstr "இயல்புநிலை பயிற்சி அமைப்பை அலச முடியவில்லை"
 
 #. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be parsed
 #: src/settings.rs:110
 msgid "Could not parse exercise list"
-msgstr ""
+msgstr "உடற்பயிற்சி பட்டியலை அலச முடியவில்லை"
 
 #. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be written to the settings
 #: src/settings.rs:133
 msgid "Could not update settings with training list"
-msgstr ""
+msgstr "பயிற்சி பட்டியலுடன் அமைப்புகளை புதுப்பிக்க முடியவில்லை"
 
 #. Translators: Error message printed to the console when the GIO resource file cannot be registered
 #: src/setup.rs:14
 msgid "Could not register resources"
-msgstr ""
+msgstr "வளங்களை பதிவு செய்ய முடியவில்லை"
 
 #. Translators: Error message printed to the console when the i18n text domain cannot be bound
 #: src/setup.rs:23
 msgid "Unable to bind the text domain"
-msgstr ""
+msgstr "உரை களத்தை பிணைக்க முடியவில்லை"
 
 #. Translators: Error message printed to the console when the i18n text domain cannot be switched to
 #: src/setup.rs:28
 msgid "Unable to switch to the text domain"
-msgstr ""
+msgstr "உரை களத்திற்கு மாற முடியவில்லை"
 
 #. Translators: Error message printed to the console when there is no Display to apply the custom CSS to
 #: src/setup.rs:41
 msgid "Could not connect to a display"
-msgstr ""
+msgstr "காட்சியுடன் இணைக்க முடியவில்லை"
 
 #. Translators: Error message printed to the console, when the Shortcuts window cannot be built from resource
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
-msgstr ""
+msgstr "உதவி மேலடுக்கை உருவாக்க முடியவில்லை"
