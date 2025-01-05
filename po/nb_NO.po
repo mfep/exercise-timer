@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-10 17:10+0100\n"
+"POT-Creation-Date: 2025-01-05 18:59+0100\n"
 "PO-Revision-Date: 2024-05-24 01:09+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
@@ -61,7 +61,7 @@ msgstr "Avslutt"
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:74 src/app.rs:173
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:74 src/app.rs:176
 #: src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "Treningstidsur"
@@ -186,24 +186,24 @@ msgid "Main Menu"
 msgstr ""
 
 #. Translators: The message which is shown on the background of the empty training list
-#: src/app.rs:109
+#: src/app.rs:115
 #, fuzzy
-msgid "No Training Yet"
+msgid "No Trainings"
 msgstr "Øvelsesforvalg"
 
 #. Translators: Big label button to create the first training if none exists
-#: src/app.rs:113
+#: src/app.rs:119
 #, fuzzy
 msgid "Create Training"
 msgstr "Opprett øvelse"
 
 #. Translators: The name of the timer page
-#: src/app.rs:124
+#: src/app.rs:130
 msgid "Timer"
 msgstr "Tidsur"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:180
+#: src/app.rs:183
 msgid "translator_credits"
 msgstr ""
 
@@ -215,7 +215,7 @@ msgstr "Øvelsesforvalg"
 
 #. Translators: The editor window's title when modifying a training
 #. Translators: tooltip text for exercise card button to open the training editor
-#: src/training_editor.rs:58 src/training_setup.rs:136
+#: src/training_editor.rs:58 src/training_setup.rs:112
 #, fuzzy
 msgid "Edit Training"
 msgstr "Øvelsesforvalg"
@@ -254,7 +254,8 @@ msgstr "Hviletid"
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: src/training_editor.rs:109 src/training_editor.rs:122
 #: src/training_editor.rs:135
-msgid "seconds"
+#, fuzzy
+msgid "Seconds"
 msgstr "sekunder"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
@@ -268,73 +269,62 @@ msgstr "Treningstidsur"
 msgid "Preparation Time"
 msgstr ""
 
-#. Translators: the label of the number of sets row in the training list item
-#: src/training_setup.rs:101
-msgid "Sets"
-msgstr "Sett"
-
-#. Translators: the label of the exercise time row in the training list item
-#. Translators: Shown on the timer page during exercise
-#: src/training_setup.rs:111 src/training_timer.rs:182
-msgid "Exercise"
-msgstr "Øvelse"
-
-#. Translators: the format label for indicating the number of seconds in the training list item. Please use a short abbreviation for seconds, e.g. "s".
-#: src/training_setup.rs:120
-msgid "{} s"
+#. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
+#. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
+#: src/training_setup.rs:97
+msgid "{} × {} s"
 msgstr ""
 
 #. Translators: tooltip text for exercise card button to delete the training
-#: src/training_setup.rs:145
+#: src/training_setup.rs:120
 #, fuzzy
 msgid "Delete Training"
 msgstr "Opprett øvelse"
 
-#. Translators: tooltip text for exercise card button to start the training timer
-#: src/training_setup.rs:151
-#, fuzzy
-msgid "Start Training"
-msgstr "Start/stopp trening"
-
 #. Translators: Shown in the timer page when the training has come to the end
-#: src/training_timer.rs:119
+#: src/training_timer.rs:102
 msgid "Finished!"
 msgstr "Fullført"
 
 #. Translators: Shown on the timer page during preparation
-#: src/training_timer.rs:180
+#: src/training_timer.rs:184
 msgid "Preparation"
 msgstr ""
 
+#. Translators: Shown on the timer page during exercise
+#: src/training_timer.rs:186
+msgid "Exercise"
+msgstr "Øvelse"
+
 #. Translators: Shown on the timer page during rest
-#: src/training_timer.rs:184
+#: src/training_timer.rs:188
 msgid "Rest"
 msgstr "Hvile"
 
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:225
+#: src/training_timer.rs:229
 #, fuzzy
 msgid "Restart Training"
 msgstr "Start/stopp trening"
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:238
+#: src/training_timer.rs:240
 #, fuzzy
 msgid "Pause Training"
 msgstr "Opprett øvelse"
 
-#: src/training_timer.rs:238
+#: src/training_timer.rs:240
 #, fuzzy
 msgid "Resume Training"
 msgstr "Opprett øvelse"
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:254
+#: src/training_timer.rs:257
 msgid "Set Volume"
 msgstr ""
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:262
+#: src/training_timer.rs:269
 #, fuzzy
 msgid "Remaining Sets: {}"
 msgstr "Gjenstående sett: {}"
@@ -420,6 +410,17 @@ msgstr "Kunne ikke koble til noen skjerm."
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr ""
+
+#, fuzzy
+#~ msgid "No Training Yet"
+#~ msgstr "Øvelsesforvalg"
+
+#~ msgid "Sets"
+#~ msgstr "Sett"
+
+#, fuzzy
+#~ msgid "Start Training"
+#~ msgstr "Start/stopp trening"
 
 #, fuzzy
 #~ msgid "No training is created yet"

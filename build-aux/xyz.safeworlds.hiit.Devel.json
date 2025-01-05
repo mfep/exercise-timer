@@ -32,11 +32,11 @@
             "CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_RUSTFLAGS" : "-C link-arg=-fuse-ld=/usr/lib/sdk/rust-stable/bin/mold"
         }
     },
+    "separate-locales": false,
     "modules" : [
         {
             "name" : "hiit",
             "buildsystem" : "meson",
-            "run-tests" : true,
             "config-opts" : [
                 "-Dprofile=development"
             ],

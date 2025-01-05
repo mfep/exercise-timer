@@ -92,6 +92,8 @@ impl FactoryComponent for TrainingSetup {
                         set_label: &if true {
                             gettext!("{} × {} s", self.sets, self.exercise_s + self.rest_s)
                         } else {
+                            // Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
+                            // while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
                             gettext("{} × {} s")
                         }
                     },
