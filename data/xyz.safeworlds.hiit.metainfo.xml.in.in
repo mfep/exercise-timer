@@ -45,6 +45,26 @@
     <color type="primary" scheme_preference="dark">#7f2c22</color>
   </branding>
   <releases>
+    <release version="1.7.0" date="2025-01-07">
+      <description translate="no">
+        <p>Features</p>
+        <ul>
+          <li>Visual improvements: make the app look native on the GNOME desktop</li>
+        </ul>
+        <p>New translations</p>
+        <ul>
+          <li>Portuguese</li>
+          <li>Albanian</li>
+          <li>Estonian</li>
+          <li>Tamil</li>
+        </ul>
+        <p>Updated translations</p>
+        <ul>
+          <li>Italian</li>
+          <li>Hungarian</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.6.1" date="2024-11-10">
       <description translate="no">
         <p>Bug fixes</p>
