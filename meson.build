@@ -1,7 +1,7 @@
 project(
   'hiit',
   'rust',
-  version: '1.6.1',
+  version: '1.7.0',
   meson_version: '>= 0.59',
   # license: 'MIT',
 )

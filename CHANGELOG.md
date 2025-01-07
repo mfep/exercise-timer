@@ -2,6 +2,35 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.7.0](https://github.com/mfep/exercise-timer/compare/19bf92db72c2b6a318083390ceecafa6da43c742..v1.7.0) - 2025-01-07
+#### Bug Fixes
+- **(UI)** Fixed some margins - ([fae693a](https://github.com/mfep/exercise-timer/commit/fae693a4c8354d781cba67f040215d3c4ff1722b)) - [@mfep](https://github.com/mfep)
+- **(UI)** Using user-trash-symbolic on training list - ([0de9c62](https://github.com/mfep/exercise-timer/commit/0de9c62f9e10e37b0d59ebf109cfaf018a47544b)) - [@mfep](https://github.com/mfep)
+- **(UI)** Minor fixes in case and wording - ([19bf92d](https://github.com/mfep/exercise-timer/commit/19bf92db72c2b6a318083390ceecafa6da43c742)) - [@mfep](https://github.com/mfep)
+- **(docs)** Add note about git LFS to readme - ([6fda929](https://github.com/mfep/exercise-timer/commit/6fda929fb3ed5a4b778b914411b302dad206e53f)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Translated using Weblate (Italian) - ([981d923](https://github.com/mfep/exercise-timer/commit/981d92356c7460ac561cfece108d9f5fc56a02bd)) - albanobattistella
+- **(i18n)** Translated using Weblate (Portuguese) - ([f75fb5f](https://github.com/mfep/exercise-timer/commit/f75fb5fc6b1491b4ca93716bfcec1137398958c7)) - aquila0101
+- **(i18n)** Translated using Weblate (Estonian) - ([2d87296](https://github.com/mfep/exercise-timer/commit/2d87296c0096f0f005d5758b14e882a557e32f7a)) - Priit Jõerüüt
+- **(i18n)** Translated using Weblate (Tamil) - ([03f0f1b](https://github.com/mfep/exercise-timer/commit/03f0f1bac0c96ede6c908d123965b95555703863)) - தமிழ்நேரம்
+- **(i18n)** Translated using Weblate (Italian) - ([22b7d3f](https://github.com/mfep/exercise-timer/commit/22b7d3fee049aa26e3fd814a2daea91d1d81955d)) - albanobattistella
+#### Features
+- **(UI)** Native style training list - ([60c4bd1](https://github.com/mfep/exercise-timer/commit/60c4bd1c9db4bdd001028e85d913886480b492bd)) - [@mfep](https://github.com/mfep)
+- **(UI)** Don't show irrelevant buttons on training timer - ([ef5c748](https://github.com/mfep/exercise-timer/commit/ef5c74849ba42ab989f6d49237184f044fe07563)) - [@mfep](https://github.com/mfep)
+- **(UI)** Even simpler training list - ([354a10c](https://github.com/mfep/exercise-timer/commit/354a10c079f8846affd80624559e54a614e50aca)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Added translation using Weblate (Portuguese) - ([5399915](https://github.com/mfep/exercise-timer/commit/53999153deae766c7135b11a045cbff7e62536a2)) - aquila0101
+- **(i18n)** Added translation using Weblate (Albanian) - ([3fa06c6](https://github.com/mfep/exercise-timer/commit/3fa06c636c2443ed28189a74bcfcd0be3c91a34c)) - Besnik Bleta
+- **(i18n)** Added translation using Weblate (Estonian) - ([712e187](https://github.com/mfep/exercise-timer/commit/712e187911f98995c4df8423a8420997a862689c)) - Priit Jõerüüt
+- **(i18n)** Added translation using Weblate (Tamil) - ([88f7628](https://github.com/mfep/exercise-timer/commit/88f7628fa93763e5110b3a8b02bb76b9d49b9a4d)) - தமிழ்நேரம்
+#### Miscellaneous Chores
+- **(dependencies)** Updated dependencies - ([741dae6](https://github.com/mfep/exercise-timer/commit/741dae6a12cf518f26ef7041a12c8e50a4698b8c)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update release in metainfo - ([c7b7780](https://github.com/mfep/exercise-timer/commit/c7b778060c4fcfedc674ddab9b07c46e2bb96667)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update screenshots - ([1a6061f](https://github.com/mfep/exercise-timer/commit/1a6061f4e942f291e43fd5903b86a688451fe061)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update screenshots - ([7aaba8b](https://github.com/mfep/exercise-timer/commit/7aaba8bc6a1bf5e59e21650db6936ce4dd9726be)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Update translations - ([9dae643](https://github.com/mfep/exercise-timer/commit/9dae64305d7dcd22cbfba19d896e9f5e582c5b4b)) - [@mfep](https://github.com/mfep)
+- Resize README.md images - ([57bd583](https://github.com/mfep/exercise-timer/commit/57bd583d7f1708a86b6ec18e1bfe0d6ad2d4cb2e)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.6.1](https://github.com/mfep/exercise-timer/compare/0a5022b07ef3c97dfa4cd200c710281f10089009..v1.6.1) - 2024-11-10
 #### Bug Fixes
 - **(UI)** Show less info in training setup card - ([8406d1d](https://github.com/mfep/exercise-timer/commit/8406d1decc43659e24c99553dd735562f26e3c8e)) - [@mfep](https://github.com/mfep)
