@@ -11,7 +11,8 @@
 
 Exercise Timer is a simple utility to conduct interval training. It is built for the GNOME desktop using [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1.4/index.html) and [Relm4](https://relm4.org/).
 
-![A screenshot of Exercise Timer's exercise list UI](./data/screenshots/dark_exercise_list.png) ![A screenshot of Exercise Timer's timer UI](./data/screenshots/dark_timer.png)
+<img alt="A screenshot of Exercise Timer's exercise list UI" src="./data/screenshots/dark_exercise_list.png" width=400 />
+<img alt="A screenshot of Exercise Timer's timer UI" src="./data/screenshots/dark_timer.png" width=400 />
 
 </div>
 
