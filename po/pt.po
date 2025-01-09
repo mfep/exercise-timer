@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-10 17:10+0100\n"
-"PO-Revision-Date: 2025-01-02 19:57+0000\n"
+"PO-Revision-Date: 2025-01-09 07:21+0000\n"
 "Last-Translator: aquila0101 <aquila.santos@ba.estudante.senai.br>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/"
 "exercise-timer/exercise-timer/pt/>\n"
@@ -41,7 +41,7 @@ msgstr "Reiniciar o treinamento"
 #: data/resources/ui/help-overlay.ui:34
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Geral"
 
 #. Translators: The name of the shortcut key to open the shortcuts window
 #: data/resources/ui/help-overlay.ui:38
@@ -53,7 +53,7 @@ msgstr "Mostrar atalhos"
 #: data/resources/ui/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Sair"
 
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
@@ -73,6 +73,8 @@ msgid ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
 "interval training;"
 msgstr ""
+"Gnome;GTK;Utilitário;Esportes;Exercício;HIIT;Treinamento;Exercício;"
+"Treinamento intervalado de alta intensidade;"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:6
 msgid "The width of the window"
@@ -179,7 +181,7 @@ msgstr ""
 #. Translators: tooltip for the add training image button
 #: src/app.rs:82
 msgid "Add Training"
-msgstr ""
+msgstr "Adicionar treinamento"
 
 #. Translators: tooltip for main menu image button
 #: src/app.rs:88
@@ -199,7 +201,7 @@ msgstr "Criar treinamento"
 #. Translators: The name of the timer page
 #: src/app.rs:124
 msgid "Timer"
-msgstr ""
+msgstr "Cronômetro"
 
 #. Translators: Replace this with your name for it to show up in the about window
 #: src/app.rs:180
@@ -245,7 +247,7 @@ msgstr "Número de Conjuntos"
 #. Translators: The title of the field for the rest duration in the training in the editor window
 #: src/training_editor.rs:107
 msgid "Rest Time"
-msgstr ""
+msgstr "Tempo de descanso"
 
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: src/training_editor.rs:109 src/training_editor.rs:122
@@ -256,12 +258,12 @@ msgstr "segundos"
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: src/training_editor.rs:120
 msgid "Exercise Time"
-msgstr ""
+msgstr "Hora do exercício"
 
 #. Translators: The title of the field for the preparation duration in the training in the editor window
 #: src/training_editor.rs:133
 msgid "Preparation Time"
-msgstr ""
+msgstr "Tempo de preparação"
 
 #. Translators: the label of the number of sets row in the training list item
 #: src/training_setup.rs:101
