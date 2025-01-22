@@ -40,6 +40,14 @@
   <url type="bugtracker">@issue-tracker@</url>
   <url type="translate">@translate-page@</url>
   <content_rating type="oars-1.1" />
+  <requires>
+    <display_length>300</display_length>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </supports>
   <branding>
     <color type="primary" scheme_preference="light">#faa298</color>
     <color type="primary" scheme_preference="dark">#7f2c22</color>
