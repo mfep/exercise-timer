@@ -13,7 +13,8 @@ base_id = 'xyz.safeworlds.hiit'
 homepage = 'https://github.com/mfep/exercise-timer'
 issue_tracker = homepage + '/issues'
 translate_page = 'https://hosted.weblate.org/projects/exercise-timer/exercise-timer/'
-copyright = '© 2023-2024 Exercise Timer developers'
+donation_page = 'https://ko-fi.com/safeworlds'
+copyright = '© 2023-2025 Exercise Timer developers'
 developers = ['Lőrinc Serfőző https://the.safeworlds.xyz']
 designers = ['Lőrinc Serfőző https://the.safeworlds.xyz']
 

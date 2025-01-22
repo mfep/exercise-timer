@@ -39,6 +39,7 @@
   <url type="homepage">@homepage@</url>
   <url type="bugtracker">@issue-tracker@</url>
   <url type="translate">@translate-page@</url>
+  <url type="donation">@donation-page@</url>
   <content_rating type="oars-1.1" />
   <requires>
     <display_length>300</display_length>
