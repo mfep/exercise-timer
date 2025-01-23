@@ -54,6 +54,27 @@
     <color type="primary" scheme_preference="dark">#7f2c22</color>
   </branding>
   <releases>
+    <release version="1.7.1" date="2025-01-23">
+      <description translate="no">
+        <p>Bug fixes</p>
+        <ul>
+          <li>Fix training list margins</li>
+          <li>Lighter app icon for better contrast in dark mode</li>
+        </ul>
+        <p>New translations</p>
+        <ul>
+          <li>Spanish</li>
+        </ul>
+        <p>Updated translations</p>
+        <ul>
+          <li>Portuguese</li>
+        </ul>
+        <p>Miscellaneous</p>
+        <ul>
+          <li>Added donation link to metadata</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.7.0" date="2025-01-07">
       <description translate="no">
         <p>Features</p>
