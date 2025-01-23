@@ -2,6 +2,22 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.7.1](https://github.com/mfep/exercise-timer/compare/258959a4a3d4b465e24076ad38a3375deaa9fc37..v1.7.1) - 2025-01-23
+#### Bug Fixes
+- **(UI)** Fix training list margins - ([99be8ab](https://github.com/mfep/exercise-timer/commit/99be8ab02167dc1f55194168c219a6d99c22154c)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Translated using Weblate (Spanish) - ([7f5c10c](https://github.com/mfep/exercise-timer/commit/7f5c10c3766a47d11b6661ec2b0f2b2cb8b30b97)) - Óscar Fernández Díaz
+- **(i18n)** Translated using Weblate (Portuguese) - ([4fe0970](https://github.com/mfep/exercise-timer/commit/4fe0970eefccf0736fee271dafdba6debcc4aa84)) - aquila0101
+- Lighter app icon for better contrast in dark mode - ([485d9a9](https://github.com/mfep/exercise-timer/commit/485d9a9b8638393ae17b1fe299bc2e2163a56a3a)) - [@mfep](https://github.com/mfep)
+#### Features
+- **(i18n)** Added translation using Weblate (Spanish) - ([258959a](https://github.com/mfep/exercise-timer/commit/258959a4a3d4b465e24076ad38a3375deaa9fc37)) - Óscar Fernández Díaz
+#### Miscellaneous Chores
+- **(docs)** Update release in metainfo - ([00683c2](https://github.com/mfep/exercise-timer/commit/00683c24bcf15fd8ddad65cc69c5090a93c9f584)) - [@mfep](https://github.com/mfep)
+- **(docs)** Added donation link to metainfo - ([3f14bb9](https://github.com/mfep/exercise-timer/commit/3f14bb9b14fe3c42493a787fe8f290dbc637df64)) - [@mfep](https://github.com/mfep)
+- **(docs)** Updated screenshot - ([adf6932](https://github.com/mfep/exercise-timer/commit/adf6932092f5071449b773b638ff34baff71451e)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update metainfo with device support - ([64db5af](https://github.com/mfep/exercise-timer/commit/64db5afb58acca5cf8f85570ef7f5b1c8a173f0f)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.7.0](https://github.com/mfep/exercise-timer/compare/19bf92db72c2b6a318083390ceecafa6da43c742..v1.7.0) - 2025-01-07
 #### Bug Fixes
 - **(UI)** Fixed some margins - ([fae693a](https://github.com/mfep/exercise-timer/commit/fae693a4c8354d781cba67f040215d3c4ff1722b)) - [@mfep](https://github.com/mfep)
