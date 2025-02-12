@@ -97,8 +97,8 @@ impl Component for AppModel {
                                 {
                                     #[local_ref]
                                     list_trainings -> gtk::ListBox {
-                                        set_margin_top: 24,
-                                        set_margin_bottom: 24,
+                                        set_margin_top: 12,
+                                        set_margin_bottom: 12,
                                         set_margin_start: 12,
                                         set_margin_end: 12,
                                         set_size_request: (200, -1),

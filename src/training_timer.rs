@@ -162,103 +162,113 @@ impl Component for TrainingTimer {
             gtk::Box {
                 set_orientation: gtk::Orientation::Vertical,
                 set_valign: gtk::Align::Center,
-                gtk::Box {
-                    add_css_class: "timer",
-                    add_css_class: "card",
-                    #[watch]
-                    set_class_active: ("timer-warmup", model.state == TrainingState::Preparation),
-                    #[watch]
-                    set_class_active: ("timer-exercise", model.state == TrainingState::Exercise),
-                    #[watch]
-                    set_class_active: ("timer-rest", model.state == TrainingState::Rest),
-                    set_spacing: 5,
+                adw::Clamp {
                     set_orientation: gtk::Orientation::Vertical,
-                    set_valign: gtk::Align::Center,
-                    set_margin_all: 20,
-                    set_vexpand: true,
-                    gtk::Label {
-                        add_css_class: "timer-title",
+                    set_maximum_size: 250,
+                    gtk::Box {
+                        add_css_class: "card",
                         #[watch]
-                        set_label: &match model.state {
-                            // Translators: Shown on the timer page during preparation
-                            TrainingState::Preparation => gettext("Preparation"),
-                            // Translators: Shown on the timer page during exercise
-                            TrainingState::Exercise => gettext("Exercise"),
-                            // Translators: Shown on the timer page during rest
-                            TrainingState::Rest => gettext("Rest"),
-                        },
-                    },
-                    gtk::Box {
-                        add_css_class: "timer-label",
-                        set_orientation: gtk::Orientation::Horizontal,
-                        set_halign: gtk::Align::Center,
-                        set_direction: gtk::TextDirection::Ltr,
-                        gtk::Label {
-                            #[watch]
-                            set_width_chars: model.width_chars(2),
-                            set_xalign: 1.0,
-                            #[watch]
-                            set_label: &model.remaining_str_mins(),
-                        },
-                        gtk::Label {
-                            #[watch]
-                            set_width_chars: model.width_chars(1),
-                            #[watch]
-                            set_label: &model.remaining_str_colon(),
-                        },
-                        gtk::Label {
-                            #[watch]
-                            set_width_chars: model.width_chars(2),
-                            set_xalign: 0.0,
-                            #[watch]
-                            set_label: &model.remaining_str_secs(),
-                        },
-                    },
-                    gtk::Box {
-                        set_orientation: gtk::Orientation::Horizontal,
-                        set_halign: gtk::Align::Center,
-                        set_spacing: 12,
-                        gtk::Button {
-                            set_css_classes: &["circular", "large-button"],
-                            set_icon_name: icon_names::REFRESH,
+                        set_class_active: ("timer-warmup", model.state == TrainingState::Preparation),
+                        #[watch]
+                        set_class_active: ("timer-exercise", model.state == TrainingState::Exercise),
+                        #[watch]
+                        set_class_active: ("timer-rest", model.state == TrainingState::Rest),
+                        set_spacing: 5,
+                        set_orientation: gtk::Orientation::Vertical,
+                        set_valign: gtk::Align::Fill,
+                        set_margin_start: 12,
+                        set_margin_end: 12,
+                        set_margin_bottom: 12,
+                        set_vexpand: true,
+                        gtk::Box {
+                            set_orientation: gtk::Orientation::Vertical,
                             set_valign: gtk::Align::Center,
-                            connect_clicked => TrainingTimerInput::Reset,
-                            #[watch]
-                            set_class_active: ("huge-button", model.is_finished()),
-                            // Translators: tooltip text for the reset button
-                            set_tooltip: &gettext("Restart Training"),
-                        },
-                        gtk::Button {
-                            set_css_classes: &["circular", "huge-button"],
-                            connect_clicked => TrainingTimerInput::StartStop,
-                            gtk::Image {
+                            set_vexpand: true,
+                            gtk::Label {
+                                add_css_class: "timer-title",
                                 #[watch]
-                                set_icon_name: Some(if model.running { icon_names::PAUSE } else { icon_names::PLAY }),
-                            },
-                            #[watch]
-                            // Translators: tooltip text for the pause/resume button
-                            set_tooltip: &if model.running { gettext("Pause Training") } else { gettext("Resume Training") },
-                            #[watch]
-                            set_visible: !model.is_finished(),
-                        },
-                        #[name = "volume_button"]
-                        gtk::ScaleButton {
-                            set_valign: gtk::Align::Center,
-                            set_icons: &["audio-volume-muted-symbolic", "audio-volume-high-symbolic", "audio-volume-medium-symbolic"],
-                            set_adjustment = &gtk::Adjustment {
-                                set_lower: 0f64,
-                                set_upper: 1f64,
-                                add_binding: (&model.global_setup.beep_volume, "value"),
-                                connect_value_changed[audio_sender] => move |adj| {
-                                    audio_sender.emit(AudioPlayerInput::SetVolume(adj.value()))
+                                set_label: &match model.state {
+                                    // Translators: Shown on the timer page during preparation
+                                    TrainingState::Preparation => gettext("Preparation"),
+                                    // Translators: Shown on the timer page during exercise
+                                    TrainingState::Exercise => gettext("Exercise"),
+                                    // Translators: Shown on the timer page during rest
+                                    TrainingState::Rest => gettext("Rest"),
                                 },
                             },
-                            // Translators: tooltip text for the volume button
-                            set_tooltip: &gettext("Set Volume"),
-                            #[watch]
-                            set_visible: !model.is_finished(),
-                        }
-                    }
+                            gtk::Box {
+                                add_css_class: "timer-label",
+                                set_orientation: gtk::Orientation::Horizontal,
+                                set_halign: gtk::Align::Center,
+                                set_direction: gtk::TextDirection::Ltr,
+                                gtk::Label {
+                                    #[watch]
+                                    set_width_chars: model.width_chars(2),
+                                    set_xalign: 1.0,
+                                    #[watch]
+                                    set_label: &model.remaining_str_mins(),
+                                },
+                                gtk::Label {
+                                    #[watch]
+                                    set_width_chars: model.width_chars(1),
+                                    #[watch]
+                                    set_label: &model.remaining_str_colon(),
+                                },
+                                gtk::Label {
+                                    #[watch]
+                                    set_width_chars: model.width_chars(2),
+                                    set_xalign: 0.0,
+                                    #[watch]
+                                    set_label: &model.remaining_str_secs(),
+                                },
+                            },
+                            gtk::Box {
+                                set_orientation: gtk::Orientation::Horizontal,
+                                set_halign: gtk::Align::Center,
+                                set_spacing: 12,
+                                gtk::Button {
+                                    set_css_classes: &["circular", "large-button"],
+                                    set_icon_name: icon_names::REFRESH,
+                                    set_valign: gtk::Align::Center,
+                                    connect_clicked => TrainingTimerInput::Reset,
+                                    #[watch]
+                                    set_class_active: ("huge-button", model.is_finished()),
+                                    // Translators: tooltip text for the reset button
+                                    set_tooltip: &gettext("Restart Training"),
+                                },
+                                gtk::Button {
+                                    set_css_classes: &["circular", "huge-button"],
+                                    connect_clicked => TrainingTimerInput::StartStop,
+                                    gtk::Image {
+                                        #[watch]
+                                        set_icon_name: Some(if model.running { icon_names::PAUSE } else { icon_names::PLAY }),
+                                    },
+                                    #[watch]
+                                    // Translators: tooltip text for the pause/resume button
+                                    set_tooltip: &if model.running { gettext("Pause Training") } else { gettext("Resume Training") },
+                                    #[watch]
+                                    set_visible: !model.is_finished(),
+                                },
+                                #[name = "volume_button"]
+                                gtk::ScaleButton {
+                                    set_valign: gtk::Align::Center,
+                                    set_icons: &["audio-volume-muted-symbolic", "audio-volume-high-symbolic", "audio-volume-medium-symbolic"],
+                                    set_adjustment = &gtk::Adjustment {
+                                        set_lower: 0f64,
+                                        set_upper: 1f64,
+                                        add_binding: (&model.global_setup.beep_volume, "value"),
+                                        connect_value_changed[audio_sender] => move |adj| {
+                                            audio_sender.emit(AudioPlayerInput::SetVolume(adj.value()))
+                                        },
+                                    },
+                                    // Translators: tooltip text for the volume button
+                                    set_tooltip: &gettext("Set Volume"),
+                                    #[watch]
+                                    set_visible: !model.is_finished(),
+                                }
+                            }
+                        },
+                    },
                 },
                 gtk::Label {
                     #[watch]
