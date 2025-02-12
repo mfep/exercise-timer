@@ -25,6 +25,7 @@ pub enum AppModelInput {
     Popped,
     StartStop,
     Reset,
+    OpenMenu,
 }
 
 relm4::new_action_group!(WindowActionGroup, "win");
@@ -32,6 +33,7 @@ relm4::new_stateless_action!(ShortcutsAction, WindowActionGroup, "show-help-over
 relm4::new_stateless_action!(AboutAction, WindowActionGroup, "about");
 relm4::new_stateless_action!(StartStopAction, WindowActionGroup, "start-stop");
 relm4::new_stateless_action!(ResetAction, WindowActionGroup, "reset");
+relm4::new_stateless_action!(MenuAction, WindowActionGroup, "menu");
 
 pub struct AppModel {
     training_timer: Option<Controller<TrainingTimer>>,
@@ -81,6 +83,7 @@ impl Component for AppModel {
                                 // Translators: tooltip for the add training image button
                                 set_tooltip: &gettext("Add Training"),
                             },
+                            #[name = "menu_button"]
                             pack_end = &gtk::MenuButton {
                                 set_icon_name: "open-menu-symbolic",
                                 set_menu_model: Some(&primary_menu),
@@ -210,10 +213,17 @@ impl Component for AppModel {
                 sender.input(AppModelInput::Reset);
             })
         };
+        let menu_action = {
+            let sender = sender.clone();
+            relm4::actions::RelmAction::<MenuAction>::new_stateless(move |_| {
+                sender.input(AppModelInput::OpenMenu);
+            })
+        };
         actions.add_action(about_action);
         actions.add_action(shortcuts_action);
         actions.add_action(start_stop_action);
         actions.add_action(reset_action);
+        actions.add_action(menu_action);
         let list_trainings = model.list_trainings.widget();
         let widgets = view_output!();
         actions.register_for_widget(&widgets.main_window);
@@ -222,6 +232,7 @@ impl Component for AppModel {
         relm4::main_application()
             .set_accelerators_for_action::<StartStopAction>(&["<Control>space"]);
         relm4::main_application().set_accelerators_for_action::<ResetAction>(&["<Control>r"]);
+        relm4::main_application().set_accelerators_for_action::<MenuAction>(&["F10"]);
 
         update_status_visible(&widgets, &model);
         ComponentParts { model, widgets }
@@ -286,6 +297,9 @@ impl Component for AppModel {
                 if let Some(controller) = &self.training_timer {
                     controller.emit(TrainingTimerInput::Reset);
                 }
+            }
+            AppModelInput::OpenMenu => {
+                widgets.menu_button.emit_activate();
             }
         }
         update_status_visible(widgets, self);
