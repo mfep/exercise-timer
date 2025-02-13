@@ -30,7 +30,7 @@ jobs:
       options: --privileged
     steps:
     - uses: actions/checkout@v4
-    - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v6
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.3
       with:
         bundle: exercise-timer.flatpak
         manifest-path: build-aux/xyz.safeworlds.hiit.Devel.json
