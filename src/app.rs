@@ -132,8 +132,9 @@ impl Component for AppModel {
                 },
                 #[name = "main_navigation_page"]
                 add = &adw::NavigationPage {
-                    // Translators: The name of the timer page
-                    set_title: &gettext("Timer"),
+                    // The title is set here initially to prevent a warning,
+                    // but the value is set to the name of the training later
+                    set_title: "Timer",
                     #[wrap(Some)]
                     #[name = "main_view"]
                     set_child = &adw::ToolbarView {
@@ -280,6 +281,7 @@ impl Component for AppModel {
                         .main_view
                         .set_content(Some(self.training_timer.as_ref().unwrap().widget()));
                     widgets.navigation_view.push(&widgets.main_navigation_page);
+                    widgets.main_navigation_page.set_title(&setup.name);
                 }
             }
             AppModelInput::Popped => {
