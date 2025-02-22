@@ -2,6 +2,24 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.8.0](https://github.com/mfep/exercise-timer/compare/75d523247b565c7c94575f744f0545d47449ed85..v1.8.0) - 2025-02-22
+#### Bug Fixes
+- **(CI)** Use latest flatpak-builder action - ([da3f358](https://github.com/mfep/exercise-timer/commit/da3f3580d3fb744434435598d49db733b48403e9)) - [@mfep](https://github.com/mfep)
+- **(CI)** Use latest flatpak actions - ([860ac71](https://github.com/mfep/exercise-timer/commit/860ac714957d88ae48fc5b0b0f413f1c862d7ef9)) - [@mfep](https://github.com/mfep)
+- **(UI)** Add Ctrl+W to close the window - ([730e602](https://github.com/mfep/exercise-timer/commit/730e60258460e25212022a251584b237905e7fba)) - [@mfep](https://github.com/mfep)
+- **(UI)** Add F10 to open the menu - ([57c2c4e](https://github.com/mfep/exercise-timer/commit/57c2c4e8e65d4e65a6006f0f8ab0a86e90f0e5eb)) - [@mfep](https://github.com/mfep)
+- **(UI)** Fix window size when the training timer is active - ([4f8f7d9](https://github.com/mfep/exercise-timer/commit/4f8f7d9caf4c46773c09becc4e70ad3bbec8e41c)) - [@mfep](https://github.com/mfep)
+- **(docs)** Fix issues in appstream metainfo - ([7b1e6da](https://github.com/mfep/exercise-timer/commit/7b1e6dacb2d37aaae99424e8abf61827dbec53c7)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Add missing translations to LINGUAS - ([800ac66](https://github.com/mfep/exercise-timer/commit/800ac66f254588a5915d87dc803ef70548d8ecbe)) - [@mfep](https://github.com/mfep)
+#### Features
+- **(UI)** Training name is shown in the title bar of the timer view - ([9de8f7d](https://github.com/mfep/exercise-timer/commit/9de8f7d48921f4bd88de9731cb199c7d0044bfc2)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Added translation using Weblate (Interlingua) - ([75d5232](https://github.com/mfep/exercise-timer/commit/75d523247b565c7c94575f744f0545d47449ed85)) - Emilio S
+- Option to set rest time to zero (#33) - ([cca5ee1](https://github.com/mfep/exercise-timer/commit/cca5ee1927edf6148086c744d859775424c7244f)) - [@mfep](https://github.com/mfep)
+#### Miscellaneous Chores
+- **(docs)** Update release in metainfo - ([3c28f21](https://github.com/mfep/exercise-timer/commit/3c28f211f98393a98803ca3c0757ba632711c11f)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.7.1](https://github.com/mfep/exercise-timer/compare/258959a4a3d4b465e24076ad38a3375deaa9fc37..v1.7.1) - 2025-01-23
 #### Bug Fixes
 - **(UI)** Fix training list margins - ([99be8ab](https://github.com/mfep/exercise-timer/commit/99be8ab02167dc1f55194168c219a6d99c22154c)) - [@mfep](https://github.com/mfep)
