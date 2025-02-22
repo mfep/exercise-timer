@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:59+0100\n"
+"POT-Creation-Date: 2025-02-22 15:48+0100\n"
 "PO-Revision-Date: 2024-07-20 06:09+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/exercise-timer/"
@@ -58,7 +58,7 @@ msgstr "बंद करें"
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:74 src/app.rs:176
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:76 src/app.rs:183
 #: src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "व्यायाम टाइमर"
@@ -109,20 +109,15 @@ msgid "Train and rest with high intensity"
 msgstr "उच्च तीव्रता के साथ प्रशिक्षण लें और आराम करें"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
-msgid "Exercise timer is a simple utility to conduct interval training."
-msgstr "व्यायाम टाइमर अंतराल प्रशिक्षण संचालित करने के लिए एक सरल उपयोगिता है।"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
+#, fuzzy
 msgid ""
-"Following a short preparation period, a prescribed number of exercise sets "
-"are played. In between each exercise, there is a resting period."
+"Exercise Timer is a simple utility to conduct high intensity interval "
+"training. Following a short preparation period, a prescribed number of "
+"exercise sets are played. In between each exercise, there is a resting "
+"period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
 "एक छोटी तैयारी अवधि के बाद, निर्धारित संख्या में व्यायाम सेट चलायें जाते हैं। प्रत्येक व्यायाम "
 "के बीच में, आराम का समय होता है।"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
-msgid "The app does not make an assumption about the kind of the exercise."
-msgstr "ऐप व्यायाम के प्रकार के बारे में कोई धारणा नहीं बनाता है।"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
@@ -166,46 +161,41 @@ msgid "Timer - light mode"
 msgstr "टाइमर - हल्का मोड"
 
 #. Translators: The title of the keyboard shortcuts menu entry
-#: src/app.rs:56
+#: src/app.rs:58
 msgid "_Keyboard Shortcuts"
 msgstr "कीबोर्ड शॉर्टकट (_K)"
 
 #. Translators: The title of the about dialog menu entry
-#: src/app.rs:58
+#: src/app.rs:60
 msgid "_About Exercise Timer"
 msgstr "व्यायाम टाइमर के बारे में (_A)"
 
 #. Translators: tooltip for the add training image button
-#: src/app.rs:82
+#: src/app.rs:84
 #, fuzzy
 msgid "Add Training"
 msgstr "प्रशिक्षण जोड़ें"
 
 #. Translators: tooltip for main menu image button
-#: src/app.rs:88
+#: src/app.rs:91
 #, fuzzy
 msgid "Main Menu"
 msgstr "मुख्य मेनू"
 
 #. Translators: The message which is shown on the background of the empty training list
-#: src/app.rs:115
+#: src/app.rs:121
 #, fuzzy
 msgid "No Trainings"
 msgstr "नया प्रशिक्षण"
 
 #. Translators: Big label button to create the first training if none exists
-#: src/app.rs:119
+#: src/app.rs:125
 #, fuzzy
 msgid "Create Training"
 msgstr "प्रशिक्षण बनाएं"
 
-#. Translators: The name of the timer page
-#: src/app.rs:130
-msgid "Timer"
-msgstr "टाइमर"
-
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:183
+#: src/app.rs:190
 msgid "translator_credits"
 msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
@@ -286,50 +276,50 @@ msgid "Delete Training"
 msgstr "प्रशिक्षण मिटाएं"
 
 #. Translators: Shown in the timer page when the training has come to the end
-#: src/training_timer.rs:102
+#: src/training_timer.rs:158
 msgid "Finished!"
 msgstr "समाप्त!"
 
 #. Translators: Shown on the timer page during preparation
-#: src/training_timer.rs:184
+#: src/training_timer.rs:248
 msgid "Preparation"
 msgstr "तैयारी"
 
 #. Translators: Shown on the timer page during exercise
-#: src/training_timer.rs:186
+#: src/training_timer.rs:250
 msgid "Exercise"
 msgstr "व्यायाम"
 
 #. Translators: Shown on the timer page during rest
-#: src/training_timer.rs:188
+#: src/training_timer.rs:252
 msgid "Rest"
 msgstr "विश्राम"
 
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:229
+#: src/training_timer.rs:294
 #, fuzzy
 msgid "Restart Training"
 msgstr "प्रशिक्षण शुरू करें"
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:240
+#: src/training_timer.rs:305
 #, fuzzy
 msgid "Pause Training"
 msgstr "प्रशिक्षण रोकें"
 
-#: src/training_timer.rs:240
+#: src/training_timer.rs:305
 #, fuzzy
 msgid "Resume Training"
 msgstr "प्रशिक्षण फिर से शुरू करें"
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:257
+#: src/training_timer.rs:322
 #, fuzzy
 msgid "Set Volume"
 msgstr "वॉल्यूम निर्धारित करें"
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:269
+#: src/training_timer.rs:336
 #, fuzzy
 msgid "Remaining Sets: {}"
 msgstr "शेष सेट: {}"
@@ -350,7 +340,7 @@ msgid "Could not open resource data"
 msgstr "संसाधन डेटा नहीं खोला जा सका"
 
 #. Translators: Error message when cannot connect to the audio output
-#: src/main.rs:21
+#: src/main.rs:22
 msgid "Could not create audio output stream"
 msgstr "ऑडियो आउटपुट स्ट्रीम नहीं बनाई जा सकी"
 
@@ -413,6 +403,15 @@ msgstr "डिस्प्ले से नहीं जुड़ सके"
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr "सहायता उपरिशायी का निर्माण नहीं किया जा सका"
+
+#~ msgid "Exercise timer is a simple utility to conduct interval training."
+#~ msgstr "व्यायाम टाइमर अंतराल प्रशिक्षण संचालित करने के लिए एक सरल उपयोगिता है।"
+
+#~ msgid "The app does not make an assumption about the kind of the exercise."
+#~ msgstr "ऐप व्यायाम के प्रकार के बारे में कोई धारणा नहीं बनाता है।"
+
+#~ msgid "Timer"
+#~ msgstr "टाइमर"
 
 #, fuzzy
 #~ msgid "No Training Yet"

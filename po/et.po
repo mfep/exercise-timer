@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-10 17:10+0100\n"
+"POT-Creation-Date: 2025-02-22 15:48+0100\n"
 "PO-Revision-Date: 2024-12-28 14:00+0000\n"
 "Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/exercise-timer/"
@@ -58,7 +58,7 @@ msgstr "Välju"
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:74 src/app.rs:173
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:76 src/app.rs:183
 #: src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "Treeningutaimer"
@@ -73,8 +73,8 @@ msgid ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
 "interval training;"
 msgstr ""
-"Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;harjutus;treening;trenn;taimer;sport;"
-""
+"Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;harjutus;treening;trenn;"
+"taimer;sport;"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:6
 msgid "The width of the window"
@@ -110,21 +110,15 @@ msgid "Train and rest with high intensity"
 msgstr "Treeni ja puhka intensiivselt"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
-msgid "Exercise timer is a simple utility to conduct interval training."
-msgstr ""
-"Treeningutaimer on lihtne tarvik oma treeninguprogrammi välpade haldamiseks."
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
+#, fuzzy
 msgid ""
-"Following a short preparation period, a prescribed number of exercise sets "
-"are played. In between each exercise, there is a resting period."
+"Exercise Timer is a simple utility to conduct high intensity interval "
+"training. Following a short preparation period, a prescribed number of "
+"exercise sets are played. In between each exercise, there is a resting "
+"period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
 "Lühikese ettevalmistuse järel kuvatakse etteantud komplekt "
 "treeningharjutusi. Iga harjutuse vahel on väike puhkepaus."
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
-msgid "The app does not make an assumption about the kind of the exercise."
-msgstr "Rakendusel pole ühtegi eeldust treeningharjutuse tüübi osas."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
@@ -167,42 +161,38 @@ msgid "Timer - light mode"
 msgstr "Taimer heledas kujunduses"
 
 #. Translators: The title of the keyboard shortcuts menu entry
-#: src/app.rs:56
+#: src/app.rs:58
 msgid "_Keyboard Shortcuts"
 msgstr "_Klaviatuuri kiirklahvid"
 
 #. Translators: The title of the about dialog menu entry
-#: src/app.rs:58
+#: src/app.rs:60
 msgid "_About Exercise Timer"
 msgstr "_Rakenduse teave - Treeningutaimer"
 
 #. Translators: tooltip for the add training image button
-#: src/app.rs:82
+#: src/app.rs:84
 msgid "Add Training"
 msgstr "Lisa treeninguharjutus"
 
 #. Translators: tooltip for main menu image button
-#: src/app.rs:88
+#: src/app.rs:91
 msgid "Main Menu"
 msgstr "Põhimenüü"
 
 #. Translators: The message which is shown on the background of the empty training list
-#: src/app.rs:109
-msgid "No Training Yet"
-msgstr "Ühtegi treeninguharjutust veel pole"
+#: src/app.rs:121
+#, fuzzy
+msgid "No Trainings"
+msgstr "Uus treeninguharjutus"
 
 #. Translators: Big label button to create the first training if none exists
-#: src/app.rs:113
+#: src/app.rs:125
 msgid "Create Training"
 msgstr "Loo treeninguharjutus"
 
-#. Translators: The name of the timer page
-#: src/app.rs:124
-msgid "Timer"
-msgstr "Taimer"
-
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:180
+#: src/app.rs:190
 msgid "translator_credits"
 msgstr "Priit Jõerüüt 2024"
 
@@ -213,7 +203,7 @@ msgstr "Uus treeninguharjutus"
 
 #. Translators: The editor window's title when modifying a training
 #. Translators: tooltip text for exercise card button to open the training editor
-#: src/training_editor.rs:58 src/training_setup.rs:136
+#: src/training_editor.rs:58 src/training_setup.rs:112
 msgid "Edit Training"
 msgstr "Muuda treeninguharjutust"
 
@@ -250,7 +240,8 @@ msgstr "Puhkeaeg"
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: src/training_editor.rs:109 src/training_editor.rs:122
 #: src/training_editor.rs:135
-msgid "seconds"
+#, fuzzy
+msgid "Seconds"
 msgstr "sekundit"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
@@ -263,68 +254,58 @@ msgstr "Harjutuse aeg"
 msgid "Preparation Time"
 msgstr "Ettevalmistuse aeg"
 
-#. Translators: the label of the number of sets row in the training list item
-#: src/training_setup.rs:101
-msgid "Sets"
-msgstr "Kordusi"
-
-#. Translators: the label of the exercise time row in the training list item
-#. Translators: Shown on the timer page during exercise
-#: src/training_setup.rs:111 src/training_timer.rs:182
-msgid "Exercise"
-msgstr "Harjutus"
-
-#. Translators: the format label for indicating the number of seconds in the training list item. Please use a short abbreviation for seconds, e.g. "s".
-#: src/training_setup.rs:120
-msgid "{} s"
-msgstr "{} sek"
+#. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
+#. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
+#: src/training_setup.rs:97
+msgid "{} × {} s"
+msgstr ""
 
 #. Translators: tooltip text for exercise card button to delete the training
-#: src/training_setup.rs:145
+#: src/training_setup.rs:120
 msgid "Delete Training"
 msgstr "Kustuta treeninguharjutus"
 
-#. Translators: tooltip text for exercise card button to start the training timer
-#: src/training_setup.rs:151
-msgid "Start Training"
-msgstr "Alusta treeninguharjutust"
-
 #. Translators: Shown in the timer page when the training has come to the end
-#: src/training_timer.rs:119
+#: src/training_timer.rs:158
 msgid "Finished!"
 msgstr "Harjutus on lõppenud!"
 
 #. Translators: Shown on the timer page during preparation
-#: src/training_timer.rs:180
+#: src/training_timer.rs:248
 msgid "Preparation"
 msgstr "Ettevalmistus"
 
+#. Translators: Shown on the timer page during exercise
+#: src/training_timer.rs:250
+msgid "Exercise"
+msgstr "Harjutus"
+
 #. Translators: Shown on the timer page during rest
-#: src/training_timer.rs:184
+#: src/training_timer.rs:252
 msgid "Rest"
 msgstr "Puhkus"
 
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:225
+#: src/training_timer.rs:294
 msgid "Restart Training"
 msgstr "Alusta uuesti treeninguharjutust"
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:238
+#: src/training_timer.rs:305
 msgid "Pause Training"
 msgstr "Peata treeninguharjutus"
 
-#: src/training_timer.rs:238
+#: src/training_timer.rs:305
 msgid "Resume Training"
 msgstr "Jätka treeninguharjutust"
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:254
+#: src/training_timer.rs:322
 msgid "Set Volume"
 msgstr "Säti helivaljust"
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:262
+#: src/training_timer.rs:336
 msgid "Remaining Sets: {}"
 msgstr "Jäänud kordusi: {}"
 
@@ -344,7 +325,7 @@ msgid "Could not open resource data"
 msgstr "Ressursiandmete avamine ei õnnestu"
 
 #. Translators: Error message when cannot connect to the audio output
-#: src/main.rs:21
+#: src/main.rs:22
 msgid "Could not create audio output stream"
 msgstr "Heli väljundvoo loomine ei õnnestu"
 
@@ -407,3 +388,26 @@ msgstr "Visuaalse väljundiga ühendamine ei õnnestunud"
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr "Abiteabe ülekatte loomine ei õnnestunud"
+
+#~ msgid "Exercise timer is a simple utility to conduct interval training."
+#~ msgstr ""
+#~ "Treeningutaimer on lihtne tarvik oma treeninguprogrammi välpade "
+#~ "haldamiseks."
+
+#~ msgid "The app does not make an assumption about the kind of the exercise."
+#~ msgstr "Rakendusel pole ühtegi eeldust treeningharjutuse tüübi osas."
+
+#~ msgid "No Training Yet"
+#~ msgstr "Ühtegi treeninguharjutust veel pole"
+
+#~ msgid "Timer"
+#~ msgstr "Taimer"
+
+#~ msgid "Sets"
+#~ msgstr "Kordusi"
+
+#~ msgid "{} s"
+#~ msgstr "{} sek"
+
+#~ msgid "Start Training"
+#~ msgstr "Alusta treeninguharjutust"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:59+0100\n"
+"POT-Creation-Date: 2025-02-22 15:48+0100\n"
 "PO-Revision-Date: 2025-01-09 07:21+0000\n"
 "Last-Translator: Óscar Fernández Díaz <oscfdezdz@tuta.io>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/exercise-timer/"
@@ -58,14 +58,15 @@ msgstr "Salir"
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:74 src/app.rs:176
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:76 src/app.rs:183
 #: src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "Temporizador de ejercicio"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:4
 msgid "Timer clock for high intensity interval training"
-msgstr "Reloj temporizador para entrenamiento por intervalos de alta intensidad"
+msgstr ""
+"Reloj temporizador para entrenamiento por intervalos de alta intensidad"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/xyz.safeworlds.hiit.desktop.in.in:10
@@ -111,22 +112,15 @@ msgid "Train and rest with high intensity"
 msgstr "Entrenar y descansar con alta intensidad"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
-msgid "Exercise timer is a simple utility to conduct interval training."
-msgstr ""
-"Temporizador de ejercicio es una sencilla utilidad para realizar "
-"entrenamientos a intervalos."
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
+#, fuzzy
 msgid ""
-"Following a short preparation period, a prescribed number of exercise sets "
-"are played. In between each exercise, there is a resting period."
+"Exercise Timer is a simple utility to conduct high intensity interval "
+"training. Following a short preparation period, a prescribed number of "
+"exercise sets are played. In between each exercise, there is a resting "
+"period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
 "Tras un breve periodo de preparación, se realiza un número determinado de "
 "series de ejercicios. Entre cada ejercicio hay un periodo de descanso."
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:12
-msgid "The app does not make an assumption about the kind of the exercise."
-msgstr "La aplicación no presupone el tipo de ejercicio."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
@@ -169,42 +163,37 @@ msgid "Timer - light mode"
 msgstr "Temporizador - modo claro"
 
 #. Translators: The title of the keyboard shortcuts menu entry
-#: src/app.rs:56
+#: src/app.rs:58
 msgid "_Keyboard Shortcuts"
 msgstr "Atajos del _teclado"
 
 #. Translators: The title of the about dialog menu entry
-#: src/app.rs:58
+#: src/app.rs:60
 msgid "_About Exercise Timer"
 msgstr "_Acerca de Temporizador de ejercicio"
 
 #. Translators: tooltip for the add training image button
-#: src/app.rs:82
+#: src/app.rs:84
 msgid "Add Training"
 msgstr "Añadir entrenamiento"
 
 #. Translators: tooltip for main menu image button
-#: src/app.rs:88
+#: src/app.rs:91
 msgid "Main Menu"
 msgstr "Menú principal"
 
 #. Translators: The message which is shown on the background of the empty training list
-#: src/app.rs:115
+#: src/app.rs:121
 msgid "No Trainings"
 msgstr "No hay entrenamientos"
 
 #. Translators: Big label button to create the first training if none exists
-#: src/app.rs:119
+#: src/app.rs:125
 msgid "Create Training"
 msgstr "Crear entrenamiento"
 
-#. Translators: The name of the timer page
-#: src/app.rs:130
-msgid "Timer"
-msgstr "Temporizador"
-
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:183
+#: src/app.rs:190
 msgid "translator_credits"
 msgstr "Óscar Fernández Díaz <oscfdezdz@tuta.io>"
 
@@ -277,46 +266,46 @@ msgid "Delete Training"
 msgstr "Eliminar entrenamiento"
 
 #. Translators: Shown in the timer page when the training has come to the end
-#: src/training_timer.rs:102
+#: src/training_timer.rs:158
 msgid "Finished!"
 msgstr "¡Terminado!"
 
 #. Translators: Shown on the timer page during preparation
-#: src/training_timer.rs:184
+#: src/training_timer.rs:248
 msgid "Preparation"
 msgstr "Preparación"
 
 #. Translators: Shown on the timer page during exercise
-#: src/training_timer.rs:186
+#: src/training_timer.rs:250
 msgid "Exercise"
 msgstr "Ejercicio"
 
 #. Translators: Shown on the timer page during rest
-#: src/training_timer.rs:188
+#: src/training_timer.rs:252
 msgid "Rest"
 msgstr "Descanso"
 
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:229
+#: src/training_timer.rs:294
 msgid "Restart Training"
 msgstr "Restablecer entrenamiento"
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:240
+#: src/training_timer.rs:305
 msgid "Pause Training"
 msgstr "Pausar entrenamiento"
 
-#: src/training_timer.rs:240
+#: src/training_timer.rs:305
 msgid "Resume Training"
 msgstr "Reanudar entrenamiento"
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:257
+#: src/training_timer.rs:322
 msgid "Set Volume"
 msgstr "Establecer volumen"
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:269
+#: src/training_timer.rs:336
 msgid "Remaining Sets: {}"
 msgstr "Series restantes: {}"
 
@@ -336,7 +325,7 @@ msgid "Could not open resource data"
 msgstr "No se han podido abrir los datos de los recursos"
 
 #. Translators: Error message when cannot connect to the audio output
-#: src/main.rs:21
+#: src/main.rs:22
 msgid "Could not create audio output stream"
 msgstr "No se ha podido crear el flujo de salida de audio"
 
@@ -400,3 +389,14 @@ msgstr "No se ha podido conectar a una pantalla"
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr "No se ha podido crear los atajos del teclado"
+
+#~ msgid "Exercise timer is a simple utility to conduct interval training."
+#~ msgstr ""
+#~ "Temporizador de ejercicio es una sencilla utilidad para realizar "
+#~ "entrenamientos a intervalos."
+
+#~ msgid "The app does not make an assumption about the kind of the exercise."
+#~ msgstr "La aplicación no presupone el tipo de ejercicio."
+
+#~ msgid "Timer"
+#~ msgstr "Temporizador"
