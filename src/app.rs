@@ -247,9 +247,6 @@ impl Component for AppModel {
     ) {
         match message {
             AppModelInput::PromptNewTraining => {
-                if let Some(timer) = self.training_timer.as_ref() {
-                    timer.sender().emit(TrainingTimerInput::Pause);
-                }
                 let editor = TrainingEditor::builder()
                     .launch((TrainingEditorRole::New, TrainingSetup::default()));
                 editor.widget().present(Some(root.widget_ref()));

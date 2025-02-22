@@ -17,19 +17,98 @@ use audio_player::{AudioPlayerInput, AudioPlayerModel};
 
 use self::audio_player::AudioPlayerModelInit;
 
-#[derive(PartialEq)]
+#[derive(Clone)]
 enum TrainingState {
-    Preparation,
-    Exercise,
-    Rest,
+    Preparation {
+        remaining_s: usize,
+    },
+    Exercise {
+        remaining_s: usize,
+        remaining_sets: usize,
+    },
+    Rest {
+        remaining_s: usize,
+        remaining_sets: usize,
+    },
+    Finished,
+}
+
+impl TrainingState {
+    fn new(setup: &TrainingSetup) -> Self {
+        if setup.prepare_s > 0 {
+            Self::Preparation {
+                remaining_s: setup.prepare_s,
+            }
+        } else {
+            Self::Exercise {
+                remaining_s: setup.exercise_s,
+                remaining_sets: setup.sets,
+            }
+        }
+    }
+
+    fn tick(self, setup: &TrainingSetup) -> Self {
+        match self {
+            Self::Preparation { remaining_s } => {
+                if remaining_s > 1 {
+                    Self::Preparation {
+                        remaining_s: remaining_s - 1,
+                    }
+                } else {
+                    Self::Exercise {
+                        remaining_s: setup.exercise_s,
+                        remaining_sets: setup.sets,
+                    }
+                }
+            }
+            Self::Exercise {
+                remaining_s,
+                remaining_sets,
+            } => {
+                if remaining_s > 1 {
+                    Self::Exercise {
+                        remaining_s: remaining_s - 1,
+                        remaining_sets,
+                    }
+                } else if remaining_sets == 1 {
+                    Self::Finished
+                } else if setup.rest_s == 0 {
+                    Self::Exercise {
+                        remaining_s: setup.exercise_s,
+                        remaining_sets: remaining_sets - 1,
+                    }
+                } else {
+                    Self::Rest {
+                        remaining_s: setup.rest_s,
+                        remaining_sets,
+                    }
+                }
+            }
+            Self::Rest {
+                remaining_s,
+                remaining_sets,
+            } => {
+                if remaining_s > 1 {
+                    Self::Rest {
+                        remaining_s: remaining_s - 1,
+                        remaining_sets,
+                    }
+                } else {
+                    Self::Exercise {
+                        remaining_s: setup.exercise_s,
+                        remaining_sets: remaining_sets - 1,
+                    }
+                }
+            }
+            Self::Finished => panic!("Finished state cannot be ticked"),
+        }
+    }
 }
 
 pub struct TrainingTimer {
     setup: TrainingSetup,
     global_setup: GlobalTrainingSetup,
     state: TrainingState,
-    remaining_sets: usize,
-    remaining_s: usize,
     running: bool,
     timer: Option<relm4::WorkerController<TimerModel>>,
     audio_player: relm4::WorkerController<AudioPlayerModel>,
@@ -44,18 +123,8 @@ impl TrainingTimer {
     ) -> Self {
         let beep_volume = global_setup.beep_volume.get();
         Self {
-            state: if setup.prepare_s > 0 {
-                TrainingState::Preparation
-            } else {
-                TrainingState::Exercise
-            },
+            state: TrainingState::new(&setup),
             global_setup,
-            remaining_sets: setup.sets,
-            remaining_s: if setup.prepare_s > 0 {
-                setup.prepare_s
-            } else {
-                setup.exercise_s
-            },
             running: true,
             timer: build_timer(sender),
             setup,
@@ -69,35 +138,22 @@ impl TrainingTimer {
     }
 
     fn reset(&mut self, sender: &ComponentSender<TrainingTimer>) {
-        self.state = if self.setup.prepare_s > 0 {
-            TrainingState::Preparation
-        } else {
-            TrainingState::Exercise
-        };
-        self.remaining_sets = self.setup.sets;
-        self.remaining_s = if self.setup.prepare_s > 0 {
-            self.setup.prepare_s
-        } else {
-            self.setup.exercise_s
-        };
+        self.state = TrainingState::new(&self.setup);
         self.running = true;
         self.timer = build_timer(sender);
     }
 
-    fn is_finished(&self) -> bool {
-        self.remaining_s == 0
-    }
-
     fn remaining_str_mins(&self) -> String {
-        if self.remaining_s == 0 {
-            String::from("")
-        } else {
-            format!("{:02}", self.remaining_s / 60)
+        match self.state {
+            TrainingState::Finished => String::new(),
+            TrainingState::Exercise { remaining_s, .. }
+            | TrainingState::Preparation { remaining_s }
+            | TrainingState::Rest { remaining_s, .. } => format!("{:02}", remaining_s / 60),
         }
     }
 
     fn remaining_str_colon(&self) -> String {
-        if self.is_finished() {
+        if matches!(self.state, TrainingState::Finished) {
             // Translators: Shown in the timer page when the training has come to the end
             gettext("Finished!")
         } else {
@@ -106,15 +162,16 @@ impl TrainingTimer {
     }
 
     fn remaining_str_secs(&self) -> String {
-        if self.is_finished() {
-            String::from("")
-        } else {
-            format!("{:02}", self.remaining_s % 60)
+        match self.state {
+            TrainingState::Finished => String::new(),
+            TrainingState::Exercise { remaining_s, .. }
+            | TrainingState::Preparation { remaining_s }
+            | TrainingState::Rest { remaining_s, .. } => format!("{:02}", remaining_s % 60),
         }
     }
 
     fn width_chars(&self, default: i32) -> i32 {
-        if self.is_finished() {
+        if matches!(self.state, TrainingState::Finished) {
             -1
         } else {
             default
@@ -126,7 +183,6 @@ impl TrainingTimer {
 pub enum TrainingTimerInput {
     Tick,
     StartStop,
-    Pause,
     Reset,
 }
 
@@ -168,11 +224,11 @@ impl Component for TrainingTimer {
                     gtk::Box {
                         add_css_class: "card",
                         #[watch]
-                        set_class_active: ("timer-warmup", model.state == TrainingState::Preparation),
+                        set_class_active: ("timer-warmup", matches!(model.state, TrainingState::Preparation{ .. })),
                         #[watch]
-                        set_class_active: ("timer-exercise", model.state == TrainingState::Exercise),
+                        set_class_active: ("timer-exercise", matches!(model.state, TrainingState::Exercise{ .. } | TrainingState::Finished)),
                         #[watch]
-                        set_class_active: ("timer-rest", model.state == TrainingState::Rest),
+                        set_class_active: ("timer-rest", matches!(model.state, TrainingState::Rest{ .. })),
                         set_spacing: 5,
                         set_orientation: gtk::Orientation::Vertical,
                         set_valign: gtk::Align::Fill,
@@ -189,11 +245,12 @@ impl Component for TrainingTimer {
                                 #[watch]
                                 set_label: &match model.state {
                                     // Translators: Shown on the timer page during preparation
-                                    TrainingState::Preparation => gettext("Preparation"),
+                                    TrainingState::Preparation{ .. } => gettext("Preparation"),
                                     // Translators: Shown on the timer page during exercise
-                                    TrainingState::Exercise => gettext("Exercise"),
+                                    TrainingState::Exercise{ .. } => gettext("Exercise"),
                                     // Translators: Shown on the timer page during rest
-                                    TrainingState::Rest => gettext("Rest"),
+                                    TrainingState::Rest{ .. } => gettext("Rest"),
+                                    TrainingState::Finished => String::new(),
                                 },
                             },
                             gtk::Box {
@@ -232,7 +289,7 @@ impl Component for TrainingTimer {
                                     set_valign: gtk::Align::Center,
                                     connect_clicked => TrainingTimerInput::Reset,
                                     #[watch]
-                                    set_class_active: ("huge-button", model.is_finished()),
+                                    set_class_active: ("huge-button", matches!(model.state, TrainingState::Finished)),
                                     // Translators: tooltip text for the reset button
                                     set_tooltip: &gettext("Restart Training"),
                                 },
@@ -247,7 +304,7 @@ impl Component for TrainingTimer {
                                     // Translators: tooltip text for the pause/resume button
                                     set_tooltip: &if model.running { gettext("Pause Training") } else { gettext("Resume Training") },
                                     #[watch]
-                                    set_visible: !model.is_finished(),
+                                    set_visible: !matches!(model.state, TrainingState::Finished),
                                 },
                                 #[name = "volume_button"]
                                 gtk::ScaleButton {
@@ -264,7 +321,7 @@ impl Component for TrainingTimer {
                                     // Translators: tooltip text for the volume button
                                     set_tooltip: &gettext("Set Volume"),
                                     #[watch]
-                                    set_visible: !model.is_finished(),
+                                    set_visible: !matches!(model.state, TrainingState::Finished),
                                 }
                             }
                         },
@@ -272,13 +329,18 @@ impl Component for TrainingTimer {
                 },
                 gtk::Label {
                     #[watch]
-                    set_label: &if model.is_finished() {
+                    set_label: &if matches!(model.state, TrainingState::Finished) {
                         String::default()
                     } else if false {
                         // Translators: Label showing the number of remaining sets on the timer page
                         gettext("Remaining Sets: {}")
                     } else {
-                        gettext!("Remaining Sets: {}", model.remaining_sets)
+                        gettext!("Remaining Sets: {}", match model.state {
+                            TrainingState::Preparation { .. } => model.setup.sets,
+                            TrainingState::Exercise { remaining_sets, .. }
+                            | TrainingState::Rest { remaining_sets, .. } => remaining_sets,
+                            TrainingState::Finished => 0,
+                        })
                     },
                     set_margin_bottom: 12,
                 },
@@ -311,49 +373,42 @@ impl Component for TrainingTimer {
     ) {
         match message {
             TrainingTimerInput::StartStop => {
-                if self.remaining_s == 0 && self.remaining_sets == 0 {
-                    return;
-                } else if self.running {
+                if self.running {
                     self.timer = None;
                 } else {
                     self.timer = build_timer(&sender);
                 }
                 self.running = !self.running;
             }
-            TrainingTimerInput::Pause => {
-                self.timer = None;
-                self.running = false;
-            }
             TrainingTimerInput::Tick => {
                 assert!(self.running);
-                self.remaining_s -= 1;
-                if self.remaining_s == 0 {
-                    match self.state {
-                        TrainingState::Preparation => {
-                            self.state = TrainingState::Exercise;
-                            self.remaining_s = self.setup.exercise_s;
-                            self.audio_player.emit(AudioPlayerInput::NextExercise);
-                        }
-                        TrainingState::Exercise => {
-                            self.remaining_sets -= 1;
-                            if self.remaining_sets == 0 {
-                                self.timer = None;
-                                self.running = false;
-                                self.audio_player.emit(AudioPlayerInput::Finished);
-                            } else {
-                                self.state = TrainingState::Rest;
-                                self.remaining_s = self.setup.rest_s;
-                                self.audio_player.emit(AudioPlayerInput::NextRest);
-                            }
-                        }
-                        TrainingState::Rest => {
-                            self.state = TrainingState::Exercise;
-                            self.remaining_s = self.setup.exercise_s;
-                            self.audio_player.emit(AudioPlayerInput::NextExercise);
+                self.state = self.state.clone().tick(&self.setup);
+                const SOUND_THRESHOLD: usize = 5;
+                match self.state {
+                    TrainingState::Preparation { remaining_s } => {
+                        if remaining_s <= SOUND_THRESHOLD {
+                            self.audio_player.emit(AudioPlayerInput::Ping);
                         }
                     }
-                } else if self.remaining_s <= 5 {
-                    self.audio_player.emit(AudioPlayerInput::Ping);
+                    TrainingState::Exercise { remaining_s, .. } => {
+                        if remaining_s == self.setup.exercise_s {
+                            self.audio_player.emit(AudioPlayerInput::NextExercise);
+                        } else if remaining_s <= SOUND_THRESHOLD {
+                            self.audio_player.emit(AudioPlayerInput::Ping);
+                        }
+                    }
+                    TrainingState::Rest { remaining_s, .. } => {
+                        if remaining_s == self.setup.rest_s {
+                            self.audio_player.emit(AudioPlayerInput::NextRest);
+                        } else if remaining_s <= SOUND_THRESHOLD {
+                            self.audio_player.emit(AudioPlayerInput::Ping);
+                        }
+                    }
+                    TrainingState::Finished => {
+                        self.audio_player.emit(AudioPlayerInput::Finished);
+                        self.running = false;
+                        self.timer = None;
+                    }
                 }
             }
             TrainingTimerInput::Reset => {

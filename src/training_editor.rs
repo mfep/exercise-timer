@@ -109,7 +109,7 @@ impl relm4::SimpleComponent for TrainingEditor {
                                 set_subtitle: &gettext("Seconds"),
                                 #[wrap(Some)]
                                 set_adjustment = &gtk::Adjustment {
-                                    set_lower: SPIN_ROW_LOWER,
+                                    set_lower: 0.0,
                                     set_upper: SPIN_ROW_UPPER,
                                     set_step_increment: SPIN_ROW_STEP,
                                     add_binding: (&model.rest_s, "value"),
