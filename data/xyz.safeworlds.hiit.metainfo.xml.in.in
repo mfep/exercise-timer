@@ -54,6 +54,23 @@
     <color type="primary" scheme_preference="dark">#7f2c22</color>
   </branding>
   <releases>
+    <release version="1.8.0" date="2025-02-22">
+      <description translate="no">
+        <p>Features</p>
+        <ul>
+          <li>Training name is shown in the title bar of the timer view</li>
+          <li>Added option to set rest time to zero</li>
+          <li>Added Ctrl+W to close the window</li>
+          <li>Added F10 to open the menu</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Fixed window size when the timer view is active</li>
+          <li>Fixed issues with appstream metainfo</li>
+          <li>Fixed missing translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.7.1" date="2025-01-23">
       <description translate="no">
         <p>Bug fixes</p>
