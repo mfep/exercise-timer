@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-22 15:48+0100\n"
-"PO-Revision-Date: 2024-12-28 14:00+0000\n"
+"PO-Revision-Date: 2025-02-25 00:02+0000\n"
 "Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/et/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
@@ -110,15 +110,16 @@ msgid "Train and rest with high intensity"
 msgstr "Treeni ja puhka intensiivselt"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
-#, fuzzy
 msgid ""
 "Exercise Timer is a simple utility to conduct high intensity interval "
 "training. Following a short preparation period, a prescribed number of "
 "exercise sets are played. In between each exercise, there is a resting "
 "period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
-"Lühikese ettevalmistuse järel kuvatakse etteantud komplekt "
-"treeningharjutusi. Iga harjutuse vahel on väike puhkepaus."
+"Treeningutaimer on lihtne tarvik intensiivsete treeningharjutuste "
+"haldamiseks. Lühikese ettevalmistuse järel kuvatakse etteantud komplekt "
+"treeningharjutusi. Iga harjutuse vahel on väike puhkepaus. Rakendus ei eelda "
+"mitte mingil viisil, mis treeningharjutust sa teed."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
@@ -182,9 +183,8 @@ msgstr "Põhimenüü"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:121
-#, fuzzy
 msgid "No Trainings"
-msgstr "Uus treeninguharjutus"
+msgstr "Treeninguharjutusi pole"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:125
@@ -240,7 +240,6 @@ msgstr "Puhkeaeg"
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: src/training_editor.rs:109 src/training_editor.rs:122
 #: src/training_editor.rs:135
-#, fuzzy
 msgid "Seconds"
 msgstr "sekundit"
 
@@ -258,7 +257,7 @@ msgstr "Ettevalmistuse aeg"
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
 #: src/training_setup.rs:97
 msgid "{} × {} s"
-msgstr ""
+msgstr "{} × {} sek"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: src/training_setup.rs:120
