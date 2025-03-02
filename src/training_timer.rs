@@ -279,6 +279,7 @@ impl Component for TrainingTimer {
                                     set_label: &model.remaining_str_secs(),
                                 },
                             },
+                            #[name = "button_box"]
                             gtk::Box {
                                 set_orientation: gtk::Orientation::Horizontal,
                                 set_halign: gtk::Align::Center,
@@ -293,6 +294,7 @@ impl Component for TrainingTimer {
                                     // Translators: tooltip text for the reset button
                                     set_tooltip: &gettext("Restart Training"),
                                 },
+                                #[name = "play_pause_button"]
                                 gtk::Button {
                                     set_css_classes: &["circular", "huge-button"],
                                     connect_clicked => TrainingTimerInput::StartStop,
@@ -361,6 +363,9 @@ impl Component for TrainingTimer {
             .first_child()
             .unwrap()
             .set_css_classes(&["circular", "toggle", "large-button"]);
+        widgets
+            .button_box
+            .set_focus_child(Some(&widgets.play_pause_button));
         model.audio_player.emit(AudioPlayerInput::NextWarmup);
         ComponentParts { model, widgets }
     }
