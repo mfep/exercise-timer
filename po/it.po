@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-22 15:48+0100\n"
-"PO-Revision-Date: 2025-01-06 18:32+0000\n"
+"PO-Revision-Date: 2025-03-03 16:02+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/it/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
@@ -110,15 +110,16 @@ msgid "Train and rest with high intensity"
 msgstr "Allenati e riposati ad alta intensità"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
-#, fuzzy
 msgid ""
 "Exercise Timer is a simple utility to conduct high intensity interval "
 "training. Following a short preparation period, a prescribed number of "
 "exercise sets are played. In between each exercise, there is a resting "
 "period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
-"Dopo un breve periodo di preparazione, viene svolto un numero prestabilito "
-"di serie di esercizi. Tra un esercizio e l'altro c'è un periodo di riposo."
+"Exercise Timer è una semplice utility per condurre un allenamento "
+"intervallato ad alta intensità. Dopo un breve periodo di preparazione, viene "
+"eseguito un numero prescritto di serie di esercizi. Tra ogni esercizio, c'è "
+"un periodo di riposo. L'app non fa ipotesi sul tipo di esercizio."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
