@@ -2,6 +2,7 @@
 
 # Exercise Timer
 
+[![GNOME Circle badge](https://circle.gnome.org/assets/button/badge.svg)](https://circle.gnome.org/)
 [![CI badge](https://img.shields.io/github/actions/workflow/status/mfep/exercise-timer/ci.yml?branch=main)](https://github.com/mfep/midiconn/actions/workflows/ci.yml)
 [![License badge](https://img.shields.io/github/license/mfep/exercise-timer)](./LICENSE.txt)
 [![Flathub badge](https://img.shields.io/flathub/downloads/xyz.safeworlds.hiit?logo=flathub&logoColor=white)](https://flathub.org/apps/details/xyz.safeworlds.hiit)
