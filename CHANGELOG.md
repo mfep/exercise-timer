@@ -2,6 +2,22 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.8.1](https://github.com/mfep/exercise-timer/compare/057db8b7c431478c75d16301d995ac8c7cf9722b..v1.8.1) - 2025-03-06
+#### Bug Fixes
+- **(UI)** Update brand colors (#34) - ([5348180](https://github.com/mfep/exercise-timer/commit/5348180ab92dce05663b00e7a31973d1b77b9c5a)) - Tobias Bernard
+- **(UI)** Play/Pause button gets default focus - ([9a7066d](https://github.com/mfep/exercise-timer/commit/9a7066d0959406f534440d8d58385663db583244)) - [@mfep](https://github.com/mfep)
+- **(docs)** Reorder screenshots - ([80f84d7](https://github.com/mfep/exercise-timer/commit/80f84d7e27bd0b40e29b283feb09438398649aec)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Translated using Weblate (Italian) - ([4f61e5e](https://github.com/mfep/exercise-timer/commit/4f61e5ef1421e9a401f3eeb72220be8d889e571b)) - albanobattistella
+- **(i18n)** Translated using Weblate (Estonian) - ([5e71fde](https://github.com/mfep/exercise-timer/commit/5e71fdee3a7cbdc6d78441b7e3eace2c20e6367a)) - Priit Jõerüüt
+#### Miscellaneous Chores
+- **(docs)** Update release in metainfo - ([1b23d18](https://github.com/mfep/exercise-timer/commit/1b23d18ab99d758ef73c0358a0dd1b27bf4b7178)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update screenshot - ([ed27e8a](https://github.com/mfep/exercise-timer/commit/ed27e8a92cb39405781cc29abdd8ea582a098ef8)) - [@mfep](https://github.com/mfep)
+- **(docs)** Add GNOME Circle badge to README - ([b6b868b](https://github.com/mfep/exercise-timer/commit/b6b868b761307aac069da0c452665913077cad2f)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update homepage to apps.gnome.org/hiit - ([1b36dca](https://github.com/mfep/exercise-timer/commit/1b36dca05567d8b44c481260a34b3568bfde0b6f)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Update translations files - ([057db8b](https://github.com/mfep/exercise-timer/commit/057db8b7c431478c75d16301d995ac8c7cf9722b)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.8.0](https://github.com/mfep/exercise-timer/compare/75d523247b565c7c94575f744f0545d47449ed85..v1.8.0) - 2025-02-22
 #### Bug Fixes
 - **(CI)** Use latest flatpak-builder action - ([da3f358](https://github.com/mfep/exercise-timer/commit/da3f3580d3fb744434435598d49db733b48403e9)) - [@mfep](https://github.com/mfep)
