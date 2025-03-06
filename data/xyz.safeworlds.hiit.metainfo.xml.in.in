@@ -20,12 +20,12 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <image>https://media.githubusercontent.com/media/mfep/exercise-timer/main/data/screenshots/dark_exercise_list.png</image>
-      <caption>Exercise list - dark mode</caption>
-    </screenshot>
-    <screenshot>
       <image>https://media.githubusercontent.com/media/mfep/exercise-timer/main/data/screenshots/dark_timer.png</image>
       <caption>Timer - dark mode</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://media.githubusercontent.com/media/mfep/exercise-timer/main/data/screenshots/dark_exercise_list.png</image>
+      <caption>Exercise list - dark mode</caption>
     </screenshot>
     <screenshot>
       <image>https://media.githubusercontent.com/media/mfep/exercise-timer/main/data/screenshots/light_new_training.png</image>
