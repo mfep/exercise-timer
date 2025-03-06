@@ -10,8 +10,8 @@ i18n = import('i18n')
 gnome = import('gnome')
 
 base_id = 'xyz.safeworlds.hiit'
-homepage = 'https://github.com/mfep/exercise-timer'
-issue_tracker = homepage + '/issues'
+homepage = 'https://apps.gnome.org/Hiit/'
+issue_tracker = 'https://github.com/mfep/exercise-timer/issues'
 translate_page = 'https://hosted.weblate.org/projects/exercise-timer/exercise-timer/'
 donation_page = 'https://ko-fi.com/safeworlds'
 copyright = '© 2023-2025 Exercise Timer developers'
