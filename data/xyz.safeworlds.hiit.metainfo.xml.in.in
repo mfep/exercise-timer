@@ -54,6 +54,24 @@
     <color type="primary" scheme_preference="dark">#188653</color>
   </branding>
   <releases>
+    <release version="1.8.1" date="2025-03-06">
+      <description translate="no">
+        <p>Bug fixes</p>
+        <ul>
+          <li>Play/pause button gets default focus</li>
+        </ul>
+        <p>Updated translations</p>
+        <ul>
+          <li>Italian</li>
+          <li>Estonian</li>
+        </ul>
+        <p>Miscellaneous</p>
+        <ul>
+          <li>Updated brand colors</li>
+          <li>Updated homepage</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.8.0" date="2025-02-22">
       <description translate="no">
         <p>Features</p>
