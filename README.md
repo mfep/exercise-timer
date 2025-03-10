@@ -59,7 +59,7 @@ $ git clone https://github.com/mfep/exercise-timer.git
 
 ```bash
 $ cd exercise-timer
-$ flatpak-builder --user --install --force-clean build ./build-aux/xyz.safeworlds.hiit.Devel.yml
+$ flatpak-builder --user --install --force-clean build ./build-aux/xyz.safeworlds.hiit.Devel.json
 ```
 
 ## 🧑‍🤝‍🧑 Contributing
