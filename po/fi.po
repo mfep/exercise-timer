@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-22 15:48+0100\n"
-"PO-Revision-Date: 2025-03-12 11:08+0000\n"
-"Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
+"PO-Revision-Date: 2025-03-20 03:01+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/fi/>\n"
 "Language: fi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
@@ -73,6 +73,8 @@ msgid ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
 "interval training;"
 msgstr ""
+"Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
+"interval training;treeni;harjoitus;kuntoilu;liikunta;"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:6
 msgid "The width of the window"
@@ -166,25 +168,21 @@ msgstr "_Tietoja - Treeniajastin"
 
 #. Translators: tooltip for the add training image button
 #: src/app.rs:84
-#, fuzzy
 msgid "Add Training"
 msgstr "Lisää treeni"
 
 #. Translators: tooltip for main menu image button
 #: src/app.rs:91
-#, fuzzy
 msgid "Main Menu"
 msgstr "Päävalikko"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:121
-#, fuzzy
 msgid "No Trainings"
-msgstr "Uusi treeni"
+msgstr "Ei treenejä"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:125
-#, fuzzy
 msgid "Create Training"
 msgstr "Luo treeni"
 
@@ -195,14 +193,12 @@ msgstr "Jiri Grönroos"
 
 #. Translators: The editor window's title when creating a new training
 #: src/training_editor.rs:56
-#, fuzzy
 msgid "New Training"
 msgstr "Uusi treeni"
 
 #. Translators: The editor window's title when modifying a training
 #. Translators: tooltip text for exercise card button to open the training editor
 #: src/training_editor.rs:58 src/training_setup.rs:112
-#, fuzzy
 msgid "Edit Training"
 msgstr "Muokkaa treeniä"
 
@@ -228,32 +224,27 @@ msgstr "Nimi"
 
 #. Translators: The title of the field for the number of sets in the training in the editor window
 #: src/training_editor.rs:96
-#, fuzzy
 msgid "Number of Sets"
 msgstr "Settien määrä"
 
 #. Translators: The title of the field for the rest duration in the training in the editor window
 #: src/training_editor.rs:107
-#, fuzzy
 msgid "Rest Time"
 msgstr "Lepoaika"
 
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: src/training_editor.rs:109 src/training_editor.rs:122
 #: src/training_editor.rs:135
-#, fuzzy
 msgid "Seconds"
-msgstr "sekuntia"
+msgstr "Sekuntia"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: src/training_editor.rs:120
-#, fuzzy
 msgid "Exercise Time"
-msgstr "Harjoitusajastin"
+msgstr "Kuntoiluaika"
 
 #. Translators: The title of the field for the preparation duration in the training in the editor window
 #: src/training_editor.rs:133
-#, fuzzy
 msgid "Preparation Time"
 msgstr "Valmisteluaika"
 
@@ -261,11 +252,10 @@ msgstr "Valmisteluaika"
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
 #: src/training_setup.rs:97
 msgid "{} × {} s"
-msgstr ""
+msgstr "{} × {} s"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: src/training_setup.rs:120
-#, fuzzy
 msgid "Delete Training"
 msgstr "Poista treeni"
 
@@ -291,52 +281,47 @@ msgstr "Lepo"
 
 #. Translators: tooltip text for the reset button
 #: src/training_timer.rs:294
-#, fuzzy
 msgid "Restart Training"
-msgstr "Aloita treeni"
+msgstr "Käynnistä treeni uudelleen"
 
 #. Translators: tooltip text for the pause/resume button
 #: src/training_timer.rs:305
-#, fuzzy
 msgid "Pause Training"
 msgstr "Keskeytä treeni"
 
 #: src/training_timer.rs:305
-#, fuzzy
 msgid "Resume Training"
 msgstr "Jatka treeniä"
 
 #. Translators: tooltip text for the volume button
 #: src/training_timer.rs:322
-#, fuzzy
 msgid "Set Volume"
 msgstr "Aseta äänenvoimakkuus"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:336
-#, fuzzy
 msgid "Remaining Sets: {}"
 msgstr "Settejä jäljellä: {}"
 
 #. Translators: Error message printed to the console when an error occurs with WAV decoding
 #: src/training_timer/audio_player.rs:16
 msgid "Could not decode WAV"
-msgstr ""
+msgstr "WAV-ääntä ei voitu purkaa"
 
 #. Translators: Error message printed to the console when an error occurs with audio playback
 #: src/training_timer/audio_player.rs:25
 msgid "Could not play audio"
-msgstr ""
+msgstr "Ääntä ei voitu toistaa"
 
 #. Translators: Error message printed to the console when cannot load data from resource
 #: src/training_timer/audio_player.rs:55
 msgid "Could not open resource data"
-msgstr ""
+msgstr "Resurssidataa ei voitu avata"
 
 #. Translators: Error message when cannot connect to the audio output
 #: src/main.rs:22
 msgid "Could not create audio output stream"
-msgstr ""
+msgstr "Äänivirtaa ei voitu luoda"
 
 #. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
 #: src/settings.rs:65
