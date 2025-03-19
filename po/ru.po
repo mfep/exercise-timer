@@ -9,16 +9,17 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-22 15:48+0100\n"
-"PO-Revision-Date: 2024-10-02 21:39+0500\n"
-"Last-Translator: Stepan Kashuba <ihaterabbids@gmail.com>\n"
-"Language-Team: Russian\n"
+"PO-Revision-Date: 2025-03-20 03:01+0000\n"
+"Last-Translator: Aleksandr Melman <alexmelman88@gmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/exercise-timer/"
+"exercise-timer/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Gtranslator 46.1\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
@@ -48,7 +49,7 @@ msgstr "Общие"
 #: data/resources/ui/help-overlay.ui:38
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr "Показать горячие клавиши"
+msgstr "Показать комбинации клавиш"
 
 #. Translators: The name of the shortcut key to quit the application
 #: data/resources/ui/help-overlay.ui:46
@@ -108,31 +109,32 @@ msgstr "Громкость звукового сигнала"
 #. Translators: App summary, at most 35 characters, imperative style
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
 msgid "Train and rest with high intensity"
-msgstr "Выполняй упражнения с высокой интенсивностью"
+msgstr "Интенсивные тренировки и отдых"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
-#, fuzzy
 msgid ""
 "Exercise Timer is a simple utility to conduct high intensity interval "
 "training. Following a short preparation period, a prescribed number of "
 "exercise sets are played. In between each exercise, there is a resting "
 "period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
-"После небольшой подготовки выполняется предписанное количество подходов к "
-"упражнению. Между каждым упражнением есть период отдыха."
+"Таймер упражнений - это простая утилита для проведения высокоинтенсивных "
+"интервальных тренировок. После короткого подготовительного периода "
+"выполняется заданное количество комплексов упражнений. Между каждым "
+"упражнением есть период отдыха. Приложение не делает предположений о "
+"характере упражнений."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
 msgstr "Функции:"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
-#, fuzzy
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise, rest and preparation periods."
 msgstr ""
-"Сохраняйте и вызывайте предустановки, содержащие количество подходов, "
-"продолжительность упражнений и периодов отдыха."
+"Сохранение и вызов предустановок, содержащих количество подходов и "
+"продолжительность упражнений, отдыха и подготовительных периодов."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid "A beeping sound is played at- and prior to each transition."
@@ -155,9 +157,8 @@ msgid "Timer - dark mode"
 msgstr "Таймер - темный режим"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
-#, fuzzy
 msgid "New training dialog - light mode"
-msgstr "Список упражнений - светлый режим"
+msgstr "Новый диалог упражнений - светлый режим"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
 msgid "Timer - light mode"
@@ -166,12 +167,12 @@ msgstr "Таймер - светлый режим"
 #. Translators: The title of the keyboard shortcuts menu entry
 #: src/app.rs:58
 msgid "_Keyboard Shortcuts"
-msgstr "_Горячие клавиши"
+msgstr "_Комбинации клавиш"
 
 #. Translators: The title of the about dialog menu entry
 #: src/app.rs:60
 msgid "_About Exercise Timer"
-msgstr "_О таймере упражнений"
+msgstr "_О приложении"
 
 #. Translators: tooltip for the add training image button
 #: src/app.rs:84
@@ -185,13 +186,11 @@ msgstr "Главное меню"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:121
-#, fuzzy
 msgid "No Trainings"
-msgstr "Новое упражнение"
+msgstr "Нет упражнений"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:125
-#, fuzzy
 msgid "Create Training"
 msgstr "Создать упражнение"
 
@@ -214,7 +213,7 @@ msgstr "Изменить упражнение"
 #. Translators: Button to close the training editor window without modifications
 #: src/training_editor.rs:64
 msgid "Cancel"
-msgstr "Отмена"
+msgstr "Отменить"
 
 #. Translators: Button to close the editor window and create a new training
 #: src/training_editor.rs:70
@@ -244,9 +243,8 @@ msgstr "Время отдыха"
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: src/training_editor.rs:109 src/training_editor.rs:122
 #: src/training_editor.rs:135
-#, fuzzy
 msgid "Seconds"
-msgstr "секунды"
+msgstr "Секунды"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: src/training_editor.rs:120
@@ -262,7 +260,7 @@ msgstr "Время на подготовку"
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
 #: src/training_setup.rs:97
 msgid "{} × {} s"
-msgstr ""
+msgstr "{} × {} с"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: src/training_setup.rs:120
