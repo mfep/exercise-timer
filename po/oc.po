@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-22 15:48+0100\n"
-"PO-Revision-Date: 2025-03-16 03:07+0000\n"
+"PO-Revision-Date: 2025-03-22 08:08+0000\n"
 "Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
 "Language-Team: Occitan <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/oc/>\n"
@@ -100,7 +100,7 @@ msgstr ""
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
 msgid "The volume of the beeping sound"
-msgstr ""
+msgstr "Volum del piu"
 
 #. Translators: App summary, at most 35 characters, imperative style
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
@@ -202,27 +202,27 @@ msgstr ""
 #. Translators: Button to close the training editor window without modifications
 #: src/training_editor.rs:64
 msgid "Cancel"
-msgstr ""
+msgstr "Anullar"
 
 #. Translators: Button to close the editor window and create a new training
 #: src/training_editor.rs:70
 msgid "Create"
-msgstr ""
+msgstr "Crear"
 
 #. Translators: Button to close the editor window and update an existing training
 #: src/training_editor.rs:72
 msgid "Update"
-msgstr ""
+msgstr "Actualizar"
 
 #. Translators: The title of the field for the name of the training in the editor window
 #: src/training_editor.rs:88
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. Translators: The title of the field for the number of sets in the training in the editor window
 #: src/training_editor.rs:96
 msgid "Number of Sets"
-msgstr ""
+msgstr "Nombre de serias"
 
 #. Translators: The title of the field for the rest duration in the training in the editor window
 #: src/training_editor.rs:107
@@ -233,23 +233,23 @@ msgstr ""
 #: src/training_editor.rs:109 src/training_editor.rs:122
 #: src/training_editor.rs:135
 msgid "Seconds"
-msgstr ""
+msgstr "Segondas"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: src/training_editor.rs:120
 msgid "Exercise Time"
-msgstr ""
+msgstr "Durada de l'exercici"
 
 #. Translators: The title of the field for the preparation duration in the training in the editor window
 #: src/training_editor.rs:133
 msgid "Preparation Time"
-msgstr ""
+msgstr "Temps de preparacion"
 
 #. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
 #: src/training_setup.rs:97
 msgid "{} × {} s"
-msgstr ""
+msgstr "{} × {} s"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: src/training_setup.rs:120
@@ -264,12 +264,12 @@ msgstr ""
 #. Translators: Shown on the timer page during preparation
 #: src/training_timer.rs:248
 msgid "Preparation"
-msgstr ""
+msgstr "Preparacion"
 
 #. Translators: Shown on the timer page during exercise
 #: src/training_timer.rs:250
 msgid "Exercise"
-msgstr ""
+msgstr "Exercici"
 
 #. Translators: Shown on the timer page during rest
 #: src/training_timer.rs:252
@@ -293,7 +293,7 @@ msgstr ""
 #. Translators: tooltip text for the volume button
 #: src/training_timer.rs:322
 msgid "Set Volume"
-msgstr ""
+msgstr "Definir lo volum"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:336
