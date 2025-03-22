@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-22 15:48+0100\n"
-"PO-Revision-Date: 2025-03-22 08:08+0000\n"
+"PO-Revision-Date: 2025-03-23 06:49+0000\n"
 "Last-Translator: Gabriel Brand <gabr.brand@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/de/>\n"
@@ -76,7 +76,8 @@ msgid ""
 "interval training;"
 msgstr ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
-"interval training;Hilfsprogramm;Sport;Übung;Hochintensives Intervalltraining;"
+"interval training;Dienstprogramm;Sport;Übung;Hochintensives "
+"Intervalltraining;"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:6
 msgid "The width of the window"
@@ -88,23 +89,23 @@ msgstr "Die Höhe des Fensters"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:14
 msgid "If the window is maximized"
-msgstr ""
+msgstr "Ob das Fenster maximiert ist"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:18
 msgid "Default training setup, in JSON notation"
-msgstr ""
+msgstr "Standard-Trainingskonfiguration, in JSON-Notation"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:22
 msgid "List of training setups, in JSON notation"
-msgstr ""
+msgstr "Liste der Trainingskonfigurationen, in JSON-Notation"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
 msgid "The duration of the warmup, in seconds"
-msgstr ""
+msgstr "Die Dauer des Aufwärmens, in Sekunden"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
 msgid "The volume of the beeping sound"
-msgstr ""
+msgstr "Die Lautstärke des Pieptons"
 
 #. Translators: App summary, at most 35 characters, imperative style
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
@@ -120,34 +121,37 @@ msgid ""
 "exercise sets are played. In between each exercise, there is a resting "
 "period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
-"Exercise Timer ist ein einfaches Dienstprogramm zur Durchführung eines "
-"hochintensiven Intervalltrainings. Nach einer kurzen Vorbereitungszeit wird "
-"eine vorgeschriebene Anzahl von Übungseinheiten durchgeführt. Zwischen den "
-"einzelnen Übungen gibt es eine Ruhephase. Die App macht keine Annahmen über "
-"die Art der Übung."
+"Übungstimer ist ein einfaches Dienstprogramm zur Durchführung von "
+"hochintensivem Intervalltraining. Nach einer kurzen Vorbereitungszeit wird "
+"eine vorgeschriebene Anzahl von Übungssätzen gespielt. Zwischen jeder Übung "
+"gibt es eine Ruhezeit. Die Anwendung macht keine Annahmen über die Art der "
+"Übung."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
 msgstr "Funktionen:"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
+#, fuzzy
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise, rest and preparation periods."
 msgstr ""
+"Speichern und Abrufen von Voreinstellungen, die die Anzahl der Sätze und die "
+"Dauer der Übungen, Ruhe- und Vorbereitungszeiten enthalten."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid "A beeping sound is played at- and prior to each transition."
-msgstr ""
+msgstr "Bei und vor jedem Übergang wird ein Piepton abgespielt."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
-#, fuzzy
 msgid "The volume of the sound can be adjusted."
-msgstr "Die Lautstärke des Klangs kann angepasst werden."
+msgstr "Die Lautstärke des Tons kann angepasst werden."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
+#, fuzzy
 msgid "Light and dark mode follows the system's setting."
-msgstr ""
+msgstr "Der Hell- und Dunkelmodus folgt den Einstellungen des Systems."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
 msgid "Exercise list - dark mode"
@@ -160,7 +164,7 @@ msgstr "Timer - dunkler Modus"
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
 #, fuzzy
 msgid "New training dialog - light mode"
-msgstr "Neues Training Dialog - heller Modus"
+msgstr "»Neues Training«-Dialog - heller Modus"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
 msgid "Timer - light mode"
@@ -224,7 +228,6 @@ msgstr "Erstellen"
 
 #. Translators: Button to close the editor window and update an existing training
 #: src/training_editor.rs:72
-#, fuzzy
 msgid "Update"
 msgstr "Aktualisieren"
 
@@ -235,7 +238,6 @@ msgstr "Name"
 
 #. Translators: The title of the field for the number of sets in the training in the editor window
 #: src/training_editor.rs:96
-#, fuzzy
 msgid "Number of Sets"
 msgstr "Anzahl der Sätze"
 
@@ -273,7 +275,6 @@ msgstr "Training löschen"
 
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:158
-#, fuzzy
 msgid "Finished!"
 msgstr "Fertig!"
 
@@ -289,7 +290,6 @@ msgstr "Übung"
 
 #. Translators: Shown on the timer page during rest
 #: src/training_timer.rs:252
-#, fuzzy
 msgid "Rest"
 msgstr "Ruhe"
 
@@ -309,7 +309,6 @@ msgstr "Training fortsetzen"
 
 #. Translators: tooltip text for the volume button
 #: src/training_timer.rs:322
-#, fuzzy
 msgid "Set Volume"
 msgstr "Lautstärke einstellen"
 
@@ -320,80 +319,96 @@ msgstr "Verbleibende Sätze: {}"
 
 #. Translators: Error message printed to the console when an error occurs with WAV decoding
 #: src/training_timer/audio_player.rs:16
+#, fuzzy
 msgid "Could not decode WAV"
-msgstr ""
+msgstr "WAV konnte nicht dekodiert werden"
 
 #. Translators: Error message printed to the console when an error occurs with audio playback
 #: src/training_timer/audio_player.rs:25
+#, fuzzy
 msgid "Could not play audio"
-msgstr ""
+msgstr "Audio konnte nicht abgespielt werden"
 
 #. Translators: Error message printed to the console when cannot load data from resource
 #: src/training_timer/audio_player.rs:55
+#, fuzzy
 msgid "Could not open resource data"
-msgstr ""
+msgstr "Ressourcendaten konnten nicht geöffnet werden"
 
 #. Translators: Error message when cannot connect to the audio output
 #: src/main.rs:22
+#, fuzzy
 msgid "Could not create audio output stream"
-msgstr ""
+msgstr "Audio-Ausgabestrom konnte nicht erstellt werden"
 
 #. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
 #: src/settings.rs:65
+#, fuzzy
 msgid "Cannot find 'name' in settings dictionary"
-msgstr ""
+msgstr "'name' kann nicht im Einstellungsverzeichnis gefunden werden"
 
 #. Translators: Error message printed to the console when key 'sets' is not found in the JSON formatted training
 #: src/settings.rs:69
+#, fuzzy
 msgid "Cannot find 'sets' in settings dictionary"
-msgstr ""
+msgstr "'sets' kann nicht im Einstellungsverzeichnis gefunden werden"
 
 #. Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
 #: src/settings.rs:74
+#, fuzzy
 msgid "Cannot find 'exercise_s' in settings dictionary"
-msgstr ""
+msgstr "'exercise_s' kann nicht im Einstellungsverzeichnis gefunden werden"
 
 #. Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
 #: src/settings.rs:80
+#, fuzzy
 msgid "Cannot find 'rest_s' in settings dictionary"
-msgstr ""
+msgstr "'rest_s' kann nicht im Einstellungsverzeichnis gefunden werden"
 
 #. Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
 #: src/settings.rs:99
+#, fuzzy
 msgid "Could not parse default training setup"
-msgstr ""
+msgstr "Standard-Trainingskonfiguration konnte nicht geparst werden"
 
 #. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be parsed
 #: src/settings.rs:110
+#, fuzzy
 msgid "Could not parse exercise list"
-msgstr ""
+msgstr "Übungsliste konnte nicht geparst werden"
 
 #. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be written to the settings
 #: src/settings.rs:133
+#, fuzzy
 msgid "Could not update settings with training list"
-msgstr ""
+msgstr "Einstellungen konnten nicht mit der Trainingsliste aktualisiert werden"
 
 #. Translators: Error message printed to the console when the GIO resource file cannot be registered
 #: src/setup.rs:14
+#, fuzzy
 msgid "Could not register resources"
-msgstr ""
+msgstr "Ressourcen konnten nicht registriert werden"
 
 #. Translators: Error message printed to the console when the i18n text domain cannot be bound
 #: src/setup.rs:23
+#, fuzzy
 msgid "Unable to bind the text domain"
-msgstr ""
+msgstr "Die Textdomäne kann nicht verknüpft werden"
 
 #. Translators: Error message printed to the console when the i18n text domain cannot be switched to
 #: src/setup.rs:28
+#, fuzzy
 msgid "Unable to switch to the text domain"
-msgstr ""
+msgstr "Wechsel zur Textdomäne nicht möglich"
 
 #. Translators: Error message printed to the console when there is no Display to apply the custom CSS to
 #: src/setup.rs:41
+#, fuzzy
 msgid "Could not connect to a display"
-msgstr ""
+msgstr "Verbindung zu einem Display konnte nicht hergestellt werden"
 
 #. Translators: Error message printed to the console, when the Shortcuts window cannot be built from resource
 #: src/shortcuts_window.rs:23
+#, fuzzy
 msgid "Could not build the Help Overlay"
-msgstr ""
+msgstr "Hilfe-Overlay konnte nicht erstellt werden"
