@@ -6,15 +6,16 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 21:03+0100\n"
-"PO-Revision-Date: 2025-01-05 19:05+0100\n"
-"Last-Translator:  <>\n"
-"Language-Team: Hungarian\n"
+"PO-Revision-Date: 2025-03-24 20:35+0000\n"
+"Last-Translator: Lőrinc Serfőző <lorinc.serfozo@mailbox.org>\n"
+"Language-Team: Hungarian <https://hosted.weblate.org/projects/exercise-timer/"
+"exercise-timer/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 47.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
@@ -107,15 +108,16 @@ msgid "Train and rest with high intensity"
 msgstr "Edzz magas intenzitáson"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
-#, fuzzy
 msgid ""
 "Exercise Timer is a simple utility to conduct high intensity interval "
 "training. Following a short preparation period, a prescribed number of "
 "exercise sets are played. In between each exercise, there is a resting "
 "period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
-"A felkészülési időt követően az előírt számú gyakorlat szett következik. A "
-"gyakorlatok közé pihenőidő van ütemezve."
+"Az Edzésóra egy egyszerű segédeszköz nagy intezitású intervallum edzések "
+"vezénylésére. A felkészülési időt követően az előírt számú gyakorlat szett "
+"következik. A gyakorlatok közé pihenőidő van ütemezve. Az app nem tesz "
+"feltételezést az edzés fajtájáról."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
