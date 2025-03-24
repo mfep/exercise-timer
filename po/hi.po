@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-22 15:48+0100\n"
+"POT-Creation-Date: 2025-03-24 21:03+0100\n"
 "PO-Revision-Date: 2024-07-20 06:09+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/exercise-timer/"
@@ -144,12 +144,12 @@ msgid "Light and dark mode follows the system's setting."
 msgstr "हल्के और गहरे रंग के मोड सिस्टम की सेटिंग का अनुसरण करते हैं।"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
-msgid "Exercise list - dark mode"
-msgstr "व्यायाम सूची - गहरा मोड"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
 msgid "Timer - dark mode"
 msgstr "टाइमर - गहरा मोड"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
+msgid "Exercise list - dark mode"
+msgstr "व्यायाम सूची - गहरा मोड"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
 #, fuzzy
@@ -296,30 +296,30 @@ msgid "Rest"
 msgstr "विश्राम"
 
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:294
+#: src/training_timer.rs:295
 #, fuzzy
 msgid "Restart Training"
 msgstr "प्रशिक्षण शुरू करें"
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:305
+#: src/training_timer.rs:307
 #, fuzzy
 msgid "Pause Training"
 msgstr "प्रशिक्षण रोकें"
 
-#: src/training_timer.rs:305
+#: src/training_timer.rs:307
 #, fuzzy
 msgid "Resume Training"
 msgstr "प्रशिक्षण फिर से शुरू करें"
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:322
+#: src/training_timer.rs:324
 #, fuzzy
 msgid "Set Volume"
 msgstr "वॉल्यूम निर्धारित करें"
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:336
+#: src/training_timer.rs:338
 #, fuzzy
 msgid "Remaining Sets: {}"
 msgstr "शेष सेट: {}"

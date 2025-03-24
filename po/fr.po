@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-22 15:48+0100\n"
+"POT-Creation-Date: 2025-03-24 21:03+0100\n"
 "PO-Revision-Date: 2025-03-09 21:02+0000\n"
 "Last-Translator: Lula Bye <translate.cylinder716@passinbox.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/exercise-timer/"
@@ -146,12 +146,12 @@ msgid "Light and dark mode follows the system's setting."
 msgstr "Les modes clair et sombre suivent les paramètres du système."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
-msgid "Exercise list - dark mode"
-msgstr "Liste d'exercices - mode sombre"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
 msgid "Timer - dark mode"
 msgstr "Minuterie - mode sombre"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
+msgid "Exercise list - dark mode"
+msgstr "Liste d'exercices - mode sombre"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
 #, fuzzy
@@ -287,26 +287,26 @@ msgid "Rest"
 msgstr "Repos"
 
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:294
+#: src/training_timer.rs:295
 msgid "Restart Training"
 msgstr "Recommencer l'entrainement"
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:305
+#: src/training_timer.rs:307
 msgid "Pause Training"
 msgstr "Mettre en pause l'entrainement"
 
-#: src/training_timer.rs:305
+#: src/training_timer.rs:307
 msgid "Resume Training"
 msgstr "Reprendre l'entrainement"
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:322
+#: src/training_timer.rs:324
 msgid "Set Volume"
 msgstr "Règler le volume"
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:336
+#: src/training_timer.rs:338
 #, fuzzy
 msgid "Remaining Sets: {}"
 msgstr "Sets restants : {}"

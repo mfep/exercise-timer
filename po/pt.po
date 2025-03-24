@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-22 15:48+0100\n"
+"POT-Creation-Date: 2025-03-24 21:03+0100\n"
 "PO-Revision-Date: 2025-01-09 07:21+0000\n"
 "Last-Translator: aquila0101 <aquila.santos@ba.estudante.senai.br>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/exercise-"
@@ -146,12 +146,12 @@ msgstr ""
 "O modo claro e escuro se ajustam automaticamente às configurações do sistema."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
-msgid "Exercise list - dark mode"
-msgstr "Lista de exercícios no modo escuro"
-
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
 msgid "Timer - dark mode"
 msgstr "Temporizador - modo escuro"
+
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
+msgid "Exercise list - dark mode"
+msgstr "Lista de exercícios no modo escuro"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
 msgid "New training dialog - light mode"
@@ -287,26 +287,26 @@ msgid "Rest"
 msgstr ""
 
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:294
+#: src/training_timer.rs:295
 msgid "Restart Training"
 msgstr ""
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:305
+#: src/training_timer.rs:307
 msgid "Pause Training"
 msgstr "Pausar Treinamento"
 
-#: src/training_timer.rs:305
+#: src/training_timer.rs:307
 msgid "Resume Training"
 msgstr "Retomar Treinamento"
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:322
+#: src/training_timer.rs:324
 msgid "Set Volume"
 msgstr ""
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:336
+#: src/training_timer.rs:338
 msgid "Remaining Sets: {}"
 msgstr ""
 

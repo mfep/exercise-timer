@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-22 15:48+0100\n"
+"POT-Creation-Date: 2025-03-24 21:03+0100\n"
 "PO-Revision-Date: 2024-05-24 01:09+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
@@ -143,11 +143,11 @@ msgid "Light and dark mode follows the system's setting."
 msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
-msgid "Exercise list - dark mode"
+msgid "Timer - dark mode"
 msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
-msgid "Timer - dark mode"
+msgid "Exercise list - dark mode"
 msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
@@ -291,29 +291,29 @@ msgid "Rest"
 msgstr "Hvile"
 
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:294
+#: src/training_timer.rs:295
 #, fuzzy
 msgid "Restart Training"
 msgstr "Start/stopp trening"
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:305
+#: src/training_timer.rs:307
 #, fuzzy
 msgid "Pause Training"
 msgstr "Opprett øvelse"
 
-#: src/training_timer.rs:305
+#: src/training_timer.rs:307
 #, fuzzy
 msgid "Resume Training"
 msgstr "Opprett øvelse"
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:322
+#: src/training_timer.rs:324
 msgid "Set Volume"
 msgstr ""
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:336
+#: src/training_timer.rs:338
 #, fuzzy
 msgid "Remaining Sets: {}"
 msgstr "Gjenstående sett: {}"

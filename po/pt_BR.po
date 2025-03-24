@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-22 15:48+0100\n"
+"POT-Creation-Date: 2025-03-24 21:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -135,11 +135,11 @@ msgid "Light and dark mode follows the system's setting."
 msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
-msgid "Exercise list - dark mode"
+msgid "Timer - dark mode"
 msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
-msgid "Timer - dark mode"
+msgid "Exercise list - dark mode"
 msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
@@ -274,26 +274,26 @@ msgid "Rest"
 msgstr ""
 
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:294
+#: src/training_timer.rs:295
 msgid "Restart Training"
 msgstr ""
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:305
+#: src/training_timer.rs:307
 msgid "Pause Training"
 msgstr ""
 
-#: src/training_timer.rs:305
+#: src/training_timer.rs:307
 msgid "Resume Training"
 msgstr ""
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:322
+#: src/training_timer.rs:324
 msgid "Set Volume"
 msgstr ""
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:336
+#: src/training_timer.rs:338
 msgid "Remaining Sets: {}"
 msgstr ""
 
