@@ -130,17 +130,6 @@ impl Component for AppModel {
                         },
                     },
                 },
-                #[name = "main_navigation_page"]
-                add = &adw::NavigationPage {
-                    // The title is set here initially to prevent a warning,
-                    // but the value is set to the name of the training later
-                    set_title: "Timer",
-                    #[wrap(Some)]
-                    #[name = "main_view"]
-                    set_child = &adw::ToolbarView {
-                        add_top_bar = &adw::HeaderBar {},
-                    }
-                },
                 connect_popped[sender] => move |_, _| { sender.input(AppModelInput::Popped); },
             }
         }
@@ -278,10 +267,17 @@ impl Component for AppModel {
                             .detach(),
                     );
                     widgets
-                        .main_view
-                        .set_content(Some(self.training_timer.as_ref().unwrap().widget()));
-                    widgets.navigation_view.push(&widgets.main_navigation_page);
-                    widgets.main_navigation_page.set_title(&setup.name);
+                        .navigation_view
+                        .add(self.training_timer.as_ref().unwrap().widget());
+                    widgets
+                        .navigation_view
+                        .push(self.training_timer.as_ref().unwrap().widget());
+                    self.training_timer
+                        .as_ref()
+                        .unwrap()
+                        .widgets()
+                        .play_pause_button
+                        .grab_focus();
                 }
             }
             AppModelInput::Popped => {
