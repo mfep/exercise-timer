@@ -1,5 +1,7 @@
 mod app;
 mod config;
+mod database;
+mod schema;
 mod settings;
 mod setup;
 mod shortcuts_window;

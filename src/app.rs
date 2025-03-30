@@ -1,4 +1,5 @@
 use crate::config;
+use crate::database::*;
 use crate::settings;
 use crate::shortcuts_window::*;
 use crate::training_editor::*;
@@ -42,6 +43,7 @@ pub struct AppModel {
     window_geometry: settings::WindowGeometry,
     global_settings: settings::GlobalTrainingSetup,
     shortcuts_window: Controller<ShortcutsWindowModel>,
+    db: Database,
 }
 
 #[relm4::component(pub)]
@@ -140,6 +142,7 @@ impl Component for AppModel {
         root: Self::Root,
         sender: ComponentSender<Self>,
     ) -> ComponentParts<Self> {
+        let mut db = Database::open().unwrap();
         let mut list_trainings = relm4::factory::FactoryVecDeque::builder()
             .launch(gtk::ListBox::default())
             .forward(sender.input_sender(), |output| match output {
@@ -147,8 +150,8 @@ impl Component for AppModel {
             });
         {
             let mut guard = list_trainings.guard();
-            for training_setup in settings::load_training_list_from_gsettings().into_iter() {
-                guard.push_back(training_setup);
+            for training in db.get_trainings().unwrap().into_iter() {
+                guard.push_back(TrainingSetup::from(training));
             }
         }
         let model = AppModel {
@@ -161,6 +164,7 @@ impl Component for AppModel {
                 .transient_for(&root)
                 .launch(())
                 .detach(),
+            db,
         };
         let mut actions = relm4::actions::RelmActionGroup::<WindowActionGroup>::new();
         let about_action = {
