@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-24 21:03+0100\n"
+"POT-Creation-Date: 2025-04-06 17:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,7 +56,7 @@ msgstr ""
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:76 src/app.rs:183
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:76 src/app.rs:172
 #: src/setup.rs:11
 msgid "Exercise Timer"
 msgstr ""
@@ -182,7 +182,7 @@ msgid "Create Training"
 msgstr ""
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:190
+#: src/app.rs:179
 msgid "translator_credits"
 msgstr ""
 
@@ -255,46 +255,46 @@ msgid "Delete Training"
 msgstr ""
 
 #. Translators: Shown in the timer page when the training has come to the end
-#: src/training_timer.rs:158
+#: src/training_timer.rs:152
 msgid "Finished!"
 msgstr ""
 
 #. Translators: Shown on the timer page during preparation
-#: src/training_timer.rs:248
+#: src/training_timer.rs:245
 msgid "Preparation"
 msgstr ""
 
 #. Translators: Shown on the timer page during exercise
-#: src/training_timer.rs:250
+#: src/training_timer.rs:247
 msgid "Exercise"
 msgstr ""
 
 #. Translators: Shown on the timer page during rest
-#: src/training_timer.rs:252
+#: src/training_timer.rs:249
 msgid "Rest"
 msgstr ""
 
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:295
+#: src/training_timer.rs:292
 msgid "Restart Training"
 msgstr ""
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:307
+#: src/training_timer.rs:304
 msgid "Pause Training"
 msgstr ""
 
-#: src/training_timer.rs:307
+#: src/training_timer.rs:304
 msgid "Resume Training"
 msgstr ""
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:324
+#: src/training_timer.rs:321
 msgid "Set Volume"
 msgstr ""
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:338
+#: src/training_timer.rs:335
 msgid "Remaining Sets: {}"
 msgstr ""
 

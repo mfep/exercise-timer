@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-24 21:03+0100\n"
+"POT-Creation-Date: 2025-04-06 17:09+0200\n"
 "PO-Revision-Date: 2024-07-20 06:09+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/exercise-timer/"
@@ -58,7 +58,7 @@ msgstr "बंद करें"
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:76 src/app.rs:183
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:76 src/app.rs:172
 #: src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "व्यायाम टाइमर"
@@ -195,7 +195,7 @@ msgid "Create Training"
 msgstr "प्रशिक्षण बनाएं"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:190
+#: src/app.rs:179
 msgid "translator_credits"
 msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
@@ -276,50 +276,50 @@ msgid "Delete Training"
 msgstr "प्रशिक्षण मिटाएं"
 
 #. Translators: Shown in the timer page when the training has come to the end
-#: src/training_timer.rs:158
+#: src/training_timer.rs:152
 msgid "Finished!"
 msgstr "समाप्त!"
 
 #. Translators: Shown on the timer page during preparation
-#: src/training_timer.rs:248
+#: src/training_timer.rs:245
 msgid "Preparation"
 msgstr "तैयारी"
 
 #. Translators: Shown on the timer page during exercise
-#: src/training_timer.rs:250
+#: src/training_timer.rs:247
 msgid "Exercise"
 msgstr "व्यायाम"
 
 #. Translators: Shown on the timer page during rest
-#: src/training_timer.rs:252
+#: src/training_timer.rs:249
 msgid "Rest"
 msgstr "विश्राम"
 
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:295
+#: src/training_timer.rs:292
 #, fuzzy
 msgid "Restart Training"
 msgstr "प्रशिक्षण शुरू करें"
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:307
+#: src/training_timer.rs:304
 #, fuzzy
 msgid "Pause Training"
 msgstr "प्रशिक्षण रोकें"
 
-#: src/training_timer.rs:307
+#: src/training_timer.rs:304
 #, fuzzy
 msgid "Resume Training"
 msgstr "प्रशिक्षण फिर से शुरू करें"
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:324
+#: src/training_timer.rs:321
 #, fuzzy
 msgid "Set Volume"
 msgstr "वॉल्यूम निर्धारित करें"
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:338
+#: src/training_timer.rs:335
 #, fuzzy
 msgid "Remaining Sets: {}"
 msgstr "शेष सेट: {}"
