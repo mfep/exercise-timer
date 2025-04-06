@@ -54,6 +54,31 @@
     <color type="primary" scheme_preference="dark">#188653</color>
   </branding>
   <releases>
+      <release version="1.8.2" date="2025-04-06">
+      <description translate="no">
+        <p>Bug fixes</p>
+        <ul>
+          <li>Play/pause button gets default focus (always)</li>
+        </ul>
+        <p>New translations</p>
+        <ul>
+          <li>Dutch</li>
+          <li>German</li>
+          <li>Occitan</li>
+          <li>Portuguese (Brazil)</li>
+          <li>Swedish</li>
+          <li>Ukrainian</li>
+        </ul>
+        <p>Updated translations</p>
+        <ul>
+          <li>Bulgarian</li>
+          <li>Finnish</li>
+          <li>French</li>
+          <li>Hungarian</li>
+          <li>Russian</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.8.1" date="2025-03-06">
       <description translate="no">
         <p>Bug fixes</p>
