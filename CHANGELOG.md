@@ -2,6 +2,40 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.8.2](https://github.com/mfep/exercise-timer/compare/c2d65932506723d3aeca5eb41cf6898af4c24fb6..v1.8.2) - 2025-04-06
+#### Bug Fixes
+- **(UI)** Fix Play/Pause getting focus on the Timer page - ([09447c8](https://github.com/mfep/exercise-timer/commit/09447c852a591aa2fe7315652e796e5f9c9fe3c3)) - [@mfep](https://github.com/mfep)
+- **(docs)** Fix filename and account links (#36) - ([d301fa0](https://github.com/mfep/exercise-timer/commit/d301fa0c600a6657c8c7b346d28c9c4a83291f6f)) - Sophie Herold
+- **(i18n)** Translated using Weblate (Portuguese (Brazil)) - ([c974a6a](https://github.com/mfep/exercise-timer/commit/c974a6a3bfd49480f75ecbce6466919613f6a6ea)) - Carlos Daniel Vieira
+- **(i18n)** Translated using Weblate (Dutch) - ([efa1c7a](https://github.com/mfep/exercise-timer/commit/efa1c7a8c2ead13fa66ff2d51738669725f59d44)) - Dick Groskamp
+- **(i18n)** Translated using Weblate (Swedish) - ([e04a2c6](https://github.com/mfep/exercise-timer/commit/e04a2c6e1f663077bad9349a0f196e59d343cca1)) - Anders Jonsson
+- **(i18n)** Update German translation (#37) - ([74b676e](https://github.com/mfep/exercise-timer/commit/74b676e17c5c06ee268d09a98710dad99d53c28a)) - Philipp Kiemle
+- **(i18n)** Translated using Weblate (Hungarian) - ([925da0f](https://github.com/mfep/exercise-timer/commit/925da0f8df5c035c75d14bee404bd07ce58894f7)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Translated using Weblate (German) - ([9e7e3ec](https://github.com/mfep/exercise-timer/commit/9e7e3eca6625a9d3b6c5624293267f1b80cdd5ee)) - Gabriel Brand
+- **(i18n)** Translated using Weblate (Bulgarian) - ([947086b](https://github.com/mfep/exercise-timer/commit/947086b5780655907411ea8b16d51968742ecfa2)) - mondstern
+- **(i18n)** Translated using Weblate (Ukrainian) - ([40e3ed8](https://github.com/mfep/exercise-timer/commit/40e3ed84fa25b27c67f17051fec2c3540476e829)) - mondstern
+- **(i18n)** Translated using Weblate (German) - ([4971bdd](https://github.com/mfep/exercise-timer/commit/4971bdde1d37dde3934bebaf47060c2932bb3612)) - Gabriel Brand
+- **(i18n)** Translated using Weblate (Occitan) - ([0aef0e2](https://github.com/mfep/exercise-timer/commit/0aef0e2404903598d9e2f2d7131bd52c5c673cbd)) - Quentin PAGÈS
+- **(i18n)** Translated using Weblate (Russian) - ([1dab94c](https://github.com/mfep/exercise-timer/commit/1dab94c70b663376dbc4f387a8ca9c146301fc35)) - Aleksandr Melman
+- **(i18n)** Translated using Weblate (Finnish) - ([5e4796f](https://github.com/mfep/exercise-timer/commit/5e4796f5644946f9377d5119daeaefeca93ea38d)) - Jiri Grönroos
+- **(i18n)** Translated using Weblate (Occitan) - ([a28992b](https://github.com/mfep/exercise-timer/commit/a28992b7e8af9ab7fffab2e2777d2c99cfabc1f4)) - Quentin PAGÈS
+- **(i18n)** Translated using Weblate (Finnish) - ([bceac41](https://github.com/mfep/exercise-timer/commit/bceac4163f2cc728232101dde514f97af4d2f101)) - Ricky Tigg
+- **(i18n)** Translated using Weblate (French) - ([c2d6593](https://github.com/mfep/exercise-timer/commit/c2d65932506723d3aeca5eb41cf6898af4c24fb6)) - Lula Bye
+- Fix flatpak-builder instruction in README (#35) - ([1a475d8](https://github.com/mfep/exercise-timer/commit/1a475d8b31f502368d149cdab969aec79739793b)) - [@mfep](https://github.com/mfep)
+#### Features
+- **(i18n)** Added translation using Weblate (Dutch) - ([111cbd2](https://github.com/mfep/exercise-timer/commit/111cbd2560d5e417331ab95b8ce207a7412d0ed1)) - Dick Groskamp
+- **(i18n)** Added translation using Weblate (Swedish) - ([60bdbaa](https://github.com/mfep/exercise-timer/commit/60bdbaa578c4a3bc7e2d774589253cb3660d52e0)) - Anders Jonsson
+- **(i18n)** Added translation using Weblate (Ukrainian) - ([25090b0](https://github.com/mfep/exercise-timer/commit/25090b06d2422b5a96ee994b34cea320183556c0)) - mondstern
+- **(i18n)** Added translation using Weblate (German) - ([c3ae855](https://github.com/mfep/exercise-timer/commit/c3ae85533b276bf837525d38169127c263906c19)) - mondstern
+- **(i18n)** Added translation using Weblate (Portuguese (Brazil)) - ([3bd8228](https://github.com/mfep/exercise-timer/commit/3bd82281ba6c687add8e70e0f5ccc097a6b18cfa)) - John Peter Sa
+- **(i18n)** Added translation using Weblate (Occitan) - ([4e90977](https://github.com/mfep/exercise-timer/commit/4e9097798115f32e6929e86177b9fb25e94616b0)) - Quentin PAGÈS
+#### Miscellaneous Chores
+- **(docs)** Update release in metainfo - ([e093c5f](https://github.com/mfep/exercise-timer/commit/e093c5f9682780a03ac75a96c762c1362ad75df7)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Update translation files - ([96a7c43](https://github.com/mfep/exercise-timer/commit/96a7c43470c6c6952b4751825ae59ea282b0a7f1)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Update translation files - ([63ae894](https://github.com/mfep/exercise-timer/commit/63ae894eca0691ffd8f86fe598879ec7be68d775)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.8.1](https://github.com/mfep/exercise-timer/compare/057db8b7c431478c75d16301d995ac8c7cf9722b..v1.8.1) - 2025-03-06
 #### Bug Fixes
 - **(UI)** Update brand colors (#34) - ([5348180](https://github.com/mfep/exercise-timer/commit/5348180ab92dce05663b00e7a31973d1b77b9c5a)) - Tobias Bernard
