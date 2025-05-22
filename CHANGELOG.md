@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.8.3](https://github.com/mfep/exercise-timer/compare/e4a30dcab1ee17f0063fba990048e6445f606a7a..v1.8.3) - 2025-05-22
+#### Bug Fixes
+- **(i18n)** Translated using Weblate (Portuguese) - ([e4a30dc](https://github.com/mfep/exercise-timer/commit/e4a30dcab1ee17f0063fba990048e6445f606a7a)) - ssantos
+#### Miscellaneous Chores
+- **(docs)** Update release in metainfo - ([a6f4af9](https://github.com/mfep/exercise-timer/commit/a6f4af9d22f6aea185cbad27246d4050a18bae13)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.8.2](https://github.com/mfep/exercise-timer/compare/c2d65932506723d3aeca5eb41cf6898af4c24fb6..v1.8.2) - 2025-04-06
 #### Bug Fixes
 - **(UI)** Fix Play/Pause getting focus on the Timer page - ([09447c8](https://github.com/mfep/exercise-timer/commit/09447c852a591aa2fe7315652e796e5f9c9fe3c3)) - [@mfep](https://github.com/mfep)
