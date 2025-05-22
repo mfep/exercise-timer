@@ -54,7 +54,15 @@
     <color type="primary" scheme_preference="dark">#188653</color>
   </branding>
   <releases>
-      <release version="1.8.2" date="2025-04-06">
+    <release version="1.8.3" date="2025-05-22">
+      <description translate="no">
+        <p>Updated translations</p>
+        <ul>
+          <li>Portuguese</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.8.2" date="2025-04-06">
       <description translate="no">
         <p>Bug fixes</p>
         <ul>
@@ -321,7 +329,7 @@
     </release>
   </releases>
   <developer id="xyz.safeworlds">
-    <name translate="no">safe worlds</name>
+    <name translate="no">Lőrinc Serfőző</name>
   </developer>
   <translation type="gettext">@gettext-package@</translation>
   <launchable type="desktop-id">@app-id@.desktop</launchable>
