@@ -8,49 +8,52 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-06 17:09+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-05-24 02:35+0000\n"
+"Last-Translator: Mehmet Cevheri BOZOGLAN <cevheribozoglan@gmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/exercise-timer/"
+"exercise-timer/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "Training"
-msgstr ""
+msgstr "Eğitim"
 
 #. Translators: The name of the shortcut key to start and stop the training timer
 #: data/resources/ui/help-overlay.ui:16
 msgctxt "shortcut window"
 msgid "Start/Stop training"
-msgstr ""
+msgstr "Eğitimi Başlat/Durdur"
 
 #. Translators: The name of the shortcut key to start the training from the beginning
 #: data/resources/ui/help-overlay.ui:24
 msgctxt "shortcut window"
 msgid "Reset training"
-msgstr ""
+msgstr "Eğitimi Sıfırla"
 
 #. Translators: The title of the shortcuts group which lists general application shortcuts
 #: data/resources/ui/help-overlay.ui:34
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Genel"
 
 #. Translators: The name of the shortcut key to open the shortcuts window
 #: data/resources/ui/help-overlay.ui:38
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Kısayolları Göster"
 
 #. Translators: The name of the shortcut key to quit the application
 #: data/resources/ui/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Çıkış"
 
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
@@ -58,11 +61,11 @@ msgstr ""
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:76 src/app.rs:172
 #: src/setup.rs:11
 msgid "Exercise Timer"
-msgstr ""
+msgstr "Egzersiz Zamanlayıcısı"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:4
 msgid "Timer clock for high intensity interval training"
-msgstr ""
+msgstr "Yüksek yoğunluklu interval antrenman için zamanlayıcı saati"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/xyz.safeworlds.hiit.desktop.in.in:10
@@ -70,39 +73,41 @@ msgid ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
 "interval training;"
 msgstr ""
+"Gnome; GTK; Yardımcı Program; Spor; Egzersiz; HIIT; Eğitim; Egzersiz; Yüksek "
+"yoğunluklu aralıklı eğitim;"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:6
 msgid "The width of the window"
-msgstr ""
+msgstr "Pencerenin genişliği"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:10
 msgid "The height of the window"
-msgstr ""
+msgstr "Pencerenin yüksekliği"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:14
 msgid "If the window is maximized"
-msgstr ""
+msgstr "Pencere büyütülmüşse"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:18
 msgid "Default training setup, in JSON notation"
-msgstr ""
+msgstr "JSON gösteriminde varsayılan eğitim ayarı"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:22
 msgid "List of training setups, in JSON notation"
-msgstr ""
+msgstr "JSON gösteriminde eğitim ayarlarının listesi"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
 msgid "The duration of the warmup, in seconds"
-msgstr ""
+msgstr "Isınma süresi, saniye cinsinden"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
 msgid "The volume of the beeping sound"
-msgstr ""
+msgstr "Bipleme sesinin seviyesi"
 
 #. Translators: App summary, at most 35 characters, imperative style
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
 msgid "Train and rest with high intensity"
-msgstr ""
+msgstr "Yüksek yoğunlukta antrenman yapın ve dinlenin"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
 msgid ""
@@ -111,268 +116,275 @@ msgid ""
 "exercise sets are played. In between each exercise, there is a resting "
 "period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
+"Egzersiz Zamanlayıcısı, yüksek yoğunluklu aralıklı antrenman yapmak için "
+"basit bir yardımcı programdır. Kısa bir hazırlık döneminin ardından, önceden "
+"belirlenmiş sayıda egzersiz seti uygulanır. Her egzersiz arasında bir "
+"dinlenme süresi vardır. Uygulama, egzersizin türü hakkında bir varsayımda "
+"bulunmaz."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
-msgstr ""
+msgstr "Özellikler:"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise, rest and preparation periods."
 msgstr ""
+"Egzersiz, dinlenme ve hazırlık sürelerinin sayısını ve süresini içeren ön "
+"ayarları kaydet ve geri çağır."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid "A beeping sound is played at- and prior to each transition."
-msgstr ""
+msgstr "Her geçişte ve öncesinde bir bip sesi çalınır."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "The volume of the sound can be adjusted."
-msgstr ""
+msgstr "Ses seviyesi ayarlanabilir."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "Light and dark mode follows the system's setting."
-msgstr ""
+msgstr "Aydınlık ve karanlık mod, sistemin ayarını takip eder."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
 msgid "Timer - dark mode"
-msgstr ""
+msgstr "Zamanlıyıcı - koyu tema"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
 msgid "Exercise list - dark mode"
-msgstr ""
+msgstr "Egzersiz listesi - karanlık tema"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
 msgid "New training dialog - light mode"
-msgstr ""
+msgstr "Yeni eğitim diyaloğu - aydınlık modu"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
 msgid "Timer - light mode"
-msgstr ""
+msgstr "Zamanlayıcı - aydınlık modu"
 
 #. Translators: The title of the keyboard shortcuts menu entry
 #: src/app.rs:58
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Klavye Kısayolları"
 
 #. Translators: The title of the about dialog menu entry
 #: src/app.rs:60
 msgid "_About Exercise Timer"
-msgstr ""
+msgstr "_Egzersiz Zamanlayıcısı Hakkında"
 
 #. Translators: tooltip for the add training image button
 #: src/app.rs:84
 msgid "Add Training"
-msgstr ""
+msgstr "Eğitim Ekleyin"
 
 #. Translators: tooltip for main menu image button
 #: src/app.rs:91
 msgid "Main Menu"
-msgstr ""
+msgstr "Ana Menü"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:121
 msgid "No Trainings"
-msgstr ""
+msgstr "Eğitim Yok"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:125
 msgid "Create Training"
-msgstr ""
+msgstr "Eğitim Oluşturun"
 
 #. Translators: Replace this with your name for it to show up in the about window
 #: src/app.rs:179
 msgid "translator_credits"
-msgstr ""
+msgstr "çevirmen_kredileri"
 
 #. Translators: The editor window's title when creating a new training
 #: src/training_editor.rs:56
 msgid "New Training"
-msgstr ""
+msgstr "Yeni Eğitim"
 
 #. Translators: The editor window's title when modifying a training
 #. Translators: tooltip text for exercise card button to open the training editor
 #: src/training_editor.rs:58 src/training_setup.rs:112
 msgid "Edit Training"
-msgstr ""
+msgstr "Eğitim Düzenleme"
 
 #. Translators: Button to close the training editor window without modifications
 #: src/training_editor.rs:64
 msgid "Cancel"
-msgstr ""
+msgstr "İptal"
 
 #. Translators: Button to close the editor window and create a new training
 #: src/training_editor.rs:70
 msgid "Create"
-msgstr ""
+msgstr "Oluştur"
 
 #. Translators: Button to close the editor window and update an existing training
 #: src/training_editor.rs:72
 msgid "Update"
-msgstr ""
+msgstr "Güncelle"
 
 #. Translators: The title of the field for the name of the training in the editor window
 #: src/training_editor.rs:88
 msgid "Name"
-msgstr ""
+msgstr "Ad"
 
 #. Translators: The title of the field for the number of sets in the training in the editor window
 #: src/training_editor.rs:96
 msgid "Number of Sets"
-msgstr ""
+msgstr "Hazırlık Sayısı"
 
 #. Translators: The title of the field for the rest duration in the training in the editor window
 #: src/training_editor.rs:107
 msgid "Rest Time"
-msgstr ""
+msgstr "Dinlenme Süresi"
 
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: src/training_editor.rs:109 src/training_editor.rs:122
 #: src/training_editor.rs:135
 msgid "Seconds"
-msgstr ""
+msgstr "Saniyeler"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: src/training_editor.rs:120
 msgid "Exercise Time"
-msgstr ""
+msgstr "Egzersiz Süresi"
 
 #. Translators: The title of the field for the preparation duration in the training in the editor window
 #: src/training_editor.rs:133
 msgid "Preparation Time"
-msgstr ""
+msgstr "Hazırlık Süresi"
 
 #. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
 #: src/training_setup.rs:97
 msgid "{} × {} s"
-msgstr ""
+msgstr "{} × {} s"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: src/training_setup.rs:120
 msgid "Delete Training"
-msgstr ""
+msgstr "Eğitimi Sil"
 
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:152
 msgid "Finished!"
-msgstr ""
+msgstr "Bitti!"
 
 #. Translators: Shown on the timer page during preparation
 #: src/training_timer.rs:245
 msgid "Preparation"
-msgstr ""
+msgstr "Hazırlık"
 
 #. Translators: Shown on the timer page during exercise
 #: src/training_timer.rs:247
 msgid "Exercise"
-msgstr ""
+msgstr "Egzersiz"
 
 #. Translators: Shown on the timer page during rest
 #: src/training_timer.rs:249
 msgid "Rest"
-msgstr ""
+msgstr "Dinlenme"
 
 #. Translators: tooltip text for the reset button
 #: src/training_timer.rs:292
 msgid "Restart Training"
-msgstr ""
+msgstr "Antremanı Yeniden Başlatın"
 
 #. Translators: tooltip text for the pause/resume button
 #: src/training_timer.rs:304
 msgid "Pause Training"
-msgstr ""
+msgstr "Antremanı Durdur"
 
 #: src/training_timer.rs:304
 msgid "Resume Training"
-msgstr ""
+msgstr "Antremanı Devam Ettir"
 
 #. Translators: tooltip text for the volume button
 #: src/training_timer.rs:321
 msgid "Set Volume"
-msgstr ""
+msgstr "Sesi Ayarla"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:335
 msgid "Remaining Sets: {}"
-msgstr ""
+msgstr "Kalan Setler: {}"
 
 #. Translators: Error message printed to the console when an error occurs with WAV decoding
 #: src/training_timer/audio_player.rs:16
 msgid "Could not decode WAV"
-msgstr ""
+msgstr "WAV kodu çözülemedi"
 
 #. Translators: Error message printed to the console when an error occurs with audio playback
 #: src/training_timer/audio_player.rs:25
 msgid "Could not play audio"
-msgstr ""
+msgstr "Ses oynatılamadı"
 
 #. Translators: Error message printed to the console when cannot load data from resource
 #: src/training_timer/audio_player.rs:55
 msgid "Could not open resource data"
-msgstr ""
+msgstr "Kaynak verileri açılamadı"
 
 #. Translators: Error message when cannot connect to the audio output
 #: src/main.rs:22
 msgid "Could not create audio output stream"
-msgstr ""
+msgstr "Ses çıkış akışı oluşturulamadı"
 
 #. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
 #: src/settings.rs:65
 msgid "Cannot find 'name' in settings dictionary"
-msgstr ""
+msgstr "Ayarlar sözlüğünde 'name' bulunamıyor"
 
 #. Translators: Error message printed to the console when key 'sets' is not found in the JSON formatted training
 #: src/settings.rs:69
 msgid "Cannot find 'sets' in settings dictionary"
-msgstr ""
+msgstr "Ayarlar sözlüğünde 'sets' bulunamıyor"
 
 #. Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
 #: src/settings.rs:74
 msgid "Cannot find 'exercise_s' in settings dictionary"
-msgstr ""
+msgstr "Ayarlar sözlüğünde 'exercise_s' bulunamıyor"
 
 #. Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
 #: src/settings.rs:80
 msgid "Cannot find 'rest_s' in settings dictionary"
-msgstr ""
+msgstr "Ayarlar sözlüğünde 'rest_s' bulunamıyor"
 
 #. Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
 #: src/settings.rs:99
 msgid "Could not parse default training setup"
-msgstr ""
+msgstr "Varsayılan antreman kurulumu ayrıştırılamadı"
 
 #. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be parsed
 #: src/settings.rs:110
 msgid "Could not parse exercise list"
-msgstr ""
+msgstr "Egzersiz listesi ayrıştırılamadı"
 
 #. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be written to the settings
 #: src/settings.rs:133
 msgid "Could not update settings with training list"
-msgstr ""
+msgstr "Eğitim listesi ile ayarlar güncellenemedi"
 
 #. Translators: Error message printed to the console when the GIO resource file cannot be registered
 #: src/setup.rs:14
 msgid "Could not register resources"
-msgstr ""
+msgstr "Kaynaklar kaydedilemedi"
 
 #. Translators: Error message printed to the console when the i18n text domain cannot be bound
 #: src/setup.rs:23
 msgid "Unable to bind the text domain"
-msgstr ""
+msgstr "Metin etki alanı bağlanamıyor"
 
 #. Translators: Error message printed to the console when the i18n text domain cannot be switched to
 #: src/setup.rs:28
 msgid "Unable to switch to the text domain"
-msgstr ""
+msgstr "Metin etki alanına geçilemiyor"
 
 #. Translators: Error message printed to the console when there is no Display to apply the custom CSS to
 #: src/setup.rs:41
 msgid "Could not connect to a display"
-msgstr ""
+msgstr "Bir ekrana bağlanılamadı"
 
 #. Translators: Error message printed to the console, when the Shortcuts window cannot be built from resource
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
-msgstr ""
+msgstr "Yardım Yerleşimi oluşturulamadı"
