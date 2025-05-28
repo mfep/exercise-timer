@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-06 17:09+0200\n"
-"PO-Revision-Date: 2024-09-16 11:09+0000\n"
+"PO-Revision-Date: 2025-05-29 06:37+0000\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gnome.org>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/he/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.8-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
@@ -155,9 +155,8 @@ msgid "Exercise list - dark mode"
 msgstr "רשימת אימונים - מצב כהה"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
-#, fuzzy
 msgid "New training dialog - light mode"
-msgstr "רשימת אימונים - מצב בהיר"
+msgstr "חלון אימון חדש - מצב בהיר"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
 msgid "Timer - light mode"
@@ -185,13 +184,11 @@ msgstr "תפריט ראשי"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:121
-#, fuzzy
 msgid "No Trainings"
-msgstr "אימון חדש"
+msgstr "אין אימונים"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:125
-#, fuzzy
 msgid "Create Training"
 msgstr "יצירת אימון"
 
@@ -244,7 +241,6 @@ msgstr "זמן מנוחה"
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: src/training_editor.rs:109 src/training_editor.rs:122
 #: src/training_editor.rs:135
-#, fuzzy
 msgid "Seconds"
 msgstr "שניות"
 
@@ -262,7 +258,7 @@ msgstr "זמן הכנה"
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
 #: src/training_setup.rs:97
 msgid "{} × {} s"
-msgstr ""
+msgstr "‏‎{} × {}‎ ש"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: src/training_setup.rs:120
