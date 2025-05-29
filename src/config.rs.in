@@ -3,7 +3,9 @@ pub const VERSION: &str = @VERSION@;
 pub const HOMEPAGE: &str = @HOMEPAGE@;
 pub const ISSUE_TRACKER: &str = @ISSUE_TRACKER@;
 pub const COPYRIGHT: &str = @COPYRIGHT@;
+#[rustfmt::skip]
 pub const DEVELOPERS: &[&str] = &[ @DEVELOPERS@ ];
+#[rustfmt::skip]
 pub const DESIGNERS: &[&str] = &[ @DESIGNERS@ ];
 pub const GETTEXT_PACKAGE: &str = @GETTEXT_PACKAGE@;
 pub const LOCALEDIR: &str = @LOCALEDIR@;
