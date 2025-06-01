@@ -2,6 +2,22 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.8.4](https://github.com/mfep/exercise-timer/compare/b8376b0133cfcad397e8097679c412bfc9b5e49f..v1.8.4) - 2025-06-01
+#### Bug Fixes
+- **(i18n)** Update LINGUAS - ([1173bf7](https://github.com/mfep/exercise-timer/commit/1173bf70086bee0ba51a6d0dbc0d7cfadf8e23fb)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Translated using Weblate (Hebrew) - ([fbbf8a3](https://github.com/mfep/exercise-timer/commit/fbbf8a39ae3e19d424ba39dd8dc0c8a7f6a5a6d2)) - Yosef Or Boczko
+- **(i18n)** Translated using Weblate (Turkish) - ([69cb965](https://github.com/mfep/exercise-timer/commit/69cb965f0a5a5806f08bd2efd2ad1d91e5c7f2da)) - Mehmet Cevheri BOZOGLAN
+#### Features
+- **(i18n)** Added translation using Weblate (Turkish) - ([b8376b0](https://github.com/mfep/exercise-timer/commit/b8376b0133cfcad397e8097679c412bfc9b5e49f)) - Mehmet Cevheri BOZOGLAN
+#### Miscellaneous Chores
+- **(CI)** Update GitHub action for new runtime - ([9b82457](https://github.com/mfep/exercise-timer/commit/9b824570b040f098be89bc575db9e0381e06db35)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update release notes - ([82ab89c](https://github.com/mfep/exercise-timer/commit/82ab89c75760c69afb0f3d7eb833ec98fe3bfd76)) - [@mfep](https://github.com/mfep)
+- Update Flatpak to GNOME 48 runtime - ([c09c5ca](https://github.com/mfep/exercise-timer/commit/c09c5cae6b3955ea56734c0a0a8b4b34d591d09b)) - [@mfep](https://github.com/mfep)
+#### Refactoring
+- **(UI)** Simplify training_timer layout - ([10b1bff](https://github.com/mfep/exercise-timer/commit/10b1bffe03dc8f0fde2cfe10fc7f0db33207b683)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.8.3](https://github.com/mfep/exercise-timer/compare/e4a30dcab1ee17f0063fba990048e6445f606a7a..v1.8.3) - 2025-05-22
 #### Bug Fixes
 - **(i18n)** Translated using Weblate (Portuguese) - ([e4a30dc](https://github.com/mfep/exercise-timer/commit/e4a30dcab1ee17f0063fba990048e6445f606a7a)) - ssantos
