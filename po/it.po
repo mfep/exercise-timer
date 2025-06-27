@@ -169,7 +169,7 @@ msgstr "_Scorciatoie da tastiera"
 #. Translators: The title of the about dialog menu entry
 #: src/app.rs:60
 msgid "_About Exercise Timer"
-msgstr "_Informazioni su Exercise Timer"
+msgstr "_Informazioni su Timer per esercizi"
 
 #. Translators: tooltip for the add training image button
 #: src/app.rs:84
