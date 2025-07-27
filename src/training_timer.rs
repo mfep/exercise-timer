@@ -112,7 +112,6 @@ impl TrainingTimer {
     fn new(
         setup: TrainingSetup,
         global_setup: GlobalTrainingSetup,
-        output: rodio::OutputStreamHandle,
         sender: &ComponentSender<TrainingTimer>,
     ) -> Self {
         let beep_volume = global_setup.beep_volume.get();
@@ -124,7 +123,6 @@ impl TrainingTimer {
             setup,
             audio_player: AudioPlayerModel::builder()
                 .detach_worker(AudioPlayerModelInit {
-                    output_stream: output,
                     volume: beep_volume,
                 })
                 .forward(sender.input_sender(), |_msg| TrainingTimerInput::Tick),
@@ -195,7 +193,6 @@ fn build_timer(
 pub struct TrainingTimerInit {
     pub setup: TrainingSetup,
     pub global_setup: GlobalTrainingSetup,
-    pub output_handle: rodio::OutputStreamHandle,
 }
 
 #[relm4::component(pub)]
@@ -349,7 +346,7 @@ impl Component for TrainingTimer {
         root: Self::Root,
         sender: relm4::ComponentSender<Self>,
     ) -> ComponentParts<Self> {
-        let model = TrainingTimer::new(init.setup, init.global_setup, init.output_handle, &sender);
+        let model = TrainingTimer::new(init.setup, init.global_setup, &sender);
         let audio_sender = model.audio_player.sender();
         let widgets = view_output!();
         widgets

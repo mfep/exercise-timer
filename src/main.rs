@@ -15,14 +15,6 @@ relm4::new_stateless_action!(QuitAction, AppActionGroup, "quit");
 
 fn main() {
     setup::setup();
-    let (_stream, stream_handle) = rodio::OutputStream::try_default().unwrap_or_else(|err| {
-        panic!(
-            "{}: {}",
-            // Translators: Error message when cannot connect to the audio output
-            gettext("Could not create audio output stream"),
-            err
-        )
-    });
     let app = relm4::main_adw_application();
 
     let mut actions = relm4::actions::RelmActionGroup::<AppActionGroup>::new();
@@ -46,5 +38,5 @@ fn main() {
     app.set_accelerators_for_action::<CloseAction>(&["<Control>w"]);
 
     let app = relm4::RelmApp::from_app(app);
-    app.run::<app::AppModel>(stream_handle);
+    app.run::<app::AppModel>(());
 }

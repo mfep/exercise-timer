@@ -38,7 +38,6 @@ relm4::new_stateless_action!(MenuAction, WindowActionGroup, "menu");
 pub struct AppModel {
     training_timer: Option<Controller<TrainingTimer>>,
     list_trainings: relm4::factory::FactoryVecDeque<TrainingSetup>,
-    output_stream: rodio::OutputStreamHandle,
     window_geometry: settings::WindowGeometry,
     global_settings: settings::GlobalTrainingSetup,
     shortcuts_window: Controller<ShortcutsWindowModel>,
@@ -46,7 +45,7 @@ pub struct AppModel {
 
 #[relm4::component(pub)]
 impl Component for AppModel {
-    type Init = rodio::OutputStreamHandle;
+    type Init = ();
     type Input = AppModelInput;
     type Output = ();
     type CommandOutput = ();
@@ -154,7 +153,6 @@ impl Component for AppModel {
         let model = AppModel {
             training_timer: None,
             list_trainings,
-            output_stream: init,
             window_geometry: settings::WindowGeometry::new_from_gsettings(),
             global_settings: settings::GlobalTrainingSetup::new_from_gsettings(),
             shortcuts_window: ShortcutsWindowModel::builder()
@@ -262,7 +260,6 @@ impl Component for AppModel {
                             .launch(TrainingTimerInit {
                                 setup: setup.clone(),
                                 global_setup: self.global_settings.clone(),
-                                output_handle: self.output_stream.clone(),
                             })
                             .detach(),
                     );

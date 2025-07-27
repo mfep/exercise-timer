@@ -3,7 +3,7 @@ use relm4::{self, gtk::gio, prelude::*};
 use rodio::{self, Source};
 
 pub struct AudioPlayerModel {
-    output_stream: rodio::OutputStreamHandle,
+    output_stream: rodio::OutputStream,
     ping_bytes: gtk::glib::Bytes,
     volume: f64,
 }
@@ -19,10 +19,7 @@ impl AudioPlayerModel {
             .repeat_infinite()
             .take_duration(new_duration)
             .amplify(self.volume as f32);
-        self.output_stream
-            .play_raw(d.convert_samples())
-            // Translators: Error message printed to the console when an error occurs with audio playback
-            .unwrap_or_else(|err| panic!("{}: {}", gettext("Could not play audio"), err));
+        self.output_stream.mixer().add(d);
     }
 }
 
@@ -37,7 +34,6 @@ pub enum AudioPlayerInput {
 }
 
 pub struct AudioPlayerModelInit {
-    pub output_stream: rodio::OutputStreamHandle,
     pub volume: f64,
 }
 
@@ -54,7 +50,15 @@ impl relm4::Worker for AudioPlayerModel {
         // Translators: Error message printed to the console when cannot load data from resource
         .unwrap_or_else(|err| panic!("{}: {}", gettext("Could not open resource data"), err));
         Self {
-            output_stream: init.output_stream,
+            output_stream: rodio::OutputStreamBuilder::open_default_stream()
+                // Translators: Error message when cannot connect to the audio output
+                .unwrap_or_else(|err| {
+                    panic!(
+                        "{}: {}",
+                        gettext("Could not create audio output stream"),
+                        err
+                    )
+                }),
             volume: init.volume,
             ping_bytes,
         }

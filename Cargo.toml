@@ -7,9 +7,9 @@ edition = "2021"
 
 [dependencies]
 gettext-rs = { version = "=0.7.0", features = ["gettext-system"] }
-relm4 = { version="0.9.0", features = ["gnome_47", "libadwaita"] }
+relm4 = { version="0.9.1", features = ["gnome_47", "libadwaita"] }
 relm4-components = "0.9.1"
-relm4-macros = "0.9.0"
+relm4-macros = "0.9.1"
 relm4-icons = { version = "0.9.0" }
 libadwaita = { version="0.7.0", features = ["v1_7"] }
 tokio = { version = "1.39.1", features = [
@@ -19,8 +19,8 @@ tokio = { version = "1.39.1", features = [
     "rt-multi-thread",
 ] }
 futures = "0.3.30"
-rodio = { version="0.20.1", default-features=false, features = ["wav"] }
+rodio = { version="0.21.1", default-features=false, features = ["playback", "wav"] }
 json = "0.12.4"
 
 [build-dependencies]
-glib-build-tools = "0.20.0"
+glib-build-tools = "0.21.0"
