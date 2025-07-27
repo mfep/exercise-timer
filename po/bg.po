@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-06 17:09+0200\n"
-"PO-Revision-Date: 2025-03-23 06:49+0000\n"
-"Last-Translator: mondstern <mondstern@monocles.de>\n"
+"PO-Revision-Date: 2025-07-27 11:45+0000\n"
+"Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/bg/>\n"
 "Language: bg\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
@@ -110,22 +110,22 @@ msgid "Train and rest with high intensity"
 msgstr "Тренирайте и почивайте с висока интензивност"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
-#, fuzzy
 msgid ""
 "Exercise Timer is a simple utility to conduct high intensity interval "
 "training. Following a short preparation period, a prescribed number of "
 "exercise sets are played. In between each exercise, there is a resting "
 "period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
-"След кратък подготвителен период се изпълняват определен брой серии. Между "
-"всяко упражнение има почивка."
+"„Таймер за упражнения“ е проста програма за провеждане на високоинтензивна "
+"интервална тренировка. След кратък подготвителен период се изпълняват "
+"предписания брой серии упражнения. След всяко упражнение има период за "
+"почивка. Програмата не прави предположения за вида на упражнението."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
 msgstr "Функции:"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
-#, fuzzy
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise, rest and preparation periods."
@@ -155,9 +155,8 @@ msgid "Exercise list - dark mode"
 msgstr "Списък с упражнения — тъмен режим"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
-#, fuzzy
 msgid "New training dialog - light mode"
-msgstr "Списък с упражнения — светъл режим"
+msgstr "Нов прозорец за упражняване — светъл режим"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
 msgid "Timer - light mode"
@@ -175,24 +174,21 @@ msgstr "_Относно „Таймер за упражнения“"
 
 #. Translators: tooltip for the add training image button
 #: src/app.rs:84
-#, fuzzy
 msgid "Add Training"
-msgstr "Редактиране на тренировката"
+msgstr "Добавяне на тренировка"
 
 #. Translators: tooltip for main menu image button
 #: src/app.rs:91
 msgid "Main Menu"
-msgstr ""
+msgstr "Основно меню"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:121
-#, fuzzy
 msgid "No Trainings"
-msgstr "Нова тренировка"
+msgstr "Все още няма тренировки"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:125
-#, fuzzy
 msgid "Create Training"
 msgstr "Създаване на тренировка"
 
@@ -203,14 +199,12 @@ msgstr "twlvnn kraftwerk <kraft_werk@tutanota.com>"
 
 #. Translators: The editor window's title when creating a new training
 #: src/training_editor.rs:56
-#, fuzzy
 msgid "New Training"
 msgstr "Нова тренировка"
 
 #. Translators: The editor window's title when modifying a training
 #. Translators: tooltip text for exercise card button to open the training editor
 #: src/training_editor.rs:58 src/training_setup.rs:112
-#, fuzzy
 msgid "Edit Training"
 msgstr "Редактиране на тренировката"
 
@@ -236,46 +230,40 @@ msgstr "Име"
 
 #. Translators: The title of the field for the number of sets in the training in the editor window
 #: src/training_editor.rs:96
-#, fuzzy
 msgid "Number of Sets"
 msgstr "Брой серии"
 
 #. Translators: The title of the field for the rest duration in the training in the editor window
 #: src/training_editor.rs:107
-#, fuzzy
 msgid "Rest Time"
-msgstr "Време за почивката"
+msgstr "Време за почивка"
 
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: src/training_editor.rs:109 src/training_editor.rs:122
 #: src/training_editor.rs:135
-#, fuzzy
 msgid "Seconds"
-msgstr "секунди"
+msgstr "Секунди"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: src/training_editor.rs:120
-#, fuzzy
 msgid "Exercise Time"
-msgstr "Таймер за упражнения"
+msgstr "Продължителност"
 
 #. Translators: The title of the field for the preparation duration in the training in the editor window
 #: src/training_editor.rs:133
-#, fuzzy
 msgid "Preparation Time"
-msgstr "Време за подготовяне"
+msgstr "Време за подготвяне"
 
 #. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
 #: src/training_setup.rs:97
 msgid "{} × {} s"
-msgstr ""
+msgstr "{} × {} с"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: src/training_setup.rs:120
-#, fuzzy
 msgid "Delete Training"
-msgstr "Занулиране на тренировката"
+msgstr "Изтриване на тренировката"
 
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:152
@@ -299,29 +287,25 @@ msgstr "Почивка"
 
 #. Translators: tooltip text for the reset button
 #: src/training_timer.rs:292
-#, fuzzy
 msgid "Restart Training"
-msgstr "Стартиране/спиране на тренировката"
+msgstr "Рестартиране на тренировката"
 
 #. Translators: tooltip text for the pause/resume button
 #: src/training_timer.rs:304
-#, fuzzy
 msgid "Pause Training"
-msgstr "Занулиране на тренировката"
+msgstr "Пауза на тренировката"
 
 #: src/training_timer.rs:304
-#, fuzzy
 msgid "Resume Training"
-msgstr "Занулиране на тренировката"
+msgstr "Възобновяване на тренировката"
 
 #. Translators: tooltip text for the volume button
 #: src/training_timer.rs:321
 msgid "Set Volume"
-msgstr ""
+msgstr "Задаване на силата на звука"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:335
-#, fuzzy
 msgid "Remaining Sets: {}"
 msgstr "Оставащи серии: {}"
 
