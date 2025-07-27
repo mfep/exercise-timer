@@ -54,6 +54,24 @@
     <color type="primary" scheme_preference="dark">#188653</color>
   </branding>
   <releases>
+    <release version="1.8.5" date="2025-07-27">
+      <description translate="no">
+        <p>New translations</p>
+        <ul>
+          <li>Arabic</li>
+        </ul>
+        <p>Updated translations</p>
+        <ul>
+          <li>Bulgarian</li>
+          <li>Dutch</li>
+          <li>Italian</li>
+        </ul>
+        <p>Miscellaneous</p>
+        <ul>
+          <li>Updated library dependencies</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.8.4" date="2025-06-01">
       <description translate="no">
         <p>New translations</p>
