@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-06 17:09+0200\n"
+"POT-Creation-Date: 2025-07-27 19:11+0200\n"
 "PO-Revision-Date: 2025-01-09 07:21+0000\n"
 "Last-Translator: Óscar Fernández Díaz <oscfdezdz@tuta.io>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/exercise-timer/"
@@ -57,19 +57,19 @@ msgstr "Salir"
 
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
-#: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:76 src/app.rs:172
+#: data/xyz.safeworlds.hiit.desktop.in.in:2
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:75 src/app.rs:170
 #: src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "Temporizador de ejercicio"
 
-#: data/xyz.safeworlds.hiit.desktop.in.in:4
+#: data/xyz.safeworlds.hiit.desktop.in.in:3
 msgid "Timer clock for high intensity interval training"
 msgstr ""
 "Reloj temporizador para entrenamiento por intervalos de alta intensidad"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/xyz.safeworlds.hiit.desktop.in.in:10
+#: data/xyz.safeworlds.hiit.desktop.in.in:9
 msgid ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
 "interval training;"
@@ -163,37 +163,37 @@ msgid "Timer - light mode"
 msgstr "Temporizador - modo claro"
 
 #. Translators: The title of the keyboard shortcuts menu entry
-#: src/app.rs:58
+#: src/app.rs:57
 msgid "_Keyboard Shortcuts"
 msgstr "Atajos del _teclado"
 
 #. Translators: The title of the about dialog menu entry
-#: src/app.rs:60
+#: src/app.rs:59
 msgid "_About Exercise Timer"
 msgstr "_Acerca de Temporizador de ejercicio"
 
 #. Translators: tooltip for the add training image button
-#: src/app.rs:84
+#: src/app.rs:83
 msgid "Add Training"
 msgstr "Añadir entrenamiento"
 
 #. Translators: tooltip for main menu image button
-#: src/app.rs:91
+#: src/app.rs:90
 msgid "Main Menu"
 msgstr "Menú principal"
 
 #. Translators: The message which is shown on the background of the empty training list
-#: src/app.rs:121
+#: src/app.rs:120
 msgid "No Trainings"
 msgstr "No hay entrenamientos"
 
 #. Translators: Big label button to create the first training if none exists
-#: src/app.rs:125
+#: src/app.rs:124
 msgid "Create Training"
 msgstr "Crear entrenamiento"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:179
+#: src/app.rs:177
 msgid "translator_credits"
 msgstr "Óscar Fernández Díaz <oscfdezdz@tuta.io>"
 
@@ -266,46 +266,46 @@ msgid "Delete Training"
 msgstr "Eliminar entrenamiento"
 
 #. Translators: Shown in the timer page when the training has come to the end
-#: src/training_timer.rs:152
+#: src/training_timer.rs:150
 msgid "Finished!"
 msgstr "¡Terminado!"
 
 #. Translators: Shown on the timer page during preparation
-#: src/training_timer.rs:245
+#: src/training_timer.rs:239
 msgid "Preparation"
 msgstr "Preparación"
 
 #. Translators: Shown on the timer page during exercise
-#: src/training_timer.rs:247
+#: src/training_timer.rs:241
 msgid "Exercise"
 msgstr "Ejercicio"
 
 #. Translators: Shown on the timer page during rest
-#: src/training_timer.rs:249
+#: src/training_timer.rs:243
 msgid "Rest"
 msgstr "Descanso"
 
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:292
+#: src/training_timer.rs:286
 msgid "Restart Training"
 msgstr "Restablecer entrenamiento"
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:304
+#: src/training_timer.rs:298
 msgid "Pause Training"
 msgstr "Pausar entrenamiento"
 
-#: src/training_timer.rs:304
+#: src/training_timer.rs:298
 msgid "Resume Training"
 msgstr "Reanudar entrenamiento"
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:321
+#: src/training_timer.rs:315
 msgid "Set Volume"
 msgstr "Establecer volumen"
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:335
+#: src/training_timer.rs:328
 msgid "Remaining Sets: {}"
 msgstr "Series restantes: {}"
 
@@ -314,18 +314,12 @@ msgstr "Series restantes: {}"
 msgid "Could not decode WAV"
 msgstr "No se ha podido descodificar WAV"
 
-#. Translators: Error message printed to the console when an error occurs with audio playback
-#: src/training_timer/audio_player.rs:25
-msgid "Could not play audio"
-msgstr "No se puede reproducir audio"
-
 #. Translators: Error message printed to the console when cannot load data from resource
-#: src/training_timer/audio_player.rs:55
+#: src/training_timer/audio_player.rs:51
 msgid "Could not open resource data"
 msgstr "No se han podido abrir los datos de los recursos"
 
-#. Translators: Error message when cannot connect to the audio output
-#: src/main.rs:22
+#: src/training_timer/audio_player.rs:58
 msgid "Could not create audio output stream"
 msgstr "No se ha podido crear el flujo de salida de audio"
 
@@ -389,6 +383,9 @@ msgstr "No se ha podido conectar a una pantalla"
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr "No se ha podido crear los atajos del teclado"
+
+#~ msgid "Could not play audio"
+#~ msgstr "No se puede reproducir audio"
 
 #~ msgid "Exercise timer is a simple utility to conduct interval training."
 #~ msgstr ""

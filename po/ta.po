@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-06 17:09+0200\n"
+"POT-Creation-Date: 2025-07-27 19:11+0200\n"
 "PO-Revision-Date: 2024-12-26 10:00+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/exercise-timer/"
@@ -57,18 +57,18 @@ msgstr "வெளியேறு"
 
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
-#: data/xyz.safeworlds.hiit.desktop.in.in:3
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:76 src/app.rs:172
+#: data/xyz.safeworlds.hiit.desktop.in.in:2
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:75 src/app.rs:170
 #: src/setup.rs:11
 msgid "Exercise Timer"
 msgstr "டைமரை உடற்பயிற்சி செய்யுங்கள்"
 
-#: data/xyz.safeworlds.hiit.desktop.in.in:4
+#: data/xyz.safeworlds.hiit.desktop.in.in:3
 msgid "Timer clock for high intensity interval training"
 msgstr "அதிக தீவிரம் இடைவெளி பயிற்சிக்கான நேரங்குறிகருவி கடிகாரம்"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/xyz.safeworlds.hiit.desktop.in.in:10
+#: data/xyz.safeworlds.hiit.desktop.in.in:9
 msgid ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
 "interval training;"
@@ -161,38 +161,38 @@ msgid "Timer - light mode"
 msgstr "நேரங்குறிகருவி - ஒளி பயன்முறை"
 
 #. Translators: The title of the keyboard shortcuts menu entry
-#: src/app.rs:58
+#: src/app.rs:57
 msgid "_Keyboard Shortcuts"
 msgstr "விசைப்பலகை குறுக்குவழிகள்"
 
 #. Translators: The title of the about dialog menu entry
-#: src/app.rs:60
+#: src/app.rs:59
 msgid "_About Exercise Timer"
 msgstr "_About உடற்பயிற்சி நேரங்குறிகருவி"
 
 #. Translators: tooltip for the add training image button
-#: src/app.rs:84
+#: src/app.rs:83
 msgid "Add Training"
 msgstr "பயிற்சி சேர்க்கவும்"
 
 #. Translators: tooltip for main menu image button
-#: src/app.rs:91
+#: src/app.rs:90
 msgid "Main Menu"
 msgstr "பட்டியல் விளையாடுங்கள்"
 
 #. Translators: The message which is shown on the background of the empty training list
-#: src/app.rs:121
+#: src/app.rs:120
 #, fuzzy
 msgid "No Trainings"
 msgstr "புதிய பயிற்சி"
 
 #. Translators: Big label button to create the first training if none exists
-#: src/app.rs:125
+#: src/app.rs:124
 msgid "Create Training"
 msgstr "பயிற்சியை உருவாக்கவும்"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:179
+#: src/app.rs:177
 msgid "translator_credits"
 msgstr "மொழிபெயர்ப்பாளர்_ கிரெடிட்ச்"
 
@@ -266,46 +266,46 @@ msgid "Delete Training"
 msgstr "பயிற்சியை நீக்கு"
 
 #. Translators: Shown in the timer page when the training has come to the end
-#: src/training_timer.rs:152
+#: src/training_timer.rs:150
 msgid "Finished!"
 msgstr "முடிந்தது!"
 
 #. Translators: Shown on the timer page during preparation
-#: src/training_timer.rs:245
+#: src/training_timer.rs:239
 msgid "Preparation"
 msgstr "தயாரிப்பு"
 
 #. Translators: Shown on the timer page during exercise
-#: src/training_timer.rs:247
+#: src/training_timer.rs:241
 msgid "Exercise"
 msgstr "உடற்பயிற்சி"
 
 #. Translators: Shown on the timer page during rest
-#: src/training_timer.rs:249
+#: src/training_timer.rs:243
 msgid "Rest"
 msgstr "ஓய்வு"
 
 #. Translators: tooltip text for the reset button
-#: src/training_timer.rs:292
+#: src/training_timer.rs:286
 msgid "Restart Training"
 msgstr "பயிற்சியை மறுதொடக்கம் செய்யுங்கள்"
 
 #. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:304
+#: src/training_timer.rs:298
 msgid "Pause Training"
 msgstr "இடைநிறுத்த பயிற்சி"
 
-#: src/training_timer.rs:304
+#: src/training_timer.rs:298
 msgid "Resume Training"
 msgstr "மீண்டும் பயிற்சியைத் தொடங்குங்கள்"
 
 #. Translators: tooltip text for the volume button
-#: src/training_timer.rs:321
+#: src/training_timer.rs:315
 msgid "Set Volume"
 msgstr "தொகுதி அமைக்கவும்"
 
 #. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:335
+#: src/training_timer.rs:328
 msgid "Remaining Sets: {}"
 msgstr "மீதமுள்ள தொகுப்புகள்: {}"
 
@@ -314,18 +314,12 @@ msgstr "மீதமுள்ள தொகுப்புகள்: {}"
 msgid "Could not decode WAV"
 msgstr "WAV ஐ டிகோட் செய்ய முடியவில்லை"
 
-#. Translators: Error message printed to the console when an error occurs with audio playback
-#: src/training_timer/audio_player.rs:25
-msgid "Could not play audio"
-msgstr "ஆடியோவை இயக்க முடியவில்லை"
-
 #. Translators: Error message printed to the console when cannot load data from resource
-#: src/training_timer/audio_player.rs:55
+#: src/training_timer/audio_player.rs:51
 msgid "Could not open resource data"
 msgstr "வள தரவைத் திறக்க முடியவில்லை"
 
-#. Translators: Error message when cannot connect to the audio output
-#: src/main.rs:22
+#: src/training_timer/audio_player.rs:58
 msgid "Could not create audio output stream"
 msgstr "ஆடியோ வெளியீட்டு ச்ட்ரீமை உருவாக்க முடியவில்லை"
 
@@ -388,6 +382,9 @@ msgstr "காட்சியுடன் இணைக்க முடியவ�
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
 msgstr "உதவி மேலடுக்கை உருவாக்க முடியவில்லை"
+
+#~ msgid "Could not play audio"
+#~ msgstr "ஆடியோவை இயக்க முடியவில்லை"
 
 #~ msgid "Exercise timer is a simple utility to conduct interval training."
 #~ msgstr ""
