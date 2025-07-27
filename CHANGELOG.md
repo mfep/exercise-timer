@@ -2,6 +2,22 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.8.5](https://github.com/mfep/exercise-timer/compare/d419c56448113df9bc57a7baf3df69c7871779d7..v1.8.5) - 2025-07-27
+#### Bug Fixes
+- **(i18n)** Translated using Weblate (Bulgarian) - ([777183e](https://github.com/mfep/exercise-timer/commit/777183e5d12ec9e86ad940be555d58835b22582e)) - twlvnn
+- **(i18n)** Translated using Weblate (Arabic) - ([45f3693](https://github.com/mfep/exercise-timer/commit/45f369369c4d67fea79e010bf4a16a393a46036c)) - Ahmed Najmawi
+- **(i18n)** Translated using Weblate (Italian) - ([55e384e](https://github.com/mfep/exercise-timer/commit/55e384e16f24cb0d0622acf581a787016d3f83e7)) - Mattia Borda
+- **(i18n)** Translated using Weblate (Italian) - ([2498d30](https://github.com/mfep/exercise-timer/commit/2498d305c718d6768ecf146617de0c6004e3ab7d)) - Mattia Borda
+- **(i18n)** Translated using Weblate (Dutch) - ([d419c56](https://github.com/mfep/exercise-timer/commit/d419c56448113df9bc57a7baf3df69c7871779d7)) - Philip Goto
+#### Features
+- **(i18n)** Added translation using Weblate (Arabic) - ([8010032](https://github.com/mfep/exercise-timer/commit/801003249ded615d218e7e1108494c70a8ef0d3e)) - Ahmed Najmawi
+#### Miscellaneous Chores
+- **(dependencies)** Update dependencies and fix build - ([3ecd074](https://github.com/mfep/exercise-timer/commit/3ecd074a290abd127a82eaa7f6065c3e0b82e4e7)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update release notes - ([53156b2](https://github.com/mfep/exercise-timer/commit/53156b24d2ff73bd56c3c7e6fdfd17175cd6967f)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Update LINGUAS and potfiles - ([286da76](https://github.com/mfep/exercise-timer/commit/286da7657f3edaaa4523fee8f6cc2012ccdf31ef)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.8.4](https://github.com/mfep/exercise-timer/compare/b8376b0133cfcad397e8097679c412bfc9b5e49f..v1.8.4) - 2025-06-01
 #### Bug Fixes
 - **(i18n)** Update LINGUAS - ([1173bf7](https://github.com/mfep/exercise-timer/commit/1173bf70086bee0ba51a6d0dbc0d7cfadf8e23fb)) - [@mfep](https://github.com/mfep)
