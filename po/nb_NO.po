@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-27 19:11+0200\n"
-"PO-Revision-Date: 2025-10-01 09:01+0000\n"
+"PO-Revision-Date: 2025-10-03 17:01+0000\n"
 "Last-Translator: Bendik Aagaard Lynghaug <bendik.lynghaug@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "exercise-timer/exercise-timer/nb_NO/>\n"
@@ -188,7 +188,7 @@ msgstr "Ingen øvelsesforløp"
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:124
 msgid "Create Training"
-msgstr "Opprett øvelsesforløp"
+msgstr "Ny øvelse"
 
 #. Translators: Replace this with your name for it to show up in the about window
 #: src/app.rs:177
@@ -319,7 +319,7 @@ msgstr "Kunne ikke åpne dataresurs"
 
 #: src/training_timer/audio_player.rs:58
 msgid "Could not create audio output stream"
-msgstr "Kunne ikke opprette lydutdatastrøm"
+msgstr "Kunne ikke opprette lyd-datastrøm"
 
 #. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
 #: src/settings.rs:65
