@@ -8,51 +8,54 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 13:21+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-10-24 16:48+0000\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/exercise-timer/"
+"exercise-timer/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural="
+"(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? "
+"1 : 2);\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "Training"
-msgstr ""
+msgstr "Trening"
 
 #. Translators: The name of the shortcut key to start and stop the training timer
 #: data/resources/ui/help-overlay.ui:16
 msgctxt "shortcut window"
 msgid "Start/Stop training"
-msgstr ""
+msgstr "Pokreni/Prekini trening"
 
 #. Translators: The name of the shortcut key to start the training from the beginning
 #: data/resources/ui/help-overlay.ui:24
 msgctxt "shortcut window"
 msgid "Reset training"
-msgstr ""
+msgstr "Resetiraj trening"
 
 #. Translators: The title of the shortcuts group which lists general application shortcuts
 #: data/resources/ui/help-overlay.ui:34
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Općenito"
 
 #. Translators: The name of the shortcut key to open the shortcuts window
 #: data/resources/ui/help-overlay.ui:38
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Prikaži prečace"
 
 #. Translators: The name of the shortcut key to quit the application
 #: data/resources/ui/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Zatvori"
 
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
@@ -60,11 +63,11 @@ msgstr ""
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:75 src/app.rs:170
 #: src/setup.rs:14
 msgid "Exercise Timer"
-msgstr ""
+msgstr "Timer za vježbanje"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
 msgid "Timer clock for high intensity interval training"
-msgstr ""
+msgstr "Timer za intenzivan trening u intervalima"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/xyz.safeworlds.hiit.desktop.in.in:9
@@ -72,39 +75,41 @@ msgid ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
 "interval training;"
 msgstr ""
+"Gnome;GTK;Uslužni program;Sport;Vježba;HIIT;Trening;Vježba;Intenzivan "
+"trening u intervalima;"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:6
 msgid "The width of the window"
-msgstr ""
+msgstr "Širina prozora"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:10
 msgid "The height of the window"
-msgstr ""
+msgstr "Visina prozora"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:14
 msgid "If the window is maximized"
-msgstr ""
+msgstr "Je li prozor maksimalno otvoren"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:18
 msgid "Default training setup, in JSON notation"
-msgstr ""
+msgstr "Zadana konfiguracija treninga, u JSON notaciji"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:22
 msgid "List of training setups, in JSON notation"
-msgstr ""
+msgstr "Popis konfiguracija treninga, u JSON notaciji"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
 msgid "The duration of the warmup, in seconds"
-msgstr ""
+msgstr "Trajanje zagrijavanja, u sekundama"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
 msgid "The volume of the beeping sound"
-msgstr ""
+msgstr "Glasnoća zvučnog signala"
 
 #. Translators: App summary, at most 35 characters, imperative style
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
 msgid "Train and rest with high intensity"
-msgstr ""
+msgstr "Intenzivan trening i odmaranja"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
 msgid ""
@@ -113,264 +118,270 @@ msgid ""
 "exercise sets are played. In between each exercise, there is a resting "
 "period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
+"Timer za vježbanje je jednostavan uslužni program za provođenje intenzivnog "
+"treninga u intervalima. Nakon kratkog razdoblja pripreme slijedi propisani "
+"broj serija vježbe. Između svake vježbe postoji razdoblje odmora. Aplikacija "
+"ne pretpostavlja vrstu vježbe."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
-msgstr ""
+msgstr "Značajke:"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise, rest and preparation periods."
 msgstr ""
+"Spremi i ponovo pozovi unaprijed postavljene postavke koje sadrže broj "
+"serija i trajanje vježbe kao i razdoblja odmora i pripreme."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid "A beeping sound is played at- and prior to each transition."
-msgstr ""
+msgstr "Zvučni signal reproducira se u vrijeme i prije svakog prijelaza."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "The volume of the sound can be adjusted."
-msgstr ""
+msgstr "Glasnoća zvuka se može podesiti."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "Light and dark mode follows the system's setting."
-msgstr ""
+msgstr "Svijetli i tamni način rada prati postavke sustava."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
 msgid "Timer - dark mode"
-msgstr ""
+msgstr "Timer – tamni način rada"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
 msgid "Exercise list - dark mode"
-msgstr ""
+msgstr "Popis vježbi – tamni način rada"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
 msgid "New training dialog - light mode"
-msgstr ""
+msgstr "Novi dijaloški okvir za vježbanje – svijetli način rada"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
 msgid "Timer - light mode"
-msgstr ""
+msgstr "Timer – svijetli način rada"
 
 #. Translators: The title of the keyboard shortcuts menu entry
 #: src/app.rs:57
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Tipkovni prečaci"
 
 #. Translators: The title of the about dialog menu entry
 #: src/app.rs:59
 msgid "_About Exercise Timer"
-msgstr ""
+msgstr "_O aplikaciji Timer za vježbanje"
 
 #. Translators: tooltip for the add training image button
 #: src/app.rs:83
 msgid "Add Training"
-msgstr ""
+msgstr "Dodaj trening"
 
 #. Translators: tooltip for main menu image button
 #: src/app.rs:90
 msgid "Main Menu"
-msgstr ""
+msgstr "Glavni izbornik"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: src/app.rs:120
 msgid "No Trainings"
-msgstr ""
+msgstr "Nema treninga"
 
 #. Translators: Big label button to create the first training if none exists
 #: src/app.rs:124
 msgid "Create Training"
-msgstr ""
+msgstr "Stvori trening"
 
 #. Translators: Replace this with your name for it to show up in the about window
 #: src/app.rs:177
 msgid "translator_credits"
-msgstr ""
+msgstr "Milo Ivir <mail@milotype.de>"
 
 #. Translators: The editor window's title when creating a new training
 #: src/training_editor.rs:56
 msgid "New Training"
-msgstr ""
+msgstr "Novi trening"
 
 #. Translators: The editor window's title when modifying a training
 #. Translators: tooltip text for exercise card button to open the training editor
 #: src/training_editor.rs:58 src/training_setup.rs:112
 msgid "Edit Training"
-msgstr ""
+msgstr "Uredi trening"
 
 #. Translators: Button to close the training editor window without modifications
 #: src/training_editor.rs:64
 msgid "Cancel"
-msgstr ""
+msgstr "Odustani"
 
 #. Translators: Button to close the editor window and create a new training
 #: src/training_editor.rs:70
 msgid "Create"
-msgstr ""
+msgstr "Stvori"
 
 #. Translators: Button to close the editor window and update an existing training
 #: src/training_editor.rs:72
 msgid "Update"
-msgstr ""
+msgstr "Aktualiziraj"
 
 #. Translators: The title of the field for the name of the training in the editor window
 #: src/training_editor.rs:88
 msgid "Name"
-msgstr ""
+msgstr "Ime"
 
 #. Translators: The title of the field for the number of sets in the training in the editor window
 #: src/training_editor.rs:96
 msgid "Number of Sets"
-msgstr ""
+msgstr "Broj serija"
 
 #. Translators: The title of the field for the rest duration in the training in the editor window
 #: src/training_editor.rs:107
 msgid "Rest Time"
-msgstr ""
+msgstr "Vrijeme odmora"
 
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: src/training_editor.rs:109 src/training_editor.rs:122
 #: src/training_editor.rs:135
 msgid "Seconds"
-msgstr ""
+msgstr "Sekunde"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: src/training_editor.rs:120
 msgid "Exercise Time"
-msgstr ""
+msgstr "Vrijeme vježbanja"
 
 #. Translators: The title of the field for the preparation duration in the training in the editor window
 #: src/training_editor.rs:133
 msgid "Preparation Time"
-msgstr ""
+msgstr "Vrijeme pripreme"
 
 #. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
 #: src/training_setup.rs:97
 #, rust-format
 msgid "{} × {} s"
-msgstr ""
+msgstr "{} × {} s"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: src/training_setup.rs:120
 msgid "Delete Training"
-msgstr ""
+msgstr "Izbriši trening"
 
 #. Translators: Shown in the timer page when the training has come to the end
 #: src/training_timer.rs:150
 msgid "Finished!"
-msgstr ""
+msgstr "Gotovo!"
 
 #. Translators: Shown on the timer page during preparation
 #: src/training_timer.rs:239
 msgid "Preparation"
-msgstr ""
+msgstr "Priprema"
 
 #. Translators: Shown on the timer page during exercise
 #: src/training_timer.rs:241
 msgid "Exercise"
-msgstr ""
+msgstr "Vježba"
 
 #. Translators: Shown on the timer page during rest
 #: src/training_timer.rs:243
 msgid "Rest"
-msgstr ""
+msgstr "Odmor"
 
 #. Translators: tooltip text for the reset button
 #: src/training_timer.rs:286
 msgid "Restart Training"
-msgstr ""
+msgstr "Ponovo pokreni trening"
 
 #. Translators: tooltip text for the pause/resume button
 #: src/training_timer.rs:298
 msgid "Pause Training"
-msgstr ""
+msgstr "Pauziraj trening"
 
 #: src/training_timer.rs:298
 msgid "Resume Training"
-msgstr ""
+msgstr "Nastavi trening"
 
 #. Translators: tooltip text for the volume button
 #: src/training_timer.rs:315
 msgid "Set Volume"
-msgstr ""
+msgstr "Postavi glasnoću"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:328
 #, rust-format
 msgid "Remaining Sets: {}"
-msgstr ""
+msgstr "Preostale serije: {}"
 
 #. Translators: Error message printed to the console when an error occurs with WAV decoding
 #: src/training_timer/audio_player.rs:16
 msgid "Could not decode WAV"
-msgstr ""
+msgstr "Nije bilo moguće dekodirati WAV"
 
 #. Translators: Error message printed to the console when cannot load data from resource
 #: src/training_timer/audio_player.rs:51
 msgid "Could not open resource data"
-msgstr ""
+msgstr "Nije bilo moguće otvoriti podatke resursa"
 
 #: src/training_timer/audio_player.rs:58
 msgid "Could not create audio output stream"
-msgstr ""
+msgstr "Nije moguće stvoriti izlazni audio stream"
 
 #. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
 #: src/settings.rs:65
 msgid "Cannot find 'name' in settings dictionary"
-msgstr ""
+msgstr "Nije moguće pronaći 'name' u rječniku postavki"
 
 #. Translators: Error message printed to the console when key 'sets' is not found in the JSON formatted training
 #: src/settings.rs:69
 msgid "Cannot find 'sets' in settings dictionary"
-msgstr ""
+msgstr "Nije moguće pronaći 'sets' u rječniku postavki"
 
 #. Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
 #: src/settings.rs:74
 msgid "Cannot find 'exercise_s' in settings dictionary"
-msgstr ""
+msgstr "Nije moguće pronaći 'exercise_s' u rječniku postavki"
 
 #. Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
 #: src/settings.rs:80
 msgid "Cannot find 'rest_s' in settings dictionary"
-msgstr ""
+msgstr "Nije moguće pronaći 'rest_s' u rječniku postavki"
 
 #. Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
 #: src/settings.rs:99
 msgid "Could not parse default training setup"
-msgstr ""
+msgstr "Nije bilo moguće obraditi zadanu konfiguraciju treninga"
 
 #. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be parsed
 #: src/settings.rs:110
 msgid "Could not parse exercise list"
-msgstr ""
+msgstr "Nije bilo moguće obraditi popis vježbi"
 
 #. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be written to the settings
 #: src/settings.rs:133
 msgid "Could not update settings with training list"
-msgstr ""
+msgstr "Nije bilo moguće ažurirati postavke s popisom treninga"
 
 #. Translators: Error message printed to the console when the GIO resource file cannot be registered
 #: src/setup.rs:17
 msgid "Could not register resources"
-msgstr ""
+msgstr "Nije bilo moguće registrirati resurse"
 
 #. Translators: Error message printed to the console when the i18n text domain cannot be bound
 #: src/setup.rs:26
 msgid "Unable to bind the text domain"
-msgstr ""
+msgstr "Nije moguće povezati tekstualnu domenu"
 
 #. Translators: Error message printed to the console when the i18n text domain cannot be switched to
 #: src/setup.rs:31
 msgid "Unable to switch to the text domain"
-msgstr ""
+msgstr "Nije moguće prebaciti se na tekstualnu domenu"
 
 #. Translators: Error message printed to the console when there is no Display to apply the custom CSS to
 #: src/setup.rs:44
 msgid "Could not connect to a display"
-msgstr ""
+msgstr "Nije bilo moguće povezati se sa ekranom"
 
 #. Translators: Error message printed to the console, when the Shortcuts window cannot be built from resource
 #: src/shortcuts_window.rs:23
 msgid "Could not build the Help Overlay"
-msgstr ""
+msgstr "Nije bilo moguće izraditi sloj pomoći"
