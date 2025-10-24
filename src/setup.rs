@@ -4,7 +4,10 @@ use relm4::gtk::{self, gio, glib};
 
 pub fn setup() {
     gtk::init().unwrap();
-    relm4_icons::initialize_icons();
+    relm4_icons::initialize_icons(
+        crate::icon_names::GRESOURCE_BYTES,
+        crate::icon_names::RESOURCE_PREFIX,
+    );
 
     setup_gettext();
 

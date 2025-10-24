@@ -1,4 +1,5 @@
 use crate::config;
+use crate::icon_names;
 use crate::settings;
 use crate::shortcuts_window::*;
 use crate::training_editor::*;
@@ -14,7 +15,6 @@ use relm4::{
     prelude::*,
     RelmObjectExt,
 };
-use relm4_icons::icon_names;
 
 #[derive(Debug)]
 pub enum AppModelInput {
@@ -135,7 +135,7 @@ impl Component for AppModel {
     }
 
     fn init(
-        init: Self::Init,
+        _init: Self::Init,
         root: Self::Root,
         sender: ComponentSender<Self>,
     ) -> ComponentParts<Self> {

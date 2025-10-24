@@ -6,8 +6,11 @@ mod shortcuts_window;
 mod training_editor;
 mod training_setup;
 mod training_timer;
-use gettextrs::gettext;
 use relm4::{actions::AccelsPlus, gtk::prelude::*};
+mod icon_names {
+    pub use shipped::*; // Include all shipped icons by default
+    include!(concat!(env!("OUT_DIR"), "/icon_names.rs"));
+}
 
 relm4::new_action_group!(AppActionGroup, "app");
 relm4::new_stateless_action!(CloseAction, AppActionGroup, "close");

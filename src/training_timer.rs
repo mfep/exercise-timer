@@ -1,9 +1,9 @@
 mod audio_player;
 mod timer;
 
+use crate::icon_names;
 use gettextrs::gettext;
 use relm4::{adw::prelude::*, binding::*, gtk, prelude::*, RelmObjectExt, RelmWidgetExt};
-use relm4_icons::icon_names;
 use timer::{TimerModel, TimerOutput};
 
 use crate::{settings::GlobalTrainingSetup, training_setup::TrainingSetup};
@@ -277,7 +277,7 @@ impl Component for TrainingTimer {
                                     set_spacing: 12,
                                     gtk::Button {
                                         set_css_classes: &["circular", "large-button"],
-                                        set_icon_name: icon_names::REFRESH,
+                                        set_icon_name: icon_names::ARROW_CIRCULAR_TOP_RIGHT,
                                         set_valign: gtk::Align::Center,
                                         connect_clicked => TrainingTimerInput::Reset,
                                         #[watch]

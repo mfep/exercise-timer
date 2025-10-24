@@ -1,3 +1,4 @@
+use crate::icon_names;
 use crate::settings;
 use crate::training_editor::*;
 use futures::prelude::*;
@@ -8,7 +9,6 @@ use relm4::{
     prelude::*,
     RelmWidgetExt,
 };
-use relm4_icons::icon_names;
 use std::time::Duration;
 
 #[derive(Debug, Clone)]
