@@ -43,10 +43,10 @@ $ sudo dnf install -y flatpak-builder
 $ flatpak remote-add --user --if-not-exists flathub-verified https://flathub.org/repo/flathub.flatpakrepo
 ```
 
-3. If not present, install the GNOME 47 Flatpak runtime and SDK and the Freedesktop SDK Rust and LLVM extensions.
+3. If not present, install the GNOME 49 Flatpak runtime and SDK and the Freedesktop SDK Rust and LLVM extensions.
 
 ```bash
-$ flatpak install --user org.gnome.{Sdk,Platform}//47 org.freedesktop.Sdk.Extension.{rust-stable,llvm18}//24.08
+$ flatpak install --user org.gnome.{Sdk,Platform}//49 org.freedesktop.Sdk.Extension.{rust-stable,llvm20}//25.08
 ```
 
 4. Clone the current repository. Be aware that the binary assets are hosted in git LFS. **git LFS must be installed on the system to perform a proper checkout!**
