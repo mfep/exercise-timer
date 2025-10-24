@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-27 19:11+0200\n"
+"POT-Creation-Date: 2025-10-24 13:21+0200\n"
 "PO-Revision-Date: 2025-03-24 20:35+0000\n"
 "Last-Translator: Lőrinc Serfőző <lorinc.serfozo@mailbox.org>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/exercise-timer/"
@@ -57,7 +57,7 @@ msgstr "Kilépés"
 #. Translators: The name of the application. Feel free to localize it!
 #: data/xyz.safeworlds.hiit.desktop.in.in:2
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:75 src/app.rs:170
-#: src/setup.rs:11
+#: src/setup.rs:14
 msgid "Exercise Timer"
 msgstr "Edzésóra"
 
@@ -254,6 +254,7 @@ msgstr "Felkészülési Idő"
 #. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
 #: src/training_setup.rs:97
+#, rust-format
 msgid "{} × {} s"
 msgstr "{} × {} s"
 
@@ -303,6 +304,7 @@ msgstr "Hangerő Beállítása"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/training_timer.rs:328
+#, rust-format
 msgid "Remaining Sets: {}"
 msgstr "Hátralévő Szettek: {}"
 
@@ -356,22 +358,22 @@ msgid "Could not update settings with training list"
 msgstr "Nem sikerült frissíteni a mentett edzések listáját"
 
 #. Translators: Error message printed to the console when the GIO resource file cannot be registered
-#: src/setup.rs:14
+#: src/setup.rs:17
 msgid "Could not register resources"
 msgstr "Nem sikerült regisztrálni az erőforrásokat"
 
 #. Translators: Error message printed to the console when the i18n text domain cannot be bound
-#: src/setup.rs:23
+#: src/setup.rs:26
 msgid "Unable to bind the text domain"
 msgstr "Nem sikerült betölteni a szöveg domént"
 
 #. Translators: Error message printed to the console when the i18n text domain cannot be switched to
-#: src/setup.rs:28
+#: src/setup.rs:31
 msgid "Unable to switch to the text domain"
 msgstr "Nem sikerült átváltani a szöveg doménre"
 
 #. Translators: Error message printed to the console when there is no Display to apply the custom CSS to
-#: src/setup.rs:41
+#: src/setup.rs:44
 msgid "Could not connect to a display"
 msgstr "Nem sikerült csatlakozni a megjelenítőhöz"
 
