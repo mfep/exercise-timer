@@ -1,4 +1,5 @@
 subdir('icons')
+subdir('resources')
 
 # Desktop file
 desktop_conf = configuration_data()

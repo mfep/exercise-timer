@@ -8,7 +8,7 @@
   <shortdesc xml:lang="en">Timer clock for high intensity interval training</shortdesc>
   <homepage rdf:resource="https://github.com/mfep/exercise-timer" />
   <bug-database rdf:resource="https://github.com/mfep/exercise-timer/issues"/>
-  <programming-language>Rust</programming-language>
+  <programming-language>Vala</programming-language>
 
   <maintainer>
     <foaf:Person>

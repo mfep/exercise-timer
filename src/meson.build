@@ -18,46 +18,23 @@ endforeach
 global_conf.set('DEVELOPERS', developers_str)
 global_conf.set('DESIGNERS', designers_str)
 
-configure_file(
-  input: 'config.rs.in',
-  output: 'config.rs',
+config_source = configure_file(
+  input: 'Config.vala.in',
+  output: 'Config.vala',
   configuration: global_conf
 )
-# Copy the config.rs output to the source directory.
-run_command(
-  'cp',
-  meson.project_build_root() / 'src' / 'config.rs',
-  meson.project_source_root() / 'src' / 'config.rs',
-  check: true
-)
 
-cargo_options = [ '--manifest-path', meson.project_source_root() / 'Cargo.toml' ]
-cargo_options += [ '--target-dir', meson.project_build_root() / 'src' ]
-if get_option('offline')
-  cargo_options += ['--offline']
-endif
+sources = [
+  'Application.vala',
+  'Window.vala',
+  'main.vala',
+  config_source
+]
 
-if get_option('profile') == 'default'
-  cargo_options += [ '--release' ]
-  rust_target = 'release'
-  message('Building in release mode')
-else
-  rust_target = 'debug'
-  message('Building in debug mode')
-endif
+sources += resources
 
-custom_target(
-  'cargo-build',
-  build_by_default: true,
-  build_always_stale: true,
-  output: meson.project_name(),
-  console: true,
+executable ('hiit', sources,
+  dependencies: dependencies,
+    #  vala_args: [ '--gresourcesdir=src/' ],
   install: true,
-  install_dir: bindir,
-  command: [
-    cargo, 'build',
-    cargo_options,
-    '&&',
-    'cp', 'src' / rust_target / meson.project_name(), '@OUTPUT@',
-  ]
 )
