@@ -2,6 +2,7 @@
 <gresources>
   <gresource prefix="/xyz/safeworlds/hiit/">
     <file compressed="true" preprocess="xml-stripblanks">ui/shortcuts_dialog.ui</file>
+    <file compressed="true" preprocess="xml-stripblanks">ui/training_editor.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/training_list_row.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/window.ui</file>
     <file compressed="true">audio/ping.wav</file>

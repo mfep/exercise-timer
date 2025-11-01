@@ -42,6 +42,7 @@ template $ExerciseTimerTrainingListRow : Gtk.ListBoxRow {
                         margin-end: 10;
                         // Translators: tooltip text for exercise card button to open the training editor
                         tooltip-text: _("Edit Training");
+                        clicked => $on_edit_clicked();
                     }
                     Gtk.Button {
                         icon-name: "user-trash-symbolic";

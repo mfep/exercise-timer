@@ -6,6 +6,13 @@ namespace ExerciseTimer {
         public signal void Deleted(Gtk.Widget sender);
 
         [GtkCallback]
+        private void on_edit_clicked() {
+            var dialog = new TrainingEditor(Setup);
+            dialog.Applied.connect((setup) => { Setup = setup; });
+            dialog.present(this);
+        }
+
+        [GtkCallback]
         private void on_delete_clicked() {
             Deleted(this);
         }

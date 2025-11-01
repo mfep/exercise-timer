@@ -1,0 +1,87 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $ExerciseTimerTrainingEditor : Adw.Dialog {
+    Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar {
+            title-widget: Adw.WindowTitle {
+                // Translators: The editor window's title when modifying a training
+                title: _("Edit Training");
+            };
+        }
+
+        Adw.Clamp {
+            margin-top: 12;
+            margin-start: 12;
+            margin-bottom: 12;
+            margin-end: 12;
+
+            Gtk.Box {
+                orientation: vertical;
+
+                Adw.PreferencesGroup {
+                    margin-bottom: 12;
+
+                    Adw.EntryRow name_row {
+                        // Translators: The title of the field for the name of the training in the editor window
+                        title: _("Name");
+                    }
+                }
+
+                Adw.PreferencesGroup {
+                    margin-bottom: 12;
+
+                    Adw.SpinRow {
+                        // Translators: The title of the field for the number of sets in the training in the editor window
+                        title: _("Number of Sets");
+                        adjustment: Gtk.Adjustment sets_adjustment {
+                            lower: 1;
+                            upper: 1000000;
+                            step-increment: 1;
+                        };
+                    }
+                    Adw.SpinRow {
+                        // Translators: The title of the field for the rest duration in the training in the editor window
+                        title: _("Rest Time");
+                        // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
+                        subtitle: _("Seconds");
+                        adjustment: Gtk.Adjustment rest_adjustment {
+                            lower: 0;
+                            upper: 1000000;
+                            step-increment: 1;
+                        };
+                    }
+                    Adw.SpinRow {
+                        // Translators: The title of the field for the exercise duration in the training in the editor window
+                        title: _("Exercise Time");
+                        // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
+                        subtitle: _("Seconds");
+                        adjustment: Gtk.Adjustment exercise_adjustment {
+                            lower: 1;
+                            upper: 1000000;
+                            step-increment: 1;
+                        };
+                    }
+                    Adw.SpinRow {
+                        // Translators: The title of the field for the preparation duration in the training in the editor window
+                        title: _("Preparation Time");
+                        // Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
+                        subtitle: _("Seconds");
+                        adjustment: Gtk.Adjustment preparation_adjustment {
+                            lower: 0;
+                            upper: 1000000;
+                            step-increment: 1;
+                        };
+                    }
+                }
+
+                Gtk.Button {
+                    label: "Apply";
+                    css-classes: ["suggested-action"];
+                    clicked => $on_apply_clicked();
+                }
+            }
+        }
+    }
+}
