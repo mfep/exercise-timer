@@ -1,0 +1,37 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.ShortcutsDialog shortcuts_dialog {
+    Adw.ShortcutsSection {
+        // Translators: The title of the shortcuts group which lists the training-related shortcuts
+        title: _("Training");
+        Adw.ShortcutsItem {
+            // Translators: The name of the shortcut key to start and stop the training timer
+            title: _("Start/Stop training");
+            action-name: "win.start-stop";
+            accelerator: "<primary>space";
+        }
+        Adw.ShortcutsItem {
+            // Translators: The name of the shortcut key to start the training from the beginning
+            title: _("Reset training");
+            action-name: "win.reset";
+            accelerator: "<primary>r";
+        }
+    }
+    Adw.ShortcutsSection {
+        // Translators: The title of the shortcuts group which lists general application shortcuts
+        title: _("General");
+        Adw.ShortcutsItem {
+            // Translators: The name of the shortcut key to open the shortcuts window
+            title: _("Show Shortcuts");
+            action-name: "win.show-help-overlay";
+            accelerator: "<primary>question";
+        }
+        Adw.ShortcutsItem {
+            // Translators: The name of the shortcut key to quit the application
+            title: _("Quit");
+            action-name: "app.quit";
+            accelerator: "<primary>q";
+        }
+    }
+}

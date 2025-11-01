@@ -35,6 +35,6 @@ sources += resources
 
 executable ('hiit', sources,
   dependencies: dependencies,
-    #  vala_args: [ '--gresourcesdir=src/' ],
+  vala_args: [ '--gresourcesdir=' + meson.project_source_root() + '/data/resources' ],
   install: true,
 )

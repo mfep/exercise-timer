@@ -2,26 +2,31 @@ using Gtk 4.0;
 using Adw 1;
 
 template $ExerciseTimerWindow : Adw.ApplicationWindow {
+  // Translators: This is the name of the window, shown e..g. in the application list. Currently this is the app name
   title: _("Exercise Timer");
   default-width: 300;
   default-height: 300;
 
-  Adw.NavigationView {
+  Adw.NavigationView navigation_view {
     Adw.NavigationPage {
-      title: "Exercise Timer";
+      // Translators: This is the title of the page which lists all trainings. Currently this is the app name
+      title: _("Exercise Timer");
       Adw.ToolbarView {
         [top]
         Adw.HeaderBar {
           [start]
           Gtk.Button {
             icon-name: "list-add";
-            tooltip-text: "Add Training";
+            // Translators: tooltip for the add training image button
+            tooltip-text: _("Add Training");
             clicked => $on_add_training();
           }
           [end]
           Gtk.MenuButton {
             icon-name: "open-menu-symbolic";
             menu-model: primary_menu;
+            // Translators: tooltip for main menu image button
+            tooltip-text: _("Main Menu");
           }
         }
         Gtk.Stack training_list_stack {
@@ -42,11 +47,13 @@ template $ExerciseTimerWindow : Adw.ApplicationWindow {
           }
           Adw.StatusPage training_list_status {
             icon-name: "weight2";
-            title: "No Trainings";
-            [center]
+            // Translators: The message which is shown on the background of the empty training list
+            title: _("No Trainings");
             Gtk.Button {
               css-classes: ["suggested-action", "pill"];
-              label: "Create Training";
+              // Translators: Big label button to create the first training if none exists
+              label: _("Create Training");
+              halign: center;
             }
           }
         }
@@ -58,6 +65,12 @@ template $ExerciseTimerWindow : Adw.ApplicationWindow {
 menu primary_menu {
   section {
     item {
+      // Translators: The title of the keyboard shortcuts menu entry
+      label: _("Keyboard Shortcuts");
+      action: "app.shortcuts";
+    }
+    item {
+      // Translators: The title of the about dialog menu entry
       label: _("About Exercise Timer");
       action: "app.about";
     }

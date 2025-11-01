@@ -1,6 +1,7 @@
 
 blueprints = custom_target ('blueprints',
   input: files (
+    'ui/shortcuts_dialog.blp',
     'ui/window.blp',
     # 'ui/training_setup_row.blp',
   ),
