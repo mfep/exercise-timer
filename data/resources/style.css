@@ -24,3 +24,6 @@
     padding: 1.5em;
     -gtk-icon-size: 3em;
 }
+.training-list-row {
+    padding: 12px;
+}

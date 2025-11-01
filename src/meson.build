@@ -26,6 +26,8 @@ config_source = configure_file(
 
 sources = [
   'Application.vala',
+  'TrainingListRow.vala',
+  'TrainingSetup.vala',
   'Window.vala',
   'main.vala',
   config_source

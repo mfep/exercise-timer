@@ -2,8 +2,8 @@
 blueprints = custom_target ('blueprints',
   input: files (
     'ui/shortcuts_dialog.blp',
+    'ui/training_list_row.blp',
     'ui/window.blp',
-    # 'ui/training_setup_row.blp',
   ),
   output: '.',
   command: [ find_program ('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@' ],

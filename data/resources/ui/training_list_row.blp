@@ -1,0 +1,56 @@
+using Gtk 4.0;
+
+template $ExerciseTimerTrainingListRow : Gtk.ListBoxRow {
+    css-classes: ["training-list-row"];
+    activatable: true;
+    Gtk.Box {
+        orientation: vertical;
+        Gtk.CenterBox {
+            hexpand: true;
+            orientation: horizontal;
+
+            [start]
+            Gtk.Label {
+                css-classes: ["title-4"];
+                label: bind (template.Setup as <$ExerciseTimerTrainingSetup>).Title;
+            }
+
+            [end]
+            Gtk.Label {
+                css-classes: ["title-4"];
+                label: bind (template.Setup as <$ExerciseTimerTrainingSetup>).TotalTimeMinuteSecFormatted;
+            }
+        }
+
+        Gtk.CenterBox {
+            hexpand: true;
+            orientation: horizontal;
+            margin-top: 5;
+
+            [start]
+            Gtk.Label {
+                label: bind (template.Setup as <$ExerciseTimerTrainingSetup>).SetInfoFormatted;
+            }
+
+            [end]
+            Gtk.Box {
+                Gtk.Box {
+                    orientation: horizontal;
+                    valign: end;
+                    Gtk.Button {
+                        icon-name: "edit-symbolic";
+                        margin-end: 10;
+                        // Translators: tooltip text for exercise card button to open the training editor
+                        tooltip-text: _("Edit Training");
+                    }
+                    Gtk.Button {
+                        icon-name: "user-trash-symbolic";
+                        // Translators: tooltip text for exercise card button to delete the training
+                        tooltip-text: _("Delete Training");
+                        clicked => $on_delete_clicked();
+                    }
+                }
+            }
+        }
+    }
+}

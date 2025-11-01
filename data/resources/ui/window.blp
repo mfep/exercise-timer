@@ -54,6 +54,7 @@ template $ExerciseTimerWindow : Adw.ApplicationWindow {
               // Translators: Big label button to create the first training if none exists
               label: _("Create Training");
               halign: center;
+              clicked => $on_add_training();
             }
           }
         }
