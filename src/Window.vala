@@ -4,6 +4,11 @@ namespace ExerciseTimer {
     public class Window : Adw.ApplicationWindow {
         public Window(Gtk.Application app) {
             Object(application: app);
+
+            var settings = new GLib.Settings(Config.AppId);
+            settings.bind("window-width", this, "default_width", GLib.SettingsBindFlags.DEFAULT);
+            settings.bind("window-height", this, "default_height", GLib.SettingsBindFlags.DEFAULT);
+            settings.bind("window-is-maximized", this, "maximized", GLib.SettingsBindFlags.DEFAULT);
         }
 
         [GtkCallback]
