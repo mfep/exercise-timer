@@ -2,6 +2,7 @@
 blueprints = custom_target ('blueprints',
   input: files (
     'ui/shortcuts_dialog.blp',
+    'ui/timer_page.blp',
     'ui/training_editor.blp',
     'ui/training_list_row.blp',
     'ui/window.blp',

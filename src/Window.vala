@@ -34,6 +34,16 @@ namespace ExerciseTimer {
             }
         }
 
+        [GtkCallback]
+        private void on_training_activated(Gtk.ListBoxRow row) {
+            var training_list_row = row as TrainingListRow;
+            var setup = training_list_row.Setup;
+            var timer_page = new TimerPage(setup);
+            navigation_view.push(timer_page);
+        }
+
+        [GtkChild]
+        private unowned Adw.NavigationView navigation_view;
         [GtkChild]
         private unowned Gtk.Stack training_list_stack;
         [GtkChild]

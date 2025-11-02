@@ -2,15 +2,15 @@ using Gtk 4.0;
 using Adw 1;
 
 template $ExerciseTimerWindow : Adw.ApplicationWindow {
-  // Translators: This is the name of the window, shown e..g. in the application list. Currently this is the app name
+  // Translators: This is the name of the window. Currently this is the app name
   title: _("Exercise Timer");
   default-width: 300;
   default-height: 300;
 
   Adw.NavigationView navigation_view {
     Adw.NavigationPage {
-      // Translators: This is the title of the page which lists all trainings. Currently this is the app name
-      title: _("Exercise Timer");
+      // Translators: This is the title of the page which lists all trainings
+      title: _("Training List");
       Adw.ToolbarView {
         [top]
         Adw.HeaderBar {
@@ -42,6 +42,7 @@ template $ExerciseTimerWindow : Adw.ApplicationWindow {
                 selection-mode: none;
                 valign: start;
                 css-classes: ["boxed-list"];
+                row-activated => $on_training_activated();
               }
             }
           }
