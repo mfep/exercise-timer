@@ -15,3 +15,5 @@ resources = gnome.compile_resources ('hiit-resources',
   c_name: 'hiit',
   dependencies: blueprints,
 )
+
+subdir('icons')

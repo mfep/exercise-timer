@@ -28,6 +28,8 @@ namespace ExerciseTimer {
             css_provider.load_from_resource ("/xyz/safeworlds/hiit/style.css");
             Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER);
 
+            Gtk.IconTheme.get_for_display (Gdk.Display.get_default ()).add_resource_path ("/xyz/safeworlds/hiit/icons");
+
             win.present ();
         }
 
@@ -63,7 +65,7 @@ namespace ExerciseTimer {
         }
 
         private void on_shortcuts_action () {
-            var builder = new Gtk.Builder.from_resource("/xyz/safeworlds/hiit/ui/shortcuts_dialog.ui");
+            var builder = new Gtk.Builder.from_resource ("/xyz/safeworlds/hiit/ui/shortcuts_dialog.ui");
             var dialog = builder.get_object ("shortcuts_dialog") as Adw.ShortcutsDialog;
             dialog.present (this.get_active_window ());
         }
