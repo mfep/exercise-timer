@@ -15,12 +15,16 @@ namespace ExerciseTimer {
 
         [GtkCallback]
         private void on_add_training() {
-            training_list_stack.set_visible_child(training_list_scrolled);
-            var row = new TrainingListRow(){
-                Setup = new TrainingSetup(){ Title = "Sample Exercise %d".printf(i++), WarmupSec = 5, ExerciseSec = 30, RestSec = 10, Sets = 4 }
-            };
-            row.Deleted.connect(on_training_deleted);
-            training_listbox.append(row);
+            var editor_dialog = new TrainingEditor(default_setup);
+            editor_dialog.Applied.connect((new_setup) => {
+                training_list_stack.set_visible_child(training_list_scrolled);
+                var row = new TrainingListRow(){
+                    Setup = new_setup
+                };
+                row.Deleted.connect(on_training_deleted);
+                training_listbox.append(row);
+            });
+            editor_dialog.present(this);
         }
 
         private void on_training_deleted(Gtk.Widget row) {
@@ -39,6 +43,6 @@ namespace ExerciseTimer {
         [GtkChild]
         private unowned Gtk.ListBox training_listbox;
 
-        private int i = 0;
+        private static TrainingSetup default_setup = new TrainingSetup(){ Title = "Exercise", WarmupSec = 5, ExerciseSec = 30, RestSec = 10, Sets = 4 };
     }
 }

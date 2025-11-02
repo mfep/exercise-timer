@@ -24,6 +24,11 @@ namespace ExerciseTimer {
             this.close();
         }
 
+        [GtkCallback]
+        private void on_cancel_clicked() {
+            this.close();
+        }
+
         private TrainingSetup setup;
         [GtkChild]
         private unowned Adw.EntryRow name_row;

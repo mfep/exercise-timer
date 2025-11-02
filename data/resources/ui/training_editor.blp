@@ -9,6 +9,22 @@ template $ExerciseTimerTrainingEditor : Adw.Dialog {
                 // Translators: The editor window's title when modifying a training
                 title: _("Edit Training");
             };
+            show-end-title-buttons: false;
+
+            [start]
+            Gtk.Button {
+                // Translators: Button to close the training editor window without modifications
+                label: _("Cancel");
+                clicked => $on_cancel_clicked();
+            }
+
+            [end]
+            Gtk.Button {
+                // Translators: Button to close the training editor window with saving modifications
+                label: _("Apply");
+                css-classes: ["suggested-action"];
+                clicked => $on_apply_clicked();
+            }
         }
 
         Adw.Clamp {
@@ -21,8 +37,6 @@ template $ExerciseTimerTrainingEditor : Adw.Dialog {
                 orientation: vertical;
 
                 Adw.PreferencesGroup {
-                    margin-bottom: 12;
-
                     Adw.EntryRow name_row {
                         // Translators: The title of the field for the name of the training in the editor window
                         title: _("Name");
@@ -30,7 +44,7 @@ template $ExerciseTimerTrainingEditor : Adw.Dialog {
                 }
 
                 Adw.PreferencesGroup {
-                    margin-bottom: 12;
+                    margin-top: 12;
 
                     Adw.SpinRow {
                         // Translators: The title of the field for the number of sets in the training in the editor window
@@ -74,12 +88,6 @@ template $ExerciseTimerTrainingEditor : Adw.Dialog {
                             step-increment: 1;
                         };
                     }
-                }
-
-                Gtk.Button {
-                    label: "Apply";
-                    css-classes: ["suggested-action"];
-                    clicked => $on_apply_clicked();
                 }
             }
         }
