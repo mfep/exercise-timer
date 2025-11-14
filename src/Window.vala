@@ -40,6 +40,7 @@ namespace ExerciseTimer {
             var setup = training_list_row.Setup;
             var timer_page = new TimerPage(setup);
             navigation_view.push(timer_page);
+            voices = new Voices(timer_page);
         }
 
         [GtkChild]
@@ -52,6 +53,8 @@ namespace ExerciseTimer {
         private unowned Gtk.Widget training_list_scrolled;
         [GtkChild]
         private unowned Gtk.ListBox training_listbox;
+
+        private Voices voices;
 
         private static TrainingSetup default_setup = new TrainingSetup(){ Title = "Exercise", WarmupSec = 5, ExerciseSec = 30, RestSec = 10, Sets = 4 };
     }

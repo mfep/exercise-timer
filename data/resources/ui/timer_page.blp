@@ -72,28 +72,46 @@ template $ExerciseTimerTimerPage : Adw.NavigationPage {
 
                             Gtk.Button {
                                 css-classes: ["circular", "large-button"];
-                                //TODO icon
+                                icon-name: "arrow-circular-top-right-symbolic";
                                 valign: center;
                                 // TODO huge button
                                 // Translators: tooltip text for the reset button
                                 tooltip-text: _("Restart Training");
+                                visible: bind template.Finished inverted;
+                                clicked => $restart();
                             }
                             Gtk.Button {
                                 css-classes: ["circular", "huge-button"];
-                                // TODO icon
-                                // TODO tooltip
-                                // TODO visible
+                                icon-name: "arrow-circular-top-right-symbolic";
+                                valign: center;
+                                // Translators: tooltip text for the reset button
+                                tooltip-text: _("Restart Training");
+                                visible: bind template.Finished;
+                                clicked => $restart();
                             }
-                            Gtk.ScaleButton {
-                                css-classes: ["circular", "large-button"];
-                                //TODO icon
+                            Gtk.Button {
+                                css-classes: ["circular", "huge-button"];
+                                icon-name: bind template.PlayIconName;
+                                tooltip-text: bind template.PlayIconTooltip;
+                                visible: bind template.Finished inverted;
+                                clicked => $playPause();
+                            }
+                            Gtk.ScaleButton volume_button {
+                                icons: ["audio-volume-muted-symbolic", "audio-volume-high-symbolic", "audio-volume-medium-symbolic"];
                                 valign: center;
                                 // Translators: tooltip text for the volume button
                                 tooltip-text: _("Set Volume");
-                                // TODO visible
+                                visible: bind template.Finished inverted;
+                                adjustment: Gtk.Adjustment volume_adjustment {
+                                    lower: 0;
+                                    upper: 1;
+                                };
                             }
                         }
                     }
+                }
+                Gtk.Label {
+                    label: bind template.RemainingSetsFormatted;
                 }
             }
         }

@@ -26,10 +26,12 @@ config_source = configure_file(
 
 sources = [
   'Application.vala',
+  'ITimerNotifier.vala',
   'TimerPage.vala',
   'TrainingEditor.vala',
   'TrainingListRow.vala',
   'TrainingSetup.vala',
+  'Voices.vala',
   'Window.vala',
   'main.vala',
   config_source

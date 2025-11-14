@@ -6,7 +6,9 @@
     <file compressed="true" preprocess="xml-stripblanks">ui/training_editor.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/training_list_row.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/window.ui</file>
-    <file compressed="true">audio/ping.wav</file>
+    <file compressed="true">audio/ping1.wav</file>
+    <file compressed="true">audio/ping2.wav</file>
+    <file compressed="true">audio/ping3.wav</file>
     <file compressed="true">style.css</file>
   </gresource>
 </gresources>
