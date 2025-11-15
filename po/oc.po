@@ -21,37 +21,31 @@ msgstr ""
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
-msgctxt "shortcut window"
 msgid "Training"
 msgstr "Entrainament"
 
 #. Translators: The name of the shortcut key to start and stop the training timer
 #: data/resources/ui/help-overlay.ui:16
-msgctxt "shortcut window"
 msgid "Start/Stop training"
 msgstr "Començar/Arrestar"
 
 #. Translators: The name of the shortcut key to start the training from the beginning
 #: data/resources/ui/help-overlay.ui:24
-msgctxt "shortcut window"
 msgid "Reset training"
 msgstr "Recomençar l'entrainament"
 
 #. Translators: The title of the shortcuts group which lists general application shortcuts
 #: data/resources/ui/help-overlay.ui:34
-msgctxt "shortcut window"
 msgid "General"
 msgstr "General"
 
 #. Translators: The name of the shortcut key to open the shortcuts window
 #: data/resources/ui/help-overlay.ui:38
-msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Mostrar los acorchis"
 
 #. Translators: The name of the shortcut key to quit the application
 #: data/resources/ui/help-overlay.ui:46
-msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Quitar"
 
