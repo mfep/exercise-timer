@@ -65,7 +65,7 @@ template $ExerciseTimerTimerPage : Adw.NavigationPage {
                                 label: _("Finished!");
                             }
                         }
-                        Gtk.Box {
+                        Gtk.Box button_box {
                             orientation: horizontal;
                             halign: center;
                             spacing: 12;
@@ -89,7 +89,7 @@ template $ExerciseTimerTimerPage : Adw.NavigationPage {
                                 visible: bind template.Finished;
                                 clicked => $restart();
                             }
-                            Gtk.Button {
+                            Gtk.Button play_pause_button {
                                 css-classes: ["circular", "huge-button"];
                                 icon-name: bind template.PlayIconName;
                                 tooltip-text: bind template.PlayIconTooltip;

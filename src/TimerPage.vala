@@ -7,6 +7,7 @@ namespace ExerciseTimer {
             updateCssClass();
             timer_label_box.set_direction(Gtk.TextDirection.LTR);
             volume_button.get_first_child().css_classes = new string[] { "circular", "toggle", "large-button" };
+            button_box.set_focus_child(play_pause_button);
 
             var settings = new GLib.Settings(Config.AppId);
             settings.bind("beep-volume", volume_adjustment, "value", GLib.SettingsBindFlags.DEFAULT);
@@ -229,6 +230,10 @@ namespace ExerciseTimer {
         unowned Gtk.Adjustment volume_adjustment;
         [GtkChild]
         unowned Gtk.ScaleButton volume_button;
+        [GtkChild]
+        unowned Gtk.Box button_box;
+        [GtkChild]
+        unowned Gtk.Button play_pause_button;
 
         private State current_state;
         private int remaining_sec;
