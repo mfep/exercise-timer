@@ -30,6 +30,7 @@ sources = [
   'ITimerPageActionNotifier.vala',
   'TimerPage.vala',
   'TrainingEditor.vala',
+  'TrainingListModel.vala',
   'TrainingListRow.vala',
   'TrainingSetup.vala',
   'Voices.vala',
@@ -42,6 +43,6 @@ sources += resources
 
 executable ('hiit', sources,
   dependencies: dependencies,
-  vala_args: [ '--gresourcesdir=' + meson.project_source_root() + '/data/resources' ],
+  vala_args: [ '--gresourcesdir=' + meson.project_source_root() + '/data/resources', '--pkg', 'json-glib-1.0' ],
   install: true,
 )

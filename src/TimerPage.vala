@@ -117,9 +117,9 @@ namespace ExerciseTimer {
         [GtkCallback]
         public void restart() {
             remaining_sets = Setup.Sets;
-            if (Setup.WarmupSec > 0) {
+            if (Setup.PreparationSec > 0) {
                 current_state = State.Preparation;
-                remaining_sec = Setup.WarmupSec;
+                remaining_sec = Setup.PreparationSec;
                 preparation_started();
             } else {
                 current_state = State.Exercise;

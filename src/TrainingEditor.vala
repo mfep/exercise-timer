@@ -9,13 +9,13 @@ namespace ExerciseTimer {
                 Sets = _setup.Sets,
                 ExerciseSec = _setup.ExerciseSec,
                 RestSec = _setup.RestSec,
-                WarmupSec = _setup.WarmupSec,
+                PreparationSec = _setup.PreparationSec,
             };
             setup.bind_property("Title", name_row, "text", GLib.BindingFlags.BIDIRECTIONAL | GLib.BindingFlags.SYNC_CREATE, null, null);
             setup.bind_property("Sets", sets_adjustment, "value", GLib.BindingFlags.BIDIRECTIONAL | GLib.BindingFlags.SYNC_CREATE, null, null);
             setup.bind_property("ExerciseSec", exercise_adjustment, "value", GLib.BindingFlags.BIDIRECTIONAL | GLib.BindingFlags.SYNC_CREATE, null, null);
             setup.bind_property("RestSec", rest_adjustment, "value", GLib.BindingFlags.BIDIRECTIONAL | GLib.BindingFlags.SYNC_CREATE, null, null);
-            setup.bind_property("WarmupSec", preparation_adjustment, "value", GLib.BindingFlags.BIDIRECTIONAL | GLib.BindingFlags.SYNC_CREATE, null, null);
+            setup.bind_property("PreparationSec", preparation_adjustment, "value", GLib.BindingFlags.BIDIRECTIONAL | GLib.BindingFlags.SYNC_CREATE, null, null);
         }
 
         [GtkCallback]

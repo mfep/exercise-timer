@@ -3,18 +3,25 @@ namespace ExerciseTimer {
     public class TrainingListRow : Gtk.ListBoxRow {
         public TrainingSetup Setup { get; set; }
 
-        public signal void Deleted(Gtk.Widget sender);
+        public signal void setup_edited();
 
         [GtkCallback]
         private void on_edit_clicked() {
             var dialog = new TrainingEditor(Setup);
-            dialog.Applied.connect((setup) => { Setup = setup; });
+            dialog.Applied.connect((setup) => {
+                Setup.Title = setup.Title;
+                Setup.Sets = setup.Sets;
+                Setup.PreparationSec = setup.PreparationSec;
+                Setup.ExerciseSec = setup.ExerciseSec;
+                Setup.RestSec = setup.RestSec;
+                setup_edited();
+            });
             dialog.present(this);
         }
 
         [GtkCallback]
         private void on_delete_clicked() {
-            Deleted(this);
+            Setup.deleted(Setup);
         }
     }
 }

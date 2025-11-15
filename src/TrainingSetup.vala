@@ -1,14 +1,82 @@
+using Json;
+
 namespace ExerciseTimer {
-    public class TrainingSetup : Object {
+    public class TrainingSetup : GLib.Object, Json.Serializable {
         public string Title { get; set; }
-        public int WarmupSec { get; set; }
-        public int ExerciseSec { get; set; }
-        public int RestSec { get; set; }
-        public int Sets { get; set; }
+        public int PreparationSec {
+            get {
+                return preparation_sec;
+            }
+            set {
+                preparation_sec = value;
+                notify_properties ();
+            }
+        }
+
+        public int ExerciseSec {
+            get {
+                return exercise_sec;
+            }
+            set {
+                exercise_sec = value;
+                notify_properties ();
+            }
+        }
+
+        public int RestSec {
+            get {
+                return rest_sec;
+            }
+            set {
+                rest_sec = value;
+                notify_properties ();
+            }
+        }
+
+        public int Sets {
+            get {
+                return sets;
+            }
+            set {
+                sets = value;
+                notify_properties ();
+            }
+        }
+
+        public signal void deleted (TrainingSetup setup);
+
+        public override unowned GLib.ParamSpec? find_property (string name)
+        {
+            // Ensuring compatibility with previous versions
+            GLib.Type type = this.get_type ();
+            GLib.ObjectClass ocl = (GLib.ObjectClass) type.class_ref ();
+            switch (name) {
+            case "name" :
+            case "Title":
+                return ocl.find_property ("Title");
+
+            case "sets":
+            case "Sets":
+                return ocl.find_property ("Sets");
+
+            case "warmup_s":
+            case "PreparationSec":
+                return ocl.find_property ("PreparationSec");
+
+            case "exercise_s":
+            case "ExerciseSec":
+                return ocl.find_property ("ExerciseSec");
+
+            case "rest_s":
+            case "RestSec":
+                return ocl.find_property ("RestSec");
+            }
+            return null;
+        }
 
         public int TotalTimeSec {
             get {
-                return WarmupSec + Sets * (ExerciseSec + RestSec) - RestSec;
+                return PreparationSec + Sets * (ExerciseSec + RestSec) - RestSec;
             }
         }
 
@@ -27,5 +95,16 @@ namespace ExerciseTimer {
                 return _("%d × %d s").printf (Sets, ExerciseSec + RestSec);
             }
         }
+
+        private void notify_properties () {
+            notify_property ("TotalTimeSec");
+            notify_property ("TotalTimeMinuteSecFormatted");
+            notify_property ("SetInfoFormatted");
+        }
+
+        private int preparation_sec;
+        private int exercise_sec;
+        private int rest_sec;
+        private int sets;
     }
 }

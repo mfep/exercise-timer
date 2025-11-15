@@ -19,7 +19,8 @@ designers = ['Lőrinc Serfőző https://the.safeworlds.xyz']
 
 dependencies = [
   dependency('gtk4', version: '>= 4.0.0'),
-  dependency('libadwaita-1', version: '>= 1.0.0')
+  dependency('libadwaita-1', version: '>= 1.0.0'),
+  dependency('json-glib-1.0', version: '>= 1.0.0'),
 ]
 
 glib_compile_schemas = find_program('glib-compile-schemas', required: true)
