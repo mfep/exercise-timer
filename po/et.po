@@ -256,9 +256,9 @@ msgstr "Priit Jõerüüt 2024"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/TimerPage.vala:54
-#, fuzzy, c-format
+#, c-format
 msgid "Remaining Sets: %d"
-msgstr "Jäänud kordusi: {}"
+msgstr "Jäänud kordusi: %d"
 
 #. Translators: Shown on the timer page during preparation
 #: src/TimerPage.vala:63
@@ -304,7 +304,7 @@ msgstr "Uuenda"
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
 #: src/TrainingSetup.vala:95
 #, c-format
-msgid "%d × %d s"
+msgid "%d × %d sek"
 msgstr ""
 
 #, rust-format

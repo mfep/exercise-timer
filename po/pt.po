@@ -259,9 +259,9 @@ msgstr "créditos_de_tradução"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/TimerPage.vala:54
-#, fuzzy, c-format
+#, c-format
 msgid "Remaining Sets: %d"
-msgstr "Séries restantes: {}"
+msgstr "Séries restantes: %d"
 
 #. Translators: Shown on the timer page during preparation
 #: src/TimerPage.vala:63
@@ -308,7 +308,7 @@ msgstr "Atualizar"
 #: src/TrainingSetup.vala:95
 #, c-format
 msgid "%d × %d s"
-msgstr ""
+msgstr "%d x %d s"
 
 #, rust-format
 #~ msgid "{} × {} s"

@@ -259,9 +259,9 @@ msgstr "மொழிபெயர்ப்பாளர்_ கிரெடிட�
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/TimerPage.vala:54
-#, fuzzy, c-format
+#, c-format
 msgid "Remaining Sets: %d"
-msgstr "மீதமுள்ள தொகுப்புகள்: {}"
+msgstr "மீதமுள்ள தொகுப்புகள்: %d"
 
 #. Translators: Shown on the timer page during preparation
 #: src/TimerPage.vala:63

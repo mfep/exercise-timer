@@ -259,9 +259,9 @@ msgstr "أحمد النجماوي <iramosu@protonmail.com>"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/TimerPage.vala:54
-#, fuzzy, c-format
+#, c-format
 msgid "Remaining Sets: %d"
-msgstr "المجموعات المتبقِّية: {}"
+msgstr "المجموعات المتبقِّية: %d"
 
 #. Translators: Shown on the timer page during preparation
 #: src/TimerPage.vala:63
@@ -308,7 +308,7 @@ msgstr "حدِّث"
 #: src/TrainingSetup.vala:95
 #, c-format
 msgid "%d × %d s"
-msgstr ""
+msgstr "%d × %d ث"
 
 #, rust-format
 #~ msgid "{} × {} s"

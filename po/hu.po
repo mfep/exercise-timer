@@ -256,9 +256,9 @@ msgstr "Serfőző Lőrinc"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/TimerPage.vala:54
-#, fuzzy, c-format
+#, c-format
 msgid "Remaining Sets: %d"
-msgstr "Hátralévő Szettek: {}"
+msgstr "Hátralévő Szettek: %d"
 
 #. Translators: Shown on the timer page during preparation
 #: src/TimerPage.vala:63

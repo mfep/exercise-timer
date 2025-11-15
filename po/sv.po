@@ -258,9 +258,9 @@ msgstr "Anders Jonsson <anders.jonsson@norsjovallen.se>"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/TimerPage.vala:54
-#, fuzzy, c-format
+#, c-format
 msgid "Remaining Sets: %d"
-msgstr "Återstående uppsättningar: {}"
+msgstr "Återstående uppsättningar: %d"
 
 #. Translators: Shown on the timer page during preparation
 #: src/TimerPage.vala:63

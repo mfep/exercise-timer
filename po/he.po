@@ -259,9 +259,9 @@ msgstr "יוסף אור בוצ׳קו <yoseforb@gmail.com>"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/TimerPage.vala:54
-#, fuzzy, c-format
+#, c-format
 msgid "Remaining Sets: %d"
-msgstr "סדרות נותרות: {}"
+msgstr "סדרות נותרות: %d"
 
 #. Translators: Shown on the timer page during preparation
 #: src/TimerPage.vala:63
@@ -308,7 +308,7 @@ msgstr "עדכון"
 #: src/TrainingSetup.vala:95
 #, c-format
 msgid "%d × %d s"
-msgstr ""
+msgstr "‏‎%d × %d‎ ש"
 
 #, rust-format
 #~ msgid "{} × {} s"

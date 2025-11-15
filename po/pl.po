@@ -260,9 +260,9 @@ msgstr "Yauheni Liavontsyeu <Evgeniy_Leontyev@proton.me>"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/TimerPage.vala:54
-#, fuzzy, c-format
+#, c-format
 msgid "Remaining Sets: %d"
-msgstr "Pozostało zestawów: {}"
+msgstr "Pozostało zestawów: %d"
 
 #. Translators: Shown on the timer page during preparation
 #: src/TimerPage.vala:63

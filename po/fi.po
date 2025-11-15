@@ -252,9 +252,9 @@ msgstr "Jiri Grönroos"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/TimerPage.vala:54
-#, fuzzy, c-format
+#, c-format
 msgid "Remaining Sets: %d"
-msgstr "Settejä jäljellä: {}"
+msgstr "Settejä jäljellä: %d"
 
 #. Translators: Shown on the timer page during preparation
 #: src/TimerPage.vala:63

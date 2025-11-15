@@ -259,9 +259,9 @@ msgstr "twlvnn kraftwerk <kraft_werk@tutanota.com>"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/TimerPage.vala:54
-#, fuzzy, c-format
+#, c-format
 msgid "Remaining Sets: %d"
-msgstr "Оставащи серии: {}"
+msgstr "Оставащи серии: %d"
 
 #. Translators: Shown on the timer page during preparation
 #: src/TimerPage.vala:63
@@ -308,7 +308,7 @@ msgstr "Обновяване"
 #: src/TrainingSetup.vala:95
 #, c-format
 msgid "%d × %d s"
-msgstr ""
+msgstr "%d × %d с"
 
 #, rust-format
 #~ msgid "{} × {} s"
