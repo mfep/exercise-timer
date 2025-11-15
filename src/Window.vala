@@ -1,7 +1,7 @@
 namespace ExerciseTimer {
 
     [GtkTemplate(ui = "/xyz/safeworlds/hiit/ui/window.ui")]
-    public class Window : Adw.ApplicationWindow {
+    public class Window : Adw.ApplicationWindow, ITimerPageActionNotifier {
         public Window(Gtk.Application app) {
             Object(application: app);
 
@@ -11,6 +11,10 @@ namespace ExerciseTimer {
             settings.bind("window-is-maximized", this, "maximized", GLib.SettingsBindFlags.DEFAULT);
 
             training_list_stack.set_visible_child(training_list_status);
+        }
+
+        public void on_restart_action () {
+            restart_action_called();
         }
 
         [GtkCallback]
@@ -38,7 +42,7 @@ namespace ExerciseTimer {
         private void on_training_activated(Gtk.ListBoxRow row) {
             var training_list_row = row as TrainingListRow;
             var setup = training_list_row.Setup;
-            var timer_page = new TimerPage(setup);
+            timer_page = new TimerPage(setup, this);
             navigation_view.push(timer_page);
             voices = new Voices(timer_page);
         }
@@ -55,6 +59,7 @@ namespace ExerciseTimer {
         private unowned Gtk.ListBox training_listbox;
 
         private Voices voices;
+        private TimerPage timer_page;
 
         private static TrainingSetup default_setup = new TrainingSetup(){ Title = "Exercise", WarmupSec = 5, ExerciseSec = 30, RestSec = 10, Sets = 4 };
     }

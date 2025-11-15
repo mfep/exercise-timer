@@ -27,6 +27,7 @@ config_source = configure_file(
 sources = [
   'Application.vala',
   'ITimerNotifier.vala',
+  'ITimerPageActionNotifier.vala',
   'TimerPage.vala',
   'TrainingEditor.vala',
   'TrainingListRow.vala',

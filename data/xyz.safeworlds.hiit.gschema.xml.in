@@ -21,9 +21,9 @@
             <default>"[]"</default>
             <summary>List of training setups, in JSON notation</summary>
         </key>
-        <key name="warmup-s" type="u">
+        <key name="countdown-sec" type="u">
             <default>5</default>
-            <summary>The duration of the warmup, in seconds</summary>
+            <summary>The duration of the audio countdown, in seconds</summary>
         </key>
         <key name="beep-volume" type="d">
             <default>1</default>

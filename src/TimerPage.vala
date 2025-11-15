@@ -1,21 +1,25 @@
 namespace ExerciseTimer {
     [GtkTemplate(ui = "/xyz/safeworlds/hiit/ui/timer_page.ui")]
     public class TimerPage : Adw.NavigationPage, ITimerNotifier {
-        public TimerPage(TrainingSetup setup) {
+        public TimerPage(TrainingSetup setup, ITimerPageActionNotifier action_notifier) {
             Setup = setup;
+            this.action_notifier = action_notifier;
             updateCssClass();
             timer_label_box.set_direction(Gtk.TextDirection.LTR);
             volume_button.get_first_child().css_classes = new string[] { "circular", "toggle", "large-button" };
 
             var settings = new GLib.Settings(Config.AppId);
             settings.bind("beep-volume", volume_adjustment, "value", GLib.SettingsBindFlags.DEFAULT);
+            settings.bind("countdown-sec", this, "CountdownSec", GLib.SettingsBindFlags.DEFAULT);
 
             this.shown.connect(() => {
                 restart();
             });
             this.hidden.connect((_) => {
                 Running = false;
+                this.action_notifier.restart_action_called.disconnect(restart);
             });
+            this.action_notifier.restart_action_called.connect(restart);
         }
 
         public TrainingSetup Setup { get; private set; }
@@ -108,6 +112,8 @@ namespace ExerciseTimer {
             }
         }
 
+        public int CountdownSec { get; set; }
+
         [GtkCallback]
         public void restart() {
             remaining_sets = Setup.Sets;
@@ -136,7 +142,7 @@ namespace ExerciseTimer {
             if (remaining_sec > 1) {
                 --remaining_sec;
                 retval = true;
-                if (remaining_sec <= countdown_threshold) {
+                if (remaining_sec <= CountdownSec) {
                     countdown(remaining_sec);
                 }
             } else {
@@ -229,6 +235,6 @@ namespace ExerciseTimer {
         private int remaining_sets;
         private uint? timer_id;
         private bool running;
-        private const int countdown_threshold = 5;
+        ITimerPageActionNotifier action_notifier;
     }
 }

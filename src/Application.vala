@@ -12,11 +12,13 @@ namespace ExerciseTimer {
                 { "about", this.on_about_action },
                 { "close", this.on_close_action },
                 { "shortcuts", this.on_shortcuts_action },
+                { "restart", this.on_restart_action },
                 { "quit", this.quit },
             };
             this.add_action_entries (action_entries, this);
             this.set_accels_for_action ("app.close", { "<primary>w" });
             this.set_accels_for_action ("app.shortcuts", { "<primary>question" });
+            this.set_accels_for_action ("app.restart", { "<primary>r" });
             this.set_accels_for_action ("app.quit", { "<primary>q" });
         }
 
@@ -68,6 +70,11 @@ namespace ExerciseTimer {
             var builder = new Gtk.Builder.from_resource ("/xyz/safeworlds/hiit/ui/shortcuts_dialog.ui");
             var dialog = builder.get_object ("shortcuts_dialog") as Adw.ShortcutsDialog;
             dialog.present (this.get_active_window ());
+        }
+
+        private void on_restart_action () {
+            var window = this.active_window as ExerciseTimer.Window;
+            window?.on_restart_action ();
         }
     }
 }
