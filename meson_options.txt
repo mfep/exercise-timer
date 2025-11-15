@@ -6,7 +6,5 @@ option(
     'development'
   ],
   value: 'default',
-  description: 'The build profile for GTK Rust Template. One of "default" or "development".'
+  description: 'The build profile for Exercise Timer. One of "default" or "development".'
 )
-
-option('offline', type: 'boolean', value: false)
