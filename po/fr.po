@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 13:21+0200\n"
-"PO-Revision-Date: 2025-03-09 21:02+0000\n"
+"PO-Revision-Date: 2025-11-15 18:50+0000\n"
 "Last-Translator: Lula Bye <translate.cylinder716@passinbox.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/fr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/help-overlay.ui:12
@@ -110,28 +110,29 @@ msgid "Train and rest with high intensity"
 msgstr "Entrainement et repos a haute intensité"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
-#, fuzzy
 msgid ""
 "Exercise Timer is a simple utility to conduct high intensity interval "
 "training. Following a short preparation period, a prescribed number of "
 "exercise sets are played. In between each exercise, there is a resting "
 "period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
-"Après une courte période de préparation, un nombre prescrit de séries "
-"d’exercices est lancé. Entre chaque exercice, il y a une période de repos."
+"Exercise Timer est une application utilitaire simple qui permet de "
+"fractionner un entraînement intensif. Après une courte période de "
+"préparation, l'application lance le nombre de séries d’exercices définies à "
+"l'avance. Entre chaque exercice, il y a une période de repos. L'application "
+"de prend pas en compte le type d'exercise."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
 msgid "Features:"
 msgstr "Fonctionnalités :"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
-#, fuzzy
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise, rest and preparation periods."
 msgstr ""
-"Enregistrez et rappelez les préréglages contenant le nombre de séries et la "
-"durée des périodes d'exercice et de repos."
+"Enregistrez et réutilisez les préréglages contenant le nombre de séries et "
+"la durée de l'exercice, les périodes de repos et de préparation."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid "A beeping sound is played at- and prior to each transition."
@@ -174,9 +175,8 @@ msgstr "_A propos d'Exercise Timer"
 
 #. Translators: tooltip for the add training image button
 #: src/app.rs:83
-#, fuzzy
 msgid "Add Training"
-msgstr "Ajout d'entrainement"
+msgstr "Ajouter un entrainement"
 
 #. Translators: tooltip for main menu image button
 #: src/app.rs:90
