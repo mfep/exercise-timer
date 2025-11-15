@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 13:21+0200\n"
+"POT-Creation-Date: 2025-11-15 19:29+0100\n"
 "PO-Revision-Date: 2025-05-29 06:37+0000\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gnome.org>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/exercise-timer/"
@@ -21,42 +21,137 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
-#: data/resources/ui/help-overlay.ui:12
+#: data/resources/ui/shortcuts_dialog.blp:7
 msgid "Training"
 msgstr "אימון"
 
 #. Translators: The name of the shortcut key to start and stop the training timer
-#: data/resources/ui/help-overlay.ui:16
+#: data/resources/ui/shortcuts_dialog.blp:10
 msgid "Start/Stop training"
 msgstr "התחלה/עצירה של האימון"
 
 #. Translators: The name of the shortcut key to start the training from the beginning
-#: data/resources/ui/help-overlay.ui:24
+#: data/resources/ui/shortcuts_dialog.blp:16
 msgid "Reset training"
 msgstr "איפוס האימון"
 
 #. Translators: The title of the shortcuts group which lists general application shortcuts
-#: data/resources/ui/help-overlay.ui:34
+#: data/resources/ui/shortcuts_dialog.blp:23
 msgid "General"
 msgstr "כללי"
 
 #. Translators: The name of the shortcut key to open the shortcuts window
-#: data/resources/ui/help-overlay.ui:38
+#: data/resources/ui/shortcuts_dialog.blp:26
 msgid "Show Shortcuts"
 msgstr "הצגת צירופי מקשים"
 
 #. Translators: The name of the shortcut key to quit the application
-#: data/resources/ui/help-overlay.ui:46
+#: data/resources/ui/shortcuts_dialog.blp:32
 msgid "Quit"
 msgstr "יציאה"
 
+#. Translators: Shown in the timer page when the training has come to the end
+#: data/resources/ui/timer_page.blp:65
+msgid "Finished!"
+msgstr "הסתיים!"
+
+#. TODO huge button
+#. Translators: tooltip text for the reset button
+#: data/resources/ui/timer_page.blp:79 data/resources/ui/timer_page.blp:88
+msgid "Restart Training"
+msgstr "התחלת אימון מחדש"
+
+#. Translators: tooltip text for the volume button
+#: data/resources/ui/timer_page.blp:103
+msgid "Set Volume"
+msgstr "הגדרת עצמת שמע"
+
+#. Translators: Button to close the training editor window without modifications
+#: data/resources/ui/training_editor.blp:16
+msgid "Cancel"
+msgstr "ביטול"
+
+#. Translators: The title of the field for the name of the training in the editor window
+#: data/resources/ui/training_editor.blp:40
+msgid "Name"
+msgstr "שם"
+
+#. Translators: The title of the field for the number of sets in the training in the editor window
+#: data/resources/ui/training_editor.blp:49
+msgid "Number of Sets"
+msgstr "מספר סדרות"
+
+#. Translators: The title of the field for the rest duration in the training in the editor window
+#: data/resources/ui/training_editor.blp:58
+msgid "Rest Time"
+msgstr "זמן מנוחה"
+
+#. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
+#: data/resources/ui/training_editor.blp:60
+#: data/resources/ui/training_editor.blp:71
+#: data/resources/ui/training_editor.blp:82
+msgid "Seconds"
+msgstr "שניות"
+
+#. Translators: The title of the field for the exercise duration in the training in the editor window
+#: data/resources/ui/training_editor.blp:69
+msgid "Exercise Time"
+msgstr "זמן אימון"
+
+#. Translators: The title of the field for the preparation duration in the training in the editor window
+#: data/resources/ui/training_editor.blp:80
+msgid "Preparation Time"
+msgstr "זמן הכנה"
+
+#. Translators: tooltip text for exercise card button to open the training editor
+#. Translators: The editor window's title when modifying a training
+#: data/resources/ui/training_list_row.blp:44 src/TrainingEditor.vala:32
+msgid "Edit Training"
+msgstr "עריכת אימון"
+
+#. Translators: tooltip text for exercise card button to delete the training
+#: data/resources/ui/training_list_row.blp:50
+msgid "Delete Training"
+msgstr "מחיקת אימון"
+
+#. Translators: This is the name of the window. Currently this is the app name
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
+#: data/resources/ui/window.blp:6 data/resources/ui/window.blp:13
 #: data/xyz.safeworlds.hiit.desktop.in.in:2
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:75 src/app.rs:170
-#: src/setup.rs:14
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/Application.vala:50
 msgid "Exercise Timer"
 msgstr "קוצב זמן לאימון"
+
+#. Translators: tooltip for the add training image button
+#: data/resources/ui/window.blp:21
+msgid "Add Training"
+msgstr "הוספת אימון"
+
+#. Translators: tooltip for main menu image button
+#: data/resources/ui/window.blp:29
+msgid "Main Menu"
+msgstr "תפריט ראשי"
+
+#. Translators: The message which is shown on the background of the empty training list
+#: data/resources/ui/window.blp:52
+msgid "No Trainings"
+msgstr "אין אימונים"
+
+#. Translators: Big label button to create the first training if none exists
+#: data/resources/ui/window.blp:56
+msgid "Create Training"
+msgstr "יצירת אימון"
+
+#. Translators: The title of the keyboard shortcuts menu entry
+#: data/resources/ui/window.blp:71
+msgid "_Keyboard Shortcuts"
+msgstr "_צירופי מקשים"
+
+#. Translators: The title of the about dialog menu entry
+#: data/resources/ui/window.blp:76
+msgid "_About Exercise Timer"
+msgstr "_על קוצב זמן לאימון"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
 msgid "Timer clock for high intensity interval training"
@@ -92,7 +187,8 @@ msgid "List of training setups, in JSON notation"
 msgstr "רשימת הגדרות אימון, בתבנית JSON"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
-msgid "The duration of the warmup, in seconds"
+#, fuzzy
+msgid "The duration of the audio countdown, in seconds"
 msgstr "משך החימום, בשניות"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
@@ -156,228 +252,112 @@ msgstr "חלון אימון חדש - מצב בהיר"
 msgid "Timer - light mode"
 msgstr "קוצב זמן - מצב בהיר"
 
-#. Translators: The title of the keyboard shortcuts menu entry
-#: src/app.rs:57
-msgid "_Keyboard Shortcuts"
-msgstr "_צירופי מקשים"
-
-#. Translators: The title of the about dialog menu entry
-#: src/app.rs:59
-msgid "_About Exercise Timer"
-msgstr "_על קוצב זמן לאימון"
-
-#. Translators: tooltip for the add training image button
-#: src/app.rs:83
-msgid "Add Training"
-msgstr "הוספת אימון"
-
-#. Translators: tooltip for main menu image button
-#: src/app.rs:90
-msgid "Main Menu"
-msgstr "תפריט ראשי"
-
-#. Translators: The message which is shown on the background of the empty training list
-#: src/app.rs:120
-msgid "No Trainings"
-msgstr "אין אימונים"
-
-#. Translators: Big label button to create the first training if none exists
-#: src/app.rs:124
-msgid "Create Training"
-msgstr "יצירת אימון"
-
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:177
+#: src/Application.vala:57
 msgid "translator_credits"
 msgstr "יוסף אור בוצ׳קו <yoseforb@gmail.com>"
 
-#. Translators: The editor window's title when creating a new training
-#: src/training_editor.rs:56
-msgid "New Training"
-msgstr "אימון חדש"
-
-#. Translators: The editor window's title when modifying a training
-#. Translators: tooltip text for exercise card button to open the training editor
-#: src/training_editor.rs:58 src/training_setup.rs:112
-msgid "Edit Training"
-msgstr "עריכת אימון"
-
-#. Translators: Button to close the training editor window without modifications
-#: src/training_editor.rs:64
-msgid "Cancel"
-msgstr "ביטול"
-
-#. Translators: Button to close the editor window and create a new training
-#: src/training_editor.rs:70
-msgid "Create"
-msgstr "יצירה"
-
-#. Translators: Button to close the editor window and update an existing training
-#: src/training_editor.rs:72
-msgid "Update"
-msgstr "עדכון"
-
-#. Translators: The title of the field for the name of the training in the editor window
-#: src/training_editor.rs:88
-msgid "Name"
-msgstr "שם"
-
-#. Translators: The title of the field for the number of sets in the training in the editor window
-#: src/training_editor.rs:96
-msgid "Number of Sets"
-msgstr "מספר סדרות"
-
-#. Translators: The title of the field for the rest duration in the training in the editor window
-#: src/training_editor.rs:107
-msgid "Rest Time"
-msgstr "זמן מנוחה"
-
-#. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
-#: src/training_editor.rs:109 src/training_editor.rs:122
-#: src/training_editor.rs:135
-msgid "Seconds"
-msgstr "שניות"
-
-#. Translators: The title of the field for the exercise duration in the training in the editor window
-#: src/training_editor.rs:120
-msgid "Exercise Time"
-msgstr "זמן אימון"
-
-#. Translators: The title of the field for the preparation duration in the training in the editor window
-#: src/training_editor.rs:133
-msgid "Preparation Time"
-msgstr "זמן הכנה"
-
-#. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
-#. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
-#: src/training_setup.rs:97
-#, rust-format
-msgid "{} × {} s"
-msgstr "‏‎{} × {}‎ ש"
-
-#. Translators: tooltip text for exercise card button to delete the training
-#: src/training_setup.rs:120
-msgid "Delete Training"
-msgstr "מחיקת אימון"
-
-#. Translators: Shown in the timer page when the training has come to the end
-#: src/training_timer.rs:150
-msgid "Finished!"
-msgstr "הסתיים!"
+#. Translators: Label showing the number of remaining sets on the timer page
+#: src/TimerPage.vala:54
+#, fuzzy, c-format
+msgid "Remaining Sets: %d"
+msgstr "סדרות נותרות: {}"
 
 #. Translators: Shown on the timer page during preparation
-#: src/training_timer.rs:239
+#: src/TimerPage.vala:63
 msgid "Preparation"
 msgstr "הכנה"
 
 #. Translators: Shown on the timer page during exercise
-#: src/training_timer.rs:241
+#: src/TimerPage.vala:66
 msgid "Exercise"
 msgstr "אימון"
 
 #. Translators: Shown on the timer page during rest
-#: src/training_timer.rs:243
+#: src/TimerPage.vala:69
 msgid "Rest"
 msgstr "מנוחה"
 
-#. Translators: tooltip text for the reset button
-#: src/training_timer.rs:286
-msgid "Restart Training"
-msgstr "התחלת אימון מחדש"
-
-#. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:298
+#. Translators: tooltip text for the pause/resume button when the training is running
+#: src/TimerPage.vala:108
 msgid "Pause Training"
 msgstr "השהיית אימון"
 
-#: src/training_timer.rs:298
+#. Translators: tooltip text for the pause/resume button when the training is paused
+#: src/TimerPage.vala:111
 msgid "Resume Training"
 msgstr "המשך אימון"
 
-#. Translators: tooltip text for the volume button
-#: src/training_timer.rs:315
-msgid "Set Volume"
-msgstr "הגדרת עצמת שמע"
+#. Translators: The editor window's title when creating a new training
+#: src/TrainingEditor.vala:29
+msgid "New Training"
+msgstr "אימון חדש"
 
-#. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:328
+#. Translators: Button to close the editor window and create a new training
+#: src/TrainingEditor.vala:41
+msgid "Create"
+msgstr "יצירה"
+
+#. Translators: Button to close the editor window and update an existing training
+#: src/TrainingEditor.vala:44
+msgid "Update"
+msgstr "עדכון"
+
+#. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
+#. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
+#: src/TrainingSetup.vala:95
+#, c-format
+msgid "%d × %d s"
+msgstr ""
+
 #, rust-format
-msgid "Remaining Sets: {}"
-msgstr "סדרות נותרות: {}"
+#~ msgid "{} × {} s"
+#~ msgstr "‏‎{} × {}‎ ש"
 
-#. Translators: Error message printed to the console when an error occurs with WAV decoding
-#: src/training_timer/audio_player.rs:16
-msgid "Could not decode WAV"
-msgstr "לא ניתן לפענח את קובץ ה־WAV"
+#~ msgid "Could not decode WAV"
+#~ msgstr "לא ניתן לפענח את קובץ ה־WAV"
 
-#. Translators: Error message printed to the console when cannot load data from resource
-#: src/training_timer/audio_player.rs:51
-msgid "Could not open resource data"
-msgstr "לא ניתן לפתוח את נתוני המשאב"
+#~ msgid "Could not open resource data"
+#~ msgstr "לא ניתן לפתוח את נתוני המשאב"
 
-#: src/training_timer/audio_player.rs:58
-msgid "Could not create audio output stream"
-msgstr "לא ניתן ליצור זרם פלט שמע"
+#~ msgid "Could not create audio output stream"
+#~ msgstr "לא ניתן ליצור זרם פלט שמע"
 
-#. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
-#: src/settings.rs:65
-msgid "Cannot find 'name' in settings dictionary"
-msgstr "לא ניתן למצוא 'name' במילון ההגדרות"
+#~ msgid "Cannot find 'name' in settings dictionary"
+#~ msgstr "לא ניתן למצוא 'name' במילון ההגדרות"
 
-#. Translators: Error message printed to the console when key 'sets' is not found in the JSON formatted training
-#: src/settings.rs:69
-msgid "Cannot find 'sets' in settings dictionary"
-msgstr "לא ניתן למצוא 'sets' במילון ההגדרות"
+#~ msgid "Cannot find 'sets' in settings dictionary"
+#~ msgstr "לא ניתן למצוא 'sets' במילון ההגדרות"
 
-#. Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
-#: src/settings.rs:74
-msgid "Cannot find 'exercise_s' in settings dictionary"
-msgstr "לא ניתן למצוא 'exercise_s' במילון ההגדרות"
+#~ msgid "Cannot find 'exercise_s' in settings dictionary"
+#~ msgstr "לא ניתן למצוא 'exercise_s' במילון ההגדרות"
 
-#. Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
-#: src/settings.rs:80
-msgid "Cannot find 'rest_s' in settings dictionary"
-msgstr "לא ניתן למצוא 'rest_s' במילון ההגדרות"
+#~ msgid "Cannot find 'rest_s' in settings dictionary"
+#~ msgstr "לא ניתן למצוא 'rest_s' במילון ההגדרות"
 
-#. Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
-#: src/settings.rs:99
-msgid "Could not parse default training setup"
-msgstr "לא ניתן לנתח את הגדרת האימון המוגדרת כברירת מחדל"
+#~ msgid "Could not parse default training setup"
+#~ msgstr "לא ניתן לנתח את הגדרת האימון המוגדרת כברירת מחדל"
 
-#. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be parsed
-#: src/settings.rs:110
-msgid "Could not parse exercise list"
-msgstr "לא ניתן לנתח את רשימת האימונים"
+#~ msgid "Could not parse exercise list"
+#~ msgstr "לא ניתן לנתח את רשימת האימונים"
 
-#. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be written to the settings
-#: src/settings.rs:133
-msgid "Could not update settings with training list"
-msgstr "לא ניתן לעדכן את ההגדרות עם רשימת האימונים"
+#~ msgid "Could not update settings with training list"
+#~ msgstr "לא ניתן לעדכן את ההגדרות עם רשימת האימונים"
 
-#. Translators: Error message printed to the console when the GIO resource file cannot be registered
-#: src/setup.rs:17
-msgid "Could not register resources"
-msgstr "לא ניתן לרשום את המשאבים"
+#~ msgid "Could not register resources"
+#~ msgstr "לא ניתן לרשום את המשאבים"
 
-#. Translators: Error message printed to the console when the i18n text domain cannot be bound
-#: src/setup.rs:26
-msgid "Unable to bind the text domain"
-msgstr "לא ניתן לקשור את תחום הטקסט"
+#~ msgid "Unable to bind the text domain"
+#~ msgstr "לא ניתן לקשור את תחום הטקסט"
 
-#. Translators: Error message printed to the console when the i18n text domain cannot be switched to
-#: src/setup.rs:31
-msgid "Unable to switch to the text domain"
-msgstr "לא ניתן לעבור לתחום הטקסט"
+#~ msgid "Unable to switch to the text domain"
+#~ msgstr "לא ניתן לעבור לתחום הטקסט"
 
-#. Translators: Error message printed to the console when there is no Display to apply the custom CSS to
-#: src/setup.rs:44
-msgid "Could not connect to a display"
-msgstr "לא ניתן להתחבר לתצוגה"
+#~ msgid "Could not connect to a display"
+#~ msgstr "לא ניתן להתחבר לתצוגה"
 
-#. Translators: Error message printed to the console, when the Shortcuts window cannot be built from resource
-#: src/shortcuts_window.rs:23
-msgid "Could not build the Help Overlay"
-msgstr "לא ניתן לבנות את שכבת העזרה"
+#~ msgid "Could not build the Help Overlay"
+#~ msgstr "לא ניתן לבנות את שכבת העזרה"
 
 #~ msgid "Could not play audio"
 #~ msgstr "לא ניתן להשמיע את השמע"

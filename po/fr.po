@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 13:21+0200\n"
+"POT-Creation-Date: 2025-11-15 19:29+0100\n"
 "PO-Revision-Date: 2025-03-09 21:02+0000\n"
 "Last-Translator: Lula Bye <translate.cylinder716@passinbox.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/exercise-timer/"
@@ -20,42 +20,138 @@ msgstr ""
 "X-Generator: Weblate 5.10.3-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
-#: data/resources/ui/help-overlay.ui:12
+#: data/resources/ui/shortcuts_dialog.blp:7
 msgid "Training"
 msgstr "Entrainement"
 
 #. Translators: The name of the shortcut key to start and stop the training timer
-#: data/resources/ui/help-overlay.ui:16
+#: data/resources/ui/shortcuts_dialog.blp:10
 msgid "Start/Stop training"
 msgstr "Commencer/Arreter l'entrainement"
 
 #. Translators: The name of the shortcut key to start the training from the beginning
-#: data/resources/ui/help-overlay.ui:24
+#: data/resources/ui/shortcuts_dialog.blp:16
 msgid "Reset training"
 msgstr "Recommencer l'entrainement"
 
 #. Translators: The title of the shortcuts group which lists general application shortcuts
-#: data/resources/ui/help-overlay.ui:34
+#: data/resources/ui/shortcuts_dialog.blp:23
 msgid "General"
 msgstr "Général"
 
 #. Translators: The name of the shortcut key to open the shortcuts window
-#: data/resources/ui/help-overlay.ui:38
+#: data/resources/ui/shortcuts_dialog.blp:26
 msgid "Show Shortcuts"
 msgstr "Afficher les raccourcis"
 
 #. Translators: The name of the shortcut key to quit the application
-#: data/resources/ui/help-overlay.ui:46
+#: data/resources/ui/shortcuts_dialog.blp:32
 msgid "Quit"
 msgstr "Quitter"
 
+#. Translators: Shown in the timer page when the training has come to the end
+#: data/resources/ui/timer_page.blp:65
+msgid "Finished!"
+msgstr "Fini!"
+
+#. TODO huge button
+#. Translators: tooltip text for the reset button
+#: data/resources/ui/timer_page.blp:79 data/resources/ui/timer_page.blp:88
+msgid "Restart Training"
+msgstr "Recommencer l'entrainement"
+
+#. Translators: tooltip text for the volume button
+#: data/resources/ui/timer_page.blp:103
+msgid "Set Volume"
+msgstr "Règler le volume"
+
+#. Translators: Button to close the training editor window without modifications
+#: data/resources/ui/training_editor.blp:16
+msgid "Cancel"
+msgstr "Annuler"
+
+#. Translators: The title of the field for the name of the training in the editor window
+#: data/resources/ui/training_editor.blp:40
+msgid "Name"
+msgstr "Nom"
+
+#. Translators: The title of the field for the number of sets in the training in the editor window
+#: data/resources/ui/training_editor.blp:49
+msgid "Number of Sets"
+msgstr "Nombre de séries"
+
+#. Translators: The title of the field for the rest duration in the training in the editor window
+#: data/resources/ui/training_editor.blp:58
+msgid "Rest Time"
+msgstr "Temps de repos"
+
+#. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
+#: data/resources/ui/training_editor.blp:60
+#: data/resources/ui/training_editor.blp:71
+#: data/resources/ui/training_editor.blp:82
+msgid "Seconds"
+msgstr "Secondes"
+
+#. Translators: The title of the field for the exercise duration in the training in the editor window
+#: data/resources/ui/training_editor.blp:69
+msgid "Exercise Time"
+msgstr "Durée de l'exercice"
+
+#. Translators: The title of the field for the preparation duration in the training in the editor window
+#: data/resources/ui/training_editor.blp:80
+msgid "Preparation Time"
+msgstr "Temps de préparation"
+
+#. Translators: tooltip text for exercise card button to open the training editor
+#. Translators: The editor window's title when modifying a training
+#: data/resources/ui/training_list_row.blp:44 src/TrainingEditor.vala:32
+msgid "Edit Training"
+msgstr "Modifier un entrainement"
+
+#. Translators: tooltip text for exercise card button to delete the training
+#: data/resources/ui/training_list_row.blp:50
+msgid "Delete Training"
+msgstr "Supprimer un entrainement"
+
+#. Translators: This is the name of the window. Currently this is the app name
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: The name of the application. Feel free to localize it!
+#: data/resources/ui/window.blp:6 data/resources/ui/window.blp:13
 #: data/xyz.safeworlds.hiit.desktop.in.in:2
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/app.rs:75 src/app.rs:170
-#: src/setup.rs:14
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/Application.vala:50
 msgid "Exercise Timer"
 msgstr "Exercise Timer"
+
+#. Translators: tooltip for the add training image button
+#: data/resources/ui/window.blp:21
+#, fuzzy
+msgid "Add Training"
+msgstr "Ajout d'entrainement"
+
+#. Translators: tooltip for main menu image button
+#: data/resources/ui/window.blp:29
+msgid "Main Menu"
+msgstr "Menu principal"
+
+#. Translators: The message which is shown on the background of the empty training list
+#: data/resources/ui/window.blp:52
+msgid "No Trainings"
+msgstr "Aucun entrainements"
+
+#. Translators: Big label button to create the first training if none exists
+#: data/resources/ui/window.blp:56
+msgid "Create Training"
+msgstr "Créer un entrainement"
+
+#. Translators: The title of the keyboard shortcuts menu entry
+#: data/resources/ui/window.blp:71
+msgid "_Keyboard Shortcuts"
+msgstr "_Raccourcis clavier"
+
+#. Translators: The title of the about dialog menu entry
+#: data/resources/ui/window.blp:76
+msgid "_About Exercise Timer"
+msgstr "_A propos d'Exercise Timer"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
 msgid "Timer clock for high intensity interval training"
@@ -91,7 +187,8 @@ msgid "List of training setups, in JSON notation"
 msgstr "Liste des configurations d'exercices, en JSON"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
-msgid "The duration of the warmup, in seconds"
+#, fuzzy
+msgid "The duration of the audio countdown, in seconds"
 msgstr "Durée d'échauffement, en secondes"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
@@ -156,230 +253,114 @@ msgstr "Liste d'exercices - mode clair"
 msgid "Timer - light mode"
 msgstr "Minuteur - mode clair"
 
-#. Translators: The title of the keyboard shortcuts menu entry
-#: src/app.rs:57
-msgid "_Keyboard Shortcuts"
-msgstr "_Raccourcis clavier"
-
-#. Translators: The title of the about dialog menu entry
-#: src/app.rs:59
-msgid "_About Exercise Timer"
-msgstr "_A propos d'Exercise Timer"
-
-#. Translators: tooltip for the add training image button
-#: src/app.rs:83
-#, fuzzy
-msgid "Add Training"
-msgstr "Ajout d'entrainement"
-
-#. Translators: tooltip for main menu image button
-#: src/app.rs:90
-msgid "Main Menu"
-msgstr "Menu principal"
-
-#. Translators: The message which is shown on the background of the empty training list
-#: src/app.rs:120
-msgid "No Trainings"
-msgstr "Aucun entrainements"
-
-#. Translators: Big label button to create the first training if none exists
-#: src/app.rs:124
-msgid "Create Training"
-msgstr "Créer un entrainement"
-
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/app.rs:177
+#: src/Application.vala:57
 msgid "translator_credits"
 msgstr "Marius Couet"
 
-#. Translators: The editor window's title when creating a new training
-#: src/training_editor.rs:56
-msgid "New Training"
-msgstr "Nouvel entrainement"
-
-#. Translators: The editor window's title when modifying a training
-#. Translators: tooltip text for exercise card button to open the training editor
-#: src/training_editor.rs:58 src/training_setup.rs:112
-msgid "Edit Training"
-msgstr "Modifier un entrainement"
-
-#. Translators: Button to close the training editor window without modifications
-#: src/training_editor.rs:64
-msgid "Cancel"
-msgstr "Annuler"
-
-#. Translators: Button to close the editor window and create a new training
-#: src/training_editor.rs:70
-msgid "Create"
-msgstr "Créer"
-
-#. Translators: Button to close the editor window and update an existing training
-#: src/training_editor.rs:72
-msgid "Update"
-msgstr "Mise à jour"
-
-#. Translators: The title of the field for the name of the training in the editor window
-#: src/training_editor.rs:88
-msgid "Name"
-msgstr "Nom"
-
-#. Translators: The title of the field for the number of sets in the training in the editor window
-#: src/training_editor.rs:96
-msgid "Number of Sets"
-msgstr "Nombre de séries"
-
-#. Translators: The title of the field for the rest duration in the training in the editor window
-#: src/training_editor.rs:107
-msgid "Rest Time"
-msgstr "Temps de repos"
-
-#. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
-#: src/training_editor.rs:109 src/training_editor.rs:122
-#: src/training_editor.rs:135
-msgid "Seconds"
-msgstr "Secondes"
-
-#. Translators: The title of the field for the exercise duration in the training in the editor window
-#: src/training_editor.rs:120
-msgid "Exercise Time"
-msgstr "Durée de l'exercice"
-
-#. Translators: The title of the field for the preparation duration in the training in the editor window
-#: src/training_editor.rs:133
-msgid "Preparation Time"
-msgstr "Temps de préparation"
-
-#. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
-#. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
-#: src/training_setup.rs:97
-#, rust-format
-msgid "{} × {} s"
-msgstr "{} × {} s"
-
-#. Translators: tooltip text for exercise card button to delete the training
-#: src/training_setup.rs:120
-msgid "Delete Training"
-msgstr "Supprimer un entrainement"
-
-#. Translators: Shown in the timer page when the training has come to the end
-#: src/training_timer.rs:150
-msgid "Finished!"
-msgstr "Fini!"
+#. Translators: Label showing the number of remaining sets on the timer page
+#: src/TimerPage.vala:54
+#, fuzzy, c-format
+msgid "Remaining Sets: %d"
+msgstr "Sets restants : {}"
 
 #. Translators: Shown on the timer page during preparation
-#: src/training_timer.rs:239
+#: src/TimerPage.vala:63
 msgid "Preparation"
 msgstr "Préparation"
 
 #. Translators: Shown on the timer page during exercise
-#: src/training_timer.rs:241
+#: src/TimerPage.vala:66
 msgid "Exercise"
 msgstr "Exercice"
 
 #. Translators: Shown on the timer page during rest
-#: src/training_timer.rs:243
+#: src/TimerPage.vala:69
 msgid "Rest"
 msgstr "Repos"
 
-#. Translators: tooltip text for the reset button
-#: src/training_timer.rs:286
-msgid "Restart Training"
-msgstr "Recommencer l'entrainement"
-
-#. Translators: tooltip text for the pause/resume button
-#: src/training_timer.rs:298
+#. Translators: tooltip text for the pause/resume button when the training is running
+#: src/TimerPage.vala:108
 msgid "Pause Training"
 msgstr "Mettre en pause l'entrainement"
 
-#: src/training_timer.rs:298
+#. Translators: tooltip text for the pause/resume button when the training is paused
+#: src/TimerPage.vala:111
 msgid "Resume Training"
 msgstr "Reprendre l'entrainement"
 
-#. Translators: tooltip text for the volume button
-#: src/training_timer.rs:315
-msgid "Set Volume"
-msgstr "Règler le volume"
+#. Translators: The editor window's title when creating a new training
+#: src/TrainingEditor.vala:29
+msgid "New Training"
+msgstr "Nouvel entrainement"
 
-#. Translators: Label showing the number of remaining sets on the timer page
-#: src/training_timer.rs:328
-#, fuzzy, rust-format
-msgid "Remaining Sets: {}"
-msgstr "Sets restants : {}"
+#. Translators: Button to close the editor window and create a new training
+#: src/TrainingEditor.vala:41
+msgid "Create"
+msgstr "Créer"
 
-#. Translators: Error message printed to the console when an error occurs with WAV decoding
-#: src/training_timer/audio_player.rs:16
-msgid "Could not decode WAV"
-msgstr "Impossible de décoder WAV"
+#. Translators: Button to close the editor window and update an existing training
+#: src/TrainingEditor.vala:44
+msgid "Update"
+msgstr "Mise à jour"
 
-#. Translators: Error message printed to the console when cannot load data from resource
-#: src/training_timer/audio_player.rs:51
-msgid "Could not open resource data"
-msgstr "Impossible d'ouvrir les données"
-
-#: src/training_timer/audio_player.rs:58
-msgid "Could not create audio output stream"
-msgstr "Impossible de créer un flux de sortie audio"
-
-#. Translators: Error message printed to the console when key 'name' is not found in the JSON formatted training
-#: src/settings.rs:65
-msgid "Cannot find 'name' in settings dictionary"
-msgstr "Impossible de trouver 'nom' dans le dictionnaire des paramètres"
-
-#. Translators: Error message printed to the console when key 'sets' is not found in the JSON formatted training
-#: src/settings.rs:69
-msgid "Cannot find 'sets' in settings dictionary"
-msgstr "Impossible de trouver 'sets' dans le dictionnaire des paramètres"
-
-#. Translators: Error message printed to the console when key 'exercise_s' is not found in the JSON formatted training
-#: src/settings.rs:74
-msgid "Cannot find 'exercise_s' in settings dictionary"
+#. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
+#. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
+#: src/TrainingSetup.vala:95
+#, c-format
+msgid "%d × %d s"
 msgstr ""
-"Impossible de trouver 'exercises_s' dans le dictionnaire des paramètres"
 
-#. Translators: Error message printed to the console when key 'rest_s' is not found in the JSON formatted training
-#: src/settings.rs:80
-msgid "Cannot find 'rest_s' in settings dictionary"
-msgstr "Impossible de trouver 'rest_s' dans le dictionnaire des paramètres"
+#, rust-format
+#~ msgid "{} × {} s"
+#~ msgstr "{} × {} s"
 
-#. Translators: Error message printed to the console when the default training setup loaded from the settings cannot be parsed
-#: src/settings.rs:99
-msgid "Could not parse default training setup"
-msgstr "Impossible d'analyser la configuration d'exercice par défaut"
+#~ msgid "Could not decode WAV"
+#~ msgstr "Impossible de décoder WAV"
 
-#. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be parsed
-#: src/settings.rs:110
-msgid "Could not parse exercise list"
-msgstr "Impossible d'analyser la liste d'exercices"
+#~ msgid "Could not open resource data"
+#~ msgstr "Impossible d'ouvrir les données"
 
-#. Translators: Error message printed to the console when the JSON formatted list of user-created trainings cannot be written to the settings
-#: src/settings.rs:133
-msgid "Could not update settings with training list"
-msgstr "Impossible de mettre à jour les paramètres avec la liste d'exercices"
+#~ msgid "Could not create audio output stream"
+#~ msgstr "Impossible de créer un flux de sortie audio"
 
-#. Translators: Error message printed to the console when the GIO resource file cannot be registered
-#: src/setup.rs:17
-msgid "Could not register resources"
-msgstr "Impossible d'enregistrer les ressources"
+#~ msgid "Cannot find 'name' in settings dictionary"
+#~ msgstr "Impossible de trouver 'nom' dans le dictionnaire des paramètres"
 
-#. Translators: Error message printed to the console when the i18n text domain cannot be bound
-#: src/setup.rs:26
-msgid "Unable to bind the text domain"
-msgstr "Impossible de lier le domaine de texte"
+#~ msgid "Cannot find 'sets' in settings dictionary"
+#~ msgstr "Impossible de trouver 'sets' dans le dictionnaire des paramètres"
 
-#. Translators: Error message printed to the console when the i18n text domain cannot be switched to
-#: src/setup.rs:31
-msgid "Unable to switch to the text domain"
-msgstr "Impossible de passer au domaine texte"
+#~ msgid "Cannot find 'exercise_s' in settings dictionary"
+#~ msgstr ""
+#~ "Impossible de trouver 'exercises_s' dans le dictionnaire des paramètres"
 
-#. Translators: Error message printed to the console when there is no Display to apply the custom CSS to
-#: src/setup.rs:44
-msgid "Could not connect to a display"
-msgstr "Impossible de se connecter à un écran"
+#~ msgid "Cannot find 'rest_s' in settings dictionary"
+#~ msgstr "Impossible de trouver 'rest_s' dans le dictionnaire des paramètres"
 
-#. Translators: Error message printed to the console, when the Shortcuts window cannot be built from resource
-#: src/shortcuts_window.rs:23
-msgid "Could not build the Help Overlay"
-msgstr "Impossible de créer la superposition d'aide"
+#~ msgid "Could not parse default training setup"
+#~ msgstr "Impossible d'analyser la configuration d'exercice par défaut"
+
+#~ msgid "Could not parse exercise list"
+#~ msgstr "Impossible d'analyser la liste d'exercices"
+
+#~ msgid "Could not update settings with training list"
+#~ msgstr ""
+#~ "Impossible de mettre à jour les paramètres avec la liste d'exercices"
+
+#~ msgid "Could not register resources"
+#~ msgstr "Impossible d'enregistrer les ressources"
+
+#~ msgid "Unable to bind the text domain"
+#~ msgstr "Impossible de lier le domaine de texte"
+
+#~ msgid "Unable to switch to the text domain"
+#~ msgstr "Impossible de passer au domaine texte"
+
+#~ msgid "Could not connect to a display"
+#~ msgstr "Impossible de se connecter à un écran"
+
+#~ msgid "Could not build the Help Overlay"
+#~ msgstr "Impossible de créer la superposition d'aide"
 
 #~ msgid "Could not play audio"
 #~ msgstr "Impossible de lire l'audio"

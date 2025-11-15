@@ -9,8 +9,8 @@ template $ExerciseTimerWindow : Adw.ApplicationWindow {
 
   Adw.NavigationView navigation_view {
     Adw.NavigationPage {
-      // Translators: This is the title of the page which lists all trainings
-      title: _("Training List");
+      // Translators: This is the title of the page which lists all trainings. Currently this is the app name
+      title: _("Exercise Timer");
       Adw.ToolbarView {
         [top]
         Adw.HeaderBar {
@@ -68,12 +68,12 @@ menu primary_menu {
   section {
     item {
       // Translators: The title of the keyboard shortcuts menu entry
-      label: _("Keyboard Shortcuts");
+      label: _("_Keyboard Shortcuts");
       action: "app.shortcuts";
     }
     item {
       // Translators: The title of the about dialog menu entry
-      label: _("About Exercise Timer");
+      label: _("_About Exercise Timer");
       action: "app.about";
     }
   }
