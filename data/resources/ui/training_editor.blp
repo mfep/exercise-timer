@@ -6,8 +6,7 @@ template $ExerciseTimerTrainingEditor : Adw.Dialog {
         [top]
         Adw.HeaderBar {
             title-widget: Adw.WindowTitle {
-                // Translators: The editor window's title when modifying a training
-                title: _("Edit Training");
+                title: bind template.DialogTitle;
             };
             show-end-title-buttons: false;
 
@@ -20,8 +19,7 @@ template $ExerciseTimerTrainingEditor : Adw.Dialog {
 
             [end]
             Gtk.Button {
-                // Translators: Button to close the training editor window with saving modifications
-                label: _("Apply");
+                label: bind template.DialogAcceptStr;
                 css-classes: ["suggested-action"];
                 clicked => $on_apply_clicked();
             }

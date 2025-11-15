@@ -7,7 +7,7 @@ namespace ExerciseTimer {
 
         [GtkCallback]
         private void on_edit_clicked() {
-            var dialog = new TrainingEditor(Setup);
+            var dialog = new TrainingEditor(Setup, false);
             dialog.Applied.connect((setup) => {
                 Setup.Title = setup.Title;
                 Setup.Sets = setup.Sets;

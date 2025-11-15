@@ -3,7 +3,7 @@ namespace ExerciseTimer {
     public class TrainingEditor : Adw.Dialog {
         public signal void Applied(TrainingSetup setup);
 
-        public TrainingEditor(TrainingSetup _setup) {
+        public TrainingEditor(TrainingSetup _setup, bool new_setup) {
             setup = new TrainingSetup(){
                 Title = _setup.Title,
                 Sets = _setup.Sets,
@@ -16,6 +16,34 @@ namespace ExerciseTimer {
             setup.bind_property("ExerciseSec", exercise_adjustment, "value", GLib.BindingFlags.BIDIRECTIONAL | GLib.BindingFlags.SYNC_CREATE, null, null);
             setup.bind_property("RestSec", rest_adjustment, "value", GLib.BindingFlags.BIDIRECTIONAL | GLib.BindingFlags.SYNC_CREATE, null, null);
             setup.bind_property("PreparationSec", preparation_adjustment, "value", GLib.BindingFlags.BIDIRECTIONAL | GLib.BindingFlags.SYNC_CREATE, null, null);
+
+            this.new_setup = new_setup;
+            notify_property("DialogTitle");
+            notify_property("DialogAcceptStr");
+        }
+
+        public string DialogTitle {
+            get {
+                if (new_setup) {
+                    // Translators: The editor window's title when creating a new training
+                    return _("New Training");
+                } else {
+                    // Translators: The editor window's title when modifying a training
+                    return _("Edit Training");
+                }
+            }
+        }
+
+        public string DialogAcceptStr {
+            get {
+                if (new_setup) {
+                    // Translators: Button to close the editor window and create a new training
+                    return _("Create");
+                } else {
+                    // Translators: Button to close the editor window and update an existing training
+                    return _("Update");
+                }
+            }
         }
 
         [GtkCallback]
@@ -30,6 +58,7 @@ namespace ExerciseTimer {
         }
 
         private TrainingSetup setup;
+        private bool new_setup;
         [GtkChild]
         private unowned Adw.EntryRow name_row;
         [GtkChild]

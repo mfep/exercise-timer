@@ -66,7 +66,7 @@ namespace ExerciseTimer {
 
         [GtkCallback]
         private void on_add_training() {
-            var editor_dialog = new TrainingEditor(default_setup);
+            var editor_dialog = new TrainingEditor(default_setup, true);
             editor_dialog.Applied.connect((new_setup) => {
                 add_training_to_list(new_setup);
                 save_training_list();
