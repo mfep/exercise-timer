@@ -74,6 +74,18 @@ namespace ExerciseTimer {
             return null;
         }
 
+        public override (unowned GLib.ParamSpec)[] list_properties () {
+            GLib.Type type = this.get_type ();
+            GLib.ObjectClass ocl = (GLib.ObjectClass) type.class_ref ();
+            return new (unowned GLib.ParamSpec)[] {
+                       ocl.find_property ("Title"),
+                       ocl.find_property ("Sets"),
+                       ocl.find_property ("PreparationSec"),
+                       ocl.find_property ("ExerciseSec"),
+                       ocl.find_property ("RestSec"),
+            };
+        }
+
         public int TotalTimeSec {
             get {
                 return PreparationSec + Sets * (ExerciseSec + RestSec) - RestSec;
