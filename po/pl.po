@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-15 19:29+0100\n"
-"PO-Revision-Date: 2025-08-12 22:12+0000\n"
-"Last-Translator: Yauheni Liavontsyeu <Evgeniy_Leontyev@proton.me>\n"
+"PO-Revision-Date: 2025-11-16 22:51+0000\n"
+"Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"Plural-Forms: nplurals=3; plural="
+"(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/shortcuts_dialog.blp:7
@@ -187,9 +187,8 @@ msgid "List of training setups, in JSON notation"
 msgstr "Lista ćwiczeń, w formacie JSON"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
-#, fuzzy
 msgid "The duration of the audio countdown, in seconds"
-msgstr "Czas trwania rozgrzewki, w sekundach"
+msgstr "Czas trwania odliczania, w sekundach"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
 msgid "The volume of the beeping sound"
@@ -309,7 +308,7 @@ msgstr "Aktualizuj"
 #: src/TrainingSetup.vala:95
 #, c-format
 msgid "%d × %d s"
-msgstr ""
+msgstr "%d × %d s"
 
 #, rust-format
 #~ msgid "{} × {} s"
