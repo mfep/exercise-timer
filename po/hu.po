@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-15 19:29+0100\n"
-"PO-Revision-Date: 2025-03-24 20:35+0000\n"
+"PO-Revision-Date: 2025-11-16 22:51+0000\n"
 "Last-Translator: Lőrinc Serfőző <lorinc.serfozo@mailbox.org>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/hu/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/shortcuts_dialog.blp:7
@@ -184,9 +184,8 @@ msgid "List of training setups, in JSON notation"
 msgstr "Az edzések listája, JSON formátumban"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
-#, fuzzy
 msgid "The duration of the audio countdown, in seconds"
-msgstr "A bemelegítés időtartama, másodpercekben"
+msgstr "A visszaszámlálás hangjelzésének időtartama, másodpercekben"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
 msgid "The volume of the beeping sound"
@@ -305,7 +304,7 @@ msgstr "Módosít"
 #: src/TrainingSetup.vala:95
 #, c-format
 msgid "%d × %d s"
-msgstr ""
+msgstr "%d × %d s"
 
 #, rust-format
 #~ msgid "{} × {} s"
