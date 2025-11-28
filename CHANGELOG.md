@@ -2,6 +2,54 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.9.0](https://github.com/mfep/exercise-timer/compare/d67c604d54f87d381e74007ede8e81668f34b7e6..v1.9.0) - 2025-11-28
+#### Bug Fixes
+- **(i18n)** Translated using Weblate (Swedish) - ([ca60346](https://github.com/mfep/exercise-timer/commit/ca6034630a616bfc4dd8b1270e1585bd190596f6)) - bittin1ddc447d824349b2
+- **(i18n)** Translated using Weblate (Croatian) - ([c93afff](https://github.com/mfep/exercise-timer/commit/c93afff03df5e17f397122c3e1f195b81e4612ca)) - Milo Ivir
+- **(i18n)** Translated using Weblate (Polish) - ([9c72696](https://github.com/mfep/exercise-timer/commit/9c72696592ba988cf59c75dd0129bdd518749c41)) - Eryk Michalak
+- **(i18n)** Translated using Weblate (Estonian) - ([8d91d29](https://github.com/mfep/exercise-timer/commit/8d91d2967aad1de13003a7fc4e274c80880be226)) - Priit Jõerüüt
+- **(i18n)** Translated using Weblate (Hungarian) - ([d8a5836](https://github.com/mfep/exercise-timer/commit/d8a5836344cdfd3767911576b532a7459f03fd5f)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Translated using Weblate (French) - ([e5d5276](https://github.com/mfep/exercise-timer/commit/e5d527601d3aa48ff2a0edbb953c97e6488dbb2a)) - Lula Bye
+- **(i18n)** Translated using Weblate (Croatian) - ([ba7e69f](https://github.com/mfep/exercise-timer/commit/ba7e69feadf0d5965513202c15b3bb52434c401a)) - Milo Ivir
+- **(i18n)** Update LINGUAS - ([8e0e892](https://github.com/mfep/exercise-timer/commit/8e0e89262dbaed998888d86a507649a66aa2c165)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Translated using Weblate (Norwegian Bokmål) - ([fe56f3f](https://github.com/mfep/exercise-timer/commit/fe56f3fb481ee825041750eb1b2e9f789d2652d0)) - Bendik Aagaard Lynghaug
+- **(i18n)** Translated using Weblate (Norwegian Bokmål) - ([0940ec7](https://github.com/mfep/exercise-timer/commit/0940ec74baa8d0185f15f087fd5b9daf1cf6773c)) - Bendik Aagaard Lynghaug
+- **(i18n)** Translated using Weblate (Belarusian) - ([cc23a3a](https://github.com/mfep/exercise-timer/commit/cc23a3a0447516d4344f4b4c9a19e7adfbf4f15b)) - Yauheni Liavontsyeu
+- **(i18n)** Translated using Weblate (Polish) - ([757e18d](https://github.com/mfep/exercise-timer/commit/757e18d5316aebdfa54b2908269ceb543a3f00a7)) - Yauheni Liavontsyeu
+- Don't serialize computed properties of TrainingSetup - ([a2f2425](https://github.com/mfep/exercise-timer/commit/a2f24256bb402810bc50ec3115498f24b24eee41)) - [@mfep](https://github.com/mfep)
+#### Features
+- **(i18n)** Added translation using Weblate (Croatian) - ([bba744d](https://github.com/mfep/exercise-timer/commit/bba744d2f71f93d1a610fad15b19abb5c52baf30)) - Milo Ivir
+- **(i18n)** Added translation using Weblate (Belarusian) - ([9e7f5eb](https://github.com/mfep/exercise-timer/commit/9e7f5eb65f88b6c9c925c236426b5e0fa6ea2120)) - Yauheni Liavontsyeu
+- **(i18n)** Added translation using Weblate (Polish) - ([d67c604](https://github.com/mfep/exercise-timer/commit/d67c604d54f87d381e74007ede8e81668f34b7e6)) - Yauheni Liavontsyeu
+#### Miscellaneous Chores
+- **(CI)** Use GNOME 49 image in CI action - ([a478c7e](https://github.com/mfep/exercise-timer/commit/a478c7eb18c655cf172a5e28c7096f580f205d0e)) - [@mfep](https://github.com/mfep)
+- **(dependencies)** Update dependencies and GNOME runtime - ([3e11d1e](https://github.com/mfep/exercise-timer/commit/3e11d1e07a2de4c011c46128248c42f7aa63fd5f)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update release notes - ([7231554](https://github.com/mfep/exercise-timer/commit/72315544d89c14343d0cfecb4b7ab0cc33a2fc22)) - [@mfep](https://github.com/mfep)
+- **(docs)** Load AboutDialog from metainfo.xml - ([fcc40a4](https://github.com/mfep/exercise-timer/commit/fcc40a4085d6717e645bcb2ee7eda0113a16f4ac)) - [@mfep](https://github.com/mfep)
+- **(docs)** Update README with new Flatpak dependencies - ([75b58d6](https://github.com/mfep/exercise-timer/commit/75b58d6d0e5509cfe6b340233bdbc0ac291c4e7d)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Update potfiles - ([3aa14e8](https://github.com/mfep/exercise-timer/commit/3aa14e83168bc59a3111965d274bc957d68de202)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Update LINGUAS and potfiles - ([33f5b64](https://github.com/mfep/exercise-timer/commit/33f5b647d8c6b9f756faf9fbc313287a86026267)) - [@mfep](https://github.com/mfep)
+#### Refactoring
+- **(i18n)** Manual localization fixes - ([2faef0f](https://github.com/mfep/exercise-timer/commit/2faef0f3528c907b0e224d1f90e20732f1b4562b)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Update localization with new sources - ([7d53d6b](https://github.com/mfep/exercise-timer/commit/7d53d6b47770e4c58a92e78407415fd4336df657)) - [@mfep](https://github.com/mfep)
+- **(i18n)** Remove msgctx from pofiles - ([76be792](https://github.com/mfep/exercise-timer/commit/76be792772ea48bc5dccd109b7fcd2404a4d27c3)) - [@mfep](https://github.com/mfep)
+- Remove Rust - ([d62ca51](https://github.com/mfep/exercise-timer/commit/d62ca51e593680485b7c0ab515c7f1f6045df955)) - [@mfep](https://github.com/mfep)
+- Training editor text variants (Vala) - ([0729542](https://github.com/mfep/exercise-timer/commit/0729542e55ca7d7238ff630bdbdfdad8dad4a619)) - [@mfep](https://github.com/mfep)
+- Setting focus child on TimerPage (Vala) - ([dd5b6d1](https://github.com/mfep/exercise-timer/commit/dd5b6d1c3b96f054237541215d3ebf82d8807071)) - [@mfep](https://github.com/mfep)
+- Reading and saving trainings to JSON (Vala) - ([c1a63a8](https://github.com/mfep/exercise-timer/commit/c1a63a843fbab8c6cd4b92a289a71762c288b689)) - [@mfep](https://github.com/mfep)
+- Reset action (Vala) - ([f23b955](https://github.com/mfep/exercise-timer/commit/f23b955430636237b018066a449eebd2671e27f9)) - [@mfep](https://github.com/mfep)
+- Finished timer page (Vala) - ([b3c206c](https://github.com/mfep/exercise-timer/commit/b3c206c06b315dc24a41869789335b1e38139c43)) - [@mfep](https://github.com/mfep)
+- Initial timer view (Vala) - ([1e2b291](https://github.com/mfep/exercise-timer/commit/1e2b291af8733f3a71ccc52f1801ff8b580af314)) - [@mfep](https://github.com/mfep)
+- Create training with dialog - ([76cb4ee](https://github.com/mfep/exercise-timer/commit/76cb4ee634a1a67c45f0415acfe23ba39b9da23e)) - [@mfep](https://github.com/mfep)
+- Add missing icons - ([7efdfa7](https://github.com/mfep/exercise-timer/commit/7efdfa7830e4ee64274ec5aff1e335e1632741df)) - [@mfep](https://github.com/mfep)
+- Training editor (Vala) - ([77861f6](https://github.com/mfep/exercise-timer/commit/77861f64eeea5ea4523348c331b00f698e5059e3)) - [@mfep](https://github.com/mfep)
+- Training list view (Vala) - ([735382a](https://github.com/mfep/exercise-timer/commit/735382a5e8ea0a073053921df411a925d9a8b0c7)) - [@mfep](https://github.com/mfep)
+- Save window size to settings (Vala) - ([cb9ad4f](https://github.com/mfep/exercise-timer/commit/cb9ad4f3acba3104a6281179f26227a7ce3a4749)) - [@mfep](https://github.com/mfep)
+- Add shortcut dialog (Vala) - ([f6fa052](https://github.com/mfep/exercise-timer/commit/f6fa052379c7c5016116d0dbd0d56cd0fac79820)) - [@mfep](https://github.com/mfep)
+- Initial infrastructure for the Vala rewrite - ([795e3de](https://github.com/mfep/exercise-timer/commit/795e3de9136753e806fe15e6192b2fa4ffad7405)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.8.5](https://github.com/mfep/exercise-timer/compare/d419c56448113df9bc57a7baf3df69c7871779d7..v1.8.5) - 2025-07-27
 #### Bug Fixes
 - **(i18n)** Translated using Weblate (Bulgarian) - ([777183e](https://github.com/mfep/exercise-timer/commit/777183e5d12ec9e86ad940be555d58835b22582e)) - twlvnn
