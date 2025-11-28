@@ -44,19 +44,17 @@ namespace ExerciseTimer {
             for (int i = 0; i < Config.Designers.length; i++)
                 designers[i] = Config.Designers[i];
 
-            var about_dialog = new Adw.AboutDialog () {
-                application_icon = Config.AppId,
-                // Translators: The name of the application. Feel free to localize it!
-                application_name = _("Exercise Timer"),
+            var about_dialog =
+                new Adw.AboutDialog.from_appdata (
+                                                  "xyz/safeworlds/hiit/%s.metainfo.xml".printf (Config.AppId),
+                                                  Config.Version)
+            {
                 copyright = Config.Copyright,
                 designers = designers,
                 developers = devs,
-                issue_url = Config.IssueTracker,
-                license_type = Gtk.License.GPL_3_0,
                 // Translators: Replace this with your name for it to show up in the about window
                 translator_credits = _("translator_credits"),
                 version = Config.Version,
-                website = Config.Homepage,
             };
 
             about_dialog.present (get_active_window ());

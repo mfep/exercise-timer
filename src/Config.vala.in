@@ -2,8 +2,6 @@ namespace ExerciseTimer {
     class Config {
         public const string AppId = @APP_ID@;
         public const string Version = @VERSION@;
-        public const string Homepage = @HOMEPAGE@;
-        public const string IssueTracker = @ISSUE_TRACKER@;
         public const string Copyright = @COPYRIGHT@;
         public const string[] Developers = { @DEVELOPERS@ };
         public const string[] Designers = { @DESIGNERS@ };

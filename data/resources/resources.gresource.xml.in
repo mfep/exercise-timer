@@ -10,5 +10,6 @@
     <file compressed="true">audio/ping2.wav</file>
     <file compressed="true">audio/ping3.wav</file>
     <file compressed="true">style.css</file>
+    <file compressed="true" preprocess="xml-stripblanks">@app-id@.metainfo.xml</file>
   </gresource>
 </gresources>

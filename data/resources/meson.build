@@ -11,10 +11,19 @@ blueprints = custom_target ('blueprints',
   command: [ find_program ('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@' ],
 )
 
+resource_conf = configuration_data()
+resource_conf.set('app-id', application_id)
+resource_file = configure_file(
+    input: 'resources.gresource.xml.in',
+    output: '@BASENAME@',
+    configuration: resource_conf
+  )
+
 resources = gnome.compile_resources ('hiit-resources',
-  'resources.gresource.xml',
+  resource_file,
   c_name: 'hiit',
   dependencies: blueprints,
+  source_dir: meson.build_root() / 'data'
 )
 
 subdir('icons')
