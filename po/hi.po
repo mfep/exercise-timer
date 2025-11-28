@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-15 19:29+0100\n"
+"POT-Creation-Date: 2025-11-28 17:34+0100\n"
 "PO-Revision-Date: 2024-07-20 06:09+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/exercise-timer/"
@@ -124,10 +124,10 @@ msgstr "प्रशिक्षण मिटाएं"
 
 #. Translators: This is the name of the window. Currently this is the app name
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
-#. Translators: The name of the application. Feel free to localize it!
+#. Translators: Application name
 #: data/resources/ui/window.blp:6 data/resources/ui/window.blp:13
 #: data/xyz.safeworlds.hiit.desktop.in.in:2
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/Application.vala:50
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
 msgid "Exercise Timer"
 msgstr "व्यायाम टाइमर"
 
@@ -207,11 +207,11 @@ msgid "The volume of the beeping sound"
 msgstr "बीप की ध्वनि की आवाज"
 
 #. Translators: App summary, at most 35 characters, imperative style
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:9
 msgid "Train and rest with high intensity"
 msgstr "उच्च तीव्रता के साथ प्रशिक्षण लें और आराम करें"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
 #, fuzzy
 msgid ""
 "Exercise Timer is a simple utility to conduct high intensity interval "
@@ -222,11 +222,11 @@ msgstr ""
 "एक छोटी तैयारी अवधि के बाद, निर्धारित संख्या में व्यायाम सेट चलायें जाते हैं। प्रत्येक व्यायाम "
 "के बीच में, आराम का समय होता है।"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
 msgid "Features:"
 msgstr "विशेषताएं:"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 #, fuzzy
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
@@ -234,37 +234,37 @@ msgid ""
 msgstr ""
 "सेटों की संख्या और व्यायाम की अवधि तथा विश्राम अवधि वाले प्रीसेट को सहेजें और याद करें।"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "A beeping sound is played at- and prior to each transition."
 msgstr "प्रत्येक परिवर्तन के समय और उससे पहले एक बीप ध्वनि बजाई जाती है।"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "The volume of the sound can be adjusted."
 msgstr "ध्वनि की आवाज को समायोजित किया जा सकता है।"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:19
 msgid "Light and dark mode follows the system's setting."
 msgstr "हल्के और गहरे रंग के मोड सिस्टम की सेटिंग का अनुसरण करते हैं।"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:25
 msgid "Timer - dark mode"
 msgstr "टाइमर - गहरा मोड"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:29
 msgid "Exercise list - dark mode"
 msgstr "व्यायाम सूची - गहरा मोड"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:33
 #, fuzzy
 msgid "New training dialog - light mode"
 msgstr "व्यायाम सूची - हल्का मोड"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:37
 msgid "Timer - light mode"
 msgstr "टाइमर - हल्का मोड"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/Application.vala:57
+#: src/Application.vala:56
 msgid "translator_credits"
 msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
@@ -319,7 +319,7 @@ msgstr "अद्यतन"
 
 #. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
-#: src/TrainingSetup.vala:95
+#: src/TrainingSetup.vala:107
 #, c-format
 msgid "%d × %d s"
 msgstr ""

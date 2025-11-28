@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-15 19:29+0100\n"
+"POT-Creation-Date: 2025-11-28 17:34+0100\n"
 "PO-Revision-Date: 2025-03-20 03:01+0000\n"
 "Last-Translator: Aleksandr Melman <alexmelman88@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/exercise-timer/"
@@ -117,10 +117,10 @@ msgstr "Удалить упражнение"
 
 #. Translators: This is the name of the window. Currently this is the app name
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
-#. Translators: The name of the application. Feel free to localize it!
+#. Translators: Application name
 #: data/resources/ui/window.blp:6 data/resources/ui/window.blp:13
 #: data/xyz.safeworlds.hiit.desktop.in.in:2
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/Application.vala:50
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
 msgid "Exercise Timer"
 msgstr "Таймер упражнений"
 
@@ -197,11 +197,11 @@ msgid "The volume of the beeping sound"
 msgstr "Громкость звукового сигнала"
 
 #. Translators: App summary, at most 35 characters, imperative style
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:9
 msgid "Train and rest with high intensity"
 msgstr "Интенсивные тренировки и отдых"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
 msgid ""
 "Exercise Timer is a simple utility to conduct high intensity interval "
 "training. Following a short preparation period, a prescribed number of "
@@ -214,11 +214,11 @@ msgstr ""
 "упражнением есть период отдыха. Приложение не делает предположений о "
 "характере упражнений."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
 msgid "Features:"
 msgstr "Функции:"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise, rest and preparation periods."
@@ -226,36 +226,36 @@ msgstr ""
 "Сохранение и вызов предустановок, содержащих количество подходов и "
 "продолжительность упражнений, отдыха и подготовительных периодов."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "A beeping sound is played at- and prior to each transition."
 msgstr "Перед каждым подходом и во время него воспроизводится звуковой сигнал."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "The volume of the sound can be adjusted."
 msgstr "Громкость звука можно регулировать."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:19
 msgid "Light and dark mode follows the system's setting."
 msgstr "Светлый и темный режим соответствуют настройкам системы."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:25
 msgid "Timer - dark mode"
 msgstr "Таймер - темный режим"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:29
 msgid "Exercise list - dark mode"
 msgstr "Список упражнений - темный режим"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:33
 msgid "New training dialog - light mode"
 msgstr "Новый диалог упражнений - светлый режим"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:37
 msgid "Timer - light mode"
 msgstr "Таймер - светлый режим"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/Application.vala:57
+#: src/Application.vala:56
 msgid "translator_credits"
 msgstr "Stepan Kashuba"
 
@@ -307,7 +307,7 @@ msgstr "Обновить"
 
 #. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
-#: src/TrainingSetup.vala:95
+#: src/TrainingSetup.vala:107
 #, c-format
 msgid "%d × %d s"
 msgstr "%d × %d с"

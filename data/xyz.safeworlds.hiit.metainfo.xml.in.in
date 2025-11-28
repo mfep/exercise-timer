@@ -3,6 +3,7 @@
   <id>@app-id@</id>
   <metadata_license>CC0</metadata_license>
   <project_license>GPL-3.0</project_license>
+  <!-- Translators: Application name -->
   <name>Exercise Timer</name>
   <!-- Translators: App summary, at most 35 characters, imperative style -->
   <summary>Train and rest with high intensity</summary>

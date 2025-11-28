@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-15 19:29+0100\n"
+"POT-Creation-Date: 2025-11-28 17:34+0100\n"
 "PO-Revision-Date: 2025-05-29 06:37+0000\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gnome.org>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/exercise-timer/"
@@ -116,10 +116,10 @@ msgstr "מחיקת אימון"
 
 #. Translators: This is the name of the window. Currently this is the app name
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
-#. Translators: The name of the application. Feel free to localize it!
+#. Translators: Application name
 #: data/resources/ui/window.blp:6 data/resources/ui/window.blp:13
 #: data/xyz.safeworlds.hiit.desktop.in.in:2
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:6 src/Application.vala:50
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
 msgid "Exercise Timer"
 msgstr "קוצב זמן לאימון"
 
@@ -196,11 +196,11 @@ msgid "The volume of the beeping sound"
 msgstr "עצמת השמע של הצליל המצפצף"
 
 #. Translators: App summary, at most 35 characters, imperative style
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:8
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:9
 msgid "Train and rest with high intensity"
 msgstr "אימון ומנוחה בעצימות גבוהה"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:10
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
 #, fuzzy
 msgid ""
 "Exercise Timer is a simple utility to conduct high intensity interval "
@@ -211,11 +211,11 @@ msgstr ""
 "לאחר זמן הכנה קצר, מבוצע מספר מוגדר של סדרות אימון. בין כל תרגיל, ישנו זמן "
 "מנוחה."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:13
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
 msgid "Features:"
 msgstr "תכונות:"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:15
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 #, fuzzy
 msgid ""
 "Save and recall presets containing the number of sets and the duration of "
@@ -224,36 +224,36 @@ msgstr ""
 "שמירה ושחזור של הגדרות מוכנות מראש הכוללות את מספר הסדרות ואת משך האימון "
 "ותקופות המנוחה."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "A beeping sound is played at- and prior to each transition."
 msgstr "צליל צפצוף מושמע בזמן ולפני כל מעבר."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "The volume of the sound can be adjusted."
 msgstr "ניתן לכוונן את עצמת השמע."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:19
 msgid "Light and dark mode follows the system's setting."
 msgstr "מצב בהיר וכהה עוקב אחר הגדרות המערכת."
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:24
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:25
 msgid "Timer - dark mode"
 msgstr "קוצב זמן - מצב כהה"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:28
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:29
 msgid "Exercise list - dark mode"
 msgstr "רשימת אימונים - מצב כהה"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:32
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:33
 msgid "New training dialog - light mode"
 msgstr "חלון אימון חדש - מצב בהיר"
 
-#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:36
+#: data/xyz.safeworlds.hiit.metainfo.xml.in.in:37
 msgid "Timer - light mode"
 msgstr "קוצב זמן - מצב בהיר"
 
 #. Translators: Replace this with your name for it to show up in the about window
-#: src/Application.vala:57
+#: src/Application.vala:56
 msgid "translator_credits"
 msgstr "יוסף אור בוצ׳קו <yoseforb@gmail.com>"
 
@@ -305,7 +305,7 @@ msgstr "עדכון"
 
 #. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
-#: src/TrainingSetup.vala:95
+#: src/TrainingSetup.vala:107
 #, c-format
 msgid "%d × %d s"
 msgstr "‏‎%d × %d‎ ש"
