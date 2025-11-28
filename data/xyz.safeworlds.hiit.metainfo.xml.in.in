@@ -55,6 +55,34 @@
     <color type="primary" scheme_preference="dark">#188653</color>
   </branding>
   <releases>
+    <release version="1.9.0" date="2025-11-28">
+      <description translate="no">
+        <p>The application has been rewritten in the Vala programming language in the hope of making further development faster and easier. Existing trainings and settings should be preserved. Please open an issue upon finding bugs or inconsistencies.</p>
+        <p>Fixes</p>
+        <ul>
+          <li>Fixed notification sound not playing when starting the training</li>
+          <li>Fixed notification sound being too quiet compared to other sounds</li>
+        </ul>
+        <p>Miscellaneous</p>
+        <ul>
+          <li>Updated Flatpak runtime to GNOME 49</li>
+        </ul>
+        <p>New translations</p>
+        <ul>
+          <li>Croatian</li>
+          <li>Belarusian</li>
+          <li>Polish</li>
+        </ul>
+        <p>Updated translations</p>
+        <ul>
+          <li>Estonian</li>
+          <li>French</li>
+          <li>Hungarian</li>
+          <li>Norwegian Bokmål</li>
+          <li>Swedish</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.8.5" date="2025-07-27">
       <description translate="no">
         <p>New translations</p>
