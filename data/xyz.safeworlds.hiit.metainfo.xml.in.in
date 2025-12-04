@@ -55,6 +55,14 @@
     <color type="primary" scheme_preference="dark">#188653</color>
   </branding>
   <releases>
+    <release version="1.9.1" date="2025-12-04">
+      <description translate="no">
+        <p>Fixes</p>
+        <ul>
+          <li>Fix rest showing even when rest time is zero</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.9.0" date="2025-11-28">
       <description translate="no">
         <p>The application has been rewritten in the Vala programming language in the hope of making further development faster and easier. Existing trainings and settings should be preserved. Please open an issue upon finding bugs or inconsistencies.</p>
