@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v1.9.1](https://github.com/mfep/exercise-timer/compare/29596bae77a0a8250d4ddf2c2b7482cd05f6fb62..v1.9.1) - 2025-12-04
+#### Bug Fixes
+- Fix rest showing even when rest time is zero (#40) - ([29596ba](https://github.com/mfep/exercise-timer/commit/29596bae77a0a8250d4ddf2c2b7482cd05f6fb62)) - [@mfep](https://github.com/mfep)
+#### Miscellaneous Chores
+- **(docs)** Update release notes - ([6f78419](https://github.com/mfep/exercise-timer/commit/6f78419a5459bc50139978783c0f7c49a8b1346a)) - [@mfep](https://github.com/mfep)
+
+- - -
+
 ## [v1.9.0](https://github.com/mfep/exercise-timer/compare/d67c604d54f87d381e74007ede8e81668f34b7e6..v1.9.0) - 2025-11-28
 #### Bug Fixes
 - **(i18n)** Translated using Weblate (Swedish) - ([ca60346](https://github.com/mfep/exercise-timer/commit/ca6034630a616bfc4dd8b1270e1585bd190596f6)) - bittin1ddc447d824349b2
