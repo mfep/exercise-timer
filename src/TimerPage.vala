@@ -157,10 +157,15 @@ namespace ExerciseTimer {
                 case State.Exercise:
                     --remaining_sets;
                     if (remaining_sets > 0) {
-                        current_state = State.Rest;
-                        remaining_sec = Setup.RestSec;
+                        if (Setup.RestSec > 0) {
+                            current_state = State.Rest;
+                            remaining_sec = Setup.RestSec;
+                            rest_started();
+                        } else {
+                            remaining_sec = Setup.ExerciseSec;
+                            exercise_started();
+                        }
                         retval = true;
-                        rest_started();
                         break;
                     } else {
                         current_state = State.Finished;
