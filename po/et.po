@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-28 17:34+0100\n"
-"PO-Revision-Date: 2025-11-16 22:51+0000\n"
+"PO-Revision-Date: 2025-12-06 10:00+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/et/>\n"
@@ -302,7 +302,7 @@ msgstr "Uuenda"
 #. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
 #: src/TrainingSetup.vala:107
-#, fuzzy, c-format
+#, c-format
 msgid "%d × %d s"
 msgstr "%d × %d sek"
 
