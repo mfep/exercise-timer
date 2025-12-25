@@ -8,107 +8,110 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-28 17:34+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-12-26 21:00+0000\n"
+"Last-Translator: \"Emilio S.\" <emism.translations@gmail.com>\n"
+"Language-Team: Interlingua <https://hosted.weblate.org/projects/exercise-"
+"timer/exercise-timer/ia/>\n"
 "Language: ia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/shortcuts_dialog.blp:7
 msgid "Training"
-msgstr ""
+msgstr "Trainamento"
 
 #. Translators: The name of the shortcut key to start and stop the training timer
 #: data/resources/ui/shortcuts_dialog.blp:10
 msgid "Start/Stop training"
-msgstr ""
+msgstr "Initiar/stoppar trainamento"
 
 #. Translators: The name of the shortcut key to start the training from the beginning
 #: data/resources/ui/shortcuts_dialog.blp:16
 msgid "Reset training"
-msgstr ""
+msgstr "Reinitialisar trainamento"
 
 #. Translators: The title of the shortcuts group which lists general application shortcuts
 #: data/resources/ui/shortcuts_dialog.blp:23
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #. Translators: The name of the shortcut key to open the shortcuts window
 #: data/resources/ui/shortcuts_dialog.blp:26
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Monstrar vias breve"
 
 #. Translators: The name of the shortcut key to quit the application
 #: data/resources/ui/shortcuts_dialog.blp:32
 msgid "Quit"
-msgstr ""
+msgstr "Quitar"
 
 #. Translators: Shown in the timer page when the training has come to the end
 #: data/resources/ui/timer_page.blp:65
 msgid "Finished!"
-msgstr ""
+msgstr "Finite!"
 
 #. TODO huge button
 #. Translators: tooltip text for the reset button
 #: data/resources/ui/timer_page.blp:79 data/resources/ui/timer_page.blp:88
 msgid "Restart Training"
-msgstr ""
+msgstr "Reinitiar trainamento"
 
 #. Translators: tooltip text for the volume button
 #: data/resources/ui/timer_page.blp:103
 msgid "Set Volume"
-msgstr ""
+msgstr "Definir volumine"
 
 #. Translators: Button to close the training editor window without modifications
 #: data/resources/ui/training_editor.blp:16
 msgid "Cancel"
-msgstr ""
+msgstr "Cancellar"
 
 #. Translators: The title of the field for the name of the training in the editor window
 #: data/resources/ui/training_editor.blp:40
 msgid "Name"
-msgstr ""
+msgstr "Nomine"
 
 #. Translators: The title of the field for the number of sets in the training in the editor window
 #: data/resources/ui/training_editor.blp:49
 msgid "Number of Sets"
-msgstr ""
+msgstr "Series de trainamento"
 
 #. Translators: The title of the field for the rest duration in the training in the editor window
 #: data/resources/ui/training_editor.blp:58
 msgid "Rest Time"
-msgstr ""
+msgstr "Tempore de reposo"
 
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: data/resources/ui/training_editor.blp:60
 #: data/resources/ui/training_editor.blp:71
 #: data/resources/ui/training_editor.blp:82
 msgid "Seconds"
-msgstr ""
+msgstr "Secundas"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: data/resources/ui/training_editor.blp:69
 msgid "Exercise Time"
-msgstr ""
+msgstr "Tempore de exercitio"
 
 #. Translators: The title of the field for the preparation duration in the training in the editor window
 #: data/resources/ui/training_editor.blp:80
 msgid "Preparation Time"
-msgstr ""
+msgstr "Tempore de preparation"
 
 #. Translators: tooltip text for exercise card button to open the training editor
 #. Translators: The editor window's title when modifying a training
 #: data/resources/ui/training_list_row.blp:44 src/TrainingEditor.vala:32
 msgid "Edit Training"
-msgstr ""
+msgstr "Modificar trainamento"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: data/resources/ui/training_list_row.blp:50
 msgid "Delete Training"
-msgstr ""
+msgstr "Deler trainamento"
 
 #. Translators: This is the name of the window. Currently this is the app name
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
@@ -117,41 +120,42 @@ msgstr ""
 #: data/xyz.safeworlds.hiit.desktop.in.in:2
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
 msgid "Exercise Timer"
-msgstr ""
+msgstr "Temporisator de trainamento"
 
 #. Translators: tooltip for the add training image button
 #: data/resources/ui/window.blp:21
 msgid "Add Training"
-msgstr ""
+msgstr "Adder trainamento"
 
 #. Translators: tooltip for main menu image button
 #: data/resources/ui/window.blp:29
 msgid "Main Menu"
-msgstr ""
+msgstr "Menu principal"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: data/resources/ui/window.blp:52
 msgid "No Trainings"
-msgstr ""
+msgstr "Necun trainamentos"
 
 #. Translators: Big label button to create the first training if none exists
 #: data/resources/ui/window.blp:56
 msgid "Create Training"
-msgstr ""
+msgstr "Crear trainamento"
 
 #. Translators: The title of the keyboard shortcuts menu entry
 #: data/resources/ui/window.blp:71
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "Vias breve de _claviero"
 
 #. Translators: The title of the about dialog menu entry
 #: data/resources/ui/window.blp:76
 msgid "_About Exercise Timer"
-msgstr ""
+msgstr "_A proposito de Temporisator de exercitio"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
 msgid "Timer clock for high intensity interval training"
 msgstr ""
+"Horologio temporisator pro trainamento per intervallos de alte intensitate"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/xyz.safeworlds.hiit.desktop.in.in:9
@@ -159,26 +163,28 @@ msgid ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
 "interval training;"
 msgstr ""
+"Gnome;GTK;Utensile;Sports;Exercitio;HIIT;Trainamento;Exercitio;Trainamento "
+"de intervallo de alte intensitate;"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:6
 msgid "The width of the window"
-msgstr ""
+msgstr "Le largor del fenestra"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:10
 msgid "The height of the window"
-msgstr ""
+msgstr "Le altor del fenestra"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:14
 msgid "If the window is maximized"
-msgstr ""
+msgstr "Si le fenestra es maximisate"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:18
 msgid "Default training setup, in JSON notation"
-msgstr ""
+msgstr "Configuration de trainamento predefinite, in notation JSON"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:22
 msgid "List of training setups, in JSON notation"
-msgstr ""
+msgstr "Lista de configurationes de trainamento, in notation JSON"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
 msgid "The duration of the audio countdown, in seconds"
@@ -186,12 +192,12 @@ msgstr ""
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
 msgid "The volume of the beeping sound"
-msgstr ""
+msgstr "Le volumine del sono de pip"
 
 #. Translators: App summary, at most 35 characters, imperative style
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:9
 msgid "Train and rest with high intensity"
-msgstr ""
+msgstr "Traina e reposa con alte intensitate"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
 msgid ""
@@ -203,7 +209,7 @@ msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
 msgid "Features:"
-msgstr ""
+msgstr "Functionalitates:"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid ""
@@ -213,31 +219,31 @@ msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "A beeping sound is played at- and prior to each transition."
-msgstr ""
+msgstr "Un sono de pip es reproducite ante e post cata transition."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "The volume of the sound can be adjusted."
-msgstr ""
+msgstr "Le volumine del sono pote esser adjustate."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:19
 msgid "Light and dark mode follows the system's setting."
-msgstr ""
+msgstr "Le modos clar e obscur seque le parametro de systema."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:25
 msgid "Timer - dark mode"
-msgstr ""
+msgstr "Temporisator - modo obscur"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:29
 msgid "Exercise list - dark mode"
-msgstr ""
+msgstr "Lista de exercitios - modo obscur"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:33
 msgid "New training dialog - light mode"
-msgstr ""
+msgstr "Nove dialogo de trainamento - modo clar"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:37
 msgid "Timer - light mode"
-msgstr ""
+msgstr "Temporisator - modo clar"
 
 #. Translators: Replace this with your name for it to show up in the about window
 #: src/Application.vala:56
@@ -248,51 +254,51 @@ msgstr ""
 #: src/TimerPage.vala:54
 #, c-format
 msgid "Remaining Sets: %d"
-msgstr ""
+msgstr "Series remanente: %d"
 
 #. Translators: Shown on the timer page during preparation
 #: src/TimerPage.vala:63
 msgid "Preparation"
-msgstr ""
+msgstr "Preparation"
 
 #. Translators: Shown on the timer page during exercise
 #: src/TimerPage.vala:66
 msgid "Exercise"
-msgstr ""
+msgstr "Exercitio"
 
 #. Translators: Shown on the timer page during rest
 #: src/TimerPage.vala:69
 msgid "Rest"
-msgstr ""
+msgstr "Reposo"
 
 #. Translators: tooltip text for the pause/resume button when the training is running
 #: src/TimerPage.vala:108
 msgid "Pause Training"
-msgstr ""
+msgstr "Pausar trainamento"
 
 #. Translators: tooltip text for the pause/resume button when the training is paused
 #: src/TimerPage.vala:111
 msgid "Resume Training"
-msgstr ""
+msgstr "Resumer trainamento"
 
 #. Translators: The editor window's title when creating a new training
 #: src/TrainingEditor.vala:29
 msgid "New Training"
-msgstr ""
+msgstr "Nove trainamento"
 
 #. Translators: Button to close the editor window and create a new training
 #: src/TrainingEditor.vala:41
 msgid "Create"
-msgstr ""
+msgstr "Crear"
 
 #. Translators: Button to close the editor window and update an existing training
 #: src/TrainingEditor.vala:44
 msgid "Update"
-msgstr ""
+msgstr "Actualisar"
 
 #. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
 #: src/TrainingSetup.vala:107
 #, c-format
 msgid "%d × %d s"
-msgstr ""
+msgstr "%d × %d s"
