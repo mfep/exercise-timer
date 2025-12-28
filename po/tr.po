@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-28 17:34+0100\n"
-"PO-Revision-Date: 2025-05-24 02:35+0000\n"
-"Last-Translator: Mehmet Cevheri BOZOGLAN <cevheribozoglan@gmail.com>\n"
+"PO-Revision-Date: 2025-12-29 18:00+0000\n"
+"Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/tr/>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/shortcuts_dialog.blp:7
@@ -186,9 +186,8 @@ msgid "List of training setups, in JSON notation"
 msgstr "JSON gösteriminde eğitim ayarlarının listesi"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
-#, fuzzy
 msgid "The duration of the audio countdown, in seconds"
-msgstr "Isınma süresi, saniye cinsinden"
+msgstr "Sesli geri sayım süresi, saniye cinsinden"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
 msgid "The volume of the beeping sound"
@@ -308,7 +307,7 @@ msgstr "Güncelle"
 #: src/TrainingSetup.vala:107
 #, c-format
 msgid "%d × %d s"
-msgstr ""
+msgstr "%d × %d sn"
 
 #, rust-format
 #~ msgid "{} × {} s"
