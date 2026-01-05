@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-28 17:34+0100\n"
-"PO-Revision-Date: 2025-06-06 15:01+0000\n"
-"Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
+"PO-Revision-Date: 2026-01-06 17:01+0000\n"
+"Last-Translator: Dick Groskamp <dikgro@yahoo.co.uk>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/nl/>\n"
 "Language: nl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/shortcuts_dialog.blp:7
@@ -186,9 +186,8 @@ msgid "List of training setups, in JSON notation"
 msgstr "Lijst met instellingen voor trainingen, in notatie JSON"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
-#, fuzzy
 msgid "The duration of the audio countdown, in seconds"
-msgstr "De duur van het opwarmen, in seconden"
+msgstr "De duur van het afkoelen met geluid, in seconden"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
 msgid "The volume of the beeping sound"
@@ -309,7 +308,7 @@ msgstr "Bijwerken"
 #: src/TrainingSetup.vala:107
 #, c-format
 msgid "%d × %d s"
-msgstr ""
+msgstr "%d × %d s"
 
 #, rust-format
 #~ msgid "{} × {} s"
