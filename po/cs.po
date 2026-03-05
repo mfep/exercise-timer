@@ -8,24 +8,26 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-28 17:34+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-03-06 12:09+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/exercise-timer/"
+"exercise-timer/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/shortcuts_dialog.blp:7
 msgid "Training"
-msgstr ""
+msgstr "Tréning"
 
 #. Translators: The name of the shortcut key to start and stop the training timer
 #: data/resources/ui/shortcuts_dialog.blp:10
 msgid "Start/Stop training"
-msgstr ""
+msgstr "Zahájit/zastavit tréning"
 
 #. Translators: The name of the shortcut key to start the training from the beginning
 #: data/resources/ui/shortcuts_dialog.blp:16
@@ -35,81 +37,81 @@ msgstr ""
 #. Translators: The title of the shortcuts group which lists general application shortcuts
 #: data/resources/ui/shortcuts_dialog.blp:23
 msgid "General"
-msgstr ""
+msgstr "Obecné"
 
 #. Translators: The name of the shortcut key to open the shortcuts window
 #: data/resources/ui/shortcuts_dialog.blp:26
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Zobrazit zkratky"
 
 #. Translators: The name of the shortcut key to quit the application
 #: data/resources/ui/shortcuts_dialog.blp:32
 msgid "Quit"
-msgstr ""
+msgstr "Ukončit"
 
 #. Translators: Shown in the timer page when the training has come to the end
 #: data/resources/ui/timer_page.blp:65
 msgid "Finished!"
-msgstr ""
+msgstr "Dokončeno!"
 
 #. TODO huge button
 #. Translators: tooltip text for the reset button
 #: data/resources/ui/timer_page.blp:79 data/resources/ui/timer_page.blp:88
 msgid "Restart Training"
-msgstr ""
+msgstr "Začít trénovat od znovu"
 
 #. Translators: tooltip text for the volume button
 #: data/resources/ui/timer_page.blp:103
 msgid "Set Volume"
-msgstr ""
+msgstr "Nastavit objem"
 
 #. Translators: Button to close the training editor window without modifications
 #: data/resources/ui/training_editor.blp:16
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 #. Translators: The title of the field for the name of the training in the editor window
 #: data/resources/ui/training_editor.blp:40
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 #. Translators: The title of the field for the number of sets in the training in the editor window
 #: data/resources/ui/training_editor.blp:49
 msgid "Number of Sets"
-msgstr ""
+msgstr "Počet sad"
 
 #. Translators: The title of the field for the rest duration in the training in the editor window
 #: data/resources/ui/training_editor.blp:58
 msgid "Rest Time"
-msgstr ""
+msgstr "Čas odpočinku"
 
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: data/resources/ui/training_editor.blp:60
 #: data/resources/ui/training_editor.blp:71
 #: data/resources/ui/training_editor.blp:82
 msgid "Seconds"
-msgstr ""
+msgstr "Sekund"
 
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: data/resources/ui/training_editor.blp:69
 msgid "Exercise Time"
-msgstr ""
+msgstr "Čas cvičení"
 
 #. Translators: The title of the field for the preparation duration in the training in the editor window
 #: data/resources/ui/training_editor.blp:80
 msgid "Preparation Time"
-msgstr ""
+msgstr "Čas přípravy"
 
 #. Translators: tooltip text for exercise card button to open the training editor
 #. Translators: The editor window's title when modifying a training
 #: data/resources/ui/training_list_row.blp:44 src/TrainingEditor.vala:32
 msgid "Edit Training"
-msgstr ""
+msgstr "Upravit tréning"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: data/resources/ui/training_list_row.blp:50
 msgid "Delete Training"
-msgstr ""
+msgstr "Smazat tréning"
 
 #. Translators: This is the name of the window. Currently this is the app name
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
@@ -118,37 +120,37 @@ msgstr ""
 #: data/xyz.safeworlds.hiit.desktop.in.in:2
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
 msgid "Exercise Timer"
-msgstr ""
+msgstr "Časovač cvičení"
 
 #. Translators: tooltip for the add training image button
 #: data/resources/ui/window.blp:21
 msgid "Add Training"
-msgstr ""
+msgstr "Přidat tréning"
 
 #. Translators: tooltip for main menu image button
 #: data/resources/ui/window.blp:29
 msgid "Main Menu"
-msgstr ""
+msgstr "Hlavní nabídka"
 
 #. Translators: The message which is shown on the background of the empty training list
 #: data/resources/ui/window.blp:52
 msgid "No Trainings"
-msgstr ""
+msgstr "Žádné tréningy"
 
 #. Translators: Big label button to create the first training if none exists
 #: data/resources/ui/window.blp:56
 msgid "Create Training"
-msgstr ""
+msgstr "Vytvořit tréning"
 
 #. Translators: The title of the keyboard shortcuts menu entry
 #: data/resources/ui/window.blp:71
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Klávesové zkratky"
 
 #. Translators: The title of the about dialog menu entry
 #: data/resources/ui/window.blp:76
 msgid "_About Exercise Timer"
-msgstr ""
+msgstr "O _aplikaci Časovač cvičení"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
 msgid "Timer clock for high intensity interval training"
@@ -204,7 +206,7 @@ msgstr ""
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
 msgid "Features:"
-msgstr ""
+msgstr "Funkce:"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:16
 msgid ""
@@ -249,47 +251,47 @@ msgstr ""
 #: src/TimerPage.vala:54
 #, c-format
 msgid "Remaining Sets: %d"
-msgstr ""
+msgstr "Zbývající sady: %d"
 
 #. Translators: Shown on the timer page during preparation
 #: src/TimerPage.vala:63
 msgid "Preparation"
-msgstr ""
+msgstr "Příprava"
 
 #. Translators: Shown on the timer page during exercise
 #: src/TimerPage.vala:66
 msgid "Exercise"
-msgstr ""
+msgstr "Cvičení"
 
 #. Translators: Shown on the timer page during rest
 #: src/TimerPage.vala:69
 msgid "Rest"
-msgstr ""
+msgstr "Odpočinek"
 
 #. Translators: tooltip text for the pause/resume button when the training is running
 #: src/TimerPage.vala:108
 msgid "Pause Training"
-msgstr ""
+msgstr "Pozastavit tréning"
 
 #. Translators: tooltip text for the pause/resume button when the training is paused
 #: src/TimerPage.vala:111
 msgid "Resume Training"
-msgstr ""
+msgstr "Pokračovat v tréningu"
 
 #. Translators: The editor window's title when creating a new training
 #: src/TrainingEditor.vala:29
 msgid "New Training"
-msgstr ""
+msgstr "Nový tréning"
 
 #. Translators: Button to close the editor window and create a new training
 #: src/TrainingEditor.vala:41
 msgid "Create"
-msgstr ""
+msgstr "Vytvořit"
 
 #. Translators: Button to close the editor window and update an existing training
 #: src/TrainingEditor.vala:44
 msgid "Update"
-msgstr ""
+msgstr "Aktualizovat"
 
 #. Translators: detail label for each training in the training list. The first placeholder stands for the number of sets,
 #. while the second stands for the length of the exercise in seconds. "s" stands for seconds, this might be needed to be localized.
