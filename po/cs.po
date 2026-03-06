@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-28 17:34+0100\n"
-"PO-Revision-Date: 2026-03-06 12:09+0000\n"
+"PO-Revision-Date: 2026-03-07 21:09+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/cs/>\n"
@@ -22,17 +22,17 @@ msgstr ""
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/shortcuts_dialog.blp:7
 msgid "Training"
-msgstr "Tréning"
+msgstr "Trénink"
 
 #. Translators: The name of the shortcut key to start and stop the training timer
 #: data/resources/ui/shortcuts_dialog.blp:10
 msgid "Start/Stop training"
-msgstr "Zahájit/zastavit tréning"
+msgstr "Zahájit/zastavit trénink"
 
 #. Translators: The name of the shortcut key to start the training from the beginning
 #: data/resources/ui/shortcuts_dialog.blp:16
 msgid "Reset training"
-msgstr ""
+msgstr "Začít cvičit od začátku"
 
 #. Translators: The title of the shortcuts group which lists general application shortcuts
 #: data/resources/ui/shortcuts_dialog.blp:23
@@ -63,7 +63,7 @@ msgstr "Začít trénovat od znovu"
 #. Translators: tooltip text for the volume button
 #: data/resources/ui/timer_page.blp:103
 msgid "Set Volume"
-msgstr "Nastavit objem"
+msgstr "Nastavit hlasitost"
 
 #. Translators: Button to close the training editor window without modifications
 #: data/resources/ui/training_editor.blp:16
@@ -83,7 +83,7 @@ msgstr "Počet sad"
 #. Translators: The title of the field for the rest duration in the training in the editor window
 #: data/resources/ui/training_editor.blp:58
 msgid "Rest Time"
-msgstr "Čas odpočinku"
+msgstr "Doba odpočinku"
 
 #. Translators: The subtitle of the field for the duration which refers to the unit. Singular form in some localizations.
 #: data/resources/ui/training_editor.blp:60
@@ -95,23 +95,23 @@ msgstr "Sekund"
 #. Translators: The title of the field for the exercise duration in the training in the editor window
 #: data/resources/ui/training_editor.blp:69
 msgid "Exercise Time"
-msgstr "Čas cvičení"
+msgstr "Doba cvičení"
 
 #. Translators: The title of the field for the preparation duration in the training in the editor window
 #: data/resources/ui/training_editor.blp:80
 msgid "Preparation Time"
-msgstr "Čas přípravy"
+msgstr "Doba přípravy"
 
 #. Translators: tooltip text for exercise card button to open the training editor
 #. Translators: The editor window's title when modifying a training
 #: data/resources/ui/training_list_row.blp:44 src/TrainingEditor.vala:32
 msgid "Edit Training"
-msgstr "Upravit tréning"
+msgstr "Upravit trénink"
 
 #. Translators: tooltip text for exercise card button to delete the training
 #: data/resources/ui/training_list_row.blp:50
 msgid "Delete Training"
-msgstr "Smazat tréning"
+msgstr "Smazat trénink"
 
 #. Translators: This is the name of the window. Currently this is the app name
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
@@ -125,7 +125,7 @@ msgstr "Časovač cvičení"
 #. Translators: tooltip for the add training image button
 #: data/resources/ui/window.blp:21
 msgid "Add Training"
-msgstr "Přidat tréning"
+msgstr "Přidat trénink"
 
 #. Translators: tooltip for main menu image button
 #: data/resources/ui/window.blp:29
@@ -135,12 +135,12 @@ msgstr "Hlavní nabídka"
 #. Translators: The message which is shown on the background of the empty training list
 #: data/resources/ui/window.blp:52
 msgid "No Trainings"
-msgstr "Žádné tréningy"
+msgstr "Žádné tréninky"
 
 #. Translators: Big label button to create the first training if none exists
 #: data/resources/ui/window.blp:56
 msgid "Create Training"
-msgstr "Vytvořit tréning"
+msgstr "Vytvořit trénink"
 
 #. Translators: The title of the keyboard shortcuts menu entry
 #: data/resources/ui/window.blp:71
@@ -154,7 +154,7 @@ msgstr "O _aplikaci Časovač cvičení"
 
 #: data/xyz.safeworlds.hiit.desktop.in.in:3
 msgid "Timer clock for high intensity interval training"
-msgstr ""
+msgstr "Časovač pro vysoce intenzivní intervalový trénink"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/xyz.safeworlds.hiit.desktop.in.in:9
@@ -162,39 +162,41 @@ msgid ""
 "Gnome;GTK;Utility;Sports;Exercise;HIIT;Training;Exercise;High intensity "
 "interval training;"
 msgstr ""
+"Gnome;GTK;Pomůcka;Sporty;Cvičení;HIIT;Trénink;Vysoce intenzivní intervalový "
+"trénink;"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:6
 msgid "The width of the window"
-msgstr ""
+msgstr "Šířka okna"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:10
 msgid "The height of the window"
-msgstr ""
+msgstr "Výška okna"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:14
 msgid "If the window is maximized"
-msgstr ""
+msgstr "Pokud je okno maximalizováno"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:18
 msgid "Default training setup, in JSON notation"
-msgstr ""
+msgstr "Výchozí uspořádání tréninku (v JSON zápisu)"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:22
 msgid "List of training setups, in JSON notation"
-msgstr ""
+msgstr "Seznam uspořádání tréninků (v JSON zápisu)"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
 msgid "The duration of the audio countdown, in seconds"
-msgstr ""
+msgstr "Délka trvání zvukového odpočtu (v sekundách)"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
 msgid "The volume of the beeping sound"
-msgstr ""
+msgstr "Hlasitost pípání"
 
 #. Translators: App summary, at most 35 characters, imperative style
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:9
 msgid "Train and rest with high intensity"
-msgstr ""
+msgstr "Trénujte/odpočív. vysoce intenzivně"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
 msgid ""
@@ -203,6 +205,10 @@ msgid ""
 "exercise sets are played. In between each exercise, there is a resting "
 "period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
+"Časovač cvičení je jednoduchá pomůcka pro vedení vysoce intenzivního "
+"intervalového tréninku. Po krátké periodě přípravy je prováděn předepsaný "
+"počet sad cvičení. Mezi každým cvičením je perioda odpočinku. Druh cvičení "
+"je na vás – to jde nad rámec aplikace."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
 msgid "Features:"
@@ -213,39 +219,41 @@ msgid ""
 "Save and recall presets containing the number of sets and the duration of "
 "the exercise, rest and preparation periods."
 msgstr ""
+"Ukládejte a vyvolávejte přednastavení obsahující počet sad a délku trvání "
+"period cvičení, odpočinku a přípravy."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:17
 msgid "A beeping sound is played at- and prior to each transition."
-msgstr ""
+msgstr "Zvuk pípání je přehráván při a před každým přechodem."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:18
 msgid "The volume of the sound can be adjusted."
-msgstr ""
+msgstr "Hlasitost zvuku je možné přizpůsobit."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:19
 msgid "Light and dark mode follows the system's setting."
-msgstr ""
+msgstr "Světlý a tmavý režim se řídí nastavením systému."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:25
 msgid "Timer - dark mode"
-msgstr ""
+msgstr "Časovač – tmavý režim"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:29
 msgid "Exercise list - dark mode"
-msgstr ""
+msgstr "Seznam cvičení – tmavý režim"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:33
 msgid "New training dialog - light mode"
-msgstr ""
+msgstr "Dialog nového tréninku – světlý režim"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:37
 msgid "Timer - light mode"
-msgstr ""
+msgstr "Časovač – světlý režim"
 
 #. Translators: Replace this with your name for it to show up in the about window
 #: src/Application.vala:56
 msgid "translator_credits"
-msgstr ""
+msgstr "Pavel Borecki"
 
 #. Translators: Label showing the number of remaining sets on the timer page
 #: src/TimerPage.vala:54
@@ -271,17 +279,17 @@ msgstr "Odpočinek"
 #. Translators: tooltip text for the pause/resume button when the training is running
 #: src/TimerPage.vala:108
 msgid "Pause Training"
-msgstr "Pozastavit tréning"
+msgstr "Pozastavit trénink"
 
 #. Translators: tooltip text for the pause/resume button when the training is paused
 #: src/TimerPage.vala:111
 msgid "Resume Training"
-msgstr "Pokračovat v tréningu"
+msgstr "Pokračovat v tréninku"
 
 #. Translators: The editor window's title when creating a new training
 #: src/TrainingEditor.vala:29
 msgid "New Training"
-msgstr "Nový tréning"
+msgstr "Nový trénink"
 
 #. Translators: Button to close the editor window and create a new training
 #: src/TrainingEditor.vala:41
@@ -298,4 +306,4 @@ msgstr "Aktualizovat"
 #: src/TrainingSetup.vala:107
 #, c-format
 msgid "%d × %d s"
-msgstr ""
+msgstr "%d × %d s"
