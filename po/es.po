@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-28 17:34+0100\n"
-"PO-Revision-Date: 2025-01-09 07:21+0000\n"
-"Last-Translator: Óscar Fernández Díaz <oscfdezdz@tuta.io>\n"
+"PO-Revision-Date: 2026-05-04 20:09+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/shortcuts_dialog.blp:7
@@ -32,7 +32,7 @@ msgstr "Iniciar/Detener entrenamiento"
 #. Translators: The name of the shortcut key to start the training from the beginning
 #: data/resources/ui/shortcuts_dialog.blp:16
 msgid "Reset training"
-msgstr "Restablecer entrenamiento"
+msgstr "Reiniciar entrenamiento"
 
 #. Translators: The title of the shortcuts group which lists general application shortcuts
 #: data/resources/ui/shortcuts_dialog.blp:23
@@ -188,9 +188,8 @@ msgid "List of training setups, in JSON notation"
 msgstr "Lista de configuraciones de entrenamiento, en notación JSON"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:26
-#, fuzzy
 msgid "The duration of the audio countdown, in seconds"
-msgstr "La duración del calentamiento, en segundos"
+msgstr "La duración del cuenta atrás de sonido, en segundos"
 
 #: data/xyz.safeworlds.hiit.gschema.xml.in:31
 msgid "The volume of the beeping sound"
@@ -202,15 +201,17 @@ msgid "Train and rest with high intensity"
 msgstr "Entrenar y descansar con alta intensidad"
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:11
-#, fuzzy
 msgid ""
 "Exercise Timer is a simple utility to conduct high intensity interval "
 "training. Following a short preparation period, a prescribed number of "
 "exercise sets are played. In between each exercise, there is a resting "
 "period. The app does not make an assumption about the kind of the exercise."
 msgstr ""
-"Tras un breve periodo de preparación, se realiza un número determinado de "
-"series de ejercicios. Entre cada ejercicio hay un periodo de descanso."
+"Exercise Timer es una herramienta sencilla para realizar entrenamientos de "
+"intervalos de alta intensidad. Tras un breve periodo de preparación, se "
+"realiza un número determinado de series de ejercicios. Entre cada ejercicio "
+"hay un período de descanso. La aplicación no presupone ningún tipo de "
+"ejercicio."
 
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:14
 msgid "Features:"
@@ -308,7 +309,7 @@ msgstr "Actualizar"
 #: src/TrainingSetup.vala:107
 #, c-format
 msgid "%d × %d s"
-msgstr ""
+msgstr "%d × %d s"
 
 #, rust-format
 #~ msgid "{} × {} s"
