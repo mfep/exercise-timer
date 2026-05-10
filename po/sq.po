@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-28 17:34+0100\n"
+"POT-Creation-Date: 2026-05-10 14:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -113,39 +113,39 @@ msgstr ""
 #. Translators: This is the name of the window. Currently this is the app name
 #. Translators: This is the title of the page which lists all trainings. Currently this is the app name
 #. Translators: Application name
-#: data/resources/ui/window.blp:6 data/resources/ui/window.blp:13
+#: data/resources/ui/window.blp:6 data/resources/ui/window.blp:14
 #: data/xyz.safeworlds.hiit.desktop.in.in:2
 #: data/xyz.safeworlds.hiit.metainfo.xml.in.in:7
 msgid "Exercise Timer"
 msgstr ""
 
 #. Translators: tooltip for the add training image button
-#: data/resources/ui/window.blp:21
+#: data/resources/ui/window.blp:22
 msgid "Add Training"
 msgstr ""
 
 #. Translators: tooltip for main menu image button
-#: data/resources/ui/window.blp:29
+#: data/resources/ui/window.blp:30
 msgid "Main Menu"
 msgstr ""
 
 #. Translators: The message which is shown on the background of the empty training list
-#: data/resources/ui/window.blp:52
+#: data/resources/ui/window.blp:53
 msgid "No Trainings"
 msgstr ""
 
 #. Translators: Big label button to create the first training if none exists
-#: data/resources/ui/window.blp:56
+#: data/resources/ui/window.blp:57
 msgid "Create Training"
 msgstr ""
 
 #. Translators: The title of the keyboard shortcuts menu entry
-#: data/resources/ui/window.blp:71
+#: data/resources/ui/window.blp:73
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
 #. Translators: The title of the about dialog menu entry
-#: data/resources/ui/window.blp:76
+#: data/resources/ui/window.blp:78
 msgid "_About Exercise Timer"
 msgstr ""
 
@@ -295,4 +295,15 @@ msgstr ""
 #: src/TrainingSetup.vala:107
 #, c-format
 msgid "%d × %d s"
+msgstr ""
+
+#. Translators: caption of the tost that appears when deleting a training in the training list
+#: src/Window.vala:105
+#, c-format
+msgid "Deleted training: %s"
+msgstr ""
+
+#. Translators: caption of the button on the training deletion toast that re-adds the training to the list
+#: src/Window.vala:107
+msgid "Undo"
 msgstr ""
