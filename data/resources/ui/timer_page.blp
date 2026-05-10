@@ -17,7 +17,7 @@ template $ExerciseTimerTimerPage : Adw.NavigationPage {
             margin-start: 12;
             margin-end: 12;
 
-            Gtk.Box {
+            Gtk.Box timer_box {
                 orientation: vertical;
                 spacing: 12;
 
@@ -109,9 +109,6 @@ template $ExerciseTimerTimerPage : Adw.NavigationPage {
                             }
                         }
                     }
-                }
-                Gtk.Label {
-                    label: bind template.RemainingSetsFormatted;
                 }
             }
         }

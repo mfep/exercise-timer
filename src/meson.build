@@ -28,6 +28,7 @@ sources = [
   'Application.vala',
   'ITimerNotifier.vala',
   'ITimerPageActionNotifier.vala',
+  'ProgressIndicator.vala',
   'TimerPage.vala',
   'TrainingEditor.vala',
   'TrainingListModel.vala',

@@ -21,6 +21,9 @@ namespace ExerciseTimer {
                 this.action_notifier.restart_action_called.disconnect(restart);
             });
             this.action_notifier.restart_action_called.connect(restart);
+            progress_indicator = new ProgressIndicator(setup);
+            bind_property("CurrentSec", progress_indicator, "CurrentSec", BindingFlags.SYNC_CREATE);
+            timer_box.append(progress_indicator);
         }
 
         public TrainingSetup Setup { get; private set; }
@@ -42,16 +45,6 @@ namespace ExerciseTimer {
             owned get {
                 var sec = remaining_sec % 60;
                 return "%02d".printf(sec);
-            }
-        }
-
-        public string RemainingSetsFormatted {
-            owned get {
-                if (Finished) {
-                    return "";
-                }
-                // Translators: Label showing the number of remaining sets on the timer page
-                return _("Remaining Sets: %d").printf(remaining_sets);
             }
         }
 
@@ -115,8 +108,11 @@ namespace ExerciseTimer {
 
         public int CountdownSec { get; set; }
 
+        public int CurrentSec { get; set; }
+
         [GtkCallback]
         public void restart() {
+            CurrentSec = 0;
             remaining_sets = Setup.Sets;
             if (Setup.PreparationSec > 0) {
                 current_state = State.Preparation;
@@ -140,6 +136,7 @@ namespace ExerciseTimer {
 
         private bool onTimeout() {
             bool retval;
+            CurrentSec += 1;
             if (remaining_sec > 1) {
                 --remaining_sec;
                 retval = true;
@@ -193,7 +190,6 @@ namespace ExerciseTimer {
         private void notifyProperties() {
             notify_property("RemainingMinFormatted");
             notify_property("RemainingSecFormatted");
-            notify_property("RemainingSetsFormatted");
             notify_property("StateFormatted");
             notify_property("Finished");
             notify_property("PlayIconName");
@@ -228,6 +224,8 @@ namespace ExerciseTimer {
         }
 
         [GtkChild]
+        unowned Gtk.Box timer_box;
+        [GtkChild]
         unowned Gtk.Box timer_card;
         [GtkChild]
         unowned Gtk.Box timer_label_box;
@@ -239,6 +237,7 @@ namespace ExerciseTimer {
         unowned Gtk.Box button_box;
         [GtkChild]
         unowned Gtk.Button play_pause_button;
+        ProgressIndicator progress_indicator;
 
         private State current_state;
         private int remaining_sec;
