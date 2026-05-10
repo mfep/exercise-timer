@@ -42,10 +42,10 @@ $ sudo dnf install -y flatpak-builder
 $ flatpak remote-add --user --if-not-exists flathub-verified https://flathub.org/repo/flathub.flatpakrepo
 ```
 
-3. If not present, install the GNOME 49 Flatpak runtime and SDK.
+3. If not present, install the GNOME 50 Flatpak runtime and SDK.
 
 ```bash
-$ flatpak install --user org.gnome.{Sdk,Platform}//49
+$ flatpak install --user org.gnome.{Sdk,Platform}//50
 ```
 
 4. Clone the current repository. Be aware that the binary assets are hosted in git LFS. **git LFS must be installed on the system to perform a proper checkout!**
