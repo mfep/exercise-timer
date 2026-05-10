@@ -7,55 +7,57 @@ template $ExerciseTimerWindow : Adw.ApplicationWindow {
   default-width: 300;
   default-height: 300;
 
-  Adw.NavigationView navigation_view {
-    Adw.NavigationPage {
-      // Translators: This is the title of the page which lists all trainings. Currently this is the app name
-      title: _("Exercise Timer");
-      Adw.ToolbarView {
-        [top]
-        Adw.HeaderBar {
-          [start]
-          Gtk.Button {
-            icon-name: "list-add";
-            // Translators: tooltip for the add training image button
-            tooltip-text: _("Add Training");
-            clicked => $on_add_training();
-          }
-          [end]
-          Gtk.MenuButton {
-            icon-name: "open-menu-symbolic";
-            menu-model: primary_menu;
-            // Translators: tooltip for main menu image button
-            tooltip-text: _("Main Menu");
-          }
-        }
-        Gtk.Stack training_list_stack {
-          transition-type: crossfade;
-          Gtk.ScrolledWindow training_list_scrolled {
-            Adw.Clamp {
-              Gtk.ListBox training_listbox {
-                margin-top: 12;
-                margin-bottom: 12;
-                margin-start: 12;
-                margin-end: 12;
-                width-request: 200;
-                selection-mode: none;
-                valign: start;
-                css-classes: ["boxed-list"];
-                row-activated => $on_training_activated();
-              }
+  Adw.ToastOverlay toast_overlay {
+    Adw.NavigationView navigation_view {
+      Adw.NavigationPage {
+        // Translators: This is the title of the page which lists all trainings. Currently this is the app name
+        title: _("Exercise Timer");
+        Adw.ToolbarView {
+          [top]
+          Adw.HeaderBar {
+            [start]
+            Gtk.Button {
+              icon-name: "list-add";
+              // Translators: tooltip for the add training image button
+              tooltip-text: _("Add Training");
+              clicked => $on_add_training();
+            }
+            [end]
+            Gtk.MenuButton {
+              icon-name: "open-menu-symbolic";
+              menu-model: primary_menu;
+              // Translators: tooltip for main menu image button
+              tooltip-text: _("Main Menu");
             }
           }
-          Adw.StatusPage training_list_status {
-            icon-name: "weight2-symbolic";
-            // Translators: The message which is shown on the background of the empty training list
-            title: _("No Trainings");
-            Gtk.Button {
-              css-classes: ["suggested-action", "pill"];
-              // Translators: Big label button to create the first training if none exists
-              label: _("Create Training");
-              halign: center;
-              clicked => $on_add_training();
+          Gtk.Stack training_list_stack {
+            transition-type: crossfade;
+            Gtk.ScrolledWindow training_list_scrolled {
+              Adw.Clamp {
+                Gtk.ListBox training_listbox {
+                  margin-top: 12;
+                  margin-bottom: 12;
+                  margin-start: 12;
+                  margin-end: 12;
+                  width-request: 200;
+                  selection-mode: none;
+                  valign: start;
+                  css-classes: ["boxed-list"];
+                  row-activated => $on_training_activated();
+                }
+              }
+            }
+            Adw.StatusPage training_list_status {
+              icon-name: "weight2-symbolic";
+              // Translators: The message which is shown on the background of the empty training list
+              title: _("No Trainings");
+              Gtk.Button {
+                css-classes: ["suggested-action", "pill"];
+                // Translators: Big label button to create the first training if none exists
+                label: _("Create Training");
+                halign: center;
+                clicked => $on_add_training();
+              }
             }
           }
         }

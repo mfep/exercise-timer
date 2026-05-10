@@ -1,7 +1,7 @@
 namespace ExerciseTimer {
     public class TrainingListModel : GLib.Object, GLib.ListModel {
 
-        public signal void item_deleted (uint remaining_items);
+        public signal void item_deleted (uint remaining_items, TrainingSetup deleted_setup);
 
         public GLib.Object? get_item (uint position) {
             if (position >= setup_list.length ()) {
@@ -19,6 +19,7 @@ namespace ExerciseTimer {
         }
 
         public void append (TrainingSetup setup) {
+            setup.deleted.disconnect (on_setup_deleted);
             setup.deleted.connect (on_setup_deleted);
 
             setup_list.append (setup);
@@ -29,7 +30,7 @@ namespace ExerciseTimer {
             var idx = setup_list.index (deleted_setup);
             setup_list.remove (deleted_setup);
             items_changed (idx, 1, 0);
-            item_deleted (setup_list.length ());
+            item_deleted (setup_list.length (), deleted_setup);
         }
 
         private List<TrainingSetup> setup_list = new List<TrainingSetup> ();

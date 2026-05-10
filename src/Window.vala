@@ -12,7 +12,8 @@ namespace ExerciseTimer {
             settings.bind("window-is-maximized", this, "maximized", GLib.SettingsBindFlags.DEFAULT);
 
             training_listbox.bind_model(training_list_model, training_list_create_widget);
-            training_list_model.item_deleted.connect((remaining_items) => {
+            training_list_model.item_deleted.connect((remaining_items, deleted_setup) => {
+                create_deletion_toast(deleted_setup);
                 save_training_list();
                 if (remaining_items == 0) {
                     training_list_stack.set_visible_child(training_list_status);
@@ -86,6 +87,7 @@ namespace ExerciseTimer {
             timer_page = new TimerPage(setup, this);
             navigation_view.push(timer_page);
             voices = new Voices(timer_page);
+            toast_overlay.dismiss_all();
         }
 
         private Gtk.Widget training_list_create_widget(GLib.Object obj) {
@@ -96,6 +98,17 @@ namespace ExerciseTimer {
                 save_training_list();
             });
             return widget;
+        }
+
+        private void create_deletion_toast(TrainingSetup deleted_setup) {
+            // Translators: caption of the tost that appears when deleting a training in the training list
+            var toast = new Adw.Toast(_("Deleted training: %s").printf(deleted_setup.Title));
+            // Translators: caption of the button on the training deletion toast that re-adds the training to the list
+            toast.button_label = _("Undo");
+            toast.button_clicked.connect(() => {
+                add_training_to_list(deleted_setup);
+            });
+            toast_overlay.add_toast(toast);
         }
 
         private static void load_default_setup() {
@@ -129,6 +142,8 @@ namespace ExerciseTimer {
         private unowned Gtk.Widget training_list_scrolled;
         [GtkChild]
         private unowned Gtk.ListBox training_listbox;
+        [GtkChild]
+        private unowned Adw.ToastOverlay toast_overlay;
 
         private Voices voices;
         private TimerPage timer_page;
