@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hiit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-10 14:57+0200\n"
-"PO-Revision-Date: 2025-12-29 18:00+0000\n"
+"PO-Revision-Date: 2026-05-16 10:08+0000\n"
 "Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/exercise-timer/"
 "exercise-timer/tr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #. Translators: The title of the shortcuts group which lists the training-related shortcuts
 #: data/resources/ui/shortcuts_dialog.blp:7
@@ -311,14 +311,14 @@ msgstr "%d × %d sn"
 
 #. Translators: caption of the tost that appears when deleting a training in the training list
 #: src/Window.vala:105
-#, fuzzy, c-format
+#, c-format
 msgid "Deleted training: %s"
-msgstr "Eğitimi Sil"
+msgstr "Eğitimi sil: %s"
 
 #. Translators: caption of the button on the training deletion toast that re-adds the training to the list
 #: src/Window.vala:107
 msgid "Undo"
-msgstr ""
+msgstr "Geri al"
 
 #, rust-format
 #~ msgid "{} × {} s"
